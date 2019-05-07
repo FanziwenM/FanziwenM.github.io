@@ -72,7 +72,7 @@
     root: '/',
     scheme: 'Mist',
     version: '7.1.1',
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    sidebar: {"position":"left","display":"always","offset":12,"onmobile":false,"dimmer":false},
     back2top: true,
     back2top_sidebar: false,
     fancybox: false,
@@ -320,7 +320,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/06/PythonInMaya/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/07/NextMarkdown/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="范子文">
@@ -340,7 +340,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/05/06/PythonInMaya/" class="post-title-link" itemprop="url">PythonInMaya</a>
+                <a href="/2019/05/07/NextMarkdown/" class="post-title-link" itemprop="url">NextMarkdown</a>
               
             
           </h1>
@@ -365,7 +365,7 @@
                 
               
 
-              <time title="创建时间：2019-05-06 21:28:49 / 修改时间：21:36:56" itemprop="dateCreated datePublished" datetime="2019-05-06T21:28:49+08:00">2019-05-06</time>
+              <time title="创建时间：2019-05-07 21:22:40 / 修改时间：21:53:42" itemprop="dateCreated datePublished" datetime="2019-05-07T21:22:40+08:00">2019-05-07</time>
             
 
             
@@ -424,47 +424,229 @@
       
         
           
-            <!-- toc -->
-<ul>
-<li><a href="#python-in-maya"><strong>Python In Maya</strong></a><ul>
-<li><a href="#pymelcore">Pymel.Core</a><ul>
-<li><a href="#pmselect">pm.select()</a></li>
-<li><a href="#pmdelete">pm.delete()</a></li>
-</ul>
-</li>
-<li><a href="#trick">Trick</a><ul>
-<li><a href="#pmpopuperror">pm.PopupError()</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
-<h1><span id="python-in-maya"><strong>Python In Maya</strong></span></h1><blockquote>
-<p><strong>Maya中常用命令及常用参数</strong></p>
-</blockquote>
-<hr>
-<h2><span id="pymelcore">Pymel.Core</span></h2><h3><span id="pmselect">pm.select()</span></h3><p><strong>add(add)</strong>     <em>bool</em></p>
-<blockquote>
-<p>添加选择<br><br>Indicates that the specified items should be added to the active list without removing existing items from the active list.</p>
-</blockquote>
-<p><strong>clear(cl)</strong>   <em>bool</em></p>
-<blockquote>
-<p>取消选择<br>Clears the active list. This is more efficient than select -d;. Also select -d;will not remove sets from the active list unless the -neflag is also specified.</p>
-</blockquote>
-<hr>
-<h3><span id="pmdelete">pm.delete()</span></h3><p><strong>constructionHistory (ch)</strong>    <em>bool</em></p>
-<blockquote>
-<p>清除历史记录<br><br>Remove the construction history on the objects specified or selected.</p>
-</blockquote>
-<hr>
-<h2><span id="trick">Trick</span></h2><h3><span id="pmpopuperror">pm.PopupError()</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymel.core <span class="keyword">as</span> pm</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    pm.select(<span class="string">"RD_01"</span>,type = <span class="string">"mesh"</span>)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    pm.PopupError(str(e))</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>报错弹窗</p>
-</blockquote>
-<hr>
+            <p>
+              h1Note info&#123;% note info %&#125;提醒内容&#123;% endnote %&#125;
+
+            提醒内容
+          
+&#123;% note primary %&#125;主要内容 &#123;% endnote %&#125;
+
+            主要内容 
+          
+
+            警告内容
+          
+
+            成功内容
+          
+
+            禁止、错误内容
+          
+Tabs&#123;% tabs a %&#125;&lt;
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/05/07/NextMarkdown/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/06/PythonInMaya/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="范子文">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fanziwen">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/06/PythonInMaya/" class="post-title-link" itemprop="url">PythonInMaya</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-06 21:28:49" itemprop="dateCreated datePublished" datetime="2019-05-06T21:28:49+08:00">2019-05-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-07 21:39:47" itemprop="dateModified" datetime="2019-05-07T21:39:47+08:00">2019-05-07</time>
+              
+            
+          </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              Python In Maya
+Maya中常用命令及常用参数
+
+
+Pymel.Corepm.select()add(add)     bool
+
+添加选择Indicates that the specified items should be added to the active list without removing existing items from the active list.
+
+clear(cl)   bool
+
+取消选择Clears the active list. This is more efficient than select -d;. Also select -
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/05/06/PythonInMaya/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -581,7 +763,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-06 21:26:36" itemprop="dateModified" datetime="2019-05-06T21:26:36+08:00">2019-05-06</time>
+                <time title="修改时间：2019-05-07 21:34:08" itemprop="dateModified" datetime="2019-05-07T21:34:08+08:00">2019-05-07</time>
               
             
           </span>
@@ -635,52 +817,63 @@
       
         
           
-            <!-- toc -->
-<ul>
-<li><a href="#cmd"><strong>CMD</strong></a><ul>
-<li><a href="#常用命令">常用命令</a><ul>
-<li><a href="#通用操作">通用操作</a><ul>
-<li><a href="#help">help</a></li>
-<li><a href="#cls">cls</a></li>
-</ul>
-</li>
-<li><a href="#目录操作">目录操作</a><ul>
-<li><a href="#cd-path">cd [path]</a></li>
-<li><a href="#cd-d-drivepath">cd /d [drive:][path]</a></li>
-<li><a href="#cd">cd..</a></li>
-<li><a href="#dirb">dir/b</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
-<h1><span id="cmd"><strong>CMD</strong></span></h1><blockquote>
-<p><a href="https://blog.csdn.net/mzpmzk/article/details/70665597">https://blog.csdn.net/mzpmzk/article/details/70665597</a></p>
-</blockquote>
-<hr>
-<h2><span id="常用命令">常用命令</span></h2><h3><span id="通用操作">通用操作</span></h3><h4><span id="help">help</span></h4><ul>
-<li>可查看该命令的介绍、参数列表与使用方法</li>
-</ul>
-<h4><span id="cls">cls</span></h4><ul>
-<li>清屏</li>
-</ul>
-<h3><span id="目录操作">目录操作</span></h3><h4><span id="cd-path">cd [path]</span></h4><ul>
-<li>切换目录 </li>
-</ul>
-<h4><span id="cd-d-drivepath">cd /d [drive:][path]</span></h4><ul>
-<li>跨盘切换目录</li>
-</ul>
-<h4><span id="cd">cd..</span></h4><ul>
-<li>返回上一级</li>
-</ul>
-<h4><span id="dirb">dir/b</span></h4><ul>
-<li>显示内容(文件夹)</li>
-</ul>
+            <p>
+              
 
+CMD
+常用命令
+通用操作
+help
+cls
+
+
+目录操作
+cd [path]
+cd /d [drive:][path]
+cd..
+dir/b
+
+
+
+
+
+
+
+
+CMD
+https://blog.csdn.net/mzpmzk/article/details/70665597
+
+
+常用命令通用操作help
+可查看该命令的介绍、参数列表与使用方法
+
+cls
+清屏
+
+目录操作cd [path]
+切换目录 
+
+cd /d [drive:][path]
+跨盘切换目录
+
+cd..
+返回上一级
+
+dir/b
+显示内容(文件夹)
+
+
+              
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/05/05/CMD/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -762,7 +955,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -810,7 +1003,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
