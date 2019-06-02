@@ -100,13 +100,13 @@
 
 
 
-  <meta name="description" content="常用节点Multiply 乘     输入 说明     A 与B相乘   B 与A相乘    最常用的的节点，字面意思，就是乘，加减乘除的乘。但是对于美术，在意它所能表示的效果时，可以想象PS里的正片叠底(Multiply)，其实名字也说明了他们是一个东西 但是要注意的是：  当A和B都是标量，就是正常的乘法运算 假设A为向量（三维数组），而B为标量，则A数组中的数逐个与B相乘 当A和B都是向量">
+  <meta name="description" content="常用节点Multiply 乘      输入 说明     A 与B相乘   B 与A相乘     最常用的的节点，字面意思，就是乘，加减乘除的乘。但是对于美术，在意它所能表示的效果时，可以想象PS里的正片叠底(Multiply)，其实名字也说明了他们是一个东西 但是要注意的是：  当A和B都是标量，就是正常的乘法运算 假设A为向量（三维数组），而B为标量，则A数组中的数逐个与B相乘 当A和B都是">
 <meta name="keywords" content="UE4,Materials,basic">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UE4材质基础">
 <meta property="og:url" content="http://yoursite.com/Notes/Ue4MaterialsNotes/index.html">
 <meta property="og:site_name" content="Fan ziwen">
-<meta property="og:description" content="常用节点Multiply 乘     输入 说明     A 与B相乘   B 与A相乘    最常用的的节点，字面意思，就是乘，加减乘除的乘。但是对于美术，在意它所能表示的效果时，可以想象PS里的正片叠底(Multiply)，其实名字也说明了他们是一个东西 但是要注意的是：  当A和B都是标量，就是正常的乘法运算 假设A为向量（三维数组），而B为标量，则A数组中的数逐个与B相乘 当A和B都是向量">
+<meta property="og:description" content="常用节点Multiply 乘      输入 说明     A 与B相乘   B 与A相乘     最常用的的节点，字面意思，就是乘，加减乘除的乘。但是对于美术，在意它所能表示的效果时，可以想象PS里的正片叠底(Multiply)，其实名字也说明了他们是一个东西 但是要注意的是：  当A和B都是标量，就是正常的乘法运算 假设A为向量（三维数组），而B为标量，则A数组中的数逐个与B相乘 当A和B都是">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/clipboard.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/CreatingLayeredMaterials1.png">
@@ -114,7 +114,7 @@
 <meta property="og:updated_time" content="2019-06-02T16:32:16.982Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UE4材质基础">
-<meta name="twitter:description" content="常用节点Multiply 乘     输入 说明     A 与B相乘   B 与A相乘    最常用的的节点，字面意思，就是乘，加减乘除的乘。但是对于美术，在意它所能表示的效果时，可以想象PS里的正片叠底(Multiply)，其实名字也说明了他们是一个东西 但是要注意的是：  当A和B都是标量，就是正常的乘法运算 假设A为向量（三维数组），而B为标量，则A数组中的数逐个与B相乘 当A和B都是向量">
+<meta name="twitter:description" content="常用节点Multiply 乘      输入 说明     A 与B相乘   B 与A相乘     最常用的的节点，字面意思，就是乘，加减乘除的乘。但是对于美术，在意它所能表示的效果时，可以想象PS里的正片叠底(Multiply)，其实名字也说明了他们是一个东西 但是要注意的是：  当A和B都是标量，就是正常的乘法运算 假设A为向量（三维数组），而B为标量，则A数组中的数逐个与B相乘 当A和B都是">
 <meta name="twitter:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/clipboard.png">
 
 
@@ -447,6 +447,7 @@
         <h3 id="常用节点"><a href="#常用节点" class="headerlink" title="常用节点"></a>常用节点</h3><h4 id="Multiply"><a href="#Multiply" class="headerlink" title="Multiply"></a>Multiply</h4><blockquote>
 <p>乘</p>
 </blockquote>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -465,6 +466,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>最常用的的节点，字面意思，就是乘，加减乘除的乘。但是对于美术，在意它所能表示的效果时，可以想象PS里的<span class="label primary">正片叠底(Multiply)</span>，其实名字也说明了他们是一个东西</p>
 <p><strong>但是要注意的是：</strong></p>
 <ul>
@@ -472,13 +474,24 @@
 <li>假设A为向量（三维数组），而B为标量，则A数组中的数逐个与B相乘</li>
 <li>当A和B都是向量（三维数组），结果则是：</li>
 </ul>
-<p>$$\begin{bmatrix}<br>a1\<br>a2\<br>a3\<br>\end{bmatrix}\times<br>\begin{bmatrix}<br>b1\<br>b2\<br>b3\<br>\end{bmatrix}$$</p>
-<h3 id="凹凸加深（BumpOffset）"><a href="#凹凸加深（BumpOffset）" class="headerlink" title="凹凸加深（BumpOffset）"></a>凹凸加深（BumpOffset）</h3><p><strong>核心节点：</strong></p>
+<script type="math/tex; mode=display">\begin{bmatrix}
+a1\\
+a2\\
+a3\\
+\end{bmatrix}\times 
+\begin{bmatrix}
+b1\\
+b2\\
+b3\\
+\end{bmatrix}</script><h3 id="凹凸加深（BumpOffset）"><a href="#凹凸加深（BumpOffset）" class="headerlink" title="凹凸加深（BumpOffset）"></a>凹凸加深（BumpOffset）</h3><p><strong>核心节点：</strong></p>
 <ul>
 <li><span class="label success"><strong>BumpOffset</strong></span>
 </li>
 </ul>
-<span class="label success">BumpOffset</span>材质节点是一个很省资源的而且相对有效的方法来体现材质凸起效果，而不需要通过3D模型上进行凸起的变化。<br>但是就像Normal效果一样，这种凸起效果是一种视觉错觉，所以当摄像机视角平行于物体表面时，凹凸效果就会消失。<br><br><a id="more"></a>
+<span class="label success">BumpOffset</span>材质节点是一个很省资源的而且相对有效的方法来体现材质凸起效果，而不需要通过3D模型上进行凸起的变化。
+但是就像Normal效果一样，这种凸起效果是一种视觉错觉，所以当摄像机视角平行于物体表面时，凹凸效果就会消失。
+
+<a id="more"></a>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\clipboard.png " class="full-image" alt="凹凸加深(BumpOffset)" title="BumpOffset" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <h3 id="混合材质（CreatingLayeredMaterials）"><a href="#混合材质（CreatingLayeredMaterials）" class="headerlink" title="混合材质（CreatingLayeredMaterials）"></a>混合材质（CreatingLayeredMaterials）</h3><p><strong>核心节点：</strong></p>
 <ul>
@@ -492,7 +505,25 @@
 </ul>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\CreatingLayeredMaterials1.png " class="full-image" alt="MaterialFunctions" title="第一个材质" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\CreatingLayeredMaterials2.png " class="full-image" alt="MaterialFunctions" title="第二个材质" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 

@@ -100,17 +100,17 @@
 
 
 
-  <meta name="description" content="English">
+  <meta name="description" content="English         document.querySelectorAll(&apos;.github-emoji&apos;)           .forEach(el =&amp;gt; {             if (!el.dataset.src) { return; }             const img = document.createElement(&apos;img&apos;);             im">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Private">
 <meta property="og:url" content="http://yoursite.com/private/index.html">
 <meta property="og:site_name" content="Fan ziwen">
-<meta property="og:description" content="English">
+<meta property="og:description" content="English         document.querySelectorAll(&apos;.github-emoji&apos;)           .forEach(el =&amp;gt; {             if (!el.dataset.src) { return; }             const img = document.createElement(&apos;img&apos;);             im">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-05-16T15:27:51.872Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Private">
-<meta name="twitter:description" content="English">
+<meta name="twitter:description" content="English         document.querySelectorAll(&apos;.github-emoji&apos;)           .forEach(el =&amp;gt; {             if (!el.dataset.src) { return; }             const img = document.createElement(&apos;img&apos;);             im">
 
 
 
@@ -357,7 +357,25 @@
       <div class="post-body">
         
         
-          <h3 id="English"><a href="#English" class="headerlink" title="English"></a><a href="/private/english">English</a></h3>
+          <h3 id="English"><a href="#English" class="headerlink" title="English"></a><a href="/private/english">English</a></h3><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
         
       </div>
       
