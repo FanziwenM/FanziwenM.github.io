@@ -109,11 +109,14 @@
 <meta property="og:description" content="🔥 常用节点Add, Subtract, Multiply, Divide 加，减，乘，除  最常用的的节点，非常基础的数学运算。字面意思，加减乘除的乘。对于美术，在意它所能表示的效果时，在PS里Add相当于线性减淡，Subtract就是减去，Multiply就是正片叠底，Divide就是划分 但是要注意的是：  当A和B都是标量，就是正常的基础运算 假设A为向量（三维数组），而B为标量，则A数">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/Multiply1.png">
-<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/Multiply22.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/Multiply2.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/Multiply3.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/Multiply4.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/clipboard.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/CreatingLayeredMaterials1.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/CreatingLayeredMaterials2.png">
-<meta property="og:updated_time" content="2019-06-03T16:06:59.306Z">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/debug0.png">
+<meta property="og:updated_time" content="2019-06-04T14:14:42.330Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UE4材质基础">
 <meta name="twitter:description" content="🔥 常用节点Add, Subtract, Multiply, Divide 加，减，乘，除  最常用的的节点，非常基础的数学运算。字面意思，加减乘除的乘。对于美术，在意它所能表示的效果时，在PS里Add相当于线性减淡，Subtract就是减去，Multiply就是正片叠底，Divide就是划分 但是要注意的是：  当A和B都是标量，就是正常的基础运算 假设A为向量（三维数组），而B为标量，则A数">
@@ -394,7 +397,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-04 00:06:59" itemprop="dateModified" datetime="2019-06-04T00:06:59+08:00">2019-06-04</time>
+                <time title="修改时间：2019-06-04 22:14:42" itemprop="dateModified" datetime="2019-06-04T22:14:42+08:00">2019-06-04</time>
               
             
           </span>
@@ -446,7 +449,7 @@
       
 
       
-        <h2 id="🔥-常用节点"><a href="#🔥-常用节点" class="headerlink" title="🔥 常用节点"></a>🔥 常用节点</h2><h4 id="Add-Subtract-Multiply-Divide"><a href="#Add-Subtract-Multiply-Divide" class="headerlink" title="Add, Subtract, Multiply, Divide"></a>Add, Subtract, Multiply, Divide</h4><blockquote>
+        <h2 id="🔥-常用节点"><a href="#🔥-常用节点" class="headerlink" title="🔥 常用节点"></a>🔥 常用节点</h2><h3 id="Add-Subtract-Multiply-Divide"><a href="#Add-Subtract-Multiply-Divide" class="headerlink" title="Add, Subtract, Multiply, Divide"></a>Add, Subtract, Multiply, Divide</h3><blockquote>
 <p>加，减，乘，除</p>
 </blockquote>
 <p>最常用的的节点，非常基础的数学运算。字面意思，加减乘除的乘。对于美术，在意它所能表示的效果时，在PS里<span class="label success">Add</span>相当于<span class="label primary">线性减淡</span>，<span class="label success">Subtract</span>就是<span class="label primary">减去</span>，<span class="label success">Multiply</span>就是<span class="label primary">正片叠底</span>，<span class="label success">Divide</span>就是<span class="label primary">划分</span></p>
@@ -468,6 +471,7 @@ ka_{y}\\
 ka_{z}\\
 \end{bmatrix}</script><pre><code>例如，(0.2,0.4,1.0)乘以0.5，结果就是(0.1, 0.2, 0.5)
 </code></pre><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Multiply1.png " class="full-image" alt="MaterialFunctions" title="向量乘标量" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<a id="more"></a>
 <div class="note info">
             <p>我们可以使用<span class="label info">DebugFloat3Values</span>节点以数值的方式查看结果，具体的使用方法，可以查看<a href="#Debug节点的使用">Debug节点的使用</a></p>
           </div>
@@ -490,12 +494,15 @@ a_{x}b_{x}\\
 a_{y}b_{y}\\
 a_{z}b_{z}\\
 \end{bmatrix}</script><pre><code>例如,(0.2,0.4,1.0)与(1.0, 0.5, 0.8),结果就是(0.2, 0.2, 0.8)
-</code></pre><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Multiply22.png " class="full-image" alt="MaterialFunctions" title="向量乘向量" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+</code></pre><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Multiply2.png " class="full-image" alt="MaterialFunctions" title="向量乘向量" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <div class="note danger">
             <p>一个二维数组不能和一个三维数组相运算，结果会产生错误</p>
           </div>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Multiply3.png " class="full-image" alt="MaterialFunctions" title="错误运算" style="max-width: none; width:50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>对于对数字不太敏感的美术，或者就想知道用这些基础运算的节点到底有什么用，使用单个节点有什么效果，可以自己进行尝试，加深映象。</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Multiply4.png " class="full-image" alt="MaterialFunctions" title="加减乘除对贴图产生的效果" style="max-width: none; width:100%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <hr>
-<h3 id="凹凸加深（BumpOffset）"><a href="#凹凸加深（BumpOffset）" class="headerlink" title="凹凸加深（BumpOffset）"></a>凹凸加深（BumpOffset）</h3><p><strong>核心节点：</strong></p>
+<h2 id="🔨-基础案例"><a href="#🔨-基础案例" class="headerlink" title="🔨 基础案例"></a>🔨 基础案例</h2><h3 id="凹凸加深（BumpOffset）"><a href="#凹凸加深（BumpOffset）" class="headerlink" title="凹凸加深（BumpOffset）"></a>凹凸加深（BumpOffset）</h3><p><strong>核心节点：</strong></p>
 <ul>
 <li><span class="label success"><strong>BumpOffset</strong></span>
 </li>
@@ -503,7 +510,8 @@ a_{z}b_{z}\\
 <span class="label success">BumpOffset</span>材质节点是一个很省资源的而且相对有效的方法来体现材质凸起效果，而不需要通过3D模型上进行凸起的变化。
 但是就像Normal效果一样，这种凸起效果是一种视觉错觉，所以当摄像机视角平行于物体表面时，凹凸效果就会消失。
 
-<a id="more"></a>
+
+
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\clipboard.png " class="full-image" alt="凹凸加深(BumpOffset)" title="BumpOffset" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <h3 id="混合材质（CreatingLayeredMaterials）"><a href="#混合材质（CreatingLayeredMaterials）" class="headerlink" title="混合材质（CreatingLayeredMaterials）"></a>混合材质（CreatingLayeredMaterials）</h3><p><strong>核心节点：</strong></p>
 <ul>
@@ -517,7 +525,27 @@ a_{z}b_{z}\\
 </ul>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\CreatingLayeredMaterials1.png " class="full-image" alt="MaterialFunctions" title="第一个材质" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\CreatingLayeredMaterials2.png " class="full-image" alt="MaterialFunctions" title="第二个材质" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<h2 id="其他节点"><a href="#其他节点" class="headerlink" title="其他节点"></a>其他节点</h2><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h3 id="Debug节点的使用"><a href="#Debug节点的使用" class="headerlink" title="Debug节点的使用"></a>Debug节点的使用</h3><script>
+<hr>
+<h2 id="🚩-其他节点"><a href="#🚩-其他节点" class="headerlink" title="🚩 其他节点"></a>🚩 其他节点</h2><h3 id="Debug节点的使用"><a href="#Debug节点的使用" class="headerlink" title="Debug节点的使用"></a>Debug节点的使用</h3><p>Debug节点可以以数值的形式显示结果，这样可以帮助我们在完成一些计算后检查输出结果是否正确。</p>
+<ul>
+<li>右键，键入Debug，就可以看到相关节点</li>
+</ul>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\debug0.png " class="full-image" alt="MaterialFunctions" title="Debug节点" style="max-width: none; width:30%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>要注意的是，你要检查的输出值是什么类型就要用什么类型的Debug节点：</p>
+<ul>
+<li><span class="label info">DebugScalarValues</span>检查一维数(标量)</li>
+<li><span class="label info">DebugFloat2Values</span>检查二维数组(2D向量)</li>
+<li><span class="label info">DebugFloat3Values</span>检查三维数组(3D向量)</li>
+</ul>
+<p>还有其他Debug节点（不常用）：</p>
+<ul>
+<li><span class="label info">DebugBinaryValues</span>是以二进制的形式显示输出。明显就是给大佬们用的</li>
+<li><span class="label info">DebugOnOff</span>不断循环的输出0和1，也就是True和False</li>
+<li><span class="label info">DebugTimeSine</span>输出一个0到1的循环</li>
+</ul>
+<p><strong>使用方法：</strong></p>
+<video src="\videos\UE4MaterialsNotes\debug.mp4" preload="metadata" controls playsinline poster>Sorry, your browser does not support the video tag.</video>
+<h3 id="ConstantBiasScale"><a href="#ConstantBiasScale" class="headerlink" title="ConstantBiasScale"></a>ConstantBiasScale</h3><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -759,7 +787,7 @@ a_{z}b_{z}\\
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🔥-常用节点"><span class="nav-number">1.</span> <span class="nav-text">🔥 常用节点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Add-Subtract-Multiply-Divide"><span class="nav-number">1.0.1.</span> <span class="nav-text">Add, Subtract, Multiply, Divide</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#凹凸加深（BumpOffset）"><span class="nav-number">1.1.</span> <span class="nav-text">凹凸加深（BumpOffset）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#混合材质（CreatingLayeredMaterials）"><span class="nav-number">1.2.</span> <span class="nav-text">混合材质（CreatingLayeredMaterials）</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#其他节点"><span class="nav-number">2.</span> <span class="nav-text">其他节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">2.1.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Debug节点的使用"><span class="nav-number">2.2.</span> <span class="nav-text">Debug节点的使用</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🔥-常用节点"><span class="nav-number">1.</span> <span class="nav-text">🔥 常用节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Add-Subtract-Multiply-Divide"><span class="nav-number">1.1.</span> <span class="nav-text">Add, Subtract, Multiply, Divide</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔨-基础案例"><span class="nav-number">2.</span> <span class="nav-text">🔨 基础案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#凹凸加深（BumpOffset）"><span class="nav-number">2.1.</span> <span class="nav-text">凹凸加深（BumpOffset）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#混合材质（CreatingLayeredMaterials）"><span class="nav-number">2.2.</span> <span class="nav-text">混合材质（CreatingLayeredMaterials）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🚩-其他节点"><span class="nav-number">3.</span> <span class="nav-text">🚩 其他节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Debug节点的使用"><span class="nav-number">3.1.</span> <span class="nav-text">Debug节点的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConstantBiasScale"><span class="nav-number">3.2.</span> <span class="nav-text">ConstantBiasScale</span></a></li></ol></li></ol></div>
             
 
           </div>
