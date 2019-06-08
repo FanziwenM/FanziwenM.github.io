@@ -386,7 +386,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-05 00:50:30" itemprop="dateModified" datetime="2019-06-05T00:50:30+08:00">2019-06-05</time>
+                <time title="修改时间：2019-06-08 20:24:34" itemprop="dateModified" datetime="2019-06-08T20:24:34+08:00">2019-06-08</time>
               
             
           </span>
@@ -439,28 +439,12 @@
 
       
         
-          <h2 id="🔥-常用节点"><a href="#🔥-常用节点" class="headerlink" title="🔥 常用节点"></a>🔥 常用节点</h2><h3 id="Add-Subtract-Multiply-Divide"><a href="#Add-Subtract-Multiply-Divide" class="headerlink" title="Add, Subtract, Multiply, Divide"></a>Add, Subtract, Multiply, Divide</h3><blockquote>
-<p>加，减，乘，除</p>
-</blockquote>
-<p>最常用的的节点，非常基础的数学运算。字面意思，加减乘除的乘。对于美术，在意它所能表示的效果时，在PS里<span class="label success"><strong>Add</strong></span>相当于<span class="label primary">线性减淡</span>，<span class="label success"><strong>Subtract</strong></span>就是<span class="label primary">减去</span>，<span class="label success"><strong>Multiply</strong></span>就是<span class="label primary">正片叠底</span>，<span class="label success"><strong>Divide</strong></span>就是<span class="label primary">划分</span></p>
-<p><strong>但是要注意的是：</strong></p>
-<ul>
-<li>当A和B都是标量，就是正常的基础运算</li>
-<li>假设A为向量（三维数组），而B为标量，则A数组中的数<span class="label info">逐个</span>与B进行运算，例如乘法：</li>
-</ul>
-<script type="math/tex; mode=display">A=\begin{bmatrix}
-a_{x}\\
-a_{y}\\
-a_{z}\\
-\end{bmatrix},
-B=k\\
-\\
-AB=\begin{bmatrix}
-ka_{x}\\
-ka_{y}\\
-ka_{z}\\
-\end{bmatrix}</script><pre><code>例如，(0.2,0.4,1.0)乘以0.5，结果就是(0.1, 0.2, 0.5)
-</code></pre><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Multiply1.png " class="full-image" alt="MaterialFunctions" title="向量乘标量" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+          <h2 id="🌏基础介绍"><a href="#🌏基础介绍" class="headerlink" title="🌏基础介绍"></a>🌏基础介绍</h2><p>材质是用了一种特别的编程语言：<strong>高阶着色器语言(High Level Shading Language)</strong>简称<strong>HLSL</strong> 创建的。<strong>HLSL</strong>可以使材质直接和图形硬件通信，从而使美术和程序员直观的观察控制屏幕显示内容。<strong>Unreal Engine 4 (UE4)</strong>中用来创建材质球的材质节点包含着和<strong>HLSL</strong>一样的代码块，来实现和这些代码块相同的效果。</p>
+<hr>
+<h3 id="主材质节点-The-Main-Material-Node"><a href="#主材质节点-The-Main-Material-Node" class="headerlink" title="主材质节点(The Main Material Node)"></a>主材质节点(The Main Material Node)</h3><p>在<strong>Content Browser</strong>中右键创建一个材质</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialCreate.jpg " class="full-image" alt="MaterialCreate" title="创建材质" style="max-width: none; width:50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>双击我们新建的材质，进入材质编辑窗口。</p>
+<p><strong>主材质节点(The Main Material Node)</strong>可以被认为材质制作的最后一步。将材质节点任意组合后，输入给主节点，就会有相应的效果在材质球编译后显示。</p>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -1440,6 +1424,26 @@ ka_{z}\\
   
 
   
+<script>
+if ($('body').find('pre.mermaid').length) {
+  $.ajax({
+    type: 'GET',
+    url: '//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js',
+    dataType: 'script',
+    cache: true,
+    success: function() {
+      mermaid.initialize({
+        theme: 'neutral',
+        logLevel: 3,
+        flowchart: { curve: 'linear' },
+        gantt: { axisFormat: '%m/%d/%Y' },
+        sequence: { actorMargin: 50 }
+      });
+    }
+  });
+}
+</script>
+
 
   
 

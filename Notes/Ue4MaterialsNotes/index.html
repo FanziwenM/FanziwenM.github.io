@@ -100,14 +100,34 @@
 
 
 
-  <meta name="description" content="🔥 常用节点Add, Subtract, Multiply, Divide 加，减，乘，除  最常用的的节点，非常基础的数学运算。字面意思，加减乘除的乘。对于美术，在意它所能表示的效果时，在PS里Add相当于线性减淡，Subtract就是减去，Multiply就是正片叠底，Divide就是划分 但是要注意的是：  当A和B都是标量，就是正常的基础运算 假设A为向量（三维数组），而B为标量，则A数">
+  <meta name="description" content="🌏基础介绍材质是用了一种特别的编程语言：高阶着色器语言(High Level Shading Language)简称HLSL 创建的。HLSL可以使材质直接和图形硬件通信，从而使美术和程序员直观的观察控制屏幕显示内容。Unreal Engine 4 (UE4)中用来创建材质球的材质节点包含着和HLSL一样的代码块，来实现和这些代码块相同的效果。  主材质节点(The Main Material">
 <meta name="keywords" content="UE4,Materials,basic">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UE4材质基础">
 <meta property="og:url" content="http://yoursite.com/Notes/Ue4MaterialsNotes/index.html">
 <meta property="og:site_name" content="Fan ziwen">
-<meta property="og:description" content="🔥 常用节点Add, Subtract, Multiply, Divide 加，减，乘，除  最常用的的节点，非常基础的数学运算。字面意思，加减乘除的乘。对于美术，在意它所能表示的效果时，在PS里Add相当于线性减淡，Subtract就是减去，Multiply就是正片叠底，Divide就是划分 但是要注意的是：  当A和B都是标量，就是正常的基础运算 假设A为向量（三维数组），而B为标量，则A数">
+<meta property="og:description" content="🌏基础介绍材质是用了一种特别的编程语言：高阶着色器语言(High Level Shading Language)简称HLSL 创建的。HLSL可以使材质直接和图形硬件通信，从而使美术和程序员直观的观察控制屏幕显示内容。Unreal Engine 4 (UE4)中用来创建材质球的材质节点包含着和HLSL一样的代码块，来实现和这些代码块相同的效果。  主材质节点(The Main Material">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialCreate.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/Material_Main_Node.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialDetails.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialTranslucent.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialUnlit.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialTessellation.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialNode0.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialNode2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialNode1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialInstance.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialInstance1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialInstance2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialInstance3.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialInstance4.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialInstance5.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialInstance6.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialInstance7.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialInstance8.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialInstance9.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialInstance10.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/Multiply1.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/Multiply2.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/Multiply3.png">
@@ -118,11 +138,11 @@
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/CreatingLayeredMaterials1.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/CreatingLayeredMaterials2.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/debug0.png">
-<meta property="og:updated_time" content="2019-06-04T16:50:30.372Z">
+<meta property="og:updated_time" content="2019-06-08T12:24:34.467Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UE4材质基础">
-<meta name="twitter:description" content="🔥 常用节点Add, Subtract, Multiply, Divide 加，减，乘，除  最常用的的节点，非常基础的数学运算。字面意思，加减乘除的乘。对于美术，在意它所能表示的效果时，在PS里Add相当于线性减淡，Subtract就是减去，Multiply就是正片叠底，Divide就是划分 但是要注意的是：  当A和B都是标量，就是正常的基础运算 假设A为向量（三维数组），而B为标量，则A数">
-<meta name="twitter:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/Multiply1.png">
+<meta name="twitter:description" content="🌏基础介绍材质是用了一种特别的编程语言：高阶着色器语言(High Level Shading Language)简称HLSL 创建的。HLSL可以使材质直接和图形硬件通信，从而使美术和程序员直观的观察控制屏幕显示内容。Unreal Engine 4 (UE4)中用来创建材质球的材质节点包含着和HLSL一样的代码块，来实现和这些代码块相同的效果。  主材质节点(The Main Material">
+<meta name="twitter:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialCreate.jpg">
 
 
 
@@ -399,7 +419,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-05 00:50:30" itemprop="dateModified" datetime="2019-06-05T00:50:30+08:00">2019-06-05</time>
+                <time title="修改时间：2019-06-08 20:24:34" itemprop="dateModified" datetime="2019-06-08T20:24:34+08:00">2019-06-08</time>
               
             
           </span>
@@ -451,50 +471,164 @@
       
 
       
-        <h2 id="🔥-常用节点"><a href="#🔥-常用节点" class="headerlink" title="🔥 常用节点"></a>🔥 常用节点</h2><h3 id="Add-Subtract-Multiply-Divide"><a href="#Add-Subtract-Multiply-Divide" class="headerlink" title="Add, Subtract, Multiply, Divide"></a>Add, Subtract, Multiply, Divide</h3><blockquote>
+        <h2 id="🌏基础介绍"><a href="#🌏基础介绍" class="headerlink" title="🌏基础介绍"></a>🌏基础介绍</h2><p>材质是用了一种特别的编程语言：<strong>高阶着色器语言(High Level Shading Language)</strong>简称<strong>HLSL</strong> 创建的。<strong>HLSL</strong>可以使材质直接和图形硬件通信，从而使美术和程序员直观的观察控制屏幕显示内容。<strong>Unreal Engine 4 (UE4)</strong>中用来创建材质球的材质节点包含着和<strong>HLSL</strong>一样的代码块，来实现和这些代码块相同的效果。</p>
+<hr>
+<h3 id="主材质节点-The-Main-Material-Node"><a href="#主材质节点-The-Main-Material-Node" class="headerlink" title="主材质节点(The Main Material Node)"></a>主材质节点(The Main Material Node)</h3><p>在<strong>Content Browser</strong>中右键创建一个材质</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialCreate.jpg " class="full-image" alt="MaterialCreate" title="创建材质" style="max-width: none; width:50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>双击我们新建的材质，进入材质编辑窗口。</p>
+<p><strong>主材质节点(The Main Material Node)</strong>可以被认为材质制作的最后一步。将材质节点任意组合后，输入给主节点，就会有相应的效果在材质球编译后显示。</p>
+<a id="more"></a>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Material_Main_Node.jpg " class="full-image" alt="MaterialNode" title="主材质节点" style="max-width: none; width:15%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>主材质节点的每一个输入(Input)都有其特殊的效果。白色的输入处于启用状态，说明这类材质有相应的属性可以输入，而灰色的输入处于禁用状态，说明这个材质没有这些相应属性，而且不能输入信息。想启动和禁用主材质节点的输入，就要修改<strong>Details</strong>面板材质球的属性。</p>
+<div class="note warning">
+            <p><strong>Details面板</strong> 会显示当前选择的节点的信息,所以查看主材质的信息时请选中主材质节点，或者左键单机空白区域。</p>
+          </div>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialDetails.jpg " class="full-image" alt="MaterialDetails" title="主材质详情" style="max-width: none; width:40%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>经常使用，进行修改的地方：</p>
+<ul>
+<li><strong>Blend Mode(混合模式)</strong></li>
+<li><strong>Shading Model(着色模式)</strong></li>
+<li><strong>D3D11Tessellation Mode(曲面细分模式)</strong></li>
+</ul>
+<p>例如，当我们需要一个透明材质，我们就需要修改<strong>Blend Mode(混合模式)</strong>，改为<strong>Translucent</strong>,我们就会发现主材质节点中之前灰色的输入<strong>Opacity</strong>变成了白色开启状态。并且关闭了一些不适用这个材质的输入。</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialTranslucent.jpg " class="full-image" alt="MaterialTranslucent" title="Translucent" style="max-width: none; width:50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>当我们需要一个无光材质，我们就需要修改<strong>Shading Model(着色模式)</strong>，改为<strong>Unlit</strong>.主材质节点就只剩下<strong>Emissive Color</strong>等相应的输入</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialUnlit.jpg " class="full-image" alt="MaterialUnlit" title="Unlit" style="max-width: none; width:50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>有些材质会对面数的要求比较高，要用到高度或置换贴图，这个时候就需要修改<strong>D3D11Tessellation Mode(曲面细分模式)</strong></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialTessellation.jpg " class="full-image" alt="MaterialTessellation" title="Tessellation" style="max-width: none; width:50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>其他的材质设置当后面用到相应的材质时会详细介绍。</p>
+<hr>
+<h3 id="节点的使用-Usage"><a href="#节点的使用-Usage" class="headerlink" title="节点的使用(Usage)"></a>节点的使用(Usage)</h3><p>我们可以再空白的地方<strong>右键</strong>，或者在右边的<strong>Palette</strong>面板中搜索要使用的节点，比如想使用一个常量。右键然后键入<code>constant</code></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialNode0.jpg " class="full-image" alt="MaterialNode0" title="Node Constant" style="max-width: none; width:50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note primary">
+            <p>很多常用的节点都有快捷键，就比如<strong>Constant</strong>的快捷键是<code>1</code><br>所以我们可以按住<code>1</code>然后再空白处鼠标左键，同样可以呼出<strong>Constant</strong>节点</p>
+          </div>
+<p>选中我们刚刚呼出的节点，<strong>Details</strong>面板中就会显示该节点的设置信息。比如<strong>Constant</strong>节点，其中<strong>Value</strong>是给我们设置该常量的值。</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialNode2.jpg " class="full-image" alt="Node Constant" title="Node Constant Details" style="max-width: none; width: 75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>创建三个<strong>Constant</strong>，然后分别链接给<strong>Base Color</strong>,<strong>Metallic</strong>, <strong>Roughness</strong>。将<strong>Base Color</strong>连接的常量设置成<code>1</code>,<strong>Metallic</strong>设置成<code>1</code>, <strong>Roughness</strong>设置成<code>0</code>。<code>Ctrl+S</code>储存。这样，我们就创建了一个最简单的材质，光滑的金属材质：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialNode1.jpg " class="full-image" alt="MaterialNode1" title="Metal" style="max-width: none; width: 75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<hr>
+<h3 id="实例化材质-Material-Instance"><a href="#实例化材质-Material-Instance" class="headerlink" title="实例化材质(Material Instance)"></a>实例化材质(Material Instance)</h3><p>以上面我们刚刚做的金属材质<strong>Metal</strong>为例，找到我们刚刚做的材质球，<strong>右键选择Creat Material Instance</strong></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialInstance.jpg " class="full-image" alt="Material Instance" title="Material Instance" style="max-width: none; width: 50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>我们会看到我们多了一个材质球<strong>Metal_Inst</strong></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialInstance1.jpg " class="full-image" alt="Material Instance1" title="Material Instance" style="max-width: none; width: 50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>我们会发现<strong>Metal_Inst</strong>下面的绿色会比较暗，而且如果你鼠标悬停在这两个材质球上面，你会发下它们的类型也不一样。一个是<strong>Material</strong>，一个是<strong>Material Instance</strong>，最重要的是，当你双击进入材质球编辑，他们的界面完全不一样</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialInstance2.jpg " class="full-image" title="Material界面" style="max-width: none; width: 90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialInstance3.jpg " class="full-image" title="Material Instance界面" style="max-width: none; width: 90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>但是，我们发现虽然类型不一样，界面也不一样，但是它们的效果似乎一模一样。所以为什么要多一个<strong>Instance</strong>类呢？<br>这有点像编程中<strong>类(Class)</strong>的概念</p>
+<h4 id="类-Class"><a href="#类-Class" class="headerlink" title="类(Class)"></a>类(Class)</h4><p><strong>类</strong>是一个抽象的概念，举个例子：<br>假设我在我的世界里(我的游戏里)要创建一个人，叫<strong>小明</strong>，我给他安上两只手，两条腿，两个眼睛，一个鼻子，一张嘴。然后我又创建了一个人，叫<strong>小红</strong>，我又给他安上两只手，两条腿，两个眼睛，一个鼻子，一张嘴。然后是<strong>小文</strong>……这样就太麻烦了。</p>
+<pre class="mermaid" style="text-align: center;">            graph TD
+            
+A[<b>小明</b>] -.- A1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴))
+B[<b>小红</b>] -.- B1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴))
+C[<b>小文</b>] -.- C1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴))
+
+
+          </pre>
+<p>所以这就用到了<strong>类(Class)</strong>，我们发现<strong>小明</strong>，<strong>小红</strong>，<strong>小文</strong>，他们有很多共同的特点：<span class="label info">两只手，两条腿，两个眼睛，一个鼻子，一张嘴</span>。于是我就以这些特征去定义了一个<strong>类(Class)</strong>叫<strong>人类</strong>。然后我们再用这个<strong>人类</strong>去生成<strong>小明</strong>，<strong>小红</strong>，<strong>小文</strong>。这三个人就会继承<strong>人类</strong>中设置的属性，都有：两只手，两条腿，两个眼睛等属性，而将一个抽象的<strong>人类</strong>生成出一个像小明这样实实在在的<strong>人</strong>，就叫做<strong>实例化对象</strong></p>
+<pre class="mermaid" style="text-align: center;">            graph TD
+            O1{<b>人类</b>} -.-O2((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴))
+O{<b>人类</b>} -->|实例化| A
+O -->|实例化| B
+O -->|实例化| C
+A[<b>小明</b>] -.- A1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴))
+B[<b>小红</b>] -.- B1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴))
+C[<b>小文</b>] -.- C1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴))
+          </pre>
+<div class="note info">
+            <p>区别<b>类(Classs)</b>，<strong>对象(Object)</strong>，<strong>实例(Instance)</strong><br>上面的小明就叫作<strong>对象(Object)</strong>,但也可以说小明是<strong>人类</strong>这个<strong>类(Class)</strong>的<strong>实例(Instance)</strong></p>
+          </div>
+<p>但是这还不足以让我们创建出丰富多彩的人类，就好比<strong>小红</strong>是女的，<strong>小明</strong>戴眼镜，<strong>小文</strong>一米八等等，世界上的人又不是都一个样。所以这就要讲到<strong>参数(Parameter)</strong><br>我们可以继续完善之前我们创建的那个<strong>类(Class)</strong>,<strong>人类</strong>。我们再为它添加一些别的属性:<span class="label info">性别，戴不戴眼镜，身高</span>。</p>
+<pre class="mermaid" style="text-align: center;">            graph TD
+            O1{<b>人类</b>} -.-O2((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴<br>性别:<u> 男 </u><br>戴眼镜:<u> 否 </u><br>身高:<u> 170cm </u> ))
+          </pre>
+<p>上面这些新加的属性同样也会被<strong>对象(Object)</strong>（小明，小红，小文）继承。不同的是上面<span class="label primary"><u>下划线</u></span>的地方，是可以在<strong>实例化对象</strong>后进行修改的。而这些值就叫<strong>参数(Parameter)</strong>，所以我们再<strong>实例化对象后</strong>把小明的<strong>戴眼镜</strong>属性改成了<strong>是</strong>,把小红的<strong>性别</strong>改成了<strong>女</strong>,最后把<strong>小文</strong>的身高改成<strong>180cm</strong></p>
+<div class="note warning">
+            <p>设置<strong>参数(Parameter)</strong>时我们一般会给个默认值，就像上面例子中的<span class="label info">性别:<u> 男 </u>,戴眼镜:<u> 否 </u>,身高:<u> 170cm </u></span>,意思就是通过<strong>人类</strong>生成的对象的默认都是170cm不戴眼镜的男性。</p>
+          </div>
+<pre class="mermaid" style="text-align: center;">            graph TD
+            
+O{<b>人类</b>} -->|实例化| A
+O -->|实例化| B
+O -->|实例化| C
+A[<b>小明</b>] -.-|修改戴眼镜| A1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴<br>性别:<u> 男 </u><br>戴眼镜:<u> 是 </u><br>身高:<u> 170cm </u>))
+B[<b>小红</b>] -.-|修改性别| B1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴<br>性别:<u> 女 </u><br>戴眼镜:<u> 否 </u><br>身高:<u> 170cm </u>))
+C[<b>小文</b>] -.-|修改身高| C1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴<br>性别:<u> 男 </u><br>戴眼镜:<u> 否 </u><br>身高:<u> 180cm </u>))
+
+          </pre>
+<p>这样，我们就创建出了三个不同的<strong>人</strong>，而且我们还能通过我们定义的<strong>人类</strong>这个<strong>类(Class)</strong>创建出更多的人。<br>最重要的还是，因为<strong>继承性</strong>，假如我们需要为我们的<strong>人类</strong>添加更多属性，比如我们忘了给小明，小红，小文安两个耳朵，我们只要在<strong>人类</strong>这个<strong>类(Class)</strong>中在加上属性<span class="label info">两个耳朵</span>，这样小明，小红，小文等只要是通过<strong>人类</strong>创建出来的<strong>对象(Object)</strong>就都多了两个耳朵。<br>当然，为了创建更丰富的人，我们就要在<strong>人类</strong>中添加更多的<strong>参数</strong>，比如<span class="label info">体重，头发颜色，皮肤颜色</span>…等等，让他们在这些属性上存在差异，就会丰富我们的<strong>对象(Object)</strong></p>
+<h4 id="回到材质"><a href="#回到材质" class="headerlink" title="回到材质"></a>回到材质</h4><p>还是继续我们以我们<strong>Metal</strong>材质为例<br>进入材质编辑器，按住键盘上的<code>3</code>加鼠标左键点击空白处，呼出节点<code>Constant3Vector</code>,把其数值调成[1,1,1]连给主材质节点上的<strong>Base Color</strong>，替换掉之前的<code>Constant</code></p>
+<div class="note warning">
+            <p>我们之前连给<strong>Base Color</strong>是一个标量<code>Constant</code>，相当于一个灰度值，这次我们替换成向量<code>Constant3Vector</code>，相当于RGB值。</p>
+          </div>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialInstance4.jpg " class="full-image" title="New Metal" style="max-width: none; width: 50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>右键<span class="label warning"><b>Constant3Vector</b></span>转换成<strong>参数(Parameter)</strong>并且将该节点命名为<strong>BaseColor</strong></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialInstance5.jpg " class="full-image" title="New Metal" style="max-width: none; width: 50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>同样，右键链接着<strong>Roughness</strong>的<span class="label success"><b>Constant</b></span>节点，也转换成<strong>参数(Parameter)</strong>并且将该节点命名为<strong>Roughness</strong>,最后结果就会像下图一样</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialInstance6.jpg " class="full-image" title="New Metal" style="max-width: none; width: 50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p><code>Ctrl+S</code>保存，然后打开之前创建的<strong>Metal</strong>的<strong>实例(Instance)</strong>材质球<strong>Metal_Inst</strong>,我们就会发现编辑界面右边<strong>Details</strong>面板中多了两个参数<strong>BaseColor</strong>和<strong>Roughness</strong></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialInstance7.jpg " class="full-image" title="Metal_Inst界面" style="max-width: none; width: 90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>这两个值就是我们上面讲<strong>类(Class)</strong>时实例化对象后，可以修改的<strong>参数(Parameter)</strong>。而且我们可以看到<strong>General</strong>下的<strong>Parent</strong>中显示的是<strong>Metal</strong>。这其实就是告诉我们，我们当前编辑的材质球，是<strong>Metal</strong>的一个<strong>实例(Instance)</strong>。</p>
+<p><strong>我们试着修改下参数：</strong></p>
+<video src="\videos\UE4MaterialsNotes\materialInstance.mp4" preload="metadata" controls playsinline poster>Sorry, your browser does not support the video tag.</video>
+<p><br></p>
+<div class="note info">
+            <p>当我们修改参数时，材质球的效果的变化是实时的。而我们在主材质里修改测试时，都是需要保存或者编译才能刷新效果。这也是<strong>Material Instance</strong>的优势。</p>
+          </div>
+<p>这样，我们就可以很轻松的创建出，<strong>绿色光滑金属，红色粗糙金属，白色粗糙金属</strong></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialInstance8.jpg " class="full-image" title="金属材质实例" style="max-width: none; width: 50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>这个时候，我想给我的金属材质加点细节。所以我在<strong>Content Browser</strong>里拖一张<strong>Normal贴图</strong>到<strong>Metal</strong>的材质编辑器里。并且连到<strong>主材质节点</strong>的<strong>Normal</strong></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialInstance9.jpg " class="full-image" title="添加Normal" style="max-width: none; width: 75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>因为<strong>继承性</strong>，我们发现我们之前通过<strong>Metal</strong>创建的金属材质也都有了<strong>Normal</strong>效果</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialInstance10.jpg " class="full-image" title="添加Normal的Instance" style="max-width: none; width: 50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note danger">
+            <p>之前提到，<strong>类(Class)</strong>是一个抽象的概念，所以类是不能直接拿来用的，就好像<strong>人类</strong>不是一个实体。类似<strong>类</strong>的<strong>Material</strong>其实也一样，不能直接赋予给模型。虽然UE4里可以直接把<strong>Material</strong>赋给模型，但是为了方便实时查看效果，也为了方便复用，而且也比较符合类的概念，所以建议创建<strong>Material Instance</strong>再赋予模型。</p>
+          </div>
+<hr>
+<h3 id="参数-Parameter"><a href="#参数-Parameter" class="headerlink" title="参数 (Parameter)"></a>参数 (Parameter)</h3><hr>
+<h2 id="🔥常用节点"><a href="#🔥常用节点" class="headerlink" title="🔥常用节点"></a>🔥常用节点</h2><h3 id="Add-Subtract-Multiply-Divide"><a href="#Add-Subtract-Multiply-Divide" class="headerlink" title="Add, Subtract, Multiply, Divide"></a>Add, Subtract, Multiply, Divide</h3><blockquote>
 <p>加，减，乘，除</p>
 </blockquote>
-<p>最常用的的节点，非常基础的数学运算。字面意思，加减乘除的乘。对于美术，在意它所能表示的效果时，在PS里<span class="label success"><strong>Add</strong></span>相当于<span class="label primary">线性减淡</span>，<span class="label success"><strong>Subtract</strong></span>就是<span class="label primary">减去</span>，<span class="label success"><strong>Multiply</strong></span>就是<span class="label primary">正片叠底</span>，<span class="label success"><strong>Divide</strong></span>就是<span class="label primary">划分</span></p>
+<p>最常用的的节点，非常基础的数学运算。字面意思，加减乘除的乘。对于美术，在意它所能表示的效果时，在PS里<span class="label success"><b>Add</b></span>相当于<span class="label primary">线性减淡</span>，<span class="label success"><b>Subtract</b></span>就是<span class="label primary">减去</span>，<span class="label success"><b>Multiply</b></span>就是<span class="label primary">正片叠底</span>，<span class="label success"><b>Divide</b></span>就是<span class="label primary">划分</span></p>
 <p><strong>但是要注意的是：</strong></p>
 <ul>
 <li>当A和B都是标量，就是正常的基础运算</li>
 <li>假设A为向量（三维数组），而B为标量，则A数组中的数<span class="label info">逐个</span>与B进行运算，例如乘法：</li>
 </ul>
 <script type="math/tex; mode=display">A=\begin{bmatrix}
-a_{x}\\
-a_{y}\\
-a_{z}\\
+a_{1}\\
+a_{2}\\
+a_{3}\\
 \end{bmatrix},
 B=k\\
 \\
 AB=\begin{bmatrix}
-ka_{x}\\
-ka_{y}\\
-ka_{z}\\
+ka_{1}\\
+ka_{2}\\
+ka_{3}\\
 \end{bmatrix}</script><pre><code>例如，(0.2,0.4,1.0)乘以0.5，结果就是(0.1, 0.2, 0.5)
 </code></pre><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Multiply1.png " class="full-image" alt="MaterialFunctions" title="向量乘标量" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<a id="more"></a>
 <div class="note info">
-            <p>我们可以使用<span class="label info"><strong>DebugFloat3Values</strong></span>节点以数值的方式查看结果。<a href="#Debug节点的使用">(详情➡)</a></p>
+            <p>我们可以使用<span class="label info"><b>DebugFloat3Values</b></span>节点以数值的方式查看结果。<a href="#Debug节点的使用">(详情➡)</a></p>
           </div>
 <ul>
 <li>当A和B都是向量（三维数组）结果则是它们<span class="label info">分别</span>进行运算，例如乘法：</li>
 </ul>
 <script type="math/tex; mode=display">A=\begin{bmatrix}
-a_{x}\\
-a_{y}\\
-a_{z}\\
+a_{1}\\
+a_{2}\\
+a_{3}\\
 \end{bmatrix},
 B=\begin{bmatrix}
-b_{x}\\
-b_{y}\\
-b_{z}\\
+b_{1}\\
+b_{2}\\
+b_{3}\\
 \end{bmatrix}\\
 \\
 AB=\begin{bmatrix}
-a_{x}b_{x}\\
-a_{y}b_{y}\\
-a_{z}b_{z}\\
+a_{1}b_{1}\\
+a_{2}b_{2}\\
+a_{3}b_{3}\\
 \end{bmatrix}</script><pre><code>例如,(0.2,0.4,1.0)与(1.0, 0.5, 0.8),结果就是(0.2, 0.2, 0.8)
 </code></pre><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Multiply2.png " class="full-image" alt="MaterialFunctions" title="向量乘向量" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <div class="note danger">
@@ -507,23 +641,23 @@ a_{z}b_{z}\\
 <h3 id="Power"><a href="#Power" class="headerlink" title="Power"></a>Power</h3><blockquote>
 <p>幂</p>
 </blockquote>
-<p>求n个相同因数乘积的运算，叫做乘方，乘方的结果叫做幂(power),例如<script type="math/tex">a^n</script>，其中a叫做底数(base number),n叫做指数(exponent)，也就是<span class="label success"><strong>Power</strong></span>节点的两个输入：<strong>Base</strong>,<strong>Exp</strong></p>
+<p>求n个相同因数乘积的运算，叫做乘方，乘方的结果叫做幂(power),例如<script type="math/tex">a^n</script>，其中a叫做底数(base number),n叫做指数(exponent)，也就是<span class="label success"><b>Power</b></span>节点的两个输入：<strong>Base</strong>,<strong>Exp</strong></p>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\power.png " class="full-image" alt="MaterialFunctions" title="幂" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <p>对于美术来说，它的效果有点类似<span class="label primary">强度对比度(Contrast)</span>,我们可以做一个简单的例子：</p>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\power1.png " class="full-image" alt="MaterialFunctions" title="Power效果M" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<p>做一个简单的材质球，将一张贴图连给<span class="label success"><strong>Power</strong></span>的Base。<span class="label success"><strong>Power</strong></span>的Exp我们用一个标量参数连接，方便我们查看调整Exp参数的效果。然后我们创建这个材质的Instance。</p>
-<div class="note primary">
+<p>做一个简单的材质球，将一张贴图连给<span class="label success"><b>Power</b></span>的Base。<span class="label success"><b>Power</b></span>的Exp我们用一个标量参数连接，方便我们查看调整Exp参数的效果。然后我们创建这个材质的Instance。</p>
+<div class="note info">
             <p>这里的材质球选择无光材质，贴图使用了一张黑白带渐变的图，只是方便观察效果。自己尝试时请随意</p>
           </div>
 <p><strong>最后结果:</strong></p>
 <video src="\videos\UE4MaterialsNotes\power.mp4" preload="metadata" controls playsinline poster>Sorry, your browser does not support the video tag.</video>
 <hr>
-<h2 id="🔨-基础案例"><a href="#🔨-基础案例" class="headerlink" title="🔨 基础案例"></a>🔨 基础案例</h2><h3 id="凹凸加深（BumpOffset）"><a href="#凹凸加深（BumpOffset）" class="headerlink" title="凹凸加深（BumpOffset）"></a>凹凸加深（BumpOffset）</h3><p><strong>核心节点：</strong></p>
+<h2 id="🔨基础案例"><a href="#🔨基础案例" class="headerlink" title="🔨基础案例"></a>🔨基础案例</h2><h3 id="凹凸加深（BumpOffset）"><a href="#凹凸加深（BumpOffset）" class="headerlink" title="凹凸加深（BumpOffset）"></a>凹凸加深（BumpOffset）</h3><p><strong>核心节点：</strong></p>
 <ul>
-<li><span class="label success"><strong>BumpOffset</strong></span>
+<li><span class="label success"><b>BumpOffset</b></span>
 </li>
 </ul>
-<span class="label success"><strong>BumpOffset</strong></span>材质节点是一个很省资源的而且相对有效的方法来体现材质凸起效果，而不需要通过3D模型上进行凸起的变化。
+<span class="label success"><b>BumpOffset</b></span>材质节点是一个很省资源的而且相对有效的方法来体现材质凸起效果，而不需要通过3D模型上进行凸起的变化。
 但是就像Normal效果一样，这种凸起效果是一种视觉错觉，所以当摄像机视角平行于物体表面时，凹凸效果就会消失。
 
 
@@ -531,33 +665,33 @@ a_{z}b_{z}\\
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\clipboard.png " class="full-image" alt="凹凸加深(BumpOffset)" title="BumpOffset" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <h3 id="混合材质（CreatingLayeredMaterials）"><a href="#混合材质（CreatingLayeredMaterials）" class="headerlink" title="混合材质（CreatingLayeredMaterials）"></a>混合材质（CreatingLayeredMaterials）</h3><p><strong>核心节点：</strong></p>
 <ul>
-<li><span class="label success"><strong>MakeMaterialAttributes</strong></span></li>
-<li><span class="label info"><strong>MatLayerBlend_Simple</strong></span>
+<li><span class="label success"><b>MakeMaterialAttributes</b></span></li>
+<li><span class="label info"><b>MatLayerBlend_Simple</b></span>
 </li>
 </ul>
 <p>创建两个<strong>MaterialFunctions</strong>：</p>
 <ul>
-<li>第一个材质我们想定义两个参数，一个控制颜色，一个控制Normal强度。所以我们设置了两个输入一个三维数（向量）调节颜色，一个一维数（标量）调节Normal。然后通过<span class="label success"><strong>MakeMaterialAttributes</strong></span>输出一个MatAttributes类。</li>
+<li>第一个材质我们想定义两个参数，一个控制颜色，一个控制Normal强度。所以我们设置了两个输入一个三维数（向量）调节颜色，一个一维数（标量）调节Normal。然后通过<span class="label success"><b>MakeMaterialAttributes</b></span>输出一个MatAttributes类。</li>
 </ul>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\CreatingLayeredMaterials1.png " class="full-image" alt="MaterialFunctions" title="第一个材质" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\CreatingLayeredMaterials2.png " class="full-image" alt="MaterialFunctions" title="第二个材质" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <hr>
-<h2 id="🚩-其他节点"><a href="#🚩-其他节点" class="headerlink" title="🚩 其他节点"></a>🚩 其他节点</h2><h3 id="Debug节点的使用"><a href="#Debug节点的使用" class="headerlink" title="Debug节点的使用"></a>Debug节点的使用</h3><p>Debug节点可以以数值的形式显示结果，这样可以帮助我们在完成一些计算后检查输出结果是否正确。</p>
+<h2 id="📋其他节点"><a href="#📋其他节点" class="headerlink" title="📋其他节点"></a>📋其他节点</h2><h3 id="Debug节点的使用"><a href="#Debug节点的使用" class="headerlink" title="Debug节点的使用"></a>Debug节点的使用</h3><p>Debug节点可以以数值的形式显示结果，这样可以帮助我们在完成一些计算后检查输出结果是否正确。</p>
 <ul>
 <li>右键，键入Debug，就可以看到相关节点</li>
 </ul>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\debug0.png " class="full-image" alt="MaterialFunctions" title="Debug节点" style="max-width: none; width:30%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <p>要注意的是，你要检查的输出值是什么类型就要用什么类型的Debug节点：</p>
 <ul>
-<li><span class="label info"><strong>DebugScalarValues</strong></span>检查一维数(标量)</li>
-<li><span class="label info"><strong>DebugFloat2Values</strong></span>检查二维数组(2D向量)</li>
-<li><span class="label info"><strong>DebugFloat3Values</strong></span>检查三维数组(3D向量)</li>
+<li><span class="label info"><b>DebugScalarValues</b></span>检查一维数(标量)</li>
+<li><span class="label info"><b>DebugFloat2Values</b></span>检查二维数组(2D向量)</li>
+<li><span class="label info"><b>DebugFloat3Values</b></span>检查三维数组(3D向量)</li>
 </ul>
 <p>还有其他Debug节点（不常用）：</p>
 <ul>
-<li><span class="label info"><strong>DebugBinaryValues</strong></span>是以二进制的形式显示输出。明显就是给大佬们用的</li>
-<li><span class="label info"><strong>DebugOnOff</strong></span>不断循环的输出0和1，也就是True和False</li>
-<li><span class="label info"><strong>DebugTimeSine</strong></span>输出一个0到1的循环</li>
+<li><span class="label info"><b>DebugBinaryValues</b></span>是以二进制的形式显示输出。明显就是给大佬们用的</li>
+<li><span class="label info"><b>DebugOnOff</b></span>不断循环的输出0和1，也就是True和False</li>
+<li><span class="label info"><b>DebugTimeSine</b></span>输出一个0到1的循环</li>
 </ul>
 <p><strong>用法：</strong></p>
 <video src="\videos\UE4MaterialsNotes\debug.mp4" preload="metadata" controls playsinline poster>Sorry, your browser does not support the video tag.</video>
@@ -803,7 +937,7 @@ a_{z}b_{z}\\
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🔥-常用节点"><span class="nav-number">1.</span> <span class="nav-text">🔥 常用节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Add-Subtract-Multiply-Divide"><span class="nav-number">1.1.</span> <span class="nav-text">Add, Subtract, Multiply, Divide</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Power"><span class="nav-number">1.2.</span> <span class="nav-text">Power</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔨-基础案例"><span class="nav-number">2.</span> <span class="nav-text">🔨 基础案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#凹凸加深（BumpOffset）"><span class="nav-number">2.1.</span> <span class="nav-text">凹凸加深（BumpOffset）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#混合材质（CreatingLayeredMaterials）"><span class="nav-number">2.2.</span> <span class="nav-text">混合材质（CreatingLayeredMaterials）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🚩-其他节点"><span class="nav-number">3.</span> <span class="nav-text">🚩 其他节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Debug节点的使用"><span class="nav-number">3.1.</span> <span class="nav-text">Debug节点的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConstantBiasScale"><span class="nav-number">3.2.</span> <span class="nav-text">ConstantBiasScale</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌏基础介绍"><span class="nav-number">1.</span> <span class="nav-text">🌏基础介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主材质节点-The-Main-Material-Node"><span class="nav-number">1.1.</span> <span class="nav-text">主材质节点(The Main Material Node)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节点的使用-Usage"><span class="nav-number">1.2.</span> <span class="nav-text">节点的使用(Usage)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例化材质-Material-Instance"><span class="nav-number">1.3.</span> <span class="nav-text">实例化材质(Material Instance)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类-Class"><span class="nav-number">1.3.1.</span> <span class="nav-text">类(Class)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#回到材质"><span class="nav-number">1.3.2.</span> <span class="nav-text">回到材质</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数-Parameter"><span class="nav-number">1.4.</span> <span class="nav-text">参数 (Parameter)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔥常用节点"><span class="nav-number">2.</span> <span class="nav-text">🔥常用节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Add-Subtract-Multiply-Divide"><span class="nav-number">2.1.</span> <span class="nav-text">Add, Subtract, Multiply, Divide</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Power"><span class="nav-number">2.2.</span> <span class="nav-text">Power</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔨基础案例"><span class="nav-number">3.</span> <span class="nav-text">🔨基础案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#凹凸加深（BumpOffset）"><span class="nav-number">3.1.</span> <span class="nav-text">凹凸加深（BumpOffset）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#混合材质（CreatingLayeredMaterials）"><span class="nav-number">3.2.</span> <span class="nav-text">混合材质（CreatingLayeredMaterials）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📋其他节点"><span class="nav-number">4.</span> <span class="nav-text">📋其他节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Debug节点的使用"><span class="nav-number">4.1.</span> <span class="nav-text">Debug节点的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConstantBiasScale"><span class="nav-number">4.2.</span> <span class="nav-text">ConstantBiasScale</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1029,6 +1163,26 @@ a_{z}b_{z}\\
   
 
   
+<script>
+if ($('body').find('pre.mermaid').length) {
+  $.ajax({
+    type: 'GET',
+    url: '//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js',
+    dataType: 'script',
+    cache: true,
+    success: function() {
+      mermaid.initialize({
+        theme: 'neutral',
+        logLevel: 3,
+        flowchart: { curve: 'linear' },
+        gantt: { axisFormat: '%m/%d/%Y' },
+        sequence: { actorMargin: 50 }
+      });
+    }
+  });
+}
+</script>
+
 
   
 
