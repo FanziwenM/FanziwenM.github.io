@@ -137,20 +137,31 @@
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/Parameters5.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/Parameters6.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/Parameters7.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/Parameters8.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/Parameters9.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/TextureSample.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/TexCoord.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/TexCoord2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/TexCoord3.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/TexCoord1.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/Multiply1.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/Multiply2.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/Multiply3.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/Multiply4.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/append0.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/append1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/append2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/componentMask0.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/componentMask1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/componentMask2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/componentMask3.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/power.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/power1.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/clipboard.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/CreatingLayeredMaterials1.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/CreatingLayeredMaterials2.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/debug0.png">
-<meta property="og:updated_time" content="2019-06-09T16:44:50.771Z">
+<meta property="og:updated_time" content="2019-06-12T16:27:06.385Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UE4材质基础">
 <meta name="twitter:description" content="🌏基础介绍材质是用了一种特别的编程语言：高阶着色器语言(High Level Shading Language)简称HLSL 创建的。HLSL可以使材质直接和图形硬件通信，从而使美术和程序员直观的观察控制屏幕显示内容。Unreal Engine 4 (UE4)中用来创建材质球的材质节点包含着和HLSL一样的代码块，来实现和这些代码块相同的效果。  主材质节点(The Main Material">
@@ -439,7 +450,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-10 00:44:50" itemprop="dateModified" datetime="2019-06-10T00:44:50+08:00">2019-06-10</time>
+                <time title="修改时间：2019-06-13 00:27:06" itemprop="dateModified" datetime="2019-06-13T00:27:06+08:00">2019-06-13</time>
               
             
           </span>
@@ -494,7 +505,7 @@
         <h2 id="🌏基础介绍"><a href="#🌏基础介绍" class="headerlink" title="🌏基础介绍"></a>🌏基础介绍</h2><p>材质是用了一种特别的编程语言：<strong>高阶着色器语言(High Level Shading Language)</strong>简称<strong>HLSL</strong> 创建的。<strong>HLSL</strong>可以使材质直接和图形硬件通信，从而使美术和程序员直观的观察控制屏幕显示内容。<strong>Unreal Engine 4 (UE4)</strong>中用来创建材质球的材质节点包含着和<strong>HLSL</strong>一样的代码块，来实现和这些代码块相同的效果。</p>
 <hr>
 <h3 id="主材质节点-The-Main-Material-Node"><a href="#主材质节点-The-Main-Material-Node" class="headerlink" title="主材质节点(The Main Material Node)"></a>主材质节点(The Main Material Node)</h3><p>在<strong>Content Browser</strong>中右键创建一个材质</p>
-<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialCreate.jpg " class="full-image" alt="MaterialCreate" title="创建材质" style="max-width: none; width:50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialCreate.jpg " class="full-image" alt="MaterialCreate" title="创建材质" style="max-width: none; width:35%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <p>双击我们新建的材质，进入材质编辑窗口。</p>
 <p><strong>主材质节点(The Main Material Node)</strong>可以被认为材质制作的最后一步。将材质节点任意组合后，输入给主节点，就会有相应的效果在材质球编译后显示。</p>
 <a id="more"></a>
@@ -596,7 +607,7 @@ C[<b>小文</b>] -.-|修改身高| C1((两只手<br>两条腿<br>两个眼睛<br
 <video src="\videos\UE4MaterialsNotes\materialInstance.mp4" preload="metadata" controls playsinline poster>Sorry, your browser does not support the video tag.</video>
 <p><br></p>
 <div class="note info">
-            <p>当我们修改参数时，材质球的效果的变化是实时的。而我们在主材质里修改测试时，都是需要保存或者编译才能刷新效果。这也是<strong>Material Instance</strong>的优势。</p>
+            <p>当我们修改参数时，材质球的效果的变化是实时的。而我们在主材质里修改测试时，都是需要<strong>保存</strong>或者<strong>编译</strong>才能刷新效果。这也是<strong>Material Instance</strong>的优势。</p>
           </div>
 <p>这样，我们就可以很轻松的创建出，<strong>绿色光滑金属，红色粗糙金属，白色粗糙金属</strong></p>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialInstance8.jpg " class="full-image" title="金属材质实例" style="max-width: none; width: 50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
@@ -626,8 +637,7 @@ C[<b>小文</b>] -.-|修改身高| C1((两只手<br>两条腿<br>两个眼睛<br
             <p>我们知道<span class="label success"><b>Constant</b></span>的快捷键是<code>1</code>，<span class="label warning"><b>Constant3Vector</b></span>的快捷键是<code>3</code>。<br>而他们的参数节点<span class="label success"><b>ScalarParmeter</b></span>的快捷键是<code>S</code>，<span class="label warning"><b>VectorParameter</b></span>的快捷键是<code>V</code>。<br>所以右键<span class="label success"><b>Constant</b></span>转成参数，和按住键盘<code>S</code>加鼠标左键呼出的<span class="label success"><b>ScalarParmeter</b></span>节点是一样的。</p>
           </div>
 <p><br> </p>
-<p><strong>试着做一个简单的标准材质</strong></p>
-<p>随便找三张贴图：<strong>BaseColor</strong>,<strong>Roughness</strong>,<strong>Normal</strong><br>新建一个材质球，命名为<strong>M_Standard</strong>,并将找到的三张贴图拖入<strong>M_Standard</strong>，然后连接到相应的输入。就可以看到材质球效果。我们就做完了一个非常简单的带贴图的材质球。</p>
+<h4 id="简单的标准材质"><a href="#简单的标准材质" class="headerlink" title="简单的标准材质"></a>简单的标准材质</h4><p>试着做一个简单的标准材质,随便找三张贴图：<strong>BaseColor</strong>,<strong>Roughness</strong>,<strong>Normal</strong><br>新建一个材质球，命名为<strong>M_Standard</strong>,并将找到的三张贴图拖入<strong>M_Standard</strong>，然后连接到相应的输入。就可以看到材质球效果。我们就做完了一个非常简单的带贴图的材质球。</p>
 <video src="\videos\UE4MaterialsNotes\mStandard.mp4" preload="metadata" controls playsinline poster>Sorry, your browser does not support the video tag.</video>
 <p><br></p>
 <p>但是我们将贴图导入引擎看效果的时候不肯能都要想这样重新连一遍。这就是为什么我们要做一个标准材质。所以，接着刚刚的<strong>M_Standard</strong>材质，我们将那三个<span class="label info"><b>TextureSample</b></span>节点转换成<strong>参数</strong>，并分别明明为<strong>BaseColor</strong>,<strong>Roughness</strong>,<strong>Normal</strong></p>
@@ -647,7 +657,7 @@ C[<b>小文</b>] -.-|修改身高| C1((两只手<br>两条腿<br>两个眼睛<br
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Parameters4.jpg " class="full-image" title="Material Instance界面" style="max-width: none; width: 90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <p>规范命名，这样我们就用<strong>M_Standard</strong>快速的创建了两个材质球。</p>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Parameters5.jpg " class="full-image" title="新的Instance" style="max-width: none; width: 50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<p>但是我们现在做的材质还是太简单了，而且没有用到<span class="label success"><b>ScalarParmeter</b></span>和<span class="label warning"><b>VectorParameter</b></span>，接下来我们加上更多的参数来丰富我们的材质。我们想让<strong>BaseColor</strong>和<strong>Roughness</strong>变得可调整。所以我们添加了节点<span class="label warning"><b>VectorParameter</b></span>，设置默认值为<code>[1,1,1]</code>命名为<code>Tint</code>,并将它与<strong>BaseColor</strong>相乘。添加节点<span class="label success"><b>ScalarParmeter</b></span>，默认值为<code>1</code>命名为<code>RoughIntensity</code>与<strong>Roughness</strong>相乘。</p>
+<h4 id="添加Tint和Roughness参数"><a href="#添加Tint和Roughness参数" class="headerlink" title="添加Tint和Roughness参数"></a>添加Tint和Roughness参数</h4><p>但是我们现在做的材质还是太简单了，而且没有用到<span class="label success"><b>ScalarParmeter</b></span>和<span class="label warning"><b>VectorParameter</b></span>，接下来我们加上更多的参数来丰富我们的材质。我们想让<strong>BaseColor</strong>和<strong>Roughness</strong>变得可调整。所以我们添加了节点<span class="label warning"><b>VectorParameter</b></span>，设置默认值为<code>[1,1,1]</code>命名为<code>Tint</code>,并将它与<strong>BaseColor</strong>相乘。添加节点<span class="label success"><b>ScalarParmeter</b></span>，默认值为<code>1</code>命名为<code>RoughIntensity</code>与<strong>Roughness</strong>相乘。</p>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Parameters6.jpg " class="full-image" title="修改M_Standard" style="max-width: none; width: 75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <div class="note info">
             <p><span class="label success"><b>Multiply</b></span>节点，是非常基础，但是很常用的节点。<a href="#Add-Subtract-Multiply-Divide">(详情➡)</a></p>
@@ -656,6 +666,22 @@ C[<b>小文</b>] -.-|修改身高| C1((两只手<br>两条腿<br>两个眼睛<br
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Parameters7.jpg " class="full-image" title="Material Instance界面" style="max-width: none; width: 90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <p>试着修改刚刚创建的参数，看有什么效果。</p>
 <video src="\videos\UE4MaterialsNotes\modifyTint.mp4" preload="metadata" controls playsinline poster>Sorry, your browser does not support the video tag.</video>
+<p><br><br>这样，我们又为我们的基础材质添加了调整<strong>Roughness</strong>和修改贴图颜色的功能。</p>
+<h4 id="添加Tiling参数"><a href="#添加Tiling参数" class="headerlink" title="添加Tiling参数"></a>添加Tiling参数</h4><p>我们经常会需要调整贴图的重复度，所以我们也在我们的<strong>M_Standard</strong>加上这个功能。这里我们就要用到<span class="label danger"><b>TexCoord</b></span></p>
+<div class="note info">
+            <p><span class="label danger"><b>TexCoord</b></span>专门控制UV的节点。这一节不做具体介绍，可以直接跟着下图连接节点，想了解有关<span class="label danger"><b>TexCoord</b></span>节点可以点击<a href="#TexCoord">(详情➡)</a></p>
+          </div>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Parameters8.jpg " class="full-image" title="添加Tiling参数" style="max-width: none; width: 80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>像上图一样，添加<span class="label danger"><b>TexCoord</b></span>，再乘以一个<strong>标量参数</strong>，参数命名为<strong>Tiling</strong>，默认值为<code>1</code>。然后连接到所有贴图的输入<strong>UVs</strong>。最后保存一下。<br>和我们之前添加完参数一样，在我们的<strong>Material Instance</strong>就会出现一个<strong>Tiling</strong>参数，我们就可以通过它来调整贴图的重复次数。</p>
+<video src="\videos\UE4MaterialsNotes\miTiling.mp4" preload="metadata" controls playsinline poster>Sorry, your browser does not support the video tag.</video>
+<p><br></p>
+<h4 id="添加Normal参数"><a href="#添加Normal参数" class="headerlink" title="添加Normal参数"></a>添加Normal参数</h4><p>完成贴图UV的参数，我们可以尝试做一个相较于前面这些参数较为复杂的功能，调整<strong>Normal的强度</strong>。一张<strong>Normal</strong>贴图，它的红绿通道越强，它的Normal效果就越强，所以我们需要提取出<strong>Normal</strong>的红绿通道，然后用参数控制红绿通道来调节<strong>Normal</strong>强度。<br>这里我们会用到<span class="label success"><b>ComponentMask</b></span>来提取<strong>Normal</strong>的红绿通道，然后乘以一个<strong>参数</strong>，将结果用<span class="label success"><b>Append</b></span>再将蓝通道加回去，还原成一张<strong>RGB</strong>图。</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Parameters9.jpg " class="full-image" title="添加Normal强度参数" style="max-width: none; width: 80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note info">
+            <p>建议先了解<span class="label success"><b>Append</b></span><a href="#Append">(详情➡)</a>，紧接着就会讲到<span class="label success"><b>ComponentMask</b></span></p>
+          </div>
+<p>最后看看新功能的效果：</p>
+<video src="\videos\UE4MaterialsNotes\miNormal.mp4" preload="metadata" controls playsinline poster>Sorry, your browser does not support the video tag.</video>
 <hr>
 <h2 id="🔥常用节点"><a href="#🔥常用节点" class="headerlink" title="🔥常用节点"></a>🔥常用节点</h2><h3 id="TextureSample"><a href="#TextureSample" class="headerlink" title="TextureSample"></a>TextureSample</h3><blockquote>
 <p>贴图采样,快捷键<code>T</code></p>
@@ -687,21 +713,17 @@ C[<b>小文</b>] -.-|修改身高| C1((两只手<br>两条腿<br>两个眼睛<br
 <td style="text-align:left">U向重复次数</td>
 </tr>
 <tr>
-<td style="text-align:center"><strong>VTiling</strong></td>
+<td style="text-align:center"><strong>UTiling</strong></td>
 <td style="text-align:left">V向重复次数</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>Un Mirror U</strong></td>
-<td style="text-align:left">如果贴图是镜像的，可以拉伸成非镜像(U向)</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>Un Mirror V</strong></td>
-<td style="text-align:left">如果贴图是镜像的，可以拉伸成非镜像(V向)</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>当我们想要将<strong>Tiling</strong>转为参数时，可以像下面这样连。</p>
+<p>下图是将<span class="label danger"><b>TexCoord</b></span>与贴图链接的默认效果</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\TexCoord2.jpg " class="full-image" title="TexCoord" style="max-width: none; width: 75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>然后我们将<strong>UTiling</strong>和<strong>UTiling</strong>设置为<code>2</code>，然后按<code>空格</code>刷新节点缩略图。</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\TexCoord3.jpg " class="full-image" title="TexCoord" style="max-width: none; width: 75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>但我们发现调整贴图<strong>Tiling</strong>要选中<span class="label danger"><b>TexCoord</b></span>节点在它的<strong>Details</strong>里面调整，但是如果我们需要将<strong>Tiling</strong>变成可以调整的参数，就需要像下图这样连接。</p>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\TexCoord1.jpg " class="full-image" title="UVTiling连法" style="max-width: none; width: 50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <h3 id="Add-Subtract-Multiply-Divide"><a href="#Add-Subtract-Multiply-Divide" class="headerlink" title="Add, Subtract, Multiply, Divide"></a>Add, Subtract, Multiply, Divide</h3><blockquote>
 <p>加，减，乘，除,快捷键:加<code>A</code>，乘<code>M</code>，除<code>D</code></p>
@@ -723,7 +745,7 @@ AB=\begin{bmatrix}
 ka_{1}\\
 ka_{2}\\
 ka_{3}\\
-\end{bmatrix}</script><pre><code>例如，(0.2,0.4,1.0)乘以0.5，结果就是(0.1, 0.2, 0.5)
+\end{bmatrix}</script><pre><code>例如，[0.2,0.4,1.0]乘以0.5，结果就是[0.1, 0.2, 0.5]
 </code></pre><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Multiply1.png " class="full-image" alt="MaterialFunctions" title="向量乘标量" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <div class="note info">
             <p>我们可以使用<span class="label info"><b>DebugFloat3Values</b></span>节点以数值的方式查看结果。<a href="#Debug节点的使用">(详情➡)</a></p>
@@ -746,14 +768,90 @@ AB=\begin{bmatrix}
 a_{1}b_{1}\\
 a_{2}b_{2}\\
 a_{3}b_{3}\\
-\end{bmatrix}</script><pre><code>例如,(0.2,0.4,1.0)与(1.0, 0.5, 0.8),结果就是(0.2, 0.2, 0.8)
+\end{bmatrix}</script><pre><code>例如,[0.2,0.4,1.0]与[1.0, 0.5, 0.8],结果就是[0.2, 0.2, 0.8]
 </code></pre><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Multiply2.png " class="full-image" alt="MaterialFunctions" title="向量乘向量" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <div class="note danger">
             <p>一个二维数组不能和一个三维数组相运算，结果会产生错误</p>
           </div>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Multiply3.png " class="full-image" alt="MaterialFunctions" title="错误运算" style="max-width: none; width:50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <p>对于对数字不太敏感的美术，或者就想知道用这些基础运算的节点到底有什么用，使用单个节点有什么效果，可以自己进行尝试，加深映象。</p>
-<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Multiply4.png " class="full-image" alt="MaterialFunctions" title="加减乘除对贴图产生的效果" style="max-width: none; width:100%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Multiply4.png " class="full-image" title="加减乘除对贴图产生的效果" style="max-width: none; width:100%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<hr>
+<h3 id="Append"><a href="#Append" class="headerlink" title="Append"></a>Append</h3><blockquote>
+<p>添加，附加</p>
+</blockquote>
+<p>在编程里<strong>Append</strong>是一个对<strong>列表(list)</strong>的基础操作。作用就是将一个<strong>元素(items)</strong>添加到一个列表内。<br>例如我有个一个列表里面有三个数<code>[2, 3, 1]</code>假如我要加一个数<code>0.5</code>进去，如果是用之前上面说的<span class="label success"><b>Add</b></span>，结果可想而知，肯定是<code>[2.5, 3.5, 1.5]</code>，其实还是一个有<strong>三个元素</strong>的<strong>列表</strong>。如果是用<span class="label success"><b>Append</b></span>，结果就是<code>[2, 3, 1, 0.5]</code>，变成了一个有<strong>四个元素</strong>的<strong>列表</strong>。</p>
+<div class="note primary">
+            <p>其实<strong>RGB</strong>图也可以看成一个<strong>列表(list)</strong>时,其中的<strong>R</strong>,<strong>G</strong>,<strong>B</strong>就相当于它的<strong>元素(items)</strong>。只不过作为美术，我们更习惯说<strong>R通道(channel)</strong>，而不是说<strong>元素(items)</strong>。所以当我们看到一组数来表示颜色时,比如<code>[1, 0, 0]</code>就是代表红色，因为这组数组表示的是<code>R=1</code>,<code>G=0</code>,<code>B=0</code>。就比如<span class="label warning"><b>Constant3Vector</b></span>节点当值为<code>[1, 0, 0]</code>它的颜色时红色。</p><p><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\append0.jpg " class="full-image" title style="max-width: none; width:15%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+          </div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Inputs</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>A</strong></td>
+<td style="text-align:left">输入将被添加到的值</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>B</strong></td>
+<td style="text-align:left">输入要添加的值</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>我们知道一组数<code>[1, 0, 0]</code>代表红色，那我们可以试着用<span class="label success"><b>Append</b></span>做一组数来代表天蓝色，原理很简单，我们将<code>0.2</code>添加一个<code>0.4</code>,这时候我们得到一组数<code>[0.2, 0.4]</code>，再将<code>[0.2, 0.4]</code>添加一个<code>1</code>,这时候我们就得到一组数<code>[0.2, 0.4, 1]</code>。</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\append1.jpg " class="full-image" title="Append" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note danger">
+            <p>一定要注意<span class="label success"><b>Append</b></span>的顺序，如果要用一组数来表示颜色，<strong>列表</strong>第一个数一定是代表红色<strong>R</strong>,第二个数代表绿色<strong>G</strong>，第三个蓝色<strong>B</strong>，如果你添加了第四个数，则代表透明通道<strong>A</strong></p>
+          </div>
+<p>例如下图，在将<code>[0.2, 0.4]</code>添加一个<code>1</code>的时候我把<span class="label success"><b>Append</b></span>输入<strong>A</strong>和<strong>B</strong>颠倒，所以表示的意思是:将<code>1</code>添加一组<code>[0.2, 0.4]</code>。<br>所以最后的结果就是<code>[1, 0.2, 0.4]</code>，自然也就变成了下图的颜色。</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\append2.jpg " class="full-image" title="Append" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<hr>
+<h3 id="ComponentMask"><a href="#ComponentMask" class="headerlink" title="ComponentMask"></a>ComponentMask</h3><blockquote>
+<p>部分提取，快捷键<code>Shift+C</code></p>
+</blockquote>
+<p>经过<span class="label success"><b>Append</b></span>的介绍，我们大致对<strong>列表(list)</strong>有初步的了解后，我们就可以认识<span class="label success"><b>ComponentMask</b></span>。这个节点方便我们提取一个<strong>列表(list)</strong>内特定的<strong>元素</strong>。对于一张<strong>RGB图</strong>来说，我们更习惯说提取一张图的某个<strong>通道(channel)</strong>。而<span class="label success"><b>Append</b></span>刚好也符合我们美术的习惯。</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\componentMask0.jpg " class="full-image" title="ComponentMask" style="max-width: none; width:50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Properties</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>R</strong></td>
+<td style="text-align:left">如果勾选，<strong>红通道(第一个元素)</strong>将会输出</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>G</strong></td>
+<td style="text-align:left">如果勾选，<strong>绿通道(第二个元素)</strong>将会输出</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>B</strong></td>
+<td style="text-align:left">如果勾选，<strong>蓝通道(第三个元素)</strong>将会输出</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>A</strong></td>
+<td style="text-align:left">如果勾选，<strong>透明通道(第四个元素)</strong>将会输出</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>例如，一个天蓝色<code>[0.2, 0.4, 1]</code>，我们抽取它的<strong>G通道</strong>是<code>0.4</code>,如果同时抽取它的<strong>R通道</strong>和<strong>G通道</strong>就是<code>[0.2,0.4]</code>。<br>我们可以使用<span class="label info"><b>DebugScalarValues</b></span>和<span class="label info"><b>DebugFloat2Values</b></span>节点来检验一下。</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\componentMask1.jpg " class="full-image" title="G通道" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\componentMask2.jpg " class="full-image" title="R通道和G通道" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<ul>
+<li>最后，我们用一张图试试：</li>
+</ul>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\componentMask3.jpg " class="full-image" title="Normal的RG通道" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <hr>
 <h3 id="Power"><a href="#Power" class="headerlink" title="Power"></a>Power</h3><blockquote>
 <p>幂,快捷键<code>E</code></p>
@@ -1056,7 +1154,7 @@ a_{3}b_{3}\\
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌏基础介绍"><span class="nav-number">1.</span> <span class="nav-text">🌏基础介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主材质节点-The-Main-Material-Node"><span class="nav-number">1.1.</span> <span class="nav-text">主材质节点(The Main Material Node)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节点的使用-Usage"><span class="nav-number">1.2.</span> <span class="nav-text">节点的使用(Usage)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例化材质-Material-Instance"><span class="nav-number">1.3.</span> <span class="nav-text">实例化材质(Material Instance)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类-Class"><span class="nav-number">1.3.1.</span> <span class="nav-text">类(Class)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#回到材质"><span class="nav-number">1.3.2.</span> <span class="nav-text">回到材质</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数-Parameter"><span class="nav-number">1.4.</span> <span class="nav-text">参数 (Parameter)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔥常用节点"><span class="nav-number">2.</span> <span class="nav-text">🔥常用节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TextureSample"><span class="nav-number">2.1.</span> <span class="nav-text">TextureSample</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TexCoord"><span class="nav-number">2.2.</span> <span class="nav-text">TexCoord</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Add-Subtract-Multiply-Divide"><span class="nav-number">2.3.</span> <span class="nav-text">Add, Subtract, Multiply, Divide</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Power"><span class="nav-number">2.4.</span> <span class="nav-text">Power</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔨基础案例"><span class="nav-number">3.</span> <span class="nav-text">🔨基础案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#凹凸加深-BumpOffset"><span class="nav-number">3.1.</span> <span class="nav-text">凹凸加深(BumpOffset)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#混合材质-CreatingLayeredMaterials"><span class="nav-number">3.2.</span> <span class="nav-text">混合材质(CreatingLayeredMaterials)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📋其他节点"><span class="nav-number">4.</span> <span class="nav-text">📋其他节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Debug节点的使用"><span class="nav-number">4.1.</span> <span class="nav-text">Debug节点的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConstantBiasScale"><span class="nav-number">4.2.</span> <span class="nav-text">ConstantBiasScale</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌏基础介绍"><span class="nav-number">1.</span> <span class="nav-text">🌏基础介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主材质节点-The-Main-Material-Node"><span class="nav-number">1.1.</span> <span class="nav-text">主材质节点(The Main Material Node)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节点的使用-Usage"><span class="nav-number">1.2.</span> <span class="nav-text">节点的使用(Usage)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例化材质-Material-Instance"><span class="nav-number">1.3.</span> <span class="nav-text">实例化材质(Material Instance)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类-Class"><span class="nav-number">1.3.1.</span> <span class="nav-text">类(Class)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#回到材质"><span class="nav-number">1.3.2.</span> <span class="nav-text">回到材质</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数-Parameter"><span class="nav-number">1.4.</span> <span class="nav-text">参数 (Parameter)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简单的标准材质"><span class="nav-number">1.4.1.</span> <span class="nav-text">简单的标准材质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加Tint和Roughness参数"><span class="nav-number">1.4.2.</span> <span class="nav-text">添加Tint和Roughness参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加Tiling参数"><span class="nav-number">1.4.3.</span> <span class="nav-text">添加Tiling参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加Normal参数"><span class="nav-number">1.4.4.</span> <span class="nav-text">添加Normal参数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔥常用节点"><span class="nav-number">2.</span> <span class="nav-text">🔥常用节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TextureSample"><span class="nav-number">2.1.</span> <span class="nav-text">TextureSample</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TexCoord"><span class="nav-number">2.2.</span> <span class="nav-text">TexCoord</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Add-Subtract-Multiply-Divide"><span class="nav-number">2.3.</span> <span class="nav-text">Add, Subtract, Multiply, Divide</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Append"><span class="nav-number">2.4.</span> <span class="nav-text">Append</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ComponentMask"><span class="nav-number">2.5.</span> <span class="nav-text">ComponentMask</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Power"><span class="nav-number">2.6.</span> <span class="nav-text">Power</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔨基础案例"><span class="nav-number">3.</span> <span class="nav-text">🔨基础案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#凹凸加深-BumpOffset"><span class="nav-number">3.1.</span> <span class="nav-text">凹凸加深(BumpOffset)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#混合材质-CreatingLayeredMaterials"><span class="nav-number">3.2.</span> <span class="nav-text">混合材质(CreatingLayeredMaterials)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📋其他节点"><span class="nav-number">4.</span> <span class="nav-text">📋其他节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Debug节点的使用"><span class="nav-number">4.1.</span> <span class="nav-text">Debug节点的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConstantBiasScale"><span class="nav-number">4.2.</span> <span class="nav-text">ConstantBiasScale</span></a></li></ol></li></ol></div>
             
 
           </div>
