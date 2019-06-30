@@ -101,10 +101,10 @@
 
 
   <meta name="description" content="🌏基础介绍材质是用了一种特别的编程语言：高阶着色器语言(High Level Shading Language)简称HLSL 创建的。HLSL可以使材质直接和图形硬件通信，从而使美术和程序员直观的观察控制屏幕显示内容。Unreal Engine 4 (UE4)中用来创建材质球的材质节点包含着和HLSL一样的代码块，来实现和这些代码块相同的效果。  主材质节点(The Main Material">
-<meta name="keywords" content="UE4,Materials,basic">
+<meta name="keywords" content="Basic,Docs,UE4">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UE4材质基础">
-<meta property="og:url" content="http://yoursite.com/Docs/Ue4MaterialsNotes/index.html">
+<meta property="og:url" content="http://yoursite.com/Art/Ue4MaterialsNotes/index.html">
 <meta property="og:site_name" content="Fan ziwen">
 <meta property="og:description" content="🌏基础介绍材质是用了一种特别的编程语言：高阶着色器语言(High Level Shading Language)简称HLSL 创建的。HLSL可以使材质直接和图形硬件通信，从而使美术和程序员直观的观察控制屏幕显示内容。Unreal Engine 4 (UE4)中用来创建材质球的材质节点包含着和HLSL一样的代码块，来实现和这些代码块相同的效果。  主材质节点(The Main Material">
 <meta property="og:locale" content="zh-CN">
@@ -173,6 +173,7 @@
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/append0.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/append1.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/append2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/lerp.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/componentMask0.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/componentMask1.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/componentMask2.jpg">
@@ -182,11 +183,13 @@
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/StaticSwitchParameter2.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/power.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/power1.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/clamp.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/clamp1.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/clipboard.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/CreatingLayeredMaterials1.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/CreatingLayeredMaterials2.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/debug0.png">
-<meta property="og:updated_time" content="2019-06-15T14:27:19.038Z">
+<meta property="og:updated_time" content="2019-06-30T11:32:40.864Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UE4材质基础">
 <meta name="twitter:description" content="🌏基础介绍材质是用了一种特别的编程语言：高阶着色器语言(High Level Shading Language)简称HLSL 创建的。HLSL可以使材质直接和图形硬件通信，从而使美术和程序员直观的观察控制屏幕显示内容。Unreal Engine 4 (UE4)中用来创建材质球的材质节点包含着和HLSL一样的代码块，来实现和这些代码块相同的效果。  主材质节点(The Main Material">
@@ -198,7 +201,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/Docs/Ue4MaterialsNotes/">
+  <link rel="canonical" href="http://yoursite.com/Art/Ue4MaterialsNotes/">
 
 
 
@@ -303,8 +306,6 @@
     
 
     
-      
-    
 
     <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
 
@@ -322,10 +323,8 @@
     
 
     
-      
-    
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">4</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 
   </li>
         
@@ -341,10 +340,8 @@
     
 
     
-      
-    
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">2</span></a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 
   </li>
         
@@ -360,10 +357,8 @@
     
 
     
-      
-    
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">9</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 
   </li>
 
@@ -415,7 +410,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Docs/Ue4MaterialsNotes/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Art/Ue4MaterialsNotes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="范子文">
@@ -475,7 +470,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-15 22:27:19" itemprop="dateModified" datetime="2019-06-15T22:27:19+08:00">2019-06-15</time>
+                <time title="修改时间：2019-06-30 19:32:40" itemprop="dateModified" datetime="2019-06-30T19:32:40+08:00">2019-06-30</time>
               
             
           </span>
@@ -492,7 +487,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Docs/" itemprop="url" rel="index"><span itemprop="name">Docs</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Art/" itemprop="url" rel="index"><span itemprop="name">Art</span></a></span>
 
                 
                 
@@ -530,10 +525,10 @@
         <h2 id="🌏基础介绍"><a href="#🌏基础介绍" class="headerlink" title="🌏基础介绍"></a>🌏基础介绍</h2><p>材质是用了一种特别的编程语言：<strong>高阶着色器语言(High Level Shading Language)</strong>简称<strong>HLSL</strong> 创建的。<strong>HLSL</strong>可以使材质直接和图形硬件通信，从而使美术和程序员直观的观察控制屏幕显示内容。<strong>Unreal Engine 4 (UE4)</strong>中用来创建材质球的材质节点包含着和<strong>HLSL</strong>一样的代码块，来实现和这些代码块相同的效果。</p>
 <hr>
 <h3 id="主材质节点-The-Main-Material-Node"><a href="#主材质节点-The-Main-Material-Node" class="headerlink" title="主材质节点(The Main Material Node)"></a>主材质节点(The Main Material Node)</h3><p>在<strong>Content Browser</strong>中右键创建一个材质</p>
+<a id="more"></a>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialCreate.jpg " class="full-image" alt="MaterialCreate" title="创建材质" style="max-width: none; width:35%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <p>双击我们新建的材质，进入材质编辑窗口。</p>
 <p><strong>主材质节点(The Main Material Node)</strong>可以被认为材质制作的最后一步。将材质节点任意组合后，输入给主节点，就会有相应的效果在材质球编译后显示。</p>
-<a id="more"></a>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Material_Main_Node.jpg " class="full-image" alt="MaterialNode" title="主材质节点" style="max-width: none; width:15%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <p>主材质节点的每一个输入(Input)都有其特殊的效果。白色的输入处于启用状态，说明这类材质有相应的属性可以输入，而灰色的输入处于禁用状态，说明这个材质没有这些相应属性，而且不能输入信息。想启动和禁用主材质节点的输入，就要修改<strong>Details</strong>面板材质球的属性。</p>
 <div class="note warning">
@@ -1007,6 +1002,39 @@ a_{3}b_{3}\\
 <p>例如下图，在将<code>[0.2, 0.4]</code>添加一个<code>1</code>的时候我把<span class="label success"><b>Append</b></span>输入<strong>A</strong>和<strong>B</strong>颠倒，所以表示的意思是:将<code>1</code>添加一组<code>[0.2, 0.4]</code>。<br>所以最后的结果就是<code>[1, 0.2, 0.4]</code>，自然也就变成了下图的颜色。</p>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\append2.jpg " class="full-image" title="Append" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <hr>
+<h3 id="Lerp"><a href="#Lerp" class="headerlink" title="Lerp"></a>Lerp</h3><blockquote>
+<p>线性差值(LinearInterpolate)</p>
+</blockquote>
+<p>线性差值<span class="label success"><b>Lerp</b></span>节点通过<strong>第三个值(Alpha)</strong>讲两个<strong>值(A&B)</strong>进行混合。如果<strong>Alpha</strong>的值是<code>0</code>返回<strong>A</strong>的值，如果<strong>Alpha</strong>的值是<code>1</code>则返回<strong>B</strong>的值。如果<strong>Alpha</strong>在<code>0</code>和<code>1</code>之间，比如<code>0.5</code>则<strong>AB</strong>取平均值混合。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Inputs</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>A</strong></td>
+<td style="text-align:left">当<strong>Alpha</strong>为0时要输出的值</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>B</strong></td>
+<td style="text-align:left">当<strong>Alpha</strong>为1时要输出的值</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Alpha</strong></td>
+<td style="text-align:left">作为控制<strong>AB</strong>混合的值可以充当<strong>Mask</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="note primary">
+            <p>作为美术有个非常直白的理解，就当<strong>A</strong>是PS里一张底图，而<strong>B</strong>则是一张新建图层，而<strong>Alpha</strong>就是新建图层的<strong>遮罩(Mask)</strong>,跟所有<strong>Mask</strong>原理一样:黑透白不透</p>
+          </div>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\lerp.jpg " class="full-image" title="Append" style="max-width: none; width:50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<hr>
 <h3 id="ComponentMask"><a href="#ComponentMask" class="headerlink" title="ComponentMask"></a>ComponentMask</h3><blockquote>
 <p>部分提取，快捷键<code>Shift+C</code></p>
 </blockquote>
@@ -1095,6 +1123,62 @@ a_{3}b_{3}\\
 <p><strong>最后结果:</strong></p>
 <video src="\videos\UE4MaterialsNotes\power.mp4" preload="metadata" controls playsinline poster>Sorry, your browser does not support the video tag.</video>
 <hr>
+<h3 id="Clamp"><a href="#Clamp" class="headerlink" title="Clamp"></a>Clamp</h3><blockquote>
+<p>限制到固定范围</p>
+</blockquote>
+<p><strong>Clamp</strong>节点会将输入的值，通过设置<strong>最大值</strong>和<strong>最小值</strong>限制到规定的范围内。</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\clamp.jpg " class="full-image" title style="max-width: none; width:50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Details</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>Clamp Mode</strong></td>
+<td style="text-align:left">设置限制模式，可以只限制最大值或者最小值</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Min Default</strong></td>
+<td style="text-align:left">设置最小值的默认值</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Max Default</strong></td>
+<td style="text-align:left">设置最大值的默认值</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Inputs</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>Min</strong></td>
+<td style="text-align:left">输入将要限制的最小值</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Max</strong></td>
+<td style="text-align:left">输入将要限制的最大值</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>我们可以再一次利用Debug节点<span class="label info"><b>DebugFloat3Values</b></span>做个简单的检测，如下图：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\clamp1.jpg " class="full-image" title style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>我们用<span class="label warning"><b>Constant3Vector</b></span>设置为<code>[-1, 1.5, 0.8]</code>，输入<span class="label success"><b>Clamp</b></span>将值限制到最小为<code>0</code>,最大为<code>1</code>之间。所以<code>-1</code>变成了<code>0</code>,<code>1.5</code>变成了<code>1.0</code>, 但是<code>0.8</code>因为在限制范围内，所以还是<code>0.8</code>。所以最后的结果就是<strong>Debug</strong>节点显示的结果：<code>[0.0, 1.0, 0.8]</code></p>
+<div class="note info">
+            <p>我们会经常在很多材质里看到别人经常使用<span class="label success"><b>Clamp</b></span>，因为很多输入比如<strong>Roughness</strong>的取值是<code>[0-1]</code>,这是一个很好的习惯，而且合理的限制方便之后的运算。</p>
+          </div>
+<hr>
 <h2 id="🔨基础案例"><a href="#🔨基础案例" class="headerlink" title="🔨基础案例"></a>🔨基础案例</h2><h3 id="凹凸加深-BumpOffset"><a href="#凹凸加深-BumpOffset" class="headerlink" title="凹凸加深(BumpOffset)"></a>凹凸加深(BumpOffset)</h3><p><strong>核心节点：</strong></p>
 <ul>
 <li><span class="label success"><b>BumpOffset</b></span>
@@ -1179,11 +1263,11 @@ a_{3}b_{3}\\
       
         <div class="post-tags">
           
+            <a href="/tags/Basic/" rel="tag"># Basic</a>
+          
+            <a href="/tags/Docs/" rel="tag"># Docs</a>
+          
             <a href="/tags/UE4/" rel="tag"># UE4</a>
-          
-            <a href="/tags/Materials/" rel="tag"># Materials</a>
-          
-            <a href="/tags/basic/" rel="tag"># basic</a>
           
         </div>
       
@@ -1196,8 +1280,8 @@ a_{3}b_{3}\\
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Notes/PythonInMaya/" rel="next" title="Maya中Python常用命令及参数">
-                <i class="fa fa-chevron-left"></i> Maya中Python常用命令及参数
+              <a href="/Tech/PythonInMaya/" rel="next" title="Maya中Pymel常用命令">
+                <i class="fa fa-chevron-left"></i> Maya中Pymel常用命令
               </a>
             
           </div>
@@ -1205,6 +1289,10 @@ a_{3}b_{3}\\
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Tech/pythonAdvance/" rel="prev" title="Python进阶">
+                Python进阶 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -1273,7 +1361,7 @@ a_{3}b_{3}\\
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1325,11 +1413,7 @@ a_{3}b_{3}\\
                     
                       
                     
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1382,7 +1466,7 @@ a_{3}b_{3}\\
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌏基础介绍"><span class="nav-number">1.</span> <span class="nav-text">🌏基础介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主材质节点-The-Main-Material-Node"><span class="nav-number">1.1.</span> <span class="nav-text">主材质节点(The Main Material Node)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节点的使用-Usage"><span class="nav-number">1.2.</span> <span class="nav-text">节点的使用(Usage)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例化材质-Material-Instance"><span class="nav-number">1.3.</span> <span class="nav-text">实例化材质(Material Instance)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类-Class"><span class="nav-number">1.3.1.</span> <span class="nav-text">类(Class)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#回到材质"><span class="nav-number">1.3.2.</span> <span class="nav-text">回到材质</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数-Parameter"><span class="nav-number">1.4.</span> <span class="nav-text">参数 (Parameter)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简单的标准材质"><span class="nav-number">1.4.1.</span> <span class="nav-text">简单的标准材质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加Tint和Roughness参数"><span class="nav-number">1.4.2.</span> <span class="nav-text">添加Tint和Roughness参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加Tiling参数"><span class="nav-number">1.4.3.</span> <span class="nav-text">添加Tiling参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加Normal参数"><span class="nav-number">1.4.4.</span> <span class="nav-text">添加Normal参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加开关"><span class="nav-number">1.4.5.</span> <span class="nav-text">添加开关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#整理参数"><span class="nav-number">1.4.6.</span> <span class="nav-text">整理参数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#描述-Comment"><span class="nav-number">1.5.</span> <span class="nav-text">描述(Comment)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#材质函数-Material-Function"><span class="nav-number">1.6.</span> <span class="nav-text">材质函数(Material Function)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔥常用节点"><span class="nav-number">2.</span> <span class="nav-text">🔥常用节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TextureSample"><span class="nav-number">2.1.</span> <span class="nav-text">TextureSample</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TexCoord"><span class="nav-number">2.2.</span> <span class="nav-text">TexCoord</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Add-Subtract-Multiply-Divide"><span class="nav-number">2.3.</span> <span class="nav-text">Add, Subtract, Multiply, Divide</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Append"><span class="nav-number">2.4.</span> <span class="nav-text">Append</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ComponentMask"><span class="nav-number">2.5.</span> <span class="nav-text">ComponentMask</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StaticSwitchParameter"><span class="nav-number">2.6.</span> <span class="nav-text">StaticSwitchParameter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Power"><span class="nav-number">2.7.</span> <span class="nav-text">Power</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔨基础案例"><span class="nav-number">3.</span> <span class="nav-text">🔨基础案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#凹凸加深-BumpOffset"><span class="nav-number">3.1.</span> <span class="nav-text">凹凸加深(BumpOffset)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#混合材质-CreatingLayeredMaterials"><span class="nav-number">3.2.</span> <span class="nav-text">混合材质(CreatingLayeredMaterials)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📋其他节点"><span class="nav-number">4.</span> <span class="nav-text">📋其他节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Debug节点的使用"><span class="nav-number">4.1.</span> <span class="nav-text">Debug节点的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConstantBiasScale"><span class="nav-number">4.2.</span> <span class="nav-text">ConstantBiasScale</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌏基础介绍"><span class="nav-number">1.</span> <span class="nav-text">🌏基础介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主材质节点-The-Main-Material-Node"><span class="nav-number">1.1.</span> <span class="nav-text">主材质节点(The Main Material Node)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节点的使用-Usage"><span class="nav-number">1.2.</span> <span class="nav-text">节点的使用(Usage)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例化材质-Material-Instance"><span class="nav-number">1.3.</span> <span class="nav-text">实例化材质(Material Instance)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类-Class"><span class="nav-number">1.3.1.</span> <span class="nav-text">类(Class)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#回到材质"><span class="nav-number">1.3.2.</span> <span class="nav-text">回到材质</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数-Parameter"><span class="nav-number">1.4.</span> <span class="nav-text">参数 (Parameter)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简单的标准材质"><span class="nav-number">1.4.1.</span> <span class="nav-text">简单的标准材质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加Tint和Roughness参数"><span class="nav-number">1.4.2.</span> <span class="nav-text">添加Tint和Roughness参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加Tiling参数"><span class="nav-number">1.4.3.</span> <span class="nav-text">添加Tiling参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加Normal参数"><span class="nav-number">1.4.4.</span> <span class="nav-text">添加Normal参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加开关"><span class="nav-number">1.4.5.</span> <span class="nav-text">添加开关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#整理参数"><span class="nav-number">1.4.6.</span> <span class="nav-text">整理参数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#描述-Comment"><span class="nav-number">1.5.</span> <span class="nav-text">描述(Comment)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#材质函数-Material-Function"><span class="nav-number">1.6.</span> <span class="nav-text">材质函数(Material Function)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔥常用节点"><span class="nav-number">2.</span> <span class="nav-text">🔥常用节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TextureSample"><span class="nav-number">2.1.</span> <span class="nav-text">TextureSample</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TexCoord"><span class="nav-number">2.2.</span> <span class="nav-text">TexCoord</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Add-Subtract-Multiply-Divide"><span class="nav-number">2.3.</span> <span class="nav-text">Add, Subtract, Multiply, Divide</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Append"><span class="nav-number">2.4.</span> <span class="nav-text">Append</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lerp"><span class="nav-number">2.5.</span> <span class="nav-text">Lerp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ComponentMask"><span class="nav-number">2.6.</span> <span class="nav-text">ComponentMask</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StaticSwitchParameter"><span class="nav-number">2.7.</span> <span class="nav-text">StaticSwitchParameter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Power"><span class="nav-number">2.8.</span> <span class="nav-text">Power</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clamp"><span class="nav-number">2.9.</span> <span class="nav-text">Clamp</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔨基础案例"><span class="nav-number">3.</span> <span class="nav-text">🔨基础案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#凹凸加深-BumpOffset"><span class="nav-number">3.1.</span> <span class="nav-text">凹凸加深(BumpOffset)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#混合材质-CreatingLayeredMaterials"><span class="nav-number">3.2.</span> <span class="nav-text">混合材质(CreatingLayeredMaterials)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📋其他节点"><span class="nav-number">4.</span> <span class="nav-text">📋其他节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Debug节点的使用"><span class="nav-number">4.1.</span> <span class="nav-text">Debug节点的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConstantBiasScale"><span class="nav-number">4.2.</span> <span class="nav-text">ConstantBiasScale</span></a></li></ol></li></ol></div>
             
 
           </div>

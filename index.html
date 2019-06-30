@@ -220,8 +220,6 @@
     
 
     
-      
-    
 
     <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
 
@@ -239,10 +237,8 @@
     
 
     
-      
-    
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">4</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 
   </li>
         
@@ -258,10 +254,8 @@
     
 
     
-      
-    
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">2</span></a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 
   </li>
         
@@ -277,10 +271,8 @@
     
 
     
-      
-    
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">9</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 
   </li>
 
@@ -332,7 +324,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Docs/Ue4MaterialsNotes/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Tech/pythonAdvance/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="范子文">
@@ -352,7 +344,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/Docs/Ue4MaterialsNotes/" class="post-title-link" itemprop="url">UE4材质基础</a>
+                <a href="/Tech/pythonAdvance/" class="post-title-link" itemprop="url">Python进阶</a>
               
             
           </h1>
@@ -377,7 +369,7 @@
                 
               
 
-              <time title="创建时间：2019-06-02 16:08:47" itemprop="dateCreated datePublished" datetime="2019-06-02T16:08:47+08:00">2019-06-02</time>
+              <time title="创建时间：2019-06-20 18:28:49" itemprop="dateCreated datePublished" datetime="2019-06-20T18:28:49+08:00">2019-06-20</time>
             
 
             
@@ -394,7 +386,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-15 22:27:19" itemprop="dateModified" datetime="2019-06-15T22:27:19+08:00">2019-06-15</time>
+                <time title="修改时间：2019-06-30 23:23:32" itemprop="dateModified" datetime="2019-06-30T23:23:32+08:00">2019-06-30</time>
               
             
           </span>
@@ -411,7 +403,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Docs/" itemprop="url" rel="index"><span itemprop="name">Docs</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a></span>
 
                 
                 
@@ -447,16 +439,20 @@
 
       
         
-          <h2 id="🌏基础介绍"><a href="#🌏基础介绍" class="headerlink" title="🌏基础介绍"></a>🌏基础介绍</h2><p>材质是用了一种特别的编程语言：<strong>高阶着色器语言(High Level Shading Language)</strong>简称<strong>HLSL</strong> 创建的。<strong>HLSL</strong>可以使材质直接和图形硬件通信，从而使美术和程序员直观的观察控制屏幕显示内容。<strong>Unreal Engine 4 (UE4)</strong>中用来创建材质球的材质节点包含着和<strong>HLSL</strong>一样的代码块，来实现和这些代码块相同的效果。</p>
-<hr>
-<h3 id="主材质节点-The-Main-Material-Node"><a href="#主材质节点-The-Main-Material-Node" class="headerlink" title="主材质节点(The Main Material Node)"></a>主材质节点(The Main Material Node)</h3><p>在<strong>Content Browser</strong>中右键创建一个材质</p>
-<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialCreate.jpg " class="full-image" alt="MaterialCreate" title="创建材质" style="max-width: none; width:35%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<p>双击我们新建的材质，进入材质编辑窗口。</p>
-<p><strong>主材质节点(The Main Material Node)</strong>可以被认为材质制作的最后一步。将材质节点任意组合后，输入给主节点，就会有相应的效果在材质球编译后显示。</p>
+          <h3 id="📦Package"><a href="#📦Package" class="headerlink" title="📦Package"></a>📦Package</h3><blockquote>
+<p>Python包</p>
+</blockquote>
+<p>随着程序变得越来越长，你或许会想把它拆分成几个文件，以方便维护。你亦或想在不同的程序中使用一个便捷的函数， 而不必把这个函数复制到每一个程序中去。<br>为支持这些<strong>Python</strong>有一种方法可以把定义放在一个文件里，并在脚本或解释器的交互式实例中使用它们。这样的文件被称作<strong>模块(Module)</strong> ；<strong>模块(Module)</strong>中的定义可以<strong>导入</strong>到其它<strong>模块(Module)</strong>或者<strong>主(Main)</strong>模块</p>
+<h4 id="Name"><a href="#Name" class="headerlink" title="Name"></a>Name</h4><blockquote>
+<p>全局变量<code>__name__</code></p>
+</blockquote>
+<div class="note primary">
+            <p>每一个<code>.py</code>文件都可以视为一个<strong>模块(Module)</strong>。而且当一个模块被导入时，可以通过全局变量<code>__name__</code>获取名字(字符串)。</p>
+          </div>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/Docs/Ue4MaterialsNotes/#more" rel="contents">
+              <a class="btn" href="/Tech/pythonAdvance/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -516,7 +512,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Notes/PythonInMaya/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Art/Ue4MaterialsNotes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="范子文">
@@ -536,7 +532,188 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/Notes/PythonInMaya/" class="post-title-link" itemprop="url">Maya中Python常用命令及参数</a>
+                <a href="/Art/Ue4MaterialsNotes/" class="post-title-link" itemprop="url">UE4材质基础</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-02 16:08:47" itemprop="dateCreated datePublished" datetime="2019-06-02T16:08:47+08:00">2019-06-02</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-30 19:32:40" itemprop="dateModified" datetime="2019-06-30T19:32:40+08:00">2019-06-30</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Art/" itemprop="url" rel="index"><span itemprop="name">Art</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="🌏基础介绍"><a href="#🌏基础介绍" class="headerlink" title="🌏基础介绍"></a>🌏基础介绍</h2><p>材质是用了一种特别的编程语言：<strong>高阶着色器语言(High Level Shading Language)</strong>简称<strong>HLSL</strong> 创建的。<strong>HLSL</strong>可以使材质直接和图形硬件通信，从而使美术和程序员直观的观察控制屏幕显示内容。<strong>Unreal Engine 4 (UE4)</strong>中用来创建材质球的材质节点包含着和<strong>HLSL</strong>一样的代码块，来实现和这些代码块相同的效果。</p>
+<hr>
+<h3 id="主材质节点-The-Main-Material-Node"><a href="#主材质节点-The-Main-Material-Node" class="headerlink" title="主材质节点(The Main Material Node)"></a>主材质节点(The Main Material Node)</h3><p>在<strong>Content Browser</strong>中右键创建一个材质</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/Art/Ue4MaterialsNotes/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Tech/PythonInMaya/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="范子文">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fan ziwen">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/Tech/PythonInMaya/" class="post-title-link" itemprop="url">Maya中Pymel常用命令</a>
               
             
           </h1>
@@ -578,7 +755,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-13 22:08:05" itemprop="dateModified" datetime="2019-06-13T22:08:05+08:00">2019-06-13</time>
+                <time title="修改时间：2019-06-30 19:31:01" itemprop="dateModified" datetime="2019-06-30T19:31:01+08:00">2019-06-30</time>
               
             
           </span>
@@ -595,7 +772,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a></span>
 
                 
                 
@@ -643,7 +820,7 @@
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/Notes/PythonInMaya/#more" rel="contents">
+              <a class="btn" href="/Tech/PythonInMaya/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -703,7 +880,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Notes/CMD/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Tech/CMD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="范子文">
@@ -723,7 +900,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/Notes/CMD/" class="post-title-link" itemprop="url">CMD常用命令</a>
+                <a href="/Tech/CMD/" class="post-title-link" itemprop="url">CMD与Batch常用命令</a>
               
             
           </h1>
@@ -765,7 +942,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-03 21:48:59" itemprop="dateModified" datetime="2019-06-03T21:48:59+08:00">2019-06-03</time>
+                <time title="修改时间：2019-06-30 19:32:38" itemprop="dateModified" datetime="2019-06-30T19:32:38+08:00">2019-06-30</time>
               
             
           </span>
@@ -782,7 +959,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a></span>
 
                 
                 
@@ -818,11 +995,7 @@
 
       
         
-          <blockquote>
-<p><a href="https://blog.csdn.net/mzpmzk/article/details/70665597" target="_blank" rel="noopener">https://blog.csdn.net/mzpmzk/article/details/70665597</a><br><a href="https://blog.csdn.net/qq_32451373/article/details/77743869" target="_blank" rel="noopener">https://blog.csdn.net/qq_32451373/article/details/77743869</a></p>
-</blockquote>
-<hr>
-<h2 id="通用操作"><a href="#通用操作" class="headerlink" title="通用操作"></a>通用操作</h2><p><code>$ help</code></p>
+          <h2 id="🛠CMD"><a href="#🛠CMD" class="headerlink" title="🛠CMD"></a>🛠CMD</h2><h3 id="通用操作"><a href="#通用操作" class="headerlink" title="通用操作"></a>通用操作</h3><p><code>$ help</code></p>
 <blockquote>
 <p>可查看该命令的介绍、参数列表与使用方法</p>
 </blockquote>
@@ -834,14 +1007,10 @@
 <blockquote>
 <p>显示目录结构</p>
 </blockquote>
-<p>Ctrl + Z</p>
-<blockquote>
-<p>中断命令</p>
-</blockquote>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/Notes/CMD/#more" rel="contents">
+              <a class="btn" href="/Tech/CMD/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -901,7 +1070,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Notes/NextMarkdown/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Tech/NextMarkdown/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="范子文">
@@ -921,7 +1090,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/Notes/NextMarkdown/" class="post-title-link" itemprop="url">Next主题下Markdown语法</a>
+                <a href="/Tech/NextMarkdown/" class="post-title-link" itemprop="url">Next主题下Markdown语法</a>
               
             
           </h1>
@@ -963,7 +1132,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-03 00:33:43" itemprop="dateModified" datetime="2019-06-03T00:33:43+08:00">2019-06-03</time>
+                <time title="修改时间：2019-06-30 19:31:15" itemprop="dateModified" datetime="2019-06-30T19:31:15+08:00">2019-06-30</time>
               
             
           </span>
@@ -980,7 +1149,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a></span>
 
                 
                 
@@ -1016,14 +1185,11 @@
 
       
         
-          <h2 id="备注-Note"><a href="#备注-Note" class="headerlink" title="备注(Note)"></a>备注(Note)</h2><hr>
-<h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3><figure class="highlight yml"><figcaption><span>next/_config.yml</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">note:</span></span><br><span class="line">  <span class="comment"># Note tag style values:</span></span><br><span class="line">  <span class="comment">#  - simple    bs-callout old alert style. Default.</span></span><br><span class="line">  <span class="comment">#  - modern    bs-callout new (v2-v3) alert style.</span></span><br><span class="line">  <span class="comment">#  - flat      flat callout style with background, like on Mozilla or StackOverflow.</span></span><br><span class="line">  <span class="comment">#  - disabled  disable all CSS styles import of note tag.</span></span><br><span class="line"><span class="attr">  style:</span> <span class="string">simple</span></span><br><span class="line"><span class="attr">  icons:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  border_radius:</span> <span class="number">3</span></span><br><span class="line">  <span class="comment"># Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).</span></span><br><span class="line">  <span class="comment"># Offset also applied to label tag variables. This option can work with disabled note tag.</span></span><br><span class="line"><span class="attr">  light_bg_offset:</span> <span class="number">0</span></span><br></pre></td></tr></tbody></table></figure>
-<h4 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h4><p>在主题配置文件<code>next/_config.yml</code>中，讲<code>icons</code>设置为<span class="label success">True</span>：</p>
-<figure class="highlight yml"><figcaption><span>next/_config.yml</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">note:</span> </span><br><span class="line"><span class="attr">  icons:</span> <span class="literal">true</span></span><br></pre></td></tr></tbody></table></figure>
+          <h2 id="备注-Note"><a href="#备注-Note" class="headerlink" title="备注(Note)"></a>备注(Note)</h2><h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3><figure class="highlight yml"><figcaption><span>next/_config.yml</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">note:</span></span><br><span class="line">  <span class="comment"># Note tag style values:</span></span><br><span class="line">  <span class="comment">#  - simple    bs-callout old alert style. Default.</span></span><br><span class="line">  <span class="comment">#  - modern    bs-callout new (v2-v3) alert style.</span></span><br><span class="line">  <span class="comment">#  - flat      flat callout style with background, like on Mozilla or StackOverflow.</span></span><br><span class="line">  <span class="comment">#  - disabled  disable all CSS styles import of note tag.</span></span><br><span class="line"><span class="attr">  style:</span> <span class="string">simple</span></span><br><span class="line"><span class="attr">  icons:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  border_radius:</span> <span class="number">3</span></span><br><span class="line">  <span class="comment"># Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).</span></span><br><span class="line">  <span class="comment"># Offset also applied to label tag variables. This option can work with disabled note tag.</span></span><br><span class="line"><span class="attr">  light_bg_offset:</span> <span class="number">0</span></span><br></pre></td></tr></tbody></table></figure>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/Notes/NextMarkdown/#more" rel="contents">
+              <a class="btn" href="/Tech/NextMarkdown/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1110,7 +1276,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1162,11 +1328,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1375,6 +1537,8 @@
 
   
   
+    
+      
     
       
         

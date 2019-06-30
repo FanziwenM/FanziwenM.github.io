@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"always","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="📦Package Python包  随着程序变得越来越长，你或许会想把它拆分成几个文件，以方便维护。你亦或想在不同的程序中使用一个便捷的函数， 而不必把这个函数复制到每一个程序中去。为支持这些Python有一种方法可以把定义放在一个文件里，并在脚本或解释器的交互式实例中使用它们。这样的文件被称作模块(Module) ；模块(Module)中的定义可以导入到其它模块(Module)或者主(Main">
+<meta name="keywords" content="Notes,Python,Advance">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python进阶">
+<meta property="og:url" content="http://yoursite.com/Tech/pythonAdvance/index.html">
+<meta property="og:site_name" content="Fan ziwen">
+<meta property="og:description" content="📦Package Python包  随着程序变得越来越长，你或许会想把它拆分成几个文件，以方便维护。你亦或想在不同的程序中使用一个便捷的函数， 而不必把这个函数复制到每一个程序中去。为支持这些Python有一种方法可以把定义放在一个文件里，并在脚本或解释器的交互式实例中使用它们。这样的文件被称作模块(Module) ；模块(Module)中的定义可以导入到其它模块(Module)或者主(Main">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-06-30T15:23:32.056Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python进阶">
+<meta name="twitter:description" content="📦Package Python包  随着程序变得越来越长，你或许会想把它拆分成几个文件，以方便维护。你亦或想在不同的程序中使用一个便捷的函数， 而不必把这个函数复制到每一个程序中去。为支持这些Python有一种方法可以把定义放在一个文件里，并在脚本或解释器的交互式实例中使用它们。这样的文件被称作模块(Module) ；模块(Module)中的定义可以导入到其它模块(Module)或者主(Main">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/Tech/pythonAdvance/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Python进阶 | Fan ziwen</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Fan ziwen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Tech/pythonAdvance/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="范子文">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fan ziwen">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python进阶
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-20 18:28:49" itemprop="dateCreated datePublished" datetime="2019-06-20T18:28:49+08:00">2019-06-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-30 23:23:32" itemprop="dateModified" datetime="2019-06-30T23:23:32+08:00">2019-06-30</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="📦Package"><a href="#📦Package" class="headerlink" title="📦Package"></a>📦Package</h3><blockquote>
+<p>Python包</p>
+</blockquote>
+<p>随着程序变得越来越长，你或许会想把它拆分成几个文件，以方便维护。你亦或想在不同的程序中使用一个便捷的函数， 而不必把这个函数复制到每一个程序中去。<br>为支持这些<strong>Python</strong>有一种方法可以把定义放在一个文件里，并在脚本或解释器的交互式实例中使用它们。这样的文件被称作<strong>模块(Module)</strong> ；<strong>模块(Module)</strong>中的定义可以<strong>导入</strong>到其它<strong>模块(Module)</strong>或者<strong>主(Main)</strong>模块</p>
+<h4 id="Name"><a href="#Name" class="headerlink" title="Name"></a>Name</h4><blockquote>
+<p>全局变量<code>__name__</code></p>
+</blockquote>
+<div class="note primary">
+            <p>每一个<code>.py</code>文件都可以视为一个<strong>模块(Module)</strong>。而且当一个模块被导入时，可以通过全局变量<code>__name__</code>获取名字(字符串)。</p>
+          </div>
+<a id="more"></a>
+<p>例如，我们导入一个<strong>Numpy</strong>库</p>
+<figure class="highlight python"><figcaption><span>C:\Users\Administrator>python</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">>>> </span><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="meta">>>> </span>np.__name__</span><br><span class="line"><span class="string">'numpy'</span></span><br><span class="line">>>></span><br></pre></td></tr></tbody></table></figure>
+<div class="note warning">
+            <p>模块可以包含可<strong>执行的语句</strong>以及<strong>函数定义</strong>。这些语句用于<strong>初始化</strong>模块。它们仅在模块<em>第一次</em>在<strong>import</strong>语句中被导入时才执行。(当文件被当作脚本运行时，它们也会执行。)</p>
+          </div>
+<div class="note danger">
+            <p>正如上面所说的模块被导入时，其中的<strong>执行语句</strong>也会跟着一起运行，但是我们经常导入一个<strong>模块(Module)</strong>只是为了引用其中的某些<strong>函数(Function)</strong>,这个时候我们就需要在<strong>模块(Module)</strong>中做一些检测。</p>
+          </div>
+<div class="note success">
+            <p>全局变量<code>__name__</code>还经常用于检测<strong>模块(Module)</strong>是被引用还是被执行，如果是被直接执行的话则<code>__name__</code>的值为字符串<code>"__main__"</code></p>
+          </div>
+<p>例如我们创建一个<code>test.py</code>文件</p>
+<figure class="highlight python"><figcaption><span>test.py</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"This line will always be printed"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    print(<span class="string">"This line only printed if the Module is executed as main file"</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>当我们直接<strong>运行</strong><code>test.py</code>文件时：</p>
+<figure class="highlight c"><figcaption><span>cmd</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">python -m test</span><br><span class="line"></span><br><span class="line">This line will always be printed</span><br><span class="line">This line only printed <span class="keyword">if</span> the Module is executed as main file</span><br></pre></td></tr></tbody></table></figure>
+<p>而我们通过<strong>导入</strong>执行文件时：<br></p><figure class="highlight python"><figcaption><span>C:\Users\Administrator>python</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">>>> </span><span class="keyword">import</span> test</span><br><span class="line">This line will always be printed</span><br><span class="line">>>></span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="import"><a href="#import" class="headerlink" title="import"></a>import</h4><blockquote>
+<p>导入的更多信息</p>
+</blockquote>
+<p>模块可以导入其它模块。习惯上但不要求把所有<strong>import</strong>语句放在模块（或脚本）的开头</p>
+<div class="note info">
+            <p>每个模块都有它自己的<strong>私有符号表(private symbol table)</strong>，该表用作模块中定义的所有函数的全局符号表。因此，模块的作者可以在模块内使用全局变量，而不必担心与用户的全局变量发生意外冲突。<code>modname.itemname</code></p>
+          </div>
+<p><strong>import</strong>语句有一个变体，它可以把名字从一个被调模块内直接导入到现模块的符号表里</p>
+<hr>
+<h3 id="📌Tips"><a href="#📌Tips" class="headerlink" title="📌Tips"></a>📌Tips</h3><blockquote>
+<p>python技巧</p>
+</blockquote>
+<h4 id="Zip"><a href="#Zip" class="headerlink" title="Zip"></a>Zip</h4><blockquote>
+<p>打包</p>
+</blockquote>
+<p>将对象中对应的元素打包成一个个<strong>元组</strong>，然后返回由这些元组组成的<strong>列表</strong>,如果各个迭代器的元素个数不一致，则返回列表长度与<strong>最短</strong>的对象相同<br>利用 <code>*</code>号操作符，可以将元组解压为列表</p>
+<div class="note info">
+            <p><strong>zip</strong>方法在<strong>Python 2</strong>和<strong>Python 3</strong>中的不同：在 <strong>Python 3.x</strong>中为了减少内存<code>zip()</code>返回的是一个对象。如需展示列表，需手动<code>list()</code>转换。</p>
+          </div>
+<p>例如：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">b = [<span class="string">"A"</span>, <span class="string">"B"</span>, <span class="string">"C"</span>, <span class="string">"D"</span>]</span><br><span class="line"></span><br><span class="line">zipped = zip(a,b)</span><br><span class="line">print(list(zipped))</span><br><span class="line"><span class="comment">#result: [(0, 'A'), (1, 'B'), (2, 'C'), (3, 'D')]</span></span><br></pre></td></tr></tbody></table></figure>
+<hr>
+<h4 id="Dir"><a href="#Dir" class="headerlink" title="Dir"></a>Dir</h4><blockquote>
+<p>列出属性</p>
+</blockquote>
+<p><code>dir()</code>是python内置的函数。可以查看对象内所有的属性及方法。<br><code>dir()</code> 函数不带参数时，返回当前范围内的变量、方法和定义的类型列表；带参数时，返回参数的属性、方法列表</p>
+<p>例如：<br></p><figure class="highlight python"><figcaption><span>C:\Users\Administrator>python</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">>>> </span>dir()</span><br><span class="line">[<span class="string">'__annotations__'</span>, <span class="string">'__builtins__'</span>, <span class="string">'__doc__'</span>, <span class="string">'__loader__'</span>, <span class="string">'__name__'</span>, <span class="string">'__package__'</span>, <span class="string">'__spec__'</span>]</span><br><span class="line"><span class="meta">>>> </span>__name__</span><br><span class="line"><span class="string">'__main__'</span></span><br><span class="line"><span class="meta">>>> </span><span class="function"><span class="keyword">def</span> <span class="title">myFunction</span><span class="params">()</span>:</span></span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">>>> </span>a = <span class="number">0</span></span><br><span class="line"><span class="meta">>>> </span>dir()</span><br><span class="line">[<span class="string">'__annotations__'</span>, <span class="string">'__builtins__'</span>, <span class="string">'__doc__'</span>, <span class="string">'__loader__'</span>, <span class="string">'__name__'</span>, <span class="string">'__package__'</span>, <span class="string">'__spec__'</span>, <span class="string">'a'</span>, <span class="string">'myFunction'</span>]</span><br><span class="line"><span class="meta">>>> </span>dir(list)</span><br><span class="line">[<span class="string">'__add__'</span>, <span class="string">'__class__'</span>, <span class="string">'__contains__'</span>, <span class="string">'__delattr__'</span>, <span class="string">'__delitem__'</span>, <span class="string">'__dir__'</span>, <span class="string">'__doc__'</span>, <span class="string">'__eq__'</span>, <span class="string">'__format__'</span>, <span class="string">'__ge__'</span>, <span class="string">'__getattribute__'</span>, <span class="string">'__getitem__'</span>, <span class="string">'__gt__'</span>, <span class="string">'__hash__'</span>, <span class="string">'__iadd__'</span>, <span class="string">'__imul__'</span>, <span class="string">'__init__'</span>, <span class="string">'__init_subclass__'</span>, <span class="string">'__iter__'</span>, <span class="string">'__le__'</span>, <span class="string">'__len__'</span>, <span class="string">'__lt__'</span>, <span class="string">'__mul__'</span>, <span class="string">'__ne__'</span>, <span class="string">'__new__'</span>, <span class="string">'__reduce__'</span>, <span class="string">'__reduce_ex__'</span>, <span class="string">'__repr__'</span>, <span class="string">'__reversed__'</span>, <span class="string">'__rmul__'</span>, <span class="string">'__setattr__'</span>, <span class="string">'__setitem__'</span>, <span class="string">'__sizeof__'</span>, <span class="string">'__str__'</span>, <span class="string">'__subclasshook__'</span>, <span class="string">'append'</span>, <span class="string">'clear'</span>, <span class="string">'copy'</span>, <span class="string">'count'</span>, <span class="string">'extend'</span>, <span class="string">'index'</span>, <span class="string">'insert'</span>, <span class="string">'pop'</span>, <span class="string">'remove'</span>, <span class="string">'reverse'</span>, <span class="string">'sort'</span>]</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>当输入不带参数的<code>dir()</code>我们返回了一个空python带的所有属性，其中全局变量<code>__name__</code>我们肯定不陌生<br>接着我定义了一个函数<code>myFunction</code>和一个变量<code>a</code>，这时候我们再次使用<code>dir()</code>的时候，返回的列表中多了我们定义的<code>a</code>和<code>myFunction</code><br>最后我们查看python的<strong>list</strong>类，<code>dir()</code>列出了这个类的所有属性和方法，例如我们熟悉的<code>append</code>,<code>index</code>，<code>pop</code>…等</p>
+<hr>
+<h4 id="Global"><a href="#Global" class="headerlink" title="Global"></a>Global</h4><blockquote>
+<p>全局变量</p>
+</blockquote>
+<p><strong>函数(Function)</strong>定义了本地作用域，而<strong>模块(Module)</strong>定义的是全局作用域。<br>如果想要在函数内定义全局作用域，需要加上global修饰符。</p>
+<div class="note primary">
+            <p>引用全局变量时，不需要global声明；但是后面使用或者修改这个全局变量的时候，需要global声明</p>
+          </div>
+<p>例如，我们先试定义一个函数，直接引用一个全局变量：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">123</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printA</span><span class="params">()</span>:</span></span><br><span class="line">    print(a)</span><br><span class="line">    </span><br><span class="line">printA()</span><br><span class="line"></span><br><span class="line"><span class="comment">#result:123</span></span><br></pre></td></tr></tbody></table></figure>
+<div class="note success">
+            <p>运行结果是正常的，虽然我们定义的函数<code>pringtA</code>中没有定义变量<code>a</code>，但是我们还是打印出了变量<code>a</code>的值</p>
+          </div>
+<p>接着我们试着在函数中修改全局变量<code>a</code>:</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">123</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printA</span><span class="params">()</span>:</span></span><br><span class="line">    print(a)</span><br><span class="line">    a = <span class="number">321</span></span><br><span class="line">    print(a)</span><br><span class="line"></span><br><span class="line">printA()</span><br><span class="line"></span><br><span class="line"><span class="comment">#error: UnboundLocalError: local variable 'a' referenced before assignment</span></span><br></pre></td></tr></tbody></table></figure>
+<div class="note danger">
+            <p>这时候就会产生报错，说我们的局部变量<code>a</code>在赋值前被引用。说明这时候变量<code>a</code>已经被当成了该函数的局部变量</p>
+          </div>
+<p>最后我们使用<code>global</code>在函数内定义全局变量<code>a</code>:<br></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">123</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printA</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span>  a</span><br><span class="line">    print(a)</span><br><span class="line">    a = <span class="number">321</span></span><br><span class="line">    print(a)</span><br><span class="line"></span><br><span class="line">printA()</span><br><span class="line"></span><br><span class="line"><span class="string">'''result:</span></span><br><span class="line"><span class="string">123</span></span><br><span class="line"><span class="string">321</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<div class="note success">
+            <p>最后我们加上<code>global</code>声明全局变量<code>a</code>，这时候就不会报错，并且运行正常</p>
+          </div>
+<hr>
+<h4 id="单行for循环"><a href="#单行for循环" class="headerlink" title="单行for循环"></a>单行for循环</h4><figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mylist = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line">mylist2 = [i*<span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> mylist]</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> (mylist2)</span><br></pre></td></tr></tbody></table></figure>
+<hr>
+<h3 id="💻OS库"><a href="#💻OS库" class="headerlink" title="💻OS库"></a>💻OS库</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#创建Batch文件并运行</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"runManim.bat"</span>, <span class="string">"w"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    fileName = <span class="string">"myScenes.py"</span></span><br><span class="line">    className = <span class="string">"Formula"</span></span><br><span class="line"></span><br><span class="line">    f.write(<span class="string">"python -m manim {} {} -pl"</span>.format(fileName, className) )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">os.system(<span class="string">"runManim.bat"</span>)</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### 打开文件夹</span></span><br><span class="line"></span><br><span class="line">os.startfile(path)</span><br></pre></td></tr></tbody></table></figure>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Notes/" rel="tag"># Notes</a>
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/Advance/" rel="tag"># Advance</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Art/Ue4MaterialsNotes/" rel="next" title="UE4材质基础">
+                <i class="fa fa-chevron-left"></i> UE4材质基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">范子文</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:120416678@qq.com" title="E-Mail &rarr; mailto:120416678@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#📦Package"><span class="nav-number">1.</span> <span class="nav-text">📦Package</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Name"><span class="nav-number">1.1.</span> <span class="nav-text">Name</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#import"><span class="nav-number">1.2.</span> <span class="nav-text">import</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#📌Tips"><span class="nav-number">2.</span> <span class="nav-text">📌Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Zip"><span class="nav-number">2.1.</span> <span class="nav-text">Zip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dir"><span class="nav-number">2.2.</span> <span class="nav-text">Dir</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Global"><span class="nav-number">2.3.</span> <span class="nav-text">Global</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单行for循环"><span class="nav-number">2.4.</span> <span class="nav-text">单行for循环</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#💻OS库"><span class="nav-number">3.</span> <span class="nav-text">💻OS库</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">范子文</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+<script>
+if ($('body').find('pre.mermaid').length) {
+  $.ajax({
+    type: 'GET',
+    url: '//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js',
+    dataType: 'script',
+    cache: true,
+    success: function() {
+      mermaid.initialize({
+        theme: 'neutral',
+        logLevel: 3,
+        flowchart: { curve: 'linear' },
+        gantt: { axisFormat: '%m/%d/%Y' },
+        sequence: { actorMargin: 50 }
+      });
+    }
+  });
+}
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
