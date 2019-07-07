@@ -101,7 +101,7 @@
 
 
   <meta name="description" content="🌏基础介绍材质是用了一种特别的编程语言：高阶着色器语言(High Level Shading Language)简称HLSL 创建的。HLSL可以使材质直接和图形硬件通信，从而使美术和程序员直观的观察控制屏幕显示内容。Unreal Engine 4 (UE4)中用来创建材质球的材质节点包含着和HLSL一样的代码块，来实现和这些代码块相同的效果。  主材质节点(The Main Material">
-<meta name="keywords" content="Basic,Docs,UE4">
+<meta name="keywords" content="Docs,UE4,Basic">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UE4材质基础">
 <meta property="og:url" content="http://yoursite.com/Art/Ue4MaterialsNotes/index.html">
@@ -161,6 +161,10 @@
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialFunction9.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialFunction10.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialFunction11.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MatBlend.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MatBlend1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MatBlend2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MatBlend3.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/CreatingLayeredMaterials1.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/CreatingLayeredMaterials2.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/clipboard.png">
@@ -188,8 +192,25 @@
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/power1.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/clamp.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/clamp1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialAttr.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialAttr1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialAttr2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialAttr3.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialAttr4.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialAttr5.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialAttr6.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialAttr7.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialAttr8.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialAttr9.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialAttr10.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialAttr11.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialAttr12.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialAttr13.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialAttr14.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialAttr15.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialAttr16.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/debug0.png">
-<meta property="og:updated_time" content="2019-07-06T16:15:59.336Z">
+<meta property="og:updated_time" content="2019-07-07T15:43:07.113Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UE4材质基础">
 <meta name="twitter:description" content="🌏基础介绍材质是用了一种特别的编程语言：高阶着色器语言(High Level Shading Language)简称HLSL 创建的。HLSL可以使材质直接和图形硬件通信，从而使美术和程序员直观的观察控制屏幕显示内容。Unreal Engine 4 (UE4)中用来创建材质球的材质节点包含着和HLSL一样的代码块，来实现和这些代码块相同的效果。  主材质节点(The Main Material">
@@ -480,7 +501,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-07 00:15:59" itemprop="dateModified" datetime="2019-07-07T00:15:59+08:00">2019-07-07</time>
+                <time title="修改时间：2019-07-07 23:43:07" itemprop="dateModified" datetime="2019-07-07T23:43:07+08:00">2019-07-07</time>
               
             
           </span>
@@ -884,32 +905,85 @@ C[<b>小文</b>] -.-|修改身高| C1((两只手<br>两条腿<br>两个眼睛<br
           </div>
 <hr>
 <h2 id="🔨基础案例"><a href="#🔨基础案例" class="headerlink" title="🔨基础案例"></a>🔨基础案例</h2><p>在对材质球的基础有些了解后，就可以开始尝试制作一些简单的材质了(就像我们之前制作的<strong>M_Standard</strong>)。<br>在这一章里，将介绍<strong>Epic</strong>官方文档或者UE4引擎自带<strong>Content</strong>里一些简单的材质。简单的过一遍这些基础材质，对各个节点进一步了解后，再介绍一些项目里常用的材质的基本原理。</p>
+<hr>
 <h3 id="混合材质-CreatingLayeredMaterials"><a href="#混合材质-CreatingLayeredMaterials" class="headerlink" title="混合材质(CreatingLayeredMaterials)"></a>混合材质(CreatingLayeredMaterials)</h3><p>两种，或者多种材质的混合，是我们经常接触的材质。因为这种材质可以丰富材质的细节，不会显得贴图太过重复。<br>两种材质的混合，肯定要两种材质(或者多种)，然后就是一个<strong>Alpha</strong>或者叫<strong>Mask</strong>控制它们的混合，而<strong>Alpha</strong>就可以是一张<strong>灰度图</strong>，一种<strong>顶点色</strong>，或者一系列<strong>计算结果</strong>等等。这里我们就先用作为美术，最熟悉的一张<strong>灰度图</strong>来控制材质混合。</p>
 <div class="note primary">
-            <p>贴图的混合</p>
+            <p>贴图的混合对美术来说肯定不陌生，不管是<strong>PS</strong>还是<strong>Substance Painter</strong>甚至<strong>Substance Designer</strong>等等处理贴图的软件中，我们常常对贴图的混合进行处理。会用<strong>Mask</strong>和，贴图的叠加关系来实现想要的混合效果。</p>
           </div>
-<p><strong>核心节点：</strong></p>
+<p>当然，上述的处理逻辑也能帮我们实现材质混合，比如我们先通过<a href="#Lerp"><span class="label success"><b>lerp</b></span></a>将<strong>BaseColor</strong>进行混合叠加。</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MatBlend.jpg " class="full-image" style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>这样我们就混好了<strong>BaseColor</strong>，当然一个材质球一般不只有<strong>BaseColor</strong>，所以如果要用这个方法做出一个混合材质，我们就要和混<strong>BaseColor</strong>一样将<strong>Normal</strong>，<strong>Roughness</strong>等也进行混合：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MatBlend1.jpg " class="full-image" style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>这样我们就做了一个很简单的混合材质。而且混合逻辑也很简单，符合平时美术制作贴图的逻辑：</p>
+<pre class="mermaid" style="text-align: center;">            graph LR
+            
+M[ <b>主材质</b> ]
+B1[BaseColor混合]
+B2[Roughness混合]
+B3[Normal混合]
+bc1[BaseColro1]-.->B1
+bc2[BaseColro2]-.->B1
+R1[Roughness1]-.->B2
+R2[Roughness2]-.->B2
+N1[Normal1]-.->B3
+N2[Normal2]-.->B3
+
+B1-->M
+B2-->M
+B3-->M
+
+          </pre>
+<div class="note warning">
+            <p>但是这种混合有个问题就是<strong>不灵活</strong>，而且不方便<strong>复用</strong>。</p>
+          </div>
+<p>所以，还有一种常用的混合模式,先将贴图合成一个材质，在通过材质进行混合，就像下图一样：</p>
+<pre class="mermaid" style="text-align: center;">            graph LR
+            
+M[ <b>主材质</b> ]
+m1[材质1]
+m2[材质2]
+B[材质混合]
+
+bc1[BaseColro1]-.->m1
+bc2[BaseColro2]-.->m2
+R1[Roughness1]-.->m1
+R2[Roughness2]-.->m2
+N1[Normal1]-.->m1
+N2[Normal2]-.->m2
+
+m1-->B
+m2-->B
+
+B==>M
+
+          </pre>
+<p>如何像上述流程图一样实现这种混合方法，这就需要用到节点<a href="#MakeMaterialAttributes"><span class="label success"><b>MakeMaterialAttributes</b></span></a>先创建一个<strong>MaterialAttributes</strong>类型</p>
+<div class="note info">
+            <p>当制作<strong>Material</strong>过程中涉及制作<strong>材质</strong>时，就需要用到对于<strong>MaterialAttributes</strong>类型进行操作的节点(<a href="#MaterialAttributes">详情➡</a>)</p>
+          </div>
+<p>使用<a href="#MakeMaterialAttributes"><span class="label success"><b>MakeMaterialAttributes</b></span></a>分别创建两个<strong>MaterialAttributes</strong>，</p>
+<p>然后通过<span class="label info"><b>MatLayerBlend_Simple</b></span>将两个材质进行混合，最后输出到主材质节点：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MatBlend2.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note warning">
+            <p>当最后的输出类型是<strong>MaterialAttributes</strong>类型时，记得将<strong>Details</strong>面板上的材质设置，勾选<strong>Use Material Attributes</strong><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MatBlend3.jpg " class="full-image" style="max-width: none; width:50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+          </div>
+<hr>
+<p><del><strong>核心节点：</strong></del></p>
 <ul>
-<li><span class="label success"><b>MakeMaterialAttributes</b></span></li>
-<li><span class="label info"><b>MatLayerBlend_Simple</b></span>
-</li>
+<li><del><span class="label success"><b>MakeMaterialAttributes</b></span></del></li>
+<li><del><span class="label info"><b>MatLayerBlend_Simple</b></span></del></li>
 </ul>
-<p>创建两个<strong>MaterialFunctions</strong>：</p>
+<p><del>创建两个<strong>MaterialFunctions</strong>：</del></p>
 <ul>
-<li>第一个材质我们想定义两个参数，一个控制颜色，一个控制Normal强度。所以我们设置了两个输入一个三维数（向量）调节颜色，一个一维数（标量）调节Normal。然后通过<span class="label success"><b>MakeMaterialAttributes</b></span>输出一个MatAttributes类。</li>
+<li><del>第一个材质我们想定义两个参数，一个控制颜色，一个控制Normal强度。所以我们设置了两个输入一个三维数（向量）调节颜色，一个一维数（标量）调节Normal。然后通过<span class="label success"><b>MakeMaterialAttributes</b></span>输出一个MatAttributes类。</del></li>
 </ul>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\CreatingLayeredMaterials1.png " class="full-image" alt="MaterialFunctions" title="第一个材质" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\CreatingLayeredMaterials2.png " class="full-image" alt="MaterialFunctions" title="第二个材质" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<h3 id="凹凸加深-BumpOffset"><a href="#凹凸加深-BumpOffset" class="headerlink" title="凹凸加深(BumpOffset)"></a>凹凸加深(BumpOffset)</h3><p><strong>核心节点：</strong></p>
+<h3 id="凹凸加深-BumpOffset"><a href="#凹凸加深-BumpOffset" class="headerlink" title="凹凸加深(BumpOffset)"></a><del>凹凸加深(BumpOffset)</del></h3><p><del>核心节点：</del></p>
 <ul>
-<li><span class="label success"><b>BumpOffset</b></span>
-</li>
+<li><del><span class="label success"><b>BumpOffset</b></span></del></li>
 </ul>
-<span class="label success"><b>BumpOffset</b></span>材质节点是一个很省资源的而且相对有效的方法来体现材质凸起效果，而不需要通过3D模型上进行凸起的变化。
-但是就像Normal效果一样，这种凸起效果是一种视觉错觉，所以当摄像机视角平行于物体表面时，凹凸效果就会消失。
-
-
-
+<p><del><span class="label success"><b>BumpOffset</b></span>材质节点是一个很省资源的而且相对有效的方法来体现材质凸起效果，而不需要通过3D模型上进行凸起的变化。<br>但是就像Normal效果一样，这种凸起效果是一种视觉错觉，所以当摄像机视角平行于物体表面时，凹凸效果就会消失。</del></p>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\clipboard.png " class="full-image" alt="凹凸加深(BumpOffset)" title="BumpOffset" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <hr>
 <h2 id="🔥常用节点"><a href="#🔥常用节点" class="headerlink" title="🔥常用节点"></a>🔥常用节点</h2><h3 id="TextureSample"><a href="#TextureSample" class="headerlink" title="TextureSample"></a>TextureSample</h3><blockquote>
@@ -1218,6 +1292,80 @@ a_{3}b_{3}\\
             <p>我们会经常在很多材质里看到别人经常使用<span class="label success"><b>Clamp</b></span>，因为很多输入比如<strong>Roughness</strong>的取值是<code>[0-1]</code>,这是一个很好的习惯，而且合理的限制方便之后的运算。</p>
           </div>
 <hr>
+<h3 id="MaterialAttributes"><a href="#MaterialAttributes" class="headerlink" title="MaterialAttributes"></a>MaterialAttributes</h3><blockquote>
+<p>材质属性</p>
+</blockquote>
+<p>很常用的<strong>一类节点</strong>，一个<strong>材质</strong>里可能有多个<strong>子材质</strong>，或者需要用到某个材质的<strong>某个材质属性</strong>。而<strong>MaterialAttribute</strong>的一系列方法，可以通过<strong>Make</strong>，<strong>Break</strong>，<strong>Get</strong>和<strong>Set</strong>等方法<strong>创建</strong>，<strong>拆分</strong>，<strong>获取</strong>和<strong>设置</strong>一个材质。</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialAttr.jpg " class="full-image" title style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<h4 id="MakeMaterialAttributes"><a href="#MakeMaterialAttributes" class="headerlink" title="MakeMaterialAttributes"></a>MakeMaterialAttributes</h4><blockquote>
+<p>创建一个材质属性</p>
+</blockquote>
+<p>节点<span class="label success"><b>MakeMaterialAttributes</b></span>就和<strong>主材质节点</strong>一样，有很多材质属性例如：BaseColor，Metalic，Roughness…等等，其实它的功能也就跟主材质节点类似，创建一个完整的材质球。</p>
+<p>例如和创建<strong>Material</strong>一样连接节点<span class="label success"><b>MakeMaterialAttributes</b></span>：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialAttr1.jpg " class="full-image" title style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note info">
+            <p>我们经常右键节点通过<code>Start Previewing Node</code>来预览当前节点的效果，这时候我们可以右键<span class="label success"><b>MakeMaterialAttributes</b></span>看看效果</p>
+          </div>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialAttr2.jpg " class="full-image" title style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>通过预览节点，不难发现，显示出来的效果和一个最后连接到<strong>主材质节点</strong>的效果一样，是一个完整的材质球的效果。</p>
+<div class="note warning">
+            <p>通常右键节点预览的时候，显示的效果一般是<strong>无光模式(Unlit)</strong>,比如预览一张贴图：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialAttr3.jpg " class="full-image" title style="max-width: none; width:50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+          </div>
+<div class="note success">
+            <p>这样应该就可以理解为什么说<span class="label success"><b>MakeMaterialAttributes</b></span>节点输出的是一个完整的材质信息了吧</p>
+          </div>
+<p>然而，通过<span class="label success"><b>MakeMaterialAttributes</b></span>创建的这个材质，要如何连接到<strong>主材质节点</strong>呢？<br>节点<span class="label success"><b>MakeMaterialAttributes</b></span>只有一个输出<br>而<strong>主材质节点</strong>则有好几个输入</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialAttr4.jpg " class="full-image" title style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note primary">
+            <p>这时候我们就需要通过<strong>details 面板</strong>修改我们现在正在编辑的材质的<strong>材质属性</strong>，勾选<strong>Use Material Attributes</strong> </p>
+          </div>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialAttr5.jpg " class="full-image" title style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>如上图，当勾选<strong>details 面板</strong>上的<strong>Use Material Attributes</strong> 后，我们发现我们的<strong>主材质节点</strong>变成只有一个输入<strong>Material Attribute</strong>。<br>然后将<span class="label success"><b>MakeMaterialAttributes</b></span>的唯一输出连接上<strong>主材质节点</strong>的唯一输入，就完成了材质的创建：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialAttr6.jpg " class="full-image" title style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<h4 id="BreakMaterialAttributes"><a href="#BreakMaterialAttributes" class="headerlink" title="BreakMaterialAttributes"></a>BreakMaterialAttributes</h4><blockquote>
+<p>拆分材质属性</p>
+</blockquote>
+<p>上一小节，我们通过<strong>BaseColor</strong>，<strong>Roughness</strong>，<strong>Norml</strong>等信息，创建了一个<strong>材质属性</strong>。而<span class="label success"><b>BreakMaterialAttributes</b></span>就是通过一个<strong>材质属性</strong>拆分出所有的材质当个材质属性：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialAttr7.jpg " class="full-image" title style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note info">
+            <p>注意到上图，我在输出<strong>BaseColor</strong>，<strong>Norml</strong>等使用<span class="label success"><b>Multiply</b></span>乘了一个<code>1</code>,任何数乘<code>1</code>都是本身所以这个节点的作用只是为了预览显示输出，可以通过右边的<strong>倒三角</strong>预览：</p><p><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialAttr8.jpg " class="full-image" title style="max-width: none; width:35%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+          </div>
+<h4 id="SetMaterialAttributes"><a href="#SetMaterialAttributes" class="headerlink" title="SetMaterialAttributes"></a>SetMaterialAttributes</h4><blockquote>
+<p>设置材质属性</p>
+</blockquote>
+<p>节点<span class="label success"><b>SetMaterialAttributes</b></span>和节点<span class="label success"><b>MakeMaterialAttributes</b></span>很像，都是要输入一些材质属性创建一个材质。不同的是<span class="label success"><b>MakeMaterialAttributes</b></span>会暴露出所有材质属性，而<span class="label success"><b>SetMaterialAttributes</b></span>要自己添加希望设置的材质属性。</p>
+<p>和<span class="label success"><b>MakeMaterialAttributes</b></span>一样<span class="label success"><b>SetMaterialAttributes</b></span>只有一个输出，而且默认情况下只有一个输入<strong>MaterialAttributes</strong>。</p>
+<div class="note primary">
+            <p>材质的单个属性默认是全部关闭的，假如我要添加某个材质属性，则需要在<strong>Details面板</strong>中的<strong>Attribute Set Types</strong>通过点击<strong>加号</strong>添加</p>
+          </div>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialAttr9.jpg " class="full-image" alt title style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>当添加新的单个属性时，默认给我们添加了<strong>BaseColor</strong></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialAttr10.jpg " class="full-image" alt title style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>我们看到新加的单个属性有下拉菜单，可以让我们选择添加的当个属性是什么类型：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialAttr11.jpg " class="full-image" alt title style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>刚刚添加的单个属性为<strong>BaseColor</strong>不变，然后再添加两个属性，分别改为<strong>Roughness</strong>和<strong>Normal</strong>：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialAttr12.jpg " class="full-image" alt title style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>随后和在<strong>MakeMaterialAttributes</strong>一节中一样，我们把三张图连上，最后连接到<strong>主材质节点</strong>：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialAttr13.jpg " class="full-image" alt title style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note success">
+            <p>这样我们和使用<span class="label success"><b>MakeMaterialAttributes</b></span>一样，也创建了一个材质</p>
+          </div>
+<div class="note primary">
+            <p>但是这肯定不是<span class="label success"><b>SetMaterialAttributes</b></span>的主要作用，毕竟它的功能是<strong>Set</strong>而不是<strong>Make</strong>，所以一般是用来设置某个(或者几个)材质属。被修改或者添加的输入必须是<strong>MaterialAttribute</strong>类型，输入<span class="label success"><b>SetMaterialAttributes</b></span>的<strong>MaterialAttribute</strong></p>
+          </div>
+<p>例如之前我们用<span class="label success"><b>MakeMaterialAttributes</b></span>设置的材质，我们可以通过<strong>Set</strong>给它添加<strong>Metallic(金属性)</strong></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialAttr14.jpg " class="full-image" alt title style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>当然，还可以通过<strong>Set</strong>来修改材质属性，比如修改<strong>BaseColor</strong>：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialAttr15.jpg " class="full-image" alt title style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<h4 id="GetMaterialAttributes"><a href="#GetMaterialAttributes" class="headerlink" title="GetMaterialAttributes"></a>GetMaterialAttributes</h4><blockquote>
+<p>获取材质属性</p>
+</blockquote>
+<p>既然有设置<strong>Set</strong>自然就有获取<strong>Get</strong>。也和<span class="label success"><b>BreakMaterialAttributes</b></span>类似，只有一个输入<strong>MaterialAttribute</strong>类型。然后返回单个材质属性：basecolor,metallic,roughness…等等</p>
+<div class="note primary">
+            <p>与<span class="label success"><b>BreakMaterialAttributes</b></span>不一样的就是<span class="label success"><b>GetMaterialAttributes</b></span>返回的单个材质属性和<strong>Set</strong>一样需要自己设置。</p>
+          </div>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MaterialAttr16.jpg " class="full-image" alt title style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<hr>
 <h2 id="📋其他节点"><a href="#📋其他节点" class="headerlink" title="📋其他节点"></a>📋其他节点</h2><h3 id="Debug节点的使用"><a href="#Debug节点的使用" class="headerlink" title="Debug节点的使用"></a>Debug节点的使用</h3><p>Debug节点可以以数值的形式显示结果，这样可以帮助我们在完成一些计算后检查输出结果是否正确。</p>
 <ul>
 <li>右键，键入Debug，就可以看到相关节点</li>
@@ -1278,11 +1426,11 @@ a_{3}b_{3}\\
       
         <div class="post-tags">
           
-            <a href="/tags/Basic/" rel="tag"># Basic</a>
-          
             <a href="/tags/Docs/" rel="tag"># Docs</a>
           
             <a href="/tags/UE4/" rel="tag"># UE4</a>
+          
+            <a href="/tags/Basic/" rel="tag"># Basic</a>
           
         </div>
       
@@ -1481,7 +1629,7 @@ a_{3}b_{3}\\
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌏基础介绍"><span class="nav-number">1.</span> <span class="nav-text">🌏基础介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主材质节点-The-Main-Material-Node"><span class="nav-number">1.1.</span> <span class="nav-text">主材质节点(The Main Material Node)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节点的使用-Usage"><span class="nav-number">1.2.</span> <span class="nav-text">节点的使用(Usage)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例化材质-Material-Instance"><span class="nav-number">1.3.</span> <span class="nav-text">实例化材质(Material Instance)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类-Class"><span class="nav-number">1.3.1.</span> <span class="nav-text">类(Class)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#回到材质"><span class="nav-number">1.3.2.</span> <span class="nav-text">回到材质</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数-Parameter"><span class="nav-number">1.4.</span> <span class="nav-text">参数 (Parameter)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简单的标准材质"><span class="nav-number">1.4.1.</span> <span class="nav-text">简单的标准材质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加Tint和Roughness参数"><span class="nav-number">1.4.2.</span> <span class="nav-text">添加Tint和Roughness参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加Tiling参数"><span class="nav-number">1.4.3.</span> <span class="nav-text">添加Tiling参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加Normal参数"><span class="nav-number">1.4.4.</span> <span class="nav-text">添加Normal参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加开关"><span class="nav-number">1.4.5.</span> <span class="nav-text">添加开关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#整理参数"><span class="nav-number">1.4.6.</span> <span class="nav-text">整理参数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#描述-Comment"><span class="nav-number">1.5.</span> <span class="nav-text">描述(Comment)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#材质函数-Material-Function"><span class="nav-number">1.6.</span> <span class="nav-text">材质函数(Material Function)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔨基础案例"><span class="nav-number">2.</span> <span class="nav-text">🔨基础案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#混合材质-CreatingLayeredMaterials"><span class="nav-number">2.1.</span> <span class="nav-text">混合材质(CreatingLayeredMaterials)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#凹凸加深-BumpOffset"><span class="nav-number">2.2.</span> <span class="nav-text">凹凸加深(BumpOffset)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔥常用节点"><span class="nav-number">3.</span> <span class="nav-text">🔥常用节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TextureSample"><span class="nav-number">3.1.</span> <span class="nav-text">TextureSample</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TexCoord"><span class="nav-number">3.2.</span> <span class="nav-text">TexCoord</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Add-Subtract-Multiply-Divide"><span class="nav-number">3.3.</span> <span class="nav-text">Add, Subtract, Multiply, Divide</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Append"><span class="nav-number">3.4.</span> <span class="nav-text">Append</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lerp"><span class="nav-number">3.5.</span> <span class="nav-text">Lerp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ComponentMask"><span class="nav-number">3.6.</span> <span class="nav-text">ComponentMask</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StaticSwitchParameter"><span class="nav-number">3.7.</span> <span class="nav-text">StaticSwitchParameter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Power"><span class="nav-number">3.8.</span> <span class="nav-text">Power</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clamp"><span class="nav-number">3.9.</span> <span class="nav-text">Clamp</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📋其他节点"><span class="nav-number">4.</span> <span class="nav-text">📋其他节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Debug节点的使用"><span class="nav-number">4.1.</span> <span class="nav-text">Debug节点的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConstantBiasScale"><span class="nav-number">4.2.</span> <span class="nav-text">ConstantBiasScale</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌏基础介绍"><span class="nav-number">1.</span> <span class="nav-text">🌏基础介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主材质节点-The-Main-Material-Node"><span class="nav-number">1.1.</span> <span class="nav-text">主材质节点(The Main Material Node)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节点的使用-Usage"><span class="nav-number">1.2.</span> <span class="nav-text">节点的使用(Usage)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例化材质-Material-Instance"><span class="nav-number">1.3.</span> <span class="nav-text">实例化材质(Material Instance)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类-Class"><span class="nav-number">1.3.1.</span> <span class="nav-text">类(Class)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#回到材质"><span class="nav-number">1.3.2.</span> <span class="nav-text">回到材质</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数-Parameter"><span class="nav-number">1.4.</span> <span class="nav-text">参数 (Parameter)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简单的标准材质"><span class="nav-number">1.4.1.</span> <span class="nav-text">简单的标准材质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加Tint和Roughness参数"><span class="nav-number">1.4.2.</span> <span class="nav-text">添加Tint和Roughness参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加Tiling参数"><span class="nav-number">1.4.3.</span> <span class="nav-text">添加Tiling参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加Normal参数"><span class="nav-number">1.4.4.</span> <span class="nav-text">添加Normal参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加开关"><span class="nav-number">1.4.5.</span> <span class="nav-text">添加开关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#整理参数"><span class="nav-number">1.4.6.</span> <span class="nav-text">整理参数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#描述-Comment"><span class="nav-number">1.5.</span> <span class="nav-text">描述(Comment)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#材质函数-Material-Function"><span class="nav-number">1.6.</span> <span class="nav-text">材质函数(Material Function)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔨基础案例"><span class="nav-number">2.</span> <span class="nav-text">🔨基础案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#混合材质-CreatingLayeredMaterials"><span class="nav-number">2.1.</span> <span class="nav-text">混合材质(CreatingLayeredMaterials)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#凹凸加深-BumpOffset"><span class="nav-number">2.2.</span> <span class="nav-text">凹凸加深(BumpOffset)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔥常用节点"><span class="nav-number">3.</span> <span class="nav-text">🔥常用节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TextureSample"><span class="nav-number">3.1.</span> <span class="nav-text">TextureSample</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TexCoord"><span class="nav-number">3.2.</span> <span class="nav-text">TexCoord</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Add-Subtract-Multiply-Divide"><span class="nav-number">3.3.</span> <span class="nav-text">Add, Subtract, Multiply, Divide</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Append"><span class="nav-number">3.4.</span> <span class="nav-text">Append</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lerp"><span class="nav-number">3.5.</span> <span class="nav-text">Lerp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ComponentMask"><span class="nav-number">3.6.</span> <span class="nav-text">ComponentMask</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StaticSwitchParameter"><span class="nav-number">3.7.</span> <span class="nav-text">StaticSwitchParameter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Power"><span class="nav-number">3.8.</span> <span class="nav-text">Power</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clamp"><span class="nav-number">3.9.</span> <span class="nav-text">Clamp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MaterialAttributes"><span class="nav-number">3.10.</span> <span class="nav-text">MaterialAttributes</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MakeMaterialAttributes"><span class="nav-number">3.10.1.</span> <span class="nav-text">MakeMaterialAttributes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BreakMaterialAttributes"><span class="nav-number">3.10.2.</span> <span class="nav-text">BreakMaterialAttributes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SetMaterialAttributes"><span class="nav-number">3.10.3.</span> <span class="nav-text">SetMaterialAttributes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GetMaterialAttributes"><span class="nav-number">3.10.4.</span> <span class="nav-text">GetMaterialAttributes</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📋其他节点"><span class="nav-number">4.</span> <span class="nav-text">📋其他节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Debug节点的使用"><span class="nav-number">4.1.</span> <span class="nav-text">Debug节点的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConstantBiasScale"><span class="nav-number">4.2.</span> <span class="nav-text">ConstantBiasScale</span></a></li></ol></li></ol></div>
             
 
           </div>
