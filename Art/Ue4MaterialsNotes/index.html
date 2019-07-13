@@ -101,7 +101,7 @@
 
 
   <meta name="description" content="🌏基础介绍材质是用了一种特别的编程语言：高阶着色器语言(High Level Shading Language)简称HLSL 创建的。HLSL可以使材质直接和图形硬件通信，从而使美术和程序员直观的观察控制屏幕显示内容。Unreal Engine 4 (UE4)中用来创建材质球的材质节点包含着和HLSL一样的代码块，来实现和这些代码块相同的效果。  主材质节点(The Main Material">
-<meta name="keywords" content="Docs,UE4,Basic">
+<meta name="keywords" content="Basic,Docs,UE4">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UE4材质基础">
 <meta property="og:url" content="http://yoursite.com/Art/Ue4MaterialsNotes/index.html">
@@ -165,9 +165,32 @@
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MatBlend1.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MatBlend2.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MatBlend3.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MatBlend4.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MatBlend5.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MatAttrFunction.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MatAttrFunction3.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MatAttrFunction1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MatAttrFunction2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MatAttrFunction4.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MatAttrFunction5.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MatAttrFunction6.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MatAttrFunction7.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MatAttrFunction8.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MatAttrFunction9.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MatAttrFunction10.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/CreatingLayeredMaterials1.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/CreatingLayeredMaterials2.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/SnowMatBlend.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/clipboard.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/DetailTex.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/DetailTex1.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/DetailTex2.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/Fresnel.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/Fresnel1.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/Fresnel2.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/Fresnel3.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/Fresnel4.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/Fresnel5.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/TextureSample.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/TexCoord.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/TexCoord2.jpg">
@@ -192,6 +215,11 @@
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/power1.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/clamp.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/clamp1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/WorldPosition.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/WorldPosition1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/WorldPosition2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/CameraPosition.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/CameraPosition1.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialAttr.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialAttr1.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialAttr2.jpg">
@@ -210,7 +238,9 @@
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialAttr15.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/MaterialAttr16.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/debug0.png">
-<meta property="og:updated_time" content="2019-07-07T15:43:07.113Z">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/FuzzyShading.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/FuzzyShading1.jpg">
+<meta property="og:updated_time" content="2019-07-13T06:38:50.546Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UE4材质基础">
 <meta name="twitter:description" content="🌏基础介绍材质是用了一种特别的编程语言：高阶着色器语言(High Level Shading Language)简称HLSL 创建的。HLSL可以使材质直接和图形硬件通信，从而使美术和程序员直观的观察控制屏幕显示内容。Unreal Engine 4 (UE4)中用来创建材质球的材质节点包含着和HLSL一样的代码块，来实现和这些代码块相同的效果。  主材质节点(The Main Material">
@@ -501,7 +531,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-07 23:43:07" itemprop="dateModified" datetime="2019-07-07T23:43:07+08:00">2019-07-07</time>
+                <time title="修改时间：2019-07-13 14:38:50" itemprop="dateModified" datetime="2019-07-13T14:38:50+08:00">2019-07-13</time>
               
             
           </span>
@@ -906,7 +936,7 @@ C[<b>小文</b>] -.-|修改身高| C1((两只手<br>两条腿<br>两个眼睛<br
 <hr>
 <h2 id="🔨基础案例"><a href="#🔨基础案例" class="headerlink" title="🔨基础案例"></a>🔨基础案例</h2><p>在对材质球的基础有些了解后，就可以开始尝试制作一些简单的材质了(就像我们之前制作的<strong>M_Standard</strong>)。<br>在这一章里，将介绍<strong>Epic</strong>官方文档或者UE4引擎自带<strong>Content</strong>里一些简单的材质。简单的过一遍这些基础材质，对各个节点进一步了解后，再介绍一些项目里常用的材质的基本原理。</p>
 <hr>
-<h3 id="混合材质-CreatingLayeredMaterials"><a href="#混合材质-CreatingLayeredMaterials" class="headerlink" title="混合材质(CreatingLayeredMaterials)"></a>混合材质(CreatingLayeredMaterials)</h3><p>两种，或者多种材质的混合，是我们经常接触的材质。因为这种材质可以丰富材质的细节，不会显得贴图太过重复。<br>两种材质的混合，肯定要两种材质(或者多种)，然后就是一个<strong>Alpha</strong>或者叫<strong>Mask</strong>控制它们的混合，而<strong>Alpha</strong>就可以是一张<strong>灰度图</strong>，一种<strong>顶点色</strong>，或者一系列<strong>计算结果</strong>等等。这里我们就先用作为美术，最熟悉的一张<strong>灰度图</strong>来控制材质混合。</p>
+<h3 id="混合材质"><a href="#混合材质" class="headerlink" title="混合材质"></a>混合材质</h3><p>两种，或者多种材质的混合，是我们经常接触的材质。因为这种材质可以丰富材质的细节，不会显得贴图太过重复。<br>两种材质的混合，肯定要两种材质(或者多种)，然后就是一个<strong>Alpha</strong>或者叫<strong>Mask</strong>控制它们的混合，而<strong>Alpha</strong>就可以是一张<strong>灰度图</strong>，一种<strong>顶点色</strong>，或者一系列<strong>计算结果</strong>等等。这里我们就先用作为美术，最熟悉的一张<strong>灰度图</strong>来控制材质混合。</p>
 <div class="note primary">
             <p>贴图的混合对美术来说肯定不陌生，不管是<strong>PS</strong>还是<strong>Substance Painter</strong>甚至<strong>Substance Designer</strong>等等处理贴图的软件中，我们常常对贴图的混合进行处理。会用<strong>Mask</strong>和，贴图的叠加关系来实现想要的混合效果。</p>
           </div>
@@ -967,25 +997,185 @@ B==>M
 <div class="note warning">
             <p>当最后的输出类型是<strong>MaterialAttributes</strong>类型时，记得将<strong>Details</strong>面板上的材质设置，勾选<strong>Use Material Attributes</strong><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MatBlend3.jpg " class="full-image" style="max-width: none; width:50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
           </div>
+<div class="note info">
+            <p><span class="label info"><b>MatLayerBlend_Simple</b></span>是官方<strong>材质函数(Material Function)</strong>,正如名字一样是一种简单的材质混合，如果好奇，可以双击进去看看里面的连接逻辑：</p><p><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MatBlend4.jpg " class="full-image" style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p><p>如果看过<a href="#MaterialAttributes"><strong>MaterialAttributes</strong></a>一节就会发现里面的逻辑真的很简单，只是将两个材质进行<strong>Break</strong>然后将两个材质的<strong>BaseColor</strong>,<strong>Metallic</strong>,<strong>Roughness</strong>和<strong>EmissiveColor</strong>通过输入的<strong>Alpha</strong>进行混合，再重新<strong>Make</strong>一个新材质，最后输出。</p><p>官方提供了很多种材质混合模式，只要右键输入<strong>MatlayerBledn</strong>就可以进行查找，有兴趣的可以进行尝试，点进去看看它们的逻辑：</p><p><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MatBlend5.jpg " class="full-image" style="max-width: none; width:35%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p><p>除了<span class="label info"><b>MatLayerBlend_Simple</b></span>以外，还有非常常用的混合模式<span class="label info"><b>MatLayerBlend_Standard</b></span>。这种混合模式也如名字一样<strong>标准混合(Standard)</strong>就是两个材质的<strong>所有属性</strong>都会进行混合。</p>
+          </div>
 <hr>
-<p><del><strong>核心节点：</strong></del></p>
+<h3 id="创建材质属性函数"><a href="#创建材质属性函数" class="headerlink" title="创建材质属性函数"></a>创建材质属性函数</h3><p>接着<strong>混合材质</strong>一节。我们上节提到，分别对贴图进行混合的材质混合，<strong>不灵活</strong>，而且不方便<strong>复用</strong>。<br>所以我们创建了<strong>MaterialAttributes</strong>类型，使材质进行混合。但是这样也不足以体现它的<strong>灵活</strong>和方便<strong>复用</strong>，这里是因为我们需要搭配<strong>材质函数(MaterialFunction)</strong>才能体现这一特性。</p>
+<p>我们先回到我们之前创建的<strong>M_Standard</strong>材质</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MatAttrFunction.jpg " class="full-image" style="max-width: none; width:100%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>上图是我们之前的做的<strong>M_Standard</strong>材质。我们将重新用到它<br>新建一个<strong>材质函数(Material Function)</strong>,命名为<code>MF_Standard</code><br></p><div class="note warning">
+            <p>记得<strong>材质函数(Material Function)</strong>的命名前缀是<code>MF</code>,与前缀<code>M</code>的<strong>材质(Material)</strong>区分开</p>
+          </div><p></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MatAttrFunction3.jpg " class="full-image" style="max-width: none; width:20%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>然后将<strong>M_Standard</strong>里的节点(除了<strong>主材质节点</strong>)全部复制到新建的<strong>材质函数(Material Function)</strong>:<code>MF_Standard</code></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MatAttrFunction1.jpg " class="full-image" style="max-width: none; width:100%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>然后使用节点<a href="#MakeMaterialAttributes"><span class="label success"><b>MakeMaterialAttributes</b></span></a>，照着<strong>M_Standard</strong>中的连法，将材质还原成<strong>MaterialAttributes</strong>类型，最后将输出连入材质函数的<strong>Output Result</strong>：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MatAttrFunction2.jpg " class="full-image" style="max-width: none; width:100%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>这个时候我们就会发现，左上角的<strong>预览视口</strong>就已经有材质球的效果了，而且效果和<strong>M_Standard</strong>一模一样。</p>
+<div class="note warning">
+            <p>做这样一个<strong>材质函数</strong>有什么用呢？</p>
+          </div>
+<div class="note success">
+            <p>我们创建一个这样的材质函数，当然就是希望它可以跟一个<strong>函数(Function)</strong>一样可以<strong>灵活复用</strong></p>
+          </div>
+<p>先举一个简单的例子：</p>
+<h4 id="创建不同属性材质"><a href="#创建不同属性材质" class="headerlink" title="创建不同属性材质"></a>创建不同属性材质</h4><p>之前说过，在<strong>Material</strong>编辑器中的<strong>Details</strong>面板中有很多对于材质球的属性设置。<strong>Blend Mode(混合模式)</strong>，<strong>Shading Model(着色模式)</strong>,<strong>Tessellation(曲面细分)</strong>等等…</p>
+<p>这些属性在我们编写材质的时候就会设置好，我们而且这些属性是不能通过<strong>Parameter(参数)</strong>进行调整的，所以一般来说<strong>Instance(材质实例)</strong>的材质属性会跟母材质一样。这个时候如果需要一个不一样<strong>属性</strong>但是<strong>效果</strong>一样的材质，可能就要复制出一个新的<strong>母材质</strong>，而只修改其<strong>Details</strong>面板上的属性。</p>
+<div class="note warning">
+            <p>有些<strong>Details</strong>上的材质球属性是可以在<strong>Instance</strong>材质里进行<strong>重写</strong>的，比如我们之前做的<strong>M_Standard</strong>的<strong>Instance</strong>材质<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MatAttrFunction4.jpg " class="full-image" style="max-width: none; width:35%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p><p>在它的<strong>Details</strong>面板中<strong>General</strong>下的<strong>Material Property Overrides</strong>，就是<strong>重写</strong>材质球属性，在这里可以修改<strong>Blend Mode(混合模式)</strong>，<strong>Shading Model(着色模式)</strong>，<strong>Two Sided(双面显示)</strong>等等。在这里修改材质球属性，不会影响<strong>母材质</strong>的材质球属性</p>
+          </div>
+<p>但是除了<strong>Material Property Overrides</strong>中列出的属性，其他属性则不能通过上述方法<strong>重写</strong><br>假如我要一个同样效果的<strong>高质量反射(High Quality Reflections)</strong>材质呢？<br>假如我要创建一个带<strong>Tessellation(曲面细分)</strong>的标准材质呢？</p>
 <ul>
-<li><del><span class="label success"><b>MakeMaterialAttributes</b></span></del></li>
-<li><del><span class="label info"><b>MatLayerBlend_Simple</b></span></del></li>
+<li><strong>高质量反射(High Quality Reflections)</strong></li>
 </ul>
-<p><del>创建两个<strong>MaterialFunctions</strong>：</del></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MatAttrFunction5.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <ul>
-<li><del>第一个材质我们想定义两个参数，一个控制颜色，一个控制Normal强度。所以我们设置了两个输入一个三维数（向量）调节颜色，一个一维数（标量）调节Normal。然后通过<span class="label success"><b>MakeMaterialAttributes</b></span>输出一个MatAttributes类。</del></li>
+<li><strong>Tessellation(曲面细分)标准材质</strong></li>
 </ul>
-<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\CreatingLayeredMaterials1.png " class="full-image" alt="MaterialFunctions" title="第一个材质" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\CreatingLayeredMaterials2.png " class="full-image" alt="MaterialFunctions" title="第二个材质" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<h3 id="凹凸加深-BumpOffset"><a href="#凹凸加深-BumpOffset" class="headerlink" title="凹凸加深(BumpOffset)"></a><del>凹凸加深(BumpOffset)</del></h3><p><del>核心节点：</del></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MatAttrFunction6.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>就是这样简单，只要将我们之前做的<strong>MF_Standard</strong>拖进去，将主节点改成<strong>MaterialsAttributes</strong>类型连接上，然后修改<strong>Details</strong>面板上的属性就完成了一个新的材质。</p>
+<div class="note primary">
+            <p>新建的两个材质，它们的<strong>Instance</strong>会和之前<strong>M_Standard</strong>材质创建出的<strong>Instance</strong>有着一样的<strong>效果</strong>和一样的调节<strong>参数</strong>。而且如果之后需要完善<strong>标准材质</strong>的时候，只要修改<strong>材质函数</strong> <strong>MF_Standard</strong> 就同时修改了<strong>引用</strong>它的高反射材质<strong>M_StandardHQR</strong>和带曲面细分的<strong>M_StandardTessll</strong></p>
+          </div>
+<h4 id="添加附加功能"><a href="#添加附加功能" class="headerlink" title="添加附加功能"></a>添加附加功能</h4><blockquote>
+<p>通过<strong>MF_Standard</strong>创建一个发光材质</p>
+</blockquote>
+<p>这时候，我们想在我们的<strong>标准材质</strong>的基础上创建一个带发光功能的材质。<br>因为发光功能不常用，所以我不希望这个功能直接加到<strong>M_Standard</strong>里面，所以我打算新建一个材质球。<br>而且用我们刚刚创建的<strong>MF_Standard</strong></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MatAttrFunction7.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>通过<span class="label success"><b>SetMaterialAttributes</b></span>在<strong>MF_Standard</strong>中添加了<strong>EmissiveColor</strong>属性，其他的节点都见过，所以不再赘述，可以直接跟着上图一样连接就行。不过要注意将想修改的常量转为<strong>参数</strong>。</p>
+<p>这里我随便用了一张<strong>Mask</strong>，然后将发光的颜色，和强度转为可调整的参数</p>
+<video src="\videos\UE4MaterialsNotes\MatAttrFunction.mp4" preload="metadata" controls playsinline poster>Sorry, your browser does not support the video tag.</video><br>
+
+<div class="note info">
+            <p>注意的是，我们新建的发光材质的<strong>Instance</strong>同样有着<strong>M_Standard</strong>的可调<strong>参数</strong></p>
+          </div>
+<p>这样我们又通过材质函数<strong>MF_Standard</strong>很快的创建了一个新的且功能丰富的材质球</p>
+<hr>
+<h4 id="材质混合"><a href="#材质混合" class="headerlink" title="材质混合"></a>材质混合</h4><blockquote>
+<p>使用材质函数进行材质混合</p>
+</blockquote>
+<p>在之前的<a href="#混合材质"><strong>混合材质</strong></a>一节中，对<strong>混合材质</strong>有了初步了解。在那一节中提到过<strong>复用</strong>，这一节就实现<strong>复用</strong></p>
+<p>其实经过上面两个小例子，应该知道怎么做了。</p>
 <ul>
-<li><del><span class="label success"><b>BumpOffset</b></span></del></li>
+<li>回到混合材质<strong>M_MatBlend</strong></li>
+<li>将其中一个材质替换成<strong>MF_Standard</strong></li>
 </ul>
-<p><del><span class="label success"><b>BumpOffset</b></span>材质节点是一个很省资源的而且相对有效的方法来体现材质凸起效果，而不需要通过3D模型上进行凸起的变化。<br>但是就像Normal效果一样，这种凸起效果是一种视觉错觉，所以当摄像机视角平行于物体表面时，凹凸效果就会消失。</del></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MatAttrFunction8.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>顺便将名字改成<code>M_StandardBlend</code></p>
+<div class="note info">
+            <p>这里我留下了草的材质，当然甚至可以把草的材质也封装成一个<strong>材质函数(MaterialFunction)</strong>进行复用</p>
+          </div>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MatAttrFunction9.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>这样我们又通过材质函数，快速创建了一个混着草的标准材质</p>
+<hr>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>经过上面几个例子，其实还是在讲一个道理：<br></p><div class="note primary">
+            <p>如果有段节点需要经常<strong>复用</strong>，甚至是一个<strong>材质</strong>，都将其封装到一个<strong>函数</strong>里，方便反复调用<br>就像上面三个小节，我们反复使用一个<strong>材质函数</strong>:<strong>MF_Standard</strong>，就创建了多种<strong>标准材质</strong>：</p><p><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\MatAttrFunction10.jpg " class="full-image" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+          </div><p></p>
+<hr>
+<h3 id="积雪材质"><a href="#积雪材质" class="headerlink" title="积雪材质"></a>积雪材质</h3><p>在了解了<strong>混合材质</strong>，<strong>MaterialAttributes</strong>，<strong>材质函数</strong>创建材质后，就可以尝试一些其他的混合材质了</p>
+<p><strong>核心节点：</strong></p>
+<ul>
+<li><span class="label success"><b>MakeMaterialAttributes</b></span></li>
+<li><span class="label info"><b>MatLayerBlend_Simple</b></span></li>
+<li><span class="label info"><b>FuzzyShading</b></span></li>
+<li><span class="label info"><b>WorldAlignedBlend</b></span>
+</li>
+</ul>
+<p>创建两个<strong>MaterialFunctions</strong>：</p>
+<ul>
+<li>第一个材质我们想定义两个参数，一个控制颜色，一个控制Normal强度。然后通过<span class="label success"><b>MakeMaterialAttributes</b></span>输出一个<strong>MaterialAttributes类</strong>。</li>
+</ul>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\CreatingLayeredMaterials1.png " class="full-image" alt="MaterialFunctions" title="第一个材质" style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note info">
+            <p>因为这种类型的<strong>材质函数</strong>和里面的所有节点都介绍过了，这里就不再赘述了，照着上图连接就行</p>
+          </div>
+<div class="note warning">
+            <p>唯一要注意的是，这里有两个<span class="label danger"><b>FunctionInput</b></span>,上面的输入类型为<strong>Vector3(三维向量)</strong>用于输入<strong>RGB</strong>值控制贴图颜色。下面的输入类型为<strong>Scalar(标量)</strong>用于控制Normal强度<br>对于<span class="label danger"><b>FunctionInput</b></span>和材质函数中的<strong>Input(输入)</strong>，<strong>Out(输出)</strong>还不太理解的可以复习下<a href="#材质函数-Material-Function"><strong>材质函数(Material Function)</strong></a>一节</p>
+          </div>
+<ul>
+<li>接着创建第二个材质，一个简单的<strong>雪材质</strong></li>
+</ul>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\CreatingLayeredMaterials2.png " class="full-image" alt="MaterialFunctions" title="第二个材质" style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note info">
+            <p>这里有一个新节点<span class="label info"><b>FuzzyShading</b></span>，用来模拟类似<strong>天鹅绒</strong>或<strong>苔藓</strong>的效果。<a href="#FuzzyShading">(详情➡)</a><br>其它节点则很简单，可以跟着连就行</p>
+          </div>
+<ul>
+<li>最后将两个<strong>Material Function(材质函数)</strong>在一个<strong>Material(母材质)</strong>中通过<span class="label info"><b>MatLayerBlend_Simple</b></span>进行混合。</li>
+</ul>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\SnowMatBlend.png " class="full-image" title style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note primary">
+            <p>不过这里的混合用的<strong>Alpha</strong>不是一张贴图而是通过<span class="label info"><b>WorldAlignedBlend</b></span>节点，通过计算给定的<strong>世界向量</strong>(默认世界向量为垂直向上，也就是<strong>Z</strong>轴正方向)来计算模型<strong>法线</strong>与<strong>世界向量</strong>的<strong>夹角</strong>，输出一个<strong>Alpha</strong>。可以暂时先不了解这么多，在以后的<strong>进阶</strong>中会详细介绍这方面知识。现阶段只要像上图输入两个值进行控制。如果有兴趣可以尝试各个输入的效果。</p>
+          </div>
+<hr>
+<h3 id="凹凸加深"><a href="#凹凸加深" class="headerlink" title="凹凸加深"></a>凹凸加深</h3><blockquote>
+<p>BumpOffset</p>
+</blockquote>
+<p>核心节点：</p>
+<ul>
+<li><span class="label success"><b>BumpOffset</b></span>
+</li>
+</ul>
+<span class="label success"><b>BumpOffset</b></span>材质节点是一个很省资源的而且相对有效的方法来体现材质凸起效果，而不需要通过3D模型上进行凸起的变化。
+但是就像Normal效果一样，这种凸起效果是一种视觉错觉，所以当摄像机视角平行于物体表面时，凹凸效果就会消失。
+
+
+
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\clipboard.png " class="full-image" alt="凹凸加深(BumpOffset)" title="BumpOffset" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <hr>
+<h3 id="添加细节贴图"><a href="#添加细节贴图" class="headerlink" title="添加细节贴图"></a>添加细节贴图</h3><p>相当于叠加了一套贴图。下面的两种方法似乎没有什么差别（文档描述），但是第一种似乎省了那么一点点。<br>最后加了个跟随摄像机距离，切换这两套贴图。（弥补静距离观察时的精度不足）</p>
+<ul>
+<li><strong>方法一：</strong><span class="label info"><b>DetailTexturing</b></span></li>
+</ul>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\DetailTex.png " class="full-image" alt title style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<ul>
+<li><strong>方法二：</strong><span class="label success"><b>Add</b></span> & <span class="label success"><b>Multiply</b></span></li>
+</ul>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\DetailTex1.png " class="full-image" alt title style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<ul>
+<li><strong>PS：</strong>根据摄像机距离混合</li>
+</ul>
+<p><strong>核心节点：</strong></p>
+<ul>
+<li><span class="label danger"><b>AbsoluteWorldPosition</b></span></li>
+<li><span class="label danger"><b>CameraPosition</b></span></li>
+<li><span class="label success"><b>Distance</b></span>
+</li>
+</ul>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\DetailTex2.png " class="full-image" alt title style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note info">
+            <p>节点<span class="label danger"><b>AbsoluteWorldPosition</b></span>可以获取<strong>Shader</strong>位置信息<a href="#AbsoluteWorldPosition">(详情➡)</a><br>了解<span class="label danger"><b>AbsoluteWorldPosition</b></span>节点就同样了解<span class="label danger"><b>CameraPosition</b></span><a href="#CameraPosition">(详情➡)</a></p><p>而节点<span class="label success"><b>Distance</b></span>就很好理解，就是输入两个位置，然后返回两个位置直接的距离，在上图的例子中就是就算<strong>摄像机</strong>和<strong>Shader</strong>的位置。</p>
+          </div>
+<hr>
+<h3 id="菲涅尔反射"><a href="#菲涅尔反射" class="headerlink" title="菲涅尔反射"></a>菲涅尔反射</h3><p><strong>菲涅尔反射(Fresnel)</strong> 当法线直接指向相机时，输出值<code>0</code>。 当法线垂直于相机时，输出值<code>1</code>。 结果被限制为<code>[0,1]</code>，因此中心没有任何负色</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Fresnel.png " class="full-image" alt title style="max-width: none; width:35%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Fresnel1.png " class="full-image" alt title style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<ul>
+<li><strong>例一：</strong></li>
+</ul>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Fresnel2.png " class="full-image" alt title style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<ul>
+<li>效果：</li>
+</ul>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Fresnel3.png " class="full-image" alt title style="max-width: none; width:35%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<ul>
+<li><strong>例二：</strong></li>
+</ul>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Fresnel4.png " class="full-image" alt title style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<ul>
+<li>效果：<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\Fresnel5.png " class="full-image" alt title style="max-width: none; width:35%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+</li>
+</ul>
+<hr>
+<h2 id="🎉-阶段结束"><a href="#🎉-阶段结束" class="headerlink" title="🎉 阶段结束"></a>🎉 阶段结束</h2><div class="note success">
+            <p>至此，关于<strong>UE4材质</strong>的基础介绍结束了。<br>经过对基础的了解，不能说可以做出多酷炫丰富的<strong>Shader</strong>但是也有能力做一些常用的简单材质，而且有能力大致看懂别人的写的<strong>材质</strong></p>
+          </div>
+<div class="note primary">
+            <p>接下来想对<strong>UE4材质</strong>进行进一步的了解，最好的方法就是多去看看别人写的<strong>材质</strong><br>当然有些比较复杂的材质可能还需要一定的<strong>数学</strong>基础，可以选择性的提升这方面知识<br>最重要的还是保持强烈的好奇心和求知欲，对于一些有意思的<strong>Shader</strong>要有想了解其逻辑的强烈好奇。</p>
+          </div>
+<div class="note warning">
+            <p>这篇文档后面部分是对节点的单独介绍，大部分节点都在之前的章节中超链接过了。有兴趣可以往下看复习一遍。<br>后面的对节点单独介绍的内容还会持续进行更新补充。</p>
+          </div>
 <h2 id="🔥常用节点"><a href="#🔥常用节点" class="headerlink" title="🔥常用节点"></a>🔥常用节点</h2><h3 id="TextureSample"><a href="#TextureSample" class="headerlink" title="TextureSample"></a>TextureSample</h3><blockquote>
 <p>贴图采样,快捷键<code>T</code></p>
 </blockquote>
@@ -1292,6 +1482,35 @@ a_{3}b_{3}\\
             <p>我们会经常在很多材质里看到别人经常使用<span class="label success"><b>Clamp</b></span>，因为很多输入比如<strong>Roughness</strong>的取值是<code>[0-1]</code>,这是一个很好的习惯，而且合理的限制方便之后的运算。</p>
           </div>
 <hr>
+<h3 id="AbsoluteWorldPosition"><a href="#AbsoluteWorldPosition" class="headerlink" title="AbsoluteWorldPosition"></a>AbsoluteWorldPosition</h3><blockquote>
+<p>绝对世界位置</p>
+</blockquote>
+<p>节点<span class="label danger"><b>AbsoluteWorldPosition</b></span>可以获取<strong>Shader</strong>上每个像素的位置信息</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\WorldPosition.jpg " class="full-image" title style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note warning">
+            <p>预览窗口的<strong>Cube</strong>长宽高貌似为<strong>256</strong>个单位，所以相对于<strong>Cube</strong>的中心点(世界<code>(0,0,0)</code>坐标)，顶点坐标为<code>(128, 128, 128) (128, 128, -128) (128, -128, -128)...</code>等八个位置。所以如果直接右键预览<span class="label danger"><b>AbsoluteWorldPosition</b></span>或者连接在<strong>主材质节点</strong>的<strong>EmissiveColor</strong>上会出现爆亮的效果。</p>
+          </div>
+<div class="note primary">
+            <p>因为<strong>UE4</strong>的<strong>RGB</strong>取值在<code>0</code>到<code>1</code>如果小于等于<code>0</code>则为黑，大于<code>1</code>则会发光，数值越大，越亮。<br>但主材质节点的大部分输入都会限制输入的值在<code>0</code>到<code>1</code>，比如输入一个<code>(100,100,100)</code>的值到<strong>BaseColor</strong>上也只会显示成<code>(1,1,1)</code>白色的效果</p>
+          </div>
+<div class="note success">
+            <p>所以这里通过<span class="label sunccess"><b>Divide</b></span>除以<code>128</code>压缩到<code>(1, 1, 1) (1, 1, -1) (1, -1, -1)...</code>就会看到如下图对应颜色</p>
+          </div>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\WorldPosition1.jpg " class="full-image" title style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note primary">
+            <p>而最主要的是要通过它显示的颜色理解它表示的<strong>数值</strong><br>下图列出我们能见到的6个顶点的<strong>位置信息</strong>(除以<code>128</code>后)<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\WorldPosition2.jpg " class="full-image" title style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+          </div>
+<hr>
+<h3 id="CameraPosition"><a href="#CameraPosition" class="headerlink" title="CameraPosition"></a>CameraPosition</h3><blockquote>
+<p>摄像机位置</p>
+</blockquote>
+<p>上节介绍的节点<span class="label danger"><b>AbsoluteWorldPosition</b></span>，如果理解了它的作用，就同样理解了<span class="label danger"><b>CameraPosition</b></span>，就是此时此刻摄像机的位置</p>
+<p>我们可以通过<strong>Debug</strong>节点<span class="label info"><b>DebugFloat3Values</b></span>来查看详细数值：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\CameraPosition.jpg " class="full-image" title style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>上图的意思就是说我们摄像机的位置在世界坐标<code>(x=59.96,y=436.24,z=242.28)</code>的位置，通过右下角的坐标轴我们可以看到我们确实在<strong>Y</strong>轴的正方向，所以<strong>Y</strong>轴值(绿色的值)较大。</p>
+<p>我们可以随意转动镜头，观察上面的数值变化，就好比我接着将摄像机转动到<strong>Y</strong>轴负方向，就可以看到<strong>Y</strong>轴的值为负数</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\CameraPosition1.jpg " class="full-image" title style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<hr>
 <h3 id="MaterialAttributes"><a href="#MaterialAttributes" class="headerlink" title="MaterialAttributes"></a>MaterialAttributes</h3><blockquote>
 <p>材质属性</p>
 </blockquote>
@@ -1385,6 +1604,46 @@ a_{3}b_{3}\\
 </ul>
 <p><strong>用法：</strong></p>
 <video src="\videos\UE4MaterialsNotes\debug.mp4" preload="metadata" controls playsinline poster>Sorry, your browser does not support the video tag.</video>
+<hr>
+<h3 id="FuzzyShading"><a href="#FuzzyShading" class="headerlink" title="FuzzyShading"></a>FuzzyShading</h3><p>官方自带的<strong>材质函数</strong><br>用来模拟类似<strong>天鹅绒</strong>或<strong>苔藓</strong>的效果,其实跟<strong>菲涅尔反射</strong>的原理是一样的</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\FuzzyShading.jpg " class="full-image" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Input</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>BaseColor</strong></td>
+<td style="text-align:left">输入颜色</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Normal</strong></td>
+<td style="text-align:left">输入<strong>Normal</strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>CoreDarkness</strong></td>
+<td style="text-align:left">中心黑色范围</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Power</strong></td>
+<td style="text-align:left">类似调整对比度</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>EdgeBrightness</strong></td>
+<td style="text-align:left">边缘亮度</td>
+</tr>
+</tbody>
+</table>
+</div>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4MaterialsNotes\FuzzyShading1.jpg " class="full-image" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note info">
+            <p>可以自己尝试各个输入的效果，当然感兴趣的可以点进去查看里面逻辑</p>
+          </div>
+<hr>
 <h3 id="ConstantBiasScale"><a href="#ConstantBiasScale" class="headerlink" title="ConstantBiasScale"></a>ConstantBiasScale</h3><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1426,11 +1685,11 @@ a_{3}b_{3}\\
       
         <div class="post-tags">
           
+            <a href="/tags/Basic/" rel="tag"># Basic</a>
+          
             <a href="/tags/Docs/" rel="tag"># Docs</a>
           
             <a href="/tags/UE4/" rel="tag"># UE4</a>
-          
-            <a href="/tags/Basic/" rel="tag"># Basic</a>
           
         </div>
       
@@ -1629,7 +1888,7 @@ a_{3}b_{3}\\
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌏基础介绍"><span class="nav-number">1.</span> <span class="nav-text">🌏基础介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主材质节点-The-Main-Material-Node"><span class="nav-number">1.1.</span> <span class="nav-text">主材质节点(The Main Material Node)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节点的使用-Usage"><span class="nav-number">1.2.</span> <span class="nav-text">节点的使用(Usage)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例化材质-Material-Instance"><span class="nav-number">1.3.</span> <span class="nav-text">实例化材质(Material Instance)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类-Class"><span class="nav-number">1.3.1.</span> <span class="nav-text">类(Class)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#回到材质"><span class="nav-number">1.3.2.</span> <span class="nav-text">回到材质</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数-Parameter"><span class="nav-number">1.4.</span> <span class="nav-text">参数 (Parameter)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简单的标准材质"><span class="nav-number">1.4.1.</span> <span class="nav-text">简单的标准材质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加Tint和Roughness参数"><span class="nav-number">1.4.2.</span> <span class="nav-text">添加Tint和Roughness参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加Tiling参数"><span class="nav-number">1.4.3.</span> <span class="nav-text">添加Tiling参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加Normal参数"><span class="nav-number">1.4.4.</span> <span class="nav-text">添加Normal参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加开关"><span class="nav-number">1.4.5.</span> <span class="nav-text">添加开关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#整理参数"><span class="nav-number">1.4.6.</span> <span class="nav-text">整理参数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#描述-Comment"><span class="nav-number">1.5.</span> <span class="nav-text">描述(Comment)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#材质函数-Material-Function"><span class="nav-number">1.6.</span> <span class="nav-text">材质函数(Material Function)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔨基础案例"><span class="nav-number">2.</span> <span class="nav-text">🔨基础案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#混合材质-CreatingLayeredMaterials"><span class="nav-number">2.1.</span> <span class="nav-text">混合材质(CreatingLayeredMaterials)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#凹凸加深-BumpOffset"><span class="nav-number">2.2.</span> <span class="nav-text">凹凸加深(BumpOffset)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔥常用节点"><span class="nav-number">3.</span> <span class="nav-text">🔥常用节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TextureSample"><span class="nav-number">3.1.</span> <span class="nav-text">TextureSample</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TexCoord"><span class="nav-number">3.2.</span> <span class="nav-text">TexCoord</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Add-Subtract-Multiply-Divide"><span class="nav-number">3.3.</span> <span class="nav-text">Add, Subtract, Multiply, Divide</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Append"><span class="nav-number">3.4.</span> <span class="nav-text">Append</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lerp"><span class="nav-number">3.5.</span> <span class="nav-text">Lerp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ComponentMask"><span class="nav-number">3.6.</span> <span class="nav-text">ComponentMask</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StaticSwitchParameter"><span class="nav-number">3.7.</span> <span class="nav-text">StaticSwitchParameter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Power"><span class="nav-number">3.8.</span> <span class="nav-text">Power</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clamp"><span class="nav-number">3.9.</span> <span class="nav-text">Clamp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MaterialAttributes"><span class="nav-number">3.10.</span> <span class="nav-text">MaterialAttributes</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MakeMaterialAttributes"><span class="nav-number">3.10.1.</span> <span class="nav-text">MakeMaterialAttributes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BreakMaterialAttributes"><span class="nav-number">3.10.2.</span> <span class="nav-text">BreakMaterialAttributes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SetMaterialAttributes"><span class="nav-number">3.10.3.</span> <span class="nav-text">SetMaterialAttributes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GetMaterialAttributes"><span class="nav-number">3.10.4.</span> <span class="nav-text">GetMaterialAttributes</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📋其他节点"><span class="nav-number">4.</span> <span class="nav-text">📋其他节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Debug节点的使用"><span class="nav-number">4.1.</span> <span class="nav-text">Debug节点的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConstantBiasScale"><span class="nav-number">4.2.</span> <span class="nav-text">ConstantBiasScale</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌏基础介绍"><span class="nav-number">1.</span> <span class="nav-text">🌏基础介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主材质节点-The-Main-Material-Node"><span class="nav-number">1.1.</span> <span class="nav-text">主材质节点(The Main Material Node)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节点的使用-Usage"><span class="nav-number">1.2.</span> <span class="nav-text">节点的使用(Usage)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例化材质-Material-Instance"><span class="nav-number">1.3.</span> <span class="nav-text">实例化材质(Material Instance)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类-Class"><span class="nav-number">1.3.1.</span> <span class="nav-text">类(Class)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#回到材质"><span class="nav-number">1.3.2.</span> <span class="nav-text">回到材质</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数-Parameter"><span class="nav-number">1.4.</span> <span class="nav-text">参数 (Parameter)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简单的标准材质"><span class="nav-number">1.4.1.</span> <span class="nav-text">简单的标准材质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加Tint和Roughness参数"><span class="nav-number">1.4.2.</span> <span class="nav-text">添加Tint和Roughness参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加Tiling参数"><span class="nav-number">1.4.3.</span> <span class="nav-text">添加Tiling参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加Normal参数"><span class="nav-number">1.4.4.</span> <span class="nav-text">添加Normal参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加开关"><span class="nav-number">1.4.5.</span> <span class="nav-text">添加开关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#整理参数"><span class="nav-number">1.4.6.</span> <span class="nav-text">整理参数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#描述-Comment"><span class="nav-number">1.5.</span> <span class="nav-text">描述(Comment)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#材质函数-Material-Function"><span class="nav-number">1.6.</span> <span class="nav-text">材质函数(Material Function)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔨基础案例"><span class="nav-number">2.</span> <span class="nav-text">🔨基础案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#混合材质"><span class="nav-number">2.1.</span> <span class="nav-text">混合材质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建材质属性函数"><span class="nav-number">2.2.</span> <span class="nav-text">创建材质属性函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建不同属性材质"><span class="nav-number">2.2.1.</span> <span class="nav-text">创建不同属性材质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加附加功能"><span class="nav-number">2.2.2.</span> <span class="nav-text">添加附加功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#材质混合"><span class="nav-number">2.2.3.</span> <span class="nav-text">材质混合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">2.2.4.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#积雪材质"><span class="nav-number">2.3.</span> <span class="nav-text">积雪材质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#凹凸加深"><span class="nav-number">2.4.</span> <span class="nav-text">凹凸加深</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加细节贴图"><span class="nav-number">2.5.</span> <span class="nav-text">添加细节贴图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#菲涅尔反射"><span class="nav-number">2.6.</span> <span class="nav-text">菲涅尔反射</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🎉-阶段结束"><span class="nav-number">3.</span> <span class="nav-text">🎉 阶段结束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔥常用节点"><span class="nav-number">4.</span> <span class="nav-text">🔥常用节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TextureSample"><span class="nav-number">4.1.</span> <span class="nav-text">TextureSample</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TexCoord"><span class="nav-number">4.2.</span> <span class="nav-text">TexCoord</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Add-Subtract-Multiply-Divide"><span class="nav-number">4.3.</span> <span class="nav-text">Add, Subtract, Multiply, Divide</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Append"><span class="nav-number">4.4.</span> <span class="nav-text">Append</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lerp"><span class="nav-number">4.5.</span> <span class="nav-text">Lerp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ComponentMask"><span class="nav-number">4.6.</span> <span class="nav-text">ComponentMask</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StaticSwitchParameter"><span class="nav-number">4.7.</span> <span class="nav-text">StaticSwitchParameter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Power"><span class="nav-number">4.8.</span> <span class="nav-text">Power</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clamp"><span class="nav-number">4.9.</span> <span class="nav-text">Clamp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AbsoluteWorldPosition"><span class="nav-number">4.10.</span> <span class="nav-text">AbsoluteWorldPosition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CameraPosition"><span class="nav-number">4.11.</span> <span class="nav-text">CameraPosition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MaterialAttributes"><span class="nav-number">4.12.</span> <span class="nav-text">MaterialAttributes</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MakeMaterialAttributes"><span class="nav-number">4.12.1.</span> <span class="nav-text">MakeMaterialAttributes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BreakMaterialAttributes"><span class="nav-number">4.12.2.</span> <span class="nav-text">BreakMaterialAttributes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SetMaterialAttributes"><span class="nav-number">4.12.3.</span> <span class="nav-text">SetMaterialAttributes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GetMaterialAttributes"><span class="nav-number">4.12.4.</span> <span class="nav-text">GetMaterialAttributes</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📋其他节点"><span class="nav-number">5.</span> <span class="nav-text">📋其他节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Debug节点的使用"><span class="nav-number">5.1.</span> <span class="nav-text">Debug节点的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FuzzyShading"><span class="nav-number">5.2.</span> <span class="nav-text">FuzzyShading</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConstantBiasScale"><span class="nav-number">5.3.</span> <span class="nav-text">ConstantBiasScale</span></a></li></ol></li></ol></div>
             
 
           </div>
