@@ -240,7 +240,7 @@
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/debug0.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/FuzzyShading.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4MaterialsNotes/FuzzyShading1.jpg">
-<meta property="og:updated_time" content="2019-07-13T06:38:50.546Z">
+<meta property="og:updated_time" content="2019-08-14T16:01:52.709Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UE4材质基础">
 <meta name="twitter:description" content="🌏基础介绍材质是用了一种特别的编程语言：高阶着色器语言(High Level Shading Language)简称HLSL 创建的。HLSL可以使材质直接和图形硬件通信，从而使美术和程序员直观的观察控制屏幕显示内容。Unreal Engine 4 (UE4)中用来创建材质球的材质节点包含着和HLSL一样的代码块，来实现和这些代码块相同的效果。  主材质节点(The Main Material">
@@ -531,7 +531,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-13 14:38:50" itemprop="dateModified" datetime="2019-07-13T14:38:50+08:00">2019-07-13</time>
+                <time title="修改时间：2019-08-15 00:01:52" itemprop="dateModified" datetime="2019-08-15T00:01:52+08:00">2019-08-15</time>
               
             
           </span>
@@ -634,41 +634,43 @@
 <p>举个例子：<br>假设我在我的世界里(我的游戏里)要创建一个人，叫<strong>小明</strong>，我给他安上两只手，两条腿，两个眼睛，一个鼻子，一张嘴。然后我又创建了一个人，叫<strong>小红</strong>，我又给他安上两只手，两条腿，两个眼睛，一个鼻子，一张嘴。然后是<strong>小文</strong>……这样就太麻烦了。</p>
 <pre class="mermaid" style="text-align: center;">            graph TD
             
-A[<b>小明</b>] -.- A1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴))
-B[<b>小红</b>] -.- B1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴))
-C[<b>小文</b>] -.- C1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴))
+A[小明] -.- A1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴))
+B[小红] -.- B1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴))
+C[小文] -.- C1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴))
 
 
           </pre>
 <p>所以这就用到了<strong>类(Class)</strong>，我们发现<strong>小明</strong>，<strong>小红</strong>，<strong>小文</strong>，他们有很多共同的特点：<span class="label info">两只手，两条腿，两个眼睛，一个鼻子，一张嘴</span>。于是我就以这些特征去定义了一个<strong>类(Class)</strong>叫<strong>人类</strong>。然后我们再用这个<strong>人类</strong>去生成<strong>小明</strong>，<strong>小红</strong>，<strong>小文</strong>。这三个人就会继承<strong>人类</strong>中设置的属性，都有：两只手，两条腿，两个眼睛等属性，而将一个抽象的<strong>人类</strong>生成出一个像小明这样实实在在的<strong>人</strong>，就叫做<strong>实例化对象</strong></p>
 <pre class="mermaid" style="text-align: center;">            graph TD
-            O1{<b>人类</b>} -.-O2((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴))
-O{<b>人类</b>} -->|实例化| A
+            
+O1{人类} -.-O2((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴))
+O{人类} -->|实例化| A
 O -->|实例化| B
 O -->|实例化| C
-A[<b>小明</b>] -.- A1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴))
-B[<b>小红</b>] -.- B1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴))
-C[<b>小文</b>] -.- C1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴))
+A[小明] -.- A1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴))
+B[小红] -.- B1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴))
+C[小文] -.- C1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴))
+
           </pre>
 <div class="note info">
             <p>区别<b>类(Classs)</b>，<strong>对象(Object)</strong>，<strong>实例(Instance)</strong><br>上面的小明就叫作<strong>对象(Object)</strong>,但也可以说小明是<strong>人类</strong>这个<strong>类(Class)</strong>的<strong>实例(Instance)</strong></p>
           </div>
 <p>但是这还不足以让我们创建出丰富多彩的人类，就好比<strong>小红</strong>是女的，<strong>小明</strong>戴眼镜，<strong>小文</strong>一米八等等，世界上的人又不是都一个样。所以这就要讲到<strong>参数(Parameter)</strong><br>我们可以继续完善之前我们创建的那个<strong>类(Class)</strong>,<strong>人类</strong>。我们再为它添加一些别的属性:<span class="label info">性别，戴不戴眼镜，身高</span>。</p>
 <pre class="mermaid" style="text-align: center;">            graph TD
-            O1{<b>人类</b>} -.-O2((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴<br>性别:<u> 男 </u><br>戴眼镜:<u> 否 </u><br>身高:<u> 170cm </u> ))
+            O1{人类} -.-O2((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴<br>性别: 男 <br>戴眼镜: 否 <br>身高: 170cm  ))
           </pre>
-<p>上面这些新加的属性同样也会被<strong>对象(Object)</strong>（小明，小红，小文）继承。不同的是上面<span class="label primary"><u>下划线</u></span>的地方，是可以在<strong>实例化对象</strong>后进行修改的。而这些值就叫<strong>参数(Parameter)</strong>，所以我们再<strong>实例化对象后</strong>把小明的<strong>戴眼镜</strong>属性改成了<strong>是</strong>,把小红的<strong>性别</strong>改成了<strong>女</strong>,最后把<strong>小文</strong>的身高改成<strong>180cm</strong></p>
+<p>上面这些新加的属性同样也会被<strong>对象(Object)</strong>（小明，小红，小文）继承。不同的是上面冒号<code>:</code>后的属性，是可以在<strong>实例化对象</strong>后进行修改的。而这些值就叫<strong>参数(Parameter)</strong>，所以我们再<strong>实例化对象后</strong>把小明的<strong>戴眼镜</strong>属性改成了<strong>是</strong>,把小红的<strong>性别</strong>改成了<strong>女</strong>,最后把<strong>小文</strong>的身高改成<strong>180cm</strong></p>
 <div class="note warning">
             <p>设置<strong>参数(Parameter)</strong>时我们一般会给个默认值，就像上面例子中的<span class="label info">性别:<u> 男 </u>,戴眼镜:<u> 否 </u>,身高:<u> 170cm </u></span>,意思就是通过<strong>人类</strong>生成的对象的默认都是170cm不戴眼镜的男性。</p>
           </div>
 <pre class="mermaid" style="text-align: center;">            graph TD
             
-O{<b>人类</b>} -->|实例化| A
+O{人类} -->|实例化| A
 O -->|实例化| B
 O -->|实例化| C
-A[<b>小明</b>] -.-|修改戴眼镜| A1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴<br>性别:<u> 男 </u><br>戴眼镜:<u> 是 </u><br>身高:<u> 170cm </u>))
-B[<b>小红</b>] -.-|修改性别| B1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴<br>性别:<u> 女 </u><br>戴眼镜:<u> 否 </u><br>身高:<u> 170cm </u>))
-C[<b>小文</b>] -.-|修改身高| C1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴<br>性别:<u> 男 </u><br>戴眼镜:<u> 否 </u><br>身高:<u> 180cm </u>))
+A[小明] -.-|修改戴眼镜| A1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴<br>性别: 男 <br>戴眼镜: 是 <br>身高: 170cm ))
+B[小红] -.-|修改性别| B1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴<br>性别: 女 <br>戴眼镜: 否 <br>身高: 170cm ))
+C[小文] -.-|修改身高| C1((两只手<br>两条腿<br>两个眼睛<br>一个鼻子<br>一张嘴<br>性别: 男 <br>戴眼镜: 否 <br>身高: 180cm ))
 
           </pre>
 <p>这样，我们就创建出了三个不同的<strong>人</strong>，而且我们还能通过我们定义的<strong>人类</strong>这个<strong>类(Class)</strong>创建出更多的人。<br>最重要的还是，因为<strong>继承性</strong>，假如我们需要为我们的<strong>人类</strong>添加更多属性，比如我们忘了给小明，小红，小文安两个耳朵，我们只要在<strong>人类</strong>这个<strong>类(Class)</strong>中在加上属性<span class="label info">两个耳朵</span>，这样小明，小红，小文等只要是通过<strong>人类</strong>创建出来的<strong>对象(Object)</strong>就都多了两个耳朵。<br>当然，为了创建更丰富的人，我们就要在<strong>人类</strong>中添加更多的<strong>参数</strong>，比如<span class="label info">体重，头发颜色，皮肤颜色</span>…等等，让他们在这些属性上存在差异，就会丰富我们的<strong>对象(Object)</strong></p>
@@ -1712,7 +1714,7 @@ a_{3}b_{3}\\
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Tech/pythonAdvance/" rel="prev" title="Python进阶">
+              <a href="/Tech/pythonAdvanced/" rel="prev" title="Python进阶">
                 Python进阶 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -1783,7 +1785,7 @@ a_{3}b_{3}\\
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1804,7 +1806,9 @@ a_{3}b_{3}\\
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1835,7 +1839,9 @@ a_{3}b_{3}\\
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"always","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="🌏基础介绍VanTools期初是为了方便自身工作需要，用业余时间通过Python编写的一些小工具。其目的是为了提高工作效率的同时，锻炼自己编码能力。随着功能的逐渐增加，更新和完善。工具被除了我之外更多人使用，所以写了这篇说明。 下载安装Github:https://github.com/FanziwenM/VanToolsColne 或 下载解压后，运行.bat文件即可(需先关闭Maya)">
+<meta name="keywords" content="Maya,Python,Docs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VanTools使用说明">
+<meta property="og:url" content="http://yoursite.com/Arts/VanToolsDoc/index.html">
+<meta property="og:site_name" content="Fan ziwen">
+<meta property="og:description" content="🌏基础介绍VanTools期初是为了方便自身工作需要，用业余时间通过Python编写的一些小工具。其目的是为了提高工作效率的同时，锻炼自己编码能力。随着功能的逐渐增加，更新和完善。工具被除了我之外更多人使用，所以写了这篇说明。 下载安装Github:https://github.com/FanziwenM/VanToolsColne 或 下载解压后，运行.bat文件即可(需先关闭Maya)">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/shelvs0.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/export.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/export1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/export2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/export3.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/export4.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/unit.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/unit1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/combine.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/combine1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/combine3.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/extFace.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/extFace1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/transform.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/transferUV.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/transferUV1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/transferUV2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/transferUV3.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/normal.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/normal1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/normal2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/normal3.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/normal4.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/normal5.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/normal6.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/normal7.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/normal8.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/normaQk.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/normaQk1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/normaQk2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/normalMn.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/normalMn1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/transferN.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/transferN1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/transferN2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/length.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/hardEdge.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/selectN.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/selectN1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Docs/VanTools/selectN2.jpg">
+<meta property="og:updated_time" content="2019-10-20T08:02:36.882Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="VanTools使用说明">
+<meta name="twitter:description" content="🌏基础介绍VanTools期初是为了方便自身工作需要，用业余时间通过Python编写的一些小工具。其目的是为了提高工作效率的同时，锻炼自己编码能力。随着功能的逐渐增加，更新和完善。工具被除了我之外更多人使用，所以写了这篇说明。 下载安装Github:https://github.com/FanziwenM/VanToolsColne 或 下载解压后，运行.bat文件即可(需先关闭Maya)">
+<meta name="twitter:image" content="http://yoursite.com/images/Docs/VanTools/shelvs0.jpg">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/Arts/VanToolsDoc/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>VanTools使用说明 | Fan ziwen</title>
+  
+
+
+
+
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d76c976ebf90b8fce3fc58985d94aa40";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Fan ziwen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Arts/VanToolsDoc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="范子文">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fan ziwen">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">VanTools使用说明
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-20 21:14:10 / 修改时间：16:02:36" itemprop="dateCreated datePublished" datetime="2019-10-20T21:14:10+08:00">2019-10-20</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Arts/" itemprop="url" rel="index"><span itemprop="name">Arts</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="🌏基础介绍"><a href="#🌏基础介绍" class="headerlink" title="🌏基础介绍"></a>🌏基础介绍</h2><p><strong>VanTools</strong>期初是为了方便自身工作需要，用业余时间通过Python编写的一些小工具。<br>其目的是为了提高工作效率的同时，锻炼自己编码能力。<br>随着功能的逐渐增加，更新和完善。工具被除了我之外更多人使用，所以写了这篇说明。</p>
+<h3 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h3><p><strong>Github</strong>:<a href="https://github.com/FanziwenM/VanTools" target="_blank" rel="noopener">https://github.com/FanziwenM/VanTools</a><br><strong>Colne</strong> 或 <strong>下载</strong>解压后，运行<code>.bat</code>文件即可(需先关闭Maya)</p>
+<div class="note warning">
+            <p><code>.bat</code>文件会将工具的<strong>代码</strong>，<strong>图标</strong>和<strong>Shelvs</strong>拷贝到<strong>Maya</strong>的<code>prefs</code>(路径:Documents/maya/@VERSION/prefs),工具是在<strong>Maya2018</strong>下编写的，所以这里的路径中的<code>@VERSION</code>是<code>2018</code>。其他<strong>Maya</strong>版本请改成对应版本。但是其他版本不确定工具是否正常运行</p>
+          </div>
+<p>然后开启Maya正常情况下就会多出一个<strong>Van</strong>工具栏:</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\shelvs0.jpg " class="full-image" title style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<a id="more"></a>
+<h2 id="🌌使用"><a href="#🌌使用" class="headerlink" title="🌌使用"></a>🌌使用</h2><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>工具在用户启动<strong>Maya</strong>的时候会初始化：</p>
+<ul>
+<li>插件版本检查，如果版本更新，图标变黄提示(公司内可以通过共享盘检测，外部也就是该版本忽略该功能)</li>
+<li>第一次使用会生成一些<code>.json</code>的配置文件</li>
+<li>禁用快速导出</li>
+<li>检查Maya单位，设置单位图标</li>
+</ul>
+<p>第一个图标上的数字也代表了当前版本，点击图标会跳转介绍(或更新网页)</p>
+<h3 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h3><p>项目中经常会需要导出多个FBX文件，并且保证规范命名。所以在Maya文件中规范命名后，可以通过该插件按命名分别导出多个FBX</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\export.jpg " class="full-image" title style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>如上图，点击第二个图标，弹出导出对话框<br>对话框中会显示选中模型的名字，方便确认命名，并可直接修改(修改完记得回车确认)</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\export1.jpg " class="full-image" title style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>然后选择路径，可以直接复制输入到<code>Path</code>栏中，或点击<code>...</code>按钮选择路径，<br>最后点击<code>Export</code>,会弹出导出成功对话框，可以选择打开文件夹<code>Open Folder</code>,弹出导出文件所在位置</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\export2.jpg " class="full-image" title style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\export3.jpg " class="full-image" title style="max-width: none; width:35%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>成功导出后，第三个图标就启用，用于快速导出，即导出选中模型至上一次指定的路径，方便反复修改和反复导出:<br></p><div class="note info">
+            <p>快速导出不会有对话框提示，但是短暂<strong>悬浮提示</strong>导出路径和文件</p>
+          </div><p></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\export4.jpg " class="full-image" title style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<h3 id="单位切换"><a href="#单位切换" class="headerlink" title="单位切换"></a>单位切换</h3><p>方便单位的切换，图标显示即为当前单位：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\unit.jpg " class="full-image" title style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\unit1.jpg " class="full-image" title style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<h3 id="模型-合并，分离"><a href="#模型-合并，分离" class="headerlink" title="模型 合并，分离"></a>模型 合并，分离</h3><p>Maya自带的<strong>合并(Combine)</strong>，<strong>分离(Separater)</strong>带有很多的<strong>历史信息</strong>和<strong>Transform</strong>组，而且不能保证<strong>命名</strong>和<strong>组关系</strong></p>
+<p><strong>VanTools</strong>的<strong>合并(Combine)</strong>可以保证最后选中的物件名和组关系<br>例如：这里我最后选择的是<code>SM_TestCube</code>然后进行<strong>合并(Combine)</strong>：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\combine.jpg " class="full-image" title style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\combine1.jpg " class="full-image" title style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<p>而<strong>VanTools</strong>的<strong>分离(Separater)</strong>，保证其中一个命名然后将分解出的部分加后缀，并保证<strong>组关系</strong>：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\combine3.jpg " class="full-image" title style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<h3 id="面-分离，复制分离"><a href="#面-分离，复制分离" class="headerlink" title="面 分离，复制分离"></a>面 分离，复制分离</h3><p>同样的，Maya的<strong>面分离(Extract)</strong>也有很多多余的信息，所以也改进了面的分离和复制分离：<br>同样也是保证组件关系，并且<strong>分离后选中</strong>，<strong>坐标轴归为中心</strong></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\extFace.jpg " class="full-image" title style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\extFace1.jpg " class="full-image" title style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>复制分离同理，不赘述</p>
+<h3 id="坐标和坐标轴四兄弟"><a href="#坐标和坐标轴四兄弟" class="headerlink" title="坐标和坐标轴四兄弟"></a>坐标和坐标轴四兄弟</h3><p>非常常用的自带功能，没什么好说的<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\transform.jpg " class="full-image" title style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br>从左到右:</p>
+<ul>
+<li><strong>坐标轴居中(Center Pivot)</strong></li>
+<li><strong>清理变换信息(Freeze Transformations)</strong></li>
+<li><strong>烘焙坐标轴(Bake Pivot)</strong></li>
+<li><strong>还原变换信息(Reset Transformations)</strong></li>
+</ul>
+<h3 id="UV传递"><a href="#UV传递" class="headerlink" title="UV传递"></a>UV传递</h3><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\transferUV.jpg " class="full-image" title style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>相比Maya自带的<strong>属性传递</strong>，界面清楚明朗，而且支持批量传递UV</p>
+<p>例如：<br>先选中正确的UV模型，点击<code>GetUV</code>按钮，<strong>Get</strong>成功后面就会显示被<strong>Get</strong>UV的模型<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\transferUV1.jpg " class="full-image" title style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br>然后将UV<strong>Set</strong>给其他模型(被<strong>Set</strong>的模型可以是多个)，这里因为模型一样，采样空间(SampleSpace)可以选中为<strong>Local</strong><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\transferUV2.jpg " class="full-image" title style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\transferUV3.jpg " class="full-image" title style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<h3 id="法线工具"><a href="#法线工具" class="headerlink" title="法线工具"></a>法线工具</h3><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\normal.jpg " class="full-image" title style="max-width: none; width:45%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p><strong>VanTool</strong>中的法线工具，集成了所有常用的修改<strong>Normal</strong>的功能，一一介绍：</p>
+<h4 id="General"><a href="#General" class="headerlink" title="General"></a>General</h4><p><strong>General</strong>一栏下都是常用的基础功能<br><strong>关闭/显示Normal</strong>，然后设置<strong>Normal</strong>的大小：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\normal1.jpg " class="full-image" title style="max-width: none; width:70%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\normal2.jpg " class="full-image" title style="max-width: none; width:70%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<p><strong>解/锁法线</strong>：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\normal3.jpg " class="full-image" title style="max-width: none; width:70%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<p>这里重点介绍下<strong>Smart Unlock Normal</strong><br>因为文件的互导，文件会丢失<strong>软硬边</strong>，<strong>法线都会被锁住</strong>，比如下图的简单模型导出后倒进来：<br><strong>Before：</strong><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\normal4.jpg " class="full-image" title style="max-width: none; width:70%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><strong>Reimport：</strong><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\normal5.jpg " class="full-image" title style="max-width: none; width:70%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br>虽然显示效果上<strong>Normal</strong>效果没有问题，但是模型没有<strong>软硬边</strong>，而且<strong>Normal</strong>是被锁死的：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\normal6.jpg " class="full-image" title style="max-width: none; width:70%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br>如果正常解锁<strong>Normal</strong>：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\normal7.jpg " class="full-image" title style="max-width: none; width:70%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br>会发现模型变成了全<strong>硬边</strong> ，法线效果错误</p>
+<p>这种情况就要用<strong>Smart Unlock Normal</strong>,它是基于现模型的<strong>点法线</strong>，对比<strong>面点(VertexFaces)</strong>的<strong>Normal</strong>来分别<strong>软硬边</strong>再进行解锁：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\normal8.jpg " class="full-image" title style="max-width: none; width:70%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>可以看到在<strong>解锁法线</strong>的同时，有了<strong>软硬边</strong>，而且效果和<strong>原模型一致</strong></p>
+<h4 id="QuickSet"><a href="#QuickSet" class="headerlink" title="QuickSet"></a>QuickSet</h4><p>快速设置常用的<strong>Normal</strong>朝向，例如：<br>设置为<strong>+X</strong>，即<code>vector (1,0,0)</code><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\normaQk.jpg " class="full-image" title style="max-width: none; width:70%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<p>设置为<strong>+Y</strong>，即<code>vector (0,1,0)</code><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\normaQk1.jpg " class="full-image" title style="max-width: none; width:70%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<p>设置<strong>Flatten Y</strong>，即<code>vector (x,0,z)</code><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\normaQk2.jpg " class="full-image" title style="max-width: none; width:70%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<div class="note primary">
+            <p><strong>Flatten Y</strong>就是将向量中的<strong>Y</strong>轴信息清零后<strong>归一化(Normalize)</strong>,效果相当于将原向量拍平至<strong>XZ</strong>平面</p>
+          </div>
+<h4 id="ManualSet"><a href="#ManualSet" class="headerlink" title="ManualSet"></a>ManualSet</h4><p>手动这只<strong>Normal</strong>，可以获得<strong>点</strong>，或者<strong>面</strong>的<strong>Normal</strong>，进行设置：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\normalMn.jpg " class="full-image" title style="max-width: none; width:70%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\normalMn1.jpg " class="full-image" title style="max-width: none; width:70%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<h4 id="TransferNormal"><a href="#TransferNormal" class="headerlink" title="TransferNormal"></a>TransferNormal</h4><p>和之前介绍的传递UV一样，都是讲Maya自带的属性传递进行简化<br>那之前的模型为例，先<strong>Get</strong>它的<strong>Normal</strong><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\transferN.jpg " class="full-image" title style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br>然后新建一个圆柱，然后点击<code>Transfer Normal</code><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\transferN1.jpg " class="full-image" title style="max-width: none; width:70%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br>最后单独显示这个圆柱：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\transferN2.jpg " class="full-image" title style="max-width: none; width:70%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br>可以看到，简单圆柱的Normal效果和之前的模型类似</p>
+<h4 id="Measure"><a href="#Measure" class="headerlink" title="Measure"></a>Measure</h4><p>测量所选线的总长，单位为Maya当前单位：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\length.jpg " class="full-image" title style="max-width: none; width:70%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<h4 id="SelectHardEdge"><a href="#SelectHardEdge" class="headerlink" title="SelectHardEdge"></a>SelectHardEdge</h4><p>选择硬边</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\hardEdge.jpg " class="full-image" title style="max-width: none; width:70%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<h4 id="SelectEverN"><a href="#SelectEverN" class="headerlink" title="SelectEverN"></a>SelectEverN</h4><p>隔N断选择</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\selectN.jpg " class="full-image" title style="max-width: none; width:70%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>例如：<br>隔一段<strong>Ring</strong>选择，</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\selectN1.jpg " class="full-image" title style="max-width: none; width:70%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>隔一段<strong>Loop</strong>选择：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Docs\VanTools\selectN2.jpg " class="full-image" title style="max-width: none; width:70%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Maya/" rel="tag"># Maya</a>
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/Docs/" rel="tag"># Docs</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Tech/HoudiniNotes/" rel="next" title="Houdini笔记(未整理)">
+                <i class="fa fa-chevron-left"></i> Houdini笔记(未整理)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">范子文</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:120416678@qq.com" title="E-Mail &rarr; mailto:120416678@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌏基础介绍"><span class="nav-number">1.</span> <span class="nav-text">🌏基础介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载安装"><span class="nav-number">1.1.</span> <span class="nav-text">下载安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🌌使用"><span class="nav-number">2.</span> <span class="nav-text">🌌使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化"><span class="nav-number">2.1.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导出"><span class="nav-number">2.2.</span> <span class="nav-text">导出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单位切换"><span class="nav-number">2.3.</span> <span class="nav-text">单位切换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型-合并，分离"><span class="nav-number">2.4.</span> <span class="nav-text">模型 合并，分离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面-分离，复制分离"><span class="nav-number">2.5.</span> <span class="nav-text">面 分离，复制分离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#坐标和坐标轴四兄弟"><span class="nav-number">2.6.</span> <span class="nav-text">坐标和坐标轴四兄弟</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UV传递"><span class="nav-number">2.7.</span> <span class="nav-text">UV传递</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#法线工具"><span class="nav-number">2.8.</span> <span class="nav-text">法线工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#General"><span class="nav-number">2.8.1.</span> <span class="nav-text">General</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QuickSet"><span class="nav-number">2.8.2.</span> <span class="nav-text">QuickSet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ManualSet"><span class="nav-number">2.8.3.</span> <span class="nav-text">ManualSet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TransferNormal"><span class="nav-number">2.8.4.</span> <span class="nav-text">TransferNormal</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Measure"><span class="nav-number">2.8.5.</span> <span class="nav-text">Measure</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SelectHardEdge"><span class="nav-number">2.8.6.</span> <span class="nav-text">SelectHardEdge</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SelectEverN"><span class="nav-number">2.8.7.</span> <span class="nav-text">SelectEverN</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">范子文</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+<script>
+if ($('body').find('pre.mermaid').length) {
+  $.ajax({
+    type: 'GET',
+    url: '//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js',
+    dataType: 'script',
+    cache: true,
+    success: function() {
+      mermaid.initialize({
+        theme: 'neutral',
+        logLevel: 3,
+        flowchart: { curve: 'linear' },
+        gantt: { axisFormat: '%m/%d/%Y' },
+        sequence: { actorMargin: 50 }
+      });
+    }
+  });
+}
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

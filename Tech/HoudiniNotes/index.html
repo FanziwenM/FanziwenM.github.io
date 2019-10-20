@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"always","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="🌏基础介绍常用节点connectivity 链接性  相连接的 point 或者 primitive 给与相同的值">
+<meta name="keywords" content="Notes,Basic,Houdini">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Houdini笔记(未整理)">
+<meta property="og:url" content="http://yoursite.com/Tech/HoudiniNotes/index.html">
+<meta property="og:site_name" content="Fan ziwen">
+<meta property="og:description" content="🌏基础介绍常用节点connectivity 链接性  相连接的 point 或者 primitive 给与相同的值">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/connectivity.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/menuParameter.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/menuParameter1.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/ch_mountain.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/ch_mountain2.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/ch_mountain3.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/ch_mountain4.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/ch_mountain5.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/displaceFix.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/displaceFix1.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/displaceFix2.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/displaceFix3.png">
+<meta property="og:updated_time" content="2019-10-20T08:02:34.635Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Houdini笔记(未整理)">
+<meta name="twitter:description" content="🌏基础介绍常用节点connectivity 链接性  相连接的 point 或者 primitive 给与相同的值">
+<meta name="twitter:image" content="http://yoursite.com/images/Notes/Houdini/connectivity.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/Tech/HoudiniNotes/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Houdini笔记(未整理) | Fan ziwen</title>
+  
+
+
+
+
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d76c976ebf90b8fce3fc58985d94aa40";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Fan ziwen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Tech/HoudiniNotes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="范子文">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fan ziwen">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Houdini笔记(未整理)
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-15 21:14:10" itemprop="dateCreated datePublished" datetime="2019-10-15T21:14:10+08:00">2019-10-15</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-10-20 16:02:34" itemprop="dateModified" datetime="2019-10-20T16:02:34+08:00">2019-10-20</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="🌏基础介绍"><a href="#🌏基础介绍" class="headerlink" title="🌏基础介绍"></a>🌏基础介绍</h2><h2 id="常用节点"><a href="#常用节点" class="headerlink" title="常用节点"></a>常用节点</h2><h3 id="connectivity"><a href="#connectivity" class="headerlink" title="connectivity"></a>connectivity</h3><blockquote>
+<p>链接性</p>
+</blockquote>
+<p>相连接的 point 或者 primitive 给与相同的值<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\connectivity.png " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<a id="more"></a>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>节点链接出现虚线是因为数据类型不同，但是Houdini会自动转换数据类型。</p>
+<h3 id="Digital-Asset"><a href="#Digital-Asset" class="headerlink" title="Digital Asset"></a>Digital Asset</h3><div class="note info">
+            <p>虽然<strong>Digital Asset</strong>可以存储在同一个<strong>Digital Asset Library</strong>(.hda文件)里。但是官方还是建议每一个<strong>Digital Asset</strong>存在一个单独的文件里，方便查找和分享。</p><blockquote><p>However, we recommend you store each asset in a separate ibrary file. This makes it straightforward to share some assets and not others, and keep track of which assets are in which files.</p></blockquote>
+          </div>
+<hr>
+<h3 id="ParameterInterface"><a href="#ParameterInterface" class="headerlink" title="ParameterInterface"></a>ParameterInterface</h3><hr>
+<h4 id="MenuParameter"><a href="#MenuParameter" class="headerlink" title="MenuParameter"></a>MenuParameter</h4><blockquote>
+<p>菜单栏参数</p>
+</blockquote>
+<p><strong>整型(Integer)</strong>，<strong>字符串(String)</strong>，<strong>文件(File)</strong>，<strong>节点路径(Node Path)</strong>等类型的参数，是可以设置成下来菜单</p>
+<p><strong>例如：</strong></p>
+<ul>
+<li>创建一个整型参数</li>
+<li>选择新创建参数，点击 <strong>Parameter Description</strong> 中的 <strong>Menu</strong> 标签</li>
+<li>在 <strong>Menu Items</strong>中创建需要的<strong>键值</strong></li>
+<li>最后勾选<strong>Use Menu Item Token as Value</strong></li>
+</ul>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\menuParameter.png " class="full-image" style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note danger">
+            <p>在整型的参数(integer parameter)中，默认设置是用户选择一个菜单选项，返回的值时这个选在在这个菜单中的索引(Index)。例如，选择第一个菜单项，返回值为<code>0</code>，第二个返回值为<code>1</code>,等等…比如上图中，<strong>Label</strong> 是 <code>six</code>虽然对应的值是<code>6</code>，但是默认会返回<code>2</code><br>所以要勾选<strong>Use Menu Item Token as Value</strong>，这样返回的值就是<strong>Token</strong>中设置的值，选择<code>six</code>就会返回<code>6</code></p>
+          </div>
+<div class="note warning">
+            <p>如果<strong>Token</strong>的值不是整型，返回的值也是菜单项的索引(Index)</p>
+          </div>
+<p>这里我将设置的参数关联到创建的点的<strong>Y</strong>轴坐标，然后选择参数查看变化</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\menuParameter1.png " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<hr>
+<h2 id="👿-Trick"><a href="#👿-Trick" class="headerlink" title="👿 Trick"></a>👿 Trick</h2><h3 id="ch"><a href="#ch" class="headerlink" title="ch"></a>ch</h3><blockquote>
+<p><strong>ch</strong>表达式</p>
+</blockquote>
+<p><strong>ch</strong>最基础最常用的就是引用其他节点参数<br>例如，这里有两个 <strong>Mountain</strong> 节点：</p>
+<ul>
+<li><code>mountain1</code></li>
+<li><code>mountain2</code><br>希望它们的其中的参数<code>Height</code>保持统一：<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\ch_mountain.png " class="full-image" style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+</li>
+</ul>
+<p>这种情况就可以使用 <strong>ch</strong> 函数，在节点<code>mountain2</code>的<code>Height</code>中输入：<br><code>ch("../mountain1/height")</code></p>
+<div class="note info">
+            <p>可以点击输入框，<code>Alt+E</code>来调出<strong>表达式编辑器</strong><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\ch_mountain2.png " class="full-image" style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br>然后再输入<code>ch("../mountain1/height")</code>，最后点击<strong>Accept</strong>确定</p>
+          </div>
+<p>这时候我们调整<code>mountain1</code>的值然后观察<code>mountain2</code>的<code>height</code>值的变化：<br><strong>mountain1:</strong><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\ch_mountain3.png " class="full-image" style="max-width: none; width:50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><strong>mountain2:</strong><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\ch_mountain4.png " class="full-image" style="max-width: none; width:50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<div class="note info">
+            <p>在参数中输入表达式后默认显示的是表达式语句，鼠标点击<strong>参数名</strong>，显示最终数值：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\ch_mountain5.png " class="full-image" style="max-width: none; width:40%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+          </div>
+<hr>
+<h3 id="DisplacementTrick"><a href="#DisplacementTrick" class="headerlink" title="DisplacementTrick"></a>DisplacementTrick</h3><p><strong>Displace</strong>基本都是通过<strong>Normal</strong>改变模型，例如节点<strong>mountain</strong>。<br>我们会经常遇到下面这种情况：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\displaceFix.png " class="full-image" style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<p>因为<strong>Noise</strong>的强度太大而产生的面穿插。但是更多情况是因为模型的部分<strong>太薄</strong>。<br>然而，这种情况可以通过改变其<strong>Normal</strong>修复：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\displaceFix1.png " class="full-image" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<ul>
+<li>先通过<strong>VDB</strong> 将模型转变成<strong>圆滑</strong>效果不错的模型，主要目的是为了圆滑类似<strong>耳朵</strong>这样的比较薄的部分。<br>然后将模型的<strong>Normal</strong>传递给源模型：</li>
+</ul>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\displaceFix2.png " class="full-image" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<ul>
+<li>之前提到，<strong>Displace</strong>是基于<strong>Normal</strong>改变模型，所以这一步的目的就相当于简化并<strong>Smooth</strong>了下<strong>Normal</strong></li>
+<li>而这样<strong>Displace</strong>出来的模型，在保证基本一样的效果同时，也避免了面穿插</li>
+</ul>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\displaceFix3.png " class="full-image" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Notes/" rel="tag"># Notes</a>
+          
+            <a href="/tags/Basic/" rel="tag"># Basic</a>
+          
+            <a href="/tags/Houdini/" rel="tag"># Houdini</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Tech/pythonAdvanced/" rel="next" title="Python进阶">
+                <i class="fa fa-chevron-left"></i> Python进阶
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Arts/VanToolsDoc/" rel="prev" title="VanTools使用说明">
+                VanTools使用说明 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">范子文</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:120416678@qq.com" title="E-Mail &rarr; mailto:120416678@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌏基础介绍"><span class="nav-number">1.</span> <span class="nav-text">🌏基础介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用节点"><span class="nav-number">2.</span> <span class="nav-text">常用节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#connectivity"><span class="nav-number">2.1.</span> <span class="nav-text">connectivity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">3.</span> <span class="nav-text">Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Digital-Asset"><span class="nav-number">3.1.</span> <span class="nav-text">Digital Asset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ParameterInterface"><span class="nav-number">3.2.</span> <span class="nav-text">ParameterInterface</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MenuParameter"><span class="nav-number">3.2.1.</span> <span class="nav-text">MenuParameter</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#👿-Trick"><span class="nav-number">4.</span> <span class="nav-text">👿 Trick</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ch"><span class="nav-number">4.1.</span> <span class="nav-text">ch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DisplacementTrick"><span class="nav-number">4.2.</span> <span class="nav-text">DisplacementTrick</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">范子文</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+<script>
+if ($('body').find('pre.mermaid').length) {
+  $.ajax({
+    type: 'GET',
+    url: '//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js',
+    dataType: 'script',
+    cache: true,
+    success: function() {
+      mermaid.initialize({
+        theme: 'neutral',
+        logLevel: 3,
+        flowchart: { curve: 'linear' },
+        gantt: { axisFormat: '%m/%d/%Y' },
+        sequence: { actorMargin: 50 }
+      });
+    }
+  });
+}
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
