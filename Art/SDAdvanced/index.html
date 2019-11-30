@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"always","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="简介SubatanceDsigner的进阶技巧，包括：  一些相对进阶且常用的节点解析 一些好看或特别的纹理的制作 一些经常需要使用的基础形的制作 一些不错的制作思路  节点解析VectorMorph(Warp) 根据向量变形(弯曲)">
+<meta name="keywords" content="Notes,Substance,Advanced">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Substance Designer 进阶">
+<meta property="og:url" content="http://yoursite.com/Art/SDAdvanced/index.html">
+<meta property="og:site_name" content="Fan ziwen">
+<meta property="og:description" content="简介SubatanceDsigner的进阶技巧，包括：  一些相对进阶且常用的节点解析 一些好看或特别的纹理的制作 一些经常需要使用的基础形的制作 一些不错的制作思路  节点解析VectorMorph(Warp) 根据向量变形(弯曲)">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/vectorMorph.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/vectorMorph01.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/vectorMorph02.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/vectorMorph03.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/vectorMorph04.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/vectorMorph05.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/tileSampler00.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/tileSampler01.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/tileSampler02.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/tileSampler03.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/tileSampler03_2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/tileSampler04.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/tileSampler05.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/tileSampler06.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/tileSampler07.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/tileSampler08.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/nonUniDirWarp.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/nonScan.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/nonScan.gif">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/slopeBlur00.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/slopeBlur01.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/slopeBlur02.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/gradientDyn.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/gradientDyn_01.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/gradientDyn_02.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/gradientDyn_03.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/Pattern/tileSampler00.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/Pattern/tileSampler01.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/fluidNoise00.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/Noise/fluid01.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/LichenNoise00.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/LichenNoise01.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/Noise/Moss00.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/Noise/Moss01.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/Noise/Moss01_1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/Noise/Moss01_2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/Noise/Grunge0_0.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/Noise/Grunge0_1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/Noise/mud00_1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/Noise/mud00_2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/Project/rockTile.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/Project/grassTilling.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/Project/grassTilling1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/Project/tempTilling.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/Project/laySoftly.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/visibleIf.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/SDAdvanced/visibleIf.gif">
+<meta property="og:updated_time" content="2019-11-30T13:01:56.928Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Substance Designer 进阶">
+<meta name="twitter:description" content="简介SubatanceDsigner的进阶技巧，包括：  一些相对进阶且常用的节点解析 一些好看或特别的纹理的制作 一些经常需要使用的基础形的制作 一些不错的制作思路  节点解析VectorMorph(Warp) 根据向量变形(弯曲)">
+<meta name="twitter:image" content="http://yoursite.com/images/Notes/SDAdvanced/vectorMorph.jpg">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/Art/SDAdvanced/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Substance Designer 进阶 | Fan ziwen</title>
+  
+
+
+
+
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d76c976ebf90b8fce3fc58985d94aa40";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Fan ziwen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Art/SDAdvanced/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="范子文">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fan ziwen">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Substance Designer 进阶
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-13 10:21:00" itemprop="dateCreated datePublished" datetime="2019-10-13T10:21:00+08:00">2019-10-13</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-11-30 21:01:56" itemprop="dateModified" datetime="2019-11-30T21:01:56+08:00">2019-11-30</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Art/" itemprop="url" rel="index"><span itemprop="name">Art</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>SubatanceDsigner</strong>的进阶技巧，包括：</p>
+<ul>
+<li>一些相对进阶且常用的<strong>节点</strong>解析</li>
+<li>一些好看或特别的<strong>纹理</strong>的制作</li>
+<li>一些经常需要使用的<strong>基础形</strong>的制作</li>
+<li>一些不错的制作<strong>思路</strong></li>
+</ul>
+<h2 id="节点解析"><a href="#节点解析" class="headerlink" title="节点解析"></a>节点解析</h2><h3 id="VectorMorph-Warp"><a href="#VectorMorph-Warp" class="headerlink" title="VectorMorph(Warp)"></a>VectorMorph(Warp)</h3><blockquote>
+<p>根据向量变形(弯曲)</p>
+</blockquote>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\vectorMorph.jpg " class="full-image" alt title style="max-width: none; width:45%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<a id="more"></a>
+<div class="note warning">
+            <p>我们知道<strong>DirectionalWarp</strong>可以通过使用一个<strong>Mask</strong>对目标图案进行<strong>弯曲(Warp)</strong>。但是该节点只能决定时候<strong>弯曲(Warp)</strong>(mask为<code>1</code>处弯曲，<code>0</code>处不弯曲)。所以<strong>DirectionalWarp</strong>带有很强的方向性(<strong>Intensity</strong>越强方向性越强)，所以会造成很明显的<strong>偏移</strong>效果:</p><p><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\vectorMorph01.jpg " class="full-image" alt title style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p><p>如上图所示通过 <strong>DirectionalWarp</strong> 原图很明显的往左偏移，如果我们希望保持原图的大致位置，就需要可控性更高的 <strong>VectorMorph</strong> 节点</p>
+          </div>
+<p>为什么说 <strong>VectorMorph</strong> 的可控性更高。<br>因为 <strong>VectorMorph</strong> 是通过<strong>VectorField(向量场)</strong>来进行变形。而<strong>VectorField</strong>则是通过一个<strong>Color</strong>图来表示。</p>
+<div class="note default">
+            <p>有图形学基础的人一定会知道，一张<strong>Color</strong>贴图上的像素的<code>RGB</code>值可以表示为一个<strong>向量(Vector)</strong>的<code>XYZ</code>，典型的例子就是<strong>法线贴图(Normal)</strong>。法线贴图就是用颜色来描述像素在模型表面的法线朝向。<br>但是向量的<code>XY</code>是存在<strong>负数值</strong>的，贴图的<code>RGB</code>是没有负数值的，基本都是<code>0.0-1.0</code>或<code>0-255</code>。<br>所以，一般在三维空间表示单位向量的区间<code>[-1,1]</code>被压缩到了区间<code>[0,1]</code>(公式也很简单<code>(x+1)/2</code>)<br>压缩后，原本的<code>0</code>就变成了<code>0.5</code>。例如向量<code>(0,0,1)</code>就变成了<code>(0.5,0.5,1)</code></p>
+          </div>
+<p>回到节点<strong>VectorMorph</strong>的<strong>VectorField</strong>。原理是一样的，只不过因为是二维空间，所以只用到<code>XY</code>的值也就是<code>RG</code>的值。<br>所以在二维空间中，想创建一个朝左的向量它的<code>XY</code>就是<code>(-1,0)</code>,转换成颜色<code>RG</code>就是<code>(0.0, 0.5)</code>,朝右的向量它的<code>XY</code>就是<code>(1,0)</code>,转换成颜色<code>RG</code>就是<code>(1.0, 0.5)</code>。然后加上无关紧要的<code>B</code>的值，我们就得到了两个颜色：</p>
+<ul>
+<li>Color1:(0.0, 0.5, 0.0)</li>
+<li>Color2:(1.0, 0.5, 0.0)</li>
+</ul>
+<p>而节点<strong>VectorMorph</strong>就可以利用这两种颜色将原图一部分<strong>往左</strong>变形，一部分<strong>往右</strong>变形：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\vectorMorph02.jpg " class="full-image" alt title style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>如果你真的理解了它的原理，你可以让它以任何方向变形。再比如上下：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\vectorMorph03.jpg " class="full-image" alt title style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>最后，我们回到最初遇到的问题：“如何在保持位置不发生偏移的情况下<strong>Warp</strong>”：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\vectorMorph04.jpg " class="full-image" alt title style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note success">
+            <p>还有个类似的节点<strong>VectorWarp</strong>原理和<strong>VectorMorph</strong>一样，也是通过<strong>VectorField</strong>来进行处理。只不过是扭曲(非线性变换)。<br>而<strong>VectorWarp</strong>和<strong>Non Uniform Directional Warp</strong>的效果和作用比较类似。</p>
+          </div>
+<div class="note info">
+            <p>正如我们在上面提到的<strong>法线贴图(Normal)</strong>也是用像素颜色来表现向量的值，所以我们自然可以用<strong>Normal</strong>当输入给<strong>VectorField</strong><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\vectorMorph05.jpg " class="full-image" alt title style="max-width: none; width:70%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+          </div>
+<hr>
+<h3 id="TileSampler"><a href="#TileSampler" class="headerlink" title="TileSampler"></a>TileSampler</h3><blockquote>
+<p>重复采样器</p>
+</blockquote>
+<p>非常常用的用来制作重复纹理的节点。相比节点<strong>TileRandom</strong>和<strong>TileGenerator</strong>。它的多了很多辅助贴图的输入 ，而这里主要讲解这几个贴图输入的作用。</p>
+<h4 id="ScaleMapInput"><a href="#ScaleMapInput" class="headerlink" title="ScaleMapInput"></a>ScaleMapInput</h4><blockquote>
+<p>缩放贴图，输入一张灰度图(Grayscale)，通过属性菜单中的<strong>Size|Scale Map Mutiplier</strong>影响元素缩放的强度</p>
+</blockquote>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\tileSampler00.jpg " class="full-image" alt title style="max-width: none; width:95%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<h4 id="DisplacementMapInput"><a href="#DisplacementMapInput" class="headerlink" title="DisplacementMapInput"></a>DisplacementMapInput</h4><blockquote>
+<p>位移贴图，输入一张灰度图(Grayscale)，通过属性菜单中的<strong>Position|Displacement Map Intensity</strong>来调整偏移强度，而它下面的<strong>Displacement Angle</strong>则是调整偏移方向</p>
+</blockquote>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\tileSampler01.jpg " class="full-image" alt title style="max-width: none; width:95%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<h4 id="RotationMapInput"><a href="#RotationMapInput" class="headerlink" title="RotationMapInput"></a>RotationMapInput</h4><blockquote>
+<p>旋转贴图，输入一张灰度图(Grayscale),通过属性菜单中的<strong>Rotation|Rotation Map Multiplier</strong>来控制旋转强度，重复的元素就会根据输入的灰度图，进行不同程度的旋转</p>
+</blockquote>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\tileSampler02.jpg " class="full-image" alt title style="max-width: none; width:95%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<h4 id="VectorMapInput"><a href="#VectorMapInput" class="headerlink" title="VectorMapInput"></a>VectorMapInput</h4><blockquote>
+<p>向量贴图，输入一张彩色图(Color)，跟上面讲到的节点<strong>VectorMorph</strong>的原理一样，要根据一张彩色图(即<strong>VectorField(向量场)</strong>)。来进行可控的偏移，和旋转。<strong>Position|Vector Map Displacement</strong>则控制偏移强度，<strong>Rotation|Vector Map Displacement</strong>则控制旋转强度</p>
+</blockquote>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\tileSampler03.jpg " class="full-image" alt title style="max-width: none; width:95%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note info">
+            <p>效果和输入<strong>DisplacementMapInput</strong>类似。区别就是在于<strong>DisplacementMapInput</strong>只能输入一张灰度图，只能定义一个方向，进行偏移或不偏移。<strong>VectorMapInput</strong>则可以通过一个色彩图，定义两个方向，进行两个方向的偏移。例如上图就是定义了两个<strong>2D向量</strong><code>[0.0, 0.5]</code> 和<code>[1.0, 0.5]</code>即向左，和向右</p><p>同样，也可以直接输入<strong>Normal</strong>:</p><p><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\tileSampler03_2.jpg " class="full-image" alt title style="max-width: none; width:70%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+          </div>
+<h4 id="ColorMapInput"><a href="#ColorMapInput" class="headerlink" title="ColorMapInput"></a>ColorMapInput</h4><blockquote>
+<p>颜色贴图，输入一张灰度图(Grayscale),通过属性菜单中的<strong>Color|Color parameterization Multiplier</strong>来控制颜色(准确的说是亮度)</p>
+</blockquote>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\tileSampler04.jpg " class="full-image" alt title style="max-width: none; width:95%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note primary">
+            <p>重复元素的亮暗，除了追常用的<strong>随机</strong>，和上面介绍的用输入的<strong>ColorMap</strong>来控制。还有比较常用的就是通过大小来控制颜色，在 <strong>Color Parametrization Mode</strong>中选择<strong>Scale</strong><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\tileSampler05.jpg " class="full-image" alt title style="max-width: none; width:50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br>效果：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\tileSampler06.jpg " class="full-image" alt title style="max-width: none; width:85%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+          </div>
+<h4 id="MaskMapInput"><a href="#MaskMapInput" class="headerlink" title="MaskMapInput"></a>MaskMapInput</h4><blockquote>
+<p>遮罩贴图，输入一张灰度图(Grayscale)，控制重复元素是否显示。通过<strong>Mask Map Threshold</strong>来控制遮罩的阈值</p>
+</blockquote>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\tileSampler07.jpg " class="full-image" alt title style="max-width: none; width:95%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<h4 id="PatternDistributionInput"><a href="#PatternDistributionInput" class="headerlink" title="PatternDistributionInput"></a>PatternDistributionInput</h4><blockquote>
+<p>分布贴图，输入一张灰度图(Grayscale)，控制输入图案的分布</p>
+</blockquote>
+<p><strong>Pattern Distribution</strong>仅在多个图案是输入<strong>PatternInput</strong>时起作用，用于分配多个图案的分布情况</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\tileSampler08.jpg " class="full-image" alt title style="max-width: none; width:95%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note default">
+            <p>在了解了<strong>TileSampler</strong>其他的输入后，就可以利用这些输入制作以下案例：</p><ul><li><a href="#RockTilling01">石头的散落</a></li><li><a href="#GrassTilling01">草的散落</a></li><li><a href="#FlowerTilling01">花蕊散落</a></li></ul>
+          </div>
+<hr>
+<h3 id="NonUniformDirectionalWarp"><a href="#NonUniformDirectionalWarp" class="headerlink" title="NonUniformDirectionalWarp"></a>NonUniformDirectionalWarp</h3><blockquote>
+<p>不均匀带方向性弯曲</p>
+</blockquote>
+<p>之前提到的节点<strong>VectorMorph</strong>有很高的可控性。但是每次都要将一张<strong>灰度图(Grayscale)</strong>转成一个<strong>彩色图(Color)</strong>。还是有些繁琐。<br>但是对弯曲<strong>方向性</strong>的要求不是很高，其实就可以用到节点<strong>NonUniformDirectionalWarp</strong>:</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\nonUniDirWarp.jpg " class="full-image" alt title style="max-width: none; width:65%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note info">
+            <p>我们可以看到上图使用两种方式将原图进行<strong>Warp</strong>的效果其实类似（除了扭曲方向不太一样）而用<strong>NonUniformDirectionalWarp</strong>可以通过两个灰度图输入(Grayscale)来控制不均匀的<strong>强度(Intensity)</strong>和<strong>角度(Angle)</strong></p>
+          </div>
+<div class="note default">
+            <p>使用<strong>NonUniformDirectionalWarp</strong>可以方便快速进行非均匀的<strong>弯曲(Warp)</strong>，它可以做出很多漂亮的<strong>Noise</strong>，例如：</p><ul><li><a href="#LichenNoise">地衣噪点</a></li><li><a href="#Grunge00">其他脏迹0</a></li></ul>
+          </div>
+<hr>
+<h3 id="NonUniformBlur"><a href="#NonUniformBlur" class="headerlink" title="NonUniformBlur"></a>NonUniformBlur</h3><blockquote>
+<p>不均匀模糊</p>
+</blockquote>
+<hr>
+<h3 id="HistogramScanNonUniform"><a href="#HistogramScanNonUniform" class="headerlink" title="HistogramScanNonUniform"></a>HistogramScanNonUniform</h3><blockquote>
+<p>直方图扫描，非统一</p>
+</blockquote>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\nonScan.jpg " class="full-image" alt title style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\nonScan.gif " class="full-image" alt title style="max-width: none; width:50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<hr>
+<h3 id="SlopeBlur"><a href="#SlopeBlur" class="headerlink" title="SlopeBlur"></a>SlopeBlur</h3><blockquote>
+<p>坡度模糊</p>
+</blockquote>
+<p><strong>SlopeBlur</strong>非常常用，通过输入的图(高度图)的坡度(Slope)来进行带方向性的模糊(Directional Blur)。所以内部逻辑和节点<strong>Directional Warp</strong>相似。<br>众所周知，最经常的用法就是通过一个<strong>Noise</strong>来打破直线，也常用来做边界磨损效果。或脏脏迹、污垢和铁锈。</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\slopeBlur00.jpg " class="full-image" alt title style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note warning">
+            <p><strong>SlopeBlur</strong>的基本用法在这不再赘述，要注意的就是<strong>模式(Mode)</strong>的不同效果。</p>
+          </div>
+<div class="note success">
+            <p>然而<strong>SlopeBlur</strong>还有个很好用的效果就是<strong>膨胀(inflate)</strong>。<br>将原图与自身<strong>SlopeBlur</strong>可以达到很好的膨胀效果，用这种方法可以很好的消除<strong>高度图</strong>上太过锐利的边界:<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\slopeBlur01.jpg " class="full-image" alt title style="max-width: none; width:85%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\slopeBlur02.jpg " class="full-image" alt title style="max-width: none; width:85%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+          </div>
+<div class="note default">
+            <p>通过<strong>SlopeBlur</strong>模糊自身的其他应用：</p><ul><li><a href="#LichenNoise">地衣噪点</a></li><li><a href="#Moss00">苔藓噪点0</a></li><li><a href="#Moss01">苔藓噪点1</a></li></ul>
+          </div>
+<hr>
+<h3 id="Gradient-Dynamic"><a href="#Gradient-Dynamic" class="headerlink" title="Gradient(Dynamic)"></a>Gradient(Dynamic)</h3><blockquote>
+<p>渐变(动态)</p>
+</blockquote>
+<p>一种重新映射的<strong>Gradient</strong>，在某些地方可以替换普通的<strong>Gradient</strong>节点。<br>因为普通的<strong>Gradient</strong>节点的颜色的定义是在节点内部，而且不能<strong>转换成参数(ExposingParameter)</strong>。所以如果需要将颜色定义成参数，就可以用新建一个颜色输入，输入给<strong>Gradient(Dynamic)</strong>的<code>GradientInput</code></p>
+<div class="note primary">
+            <p><strong>Gradient(Dynamic)</strong>最主要的控制是<code>GradientInput</code>输入的色彩图(color)。可以根据映射<strong>方向(Orientation)</strong>，和通过<strong>滑块(slider)</strong>控制映射位置的偏移。这说明，我们可以将不同方向的多种渐变的颜色存在一张图中。通过滑块来切换不同的渐变模式</p>
+          </div>
+<p>例如：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\gradientDyn.jpg " class="full-image" alt title style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\gradientDyn_01.jpg " class="full-image" alt title style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<ul>
+<li>像第一张图一样，先创建一张随机颜色的贴图，输入给<code>GradientInput</code></li>
+<li>在节点<strong>Gradient(Dynamic)</strong>中的<strong>Orientation</strong>选择水平<code>Horizontal</code>,然后<strong>Position</strong>调整到<code>0.5</code></li>
+<li>这样效果就相当于提取了输入的色彩图，水平的，中间位置的，颜色信息</li>
+</ul>
+<p>然后我们试着把<strong>Orientation</strong>设置成<code>vertical</code>,即将提取方向改成垂直的：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\gradientDyn_02.jpg " class="full-image" alt title style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>最后，我们再试着调整下<strong>Position</strong>的数值，将它调到<code>0.1</code>左右，即，在第一列附近：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\gradientDyn_03.jpg " class="full-image" alt title style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<hr>
+<h3 id="HistogramSelect"><a href="#HistogramSelect" class="headerlink" title="HistogramSelect"></a>HistogramSelect</h3><blockquote>
+<p>直方图选择</p>
+</blockquote>
+<hr>
+<h2 id="纹理"><a href="#纹理" class="headerlink" title="纹理"></a>纹理</h2><blockquote>
+<p>较好看或特别的噪点纹理</p>
+</blockquote>
+<h3 id="Pattern"><a href="#Pattern" class="headerlink" title="Pattern"></a>Pattern</h3><h4 id="TileSampler-1"><a href="#TileSampler-1" class="headerlink" title="TileSampler"></a>TileSampler</h4><p>重复图案</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\Pattern\tileSampler00.jpg " class="full-image" alt title style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\Pattern\tileSampler01.jpg " class="full-image" alt title style="max-width: none; width:85%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<h3 id="Noise"><a href="#Noise" class="headerlink" title="Noise"></a>Noise</h3><h4 id="Fluid00"><a href="#Fluid00" class="headerlink" title="Fluid00"></a>Fluid00</h4><blockquote>
+<p>流迹噪点</p>
+</blockquote>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\fluidNoise00.jpg " class="full-image" alt title style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<h4 id="Fluid01"><a href="#Fluid01" class="headerlink" title="Fluid01"></a>Fluid01</h4><blockquote>
+<p>流迹噪点01</p>
+</blockquote>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\Noise\fluid01.jpg " class="full-image" alt title style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<hr>
+<h4 id="LichenNoise"><a href="#LichenNoise" class="headerlink" title="LichenNoise"></a>LichenNoise</h4><blockquote>
+<p>地衣噪点</p>
+</blockquote>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\LichenNoise00.jpg " class="full-image" alt title style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\LichenNoise01.jpg " class="full-image" alt title style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<hr>
+<h4 id="Moss00"><a href="#Moss00" class="headerlink" title="Moss00"></a>Moss00</h4><blockquote>
+<p>苔藓噪点</p>
+</blockquote>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\Noise\Moss00.jpg " class="full-image" alt title style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\Noise\Moss01.jpg " class="full-image" alt title style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<hr>
+<h4 id="Moss01"><a href="#Moss01" class="headerlink" title="Moss01"></a>Moss01</h4><blockquote>
+<p>苔藓噪点</p>
+</blockquote>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\Noise\Moss01_1.jpg " class="full-image" alt title style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\Noise\Moss01_2.jpg " class="full-image" alt title style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<hr>
+<h4 id="Grunge00"><a href="#Grunge00" class="headerlink" title="Grunge00"></a>Grunge00</h4><blockquote>
+<p>其他脏迹00</p>
+</blockquote>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\Noise\Grunge0_0.jpg " class="full-image" alt title style="max-width: none; width:45%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\Noise\Grunge0_1.jpg " class="full-image" alt title style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<hr>
+<h4 id="Mud00"><a href="#Mud00" class="headerlink" title="Mud00"></a>Mud00</h4><blockquote>
+<p>泥地00</p>
+</blockquote>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\Noise\mud00_1.jpg " class="full-image" alt title style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\Noise\mud00_2.jpg " class="full-image" alt title style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<h2 id="制作"><a href="#制作" class="headerlink" title="制作"></a>制作</h2><blockquote>
+<p>具体的项目制作</p>
+</blockquote>
+<h3 id="RockTilling01"><a href="#RockTilling01" class="headerlink" title="RockTilling01"></a>RockTilling01</h3><blockquote>
+<p>石头的散落案例01</p>
+</blockquote>
+<ul>
+<li>输入4个不同的石头基础形，先制作一个大块的散落</li>
+<li>通过<strong>Scan</strong>获得大块石头的<strong>Mask</strong></li>
+<li>使用<strong>AO</strong>节点获得<strong>Mask</strong>的边界阴影</li>
+<li>通过<strong>Invert</strong>获得新的mask</li>
+<li>新建一个小石块的散落，将新的Mask输入给<strong>ScaleMap</strong>和<strong>MaskMap</strong></li>
+<li>最后将两个结果用<strong>Max</strong>混合</li>
+</ul>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\Project\rockTile.jpg " class="full-image" alt title style="max-width: none; width:95%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<hr>
+<h3 id="GrassTilling01"><a href="#GrassTilling01" class="headerlink" title="GrassTilling01"></a>GrassTilling01</h3><blockquote>
+<p>草散落案例01</p>
+</blockquote>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\Project\grassTilling.jpg " class="full-image" alt title style="max-width: none; width:95%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>在上图的基础上，旋转<code>-90</code>度后再加点随机旋转：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\Project\grassTilling1.jpg " class="full-image" alt title style="max-width: none; width:95%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<hr>
+<h3 id="FlowerTilling01"><a href="#FlowerTilling01" class="headerlink" title="FlowerTilling01"></a>FlowerTilling01</h3><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\Project\tempTilling.jpg " class="full-image" alt title style="max-width: none; width:95%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<h3 id="柔软放置"><a href="#柔软放置" class="headerlink" title="柔软放置"></a>柔软放置</h3><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\Project\laySoftly.jpg " class="full-image" alt title style="max-width: none; width:95%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<hr>
+<h2 id="参数化"><a href="#参数化" class="headerlink" title="参数化"></a>参数化</h2><blockquote>
+<p>Exposing Parameter</p>
+</blockquote>
+<h3 id="参数的显示-关闭"><a href="#参数的显示-关闭" class="headerlink" title="参数的显示/关闭"></a>参数的显示/关闭</h3><blockquote>
+<p>Display/Hide inputs and outpust with conditions</p>
+</blockquote>
+<p>当我们暴露出一些参数的时候,有些参数直接可能有关联：有些参数可能是基于另一个参数的状态。</p>
+<p>可以通过使用<strong>Visible if</strong>来添加显示参数的条件(甚至输入(input)和输出(output))。</p>
+<p>例如：</p>
+<ul>
+<li>新建一个<strong>SubGraph</strong></li>
+<li>创建一个<strong>Boolean</strong>变量</li>
+<li>在另一个暴露出来的参数中的<strong>Visible if</strong>写下特定表达式关联之前的变量</li>
+</ul>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\visibleIf.jpg " class="full-image" alt title style="max-width: none; width:35%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note danger">
+            <p>参数中有两个名称<strong>Identifier</strong>和<strong>Label</strong>容易搞混。<br>判断语句要使用<strong>Identifier</strong>的命名，因为<strong>Identifier</strong>是真正的<strong>变量名(variable)</strong><br>而<strong>Label</strong>是标签名，是外部展示的普通名称(是可以使用空格的)</p>
+          </div>
+<p>看看效果：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\SDAdvanced\visibleIf.gif " class="full-image" alt title style="max-width: none; width:45%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p><strong>Visible if</strong>输入框支持的语法和大部分编程语言的判断语句差不过：</p>
+<ul>
+<li>支持 布尔型(Boolean), 浮点型(Float), 整型(Integer)</li>
+<li><strong>true</strong>表示真，<strong>false</strong>表示假(不同的是，它这里首字符小写)</li>
+<li><strong>&&</strong>表示且，<strong>||</strong>表示或，<strong>！</strong>表示非</li>
+<li>比较操作：<strong><,>, <=,>=, ==, !=</=,></,></strong></li>
+</ul>
+<p>常用的判断例子：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Condition</th>
+<th style="text-align:left">Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">“myInput”是否为真</td>
+<td style="text-align:left"><code>input["myInput"]</code></td>
+</tr>
+<tr>
+<td style="text-align:center">“myInput”是否为假</td>
+<td style="text-align:left"><code>!input["myInput"]</code></td>
+</tr>
+<tr>
+<td style="text-align:center">“myParam”是否小于3</td>
+<td style="text-align:left"><code>input[myParam] < 3</code></td>
+</tr>
+<tr>
+<td style="text-align:center">“myParam”是否大于等于3</td>
+<td style="text-align:left"><code>input[myParam] >= 3</code></td>
+</tr>
+<tr>
+<td style="text-align:center">“myParam”的<em>Z</em>值是否等于3</td>
+<td style="text-align:left"><code>input[myParam].z == 3</code></td>
+</tr>
+<tr>
+<td style="text-align:center">“myCondition0”和”myCondition1”都为真则真</td>
+<td style="text-align:left"><code>input[myCondition0] && input[myCondition1]</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><h3 id="用Gradient调整位置"><a href="#用Gradient调整位置" class="headerlink" title="用Gradient调整位置"></a>用Gradient调整位置</h3><h3 id="GradientEditor"><a href="#GradientEditor" class="headerlink" title="GradientEditor"></a>GradientEditor</h3><ul>
+<li>可以通过<strong>Select All</strong> 在进行HSV调整</li>
+<li>可以通过<strong>Precision</strong>调整<strong>PickGradient</strong>拾取的颜色密度。</li>
+<li>Alpha可以当Mask</li>
+</ul>
+<h3 id="用来Slope的Noise可以降低精度或者拉伸贴图"><a href="#用来Slope的Noise可以降低精度或者拉伸贴图" class="headerlink" title="用来Slope的Noise可以降低精度或者拉伸贴图"></a>用来Slope的Noise可以降低精度或者拉伸贴图</h3><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Notes/" rel="tag"># Notes</a>
+          
+            <a href="/tags/Substance/" rel="tag"># Substance</a>
+          
+            <a href="/tags/Advanced/" rel="tag"># Advanced</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Tech/pythonAdvanced/" rel="next" title="Python进阶">
+                <i class="fa fa-chevron-left"></i> Python进阶
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Tech/HoudiniNotes/" rel="prev" title="Houdini笔记(未整理)">
+                Houdini笔记(未整理) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">范子文</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:120416678@qq.com" title="E-Mail &rarr; mailto:120416678@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#节点解析"><span class="nav-number">2.</span> <span class="nav-text">节点解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#VectorMorph-Warp"><span class="nav-number">2.1.</span> <span class="nav-text">VectorMorph(Warp)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TileSampler"><span class="nav-number">2.2.</span> <span class="nav-text">TileSampler</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ScaleMapInput"><span class="nav-number">2.2.1.</span> <span class="nav-text">ScaleMapInput</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DisplacementMapInput"><span class="nav-number">2.2.2.</span> <span class="nav-text">DisplacementMapInput</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RotationMapInput"><span class="nav-number">2.2.3.</span> <span class="nav-text">RotationMapInput</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#VectorMapInput"><span class="nav-number">2.2.4.</span> <span class="nav-text">VectorMapInput</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ColorMapInput"><span class="nav-number">2.2.5.</span> <span class="nav-text">ColorMapInput</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MaskMapInput"><span class="nav-number">2.2.6.</span> <span class="nav-text">MaskMapInput</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PatternDistributionInput"><span class="nav-number">2.2.7.</span> <span class="nav-text">PatternDistributionInput</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NonUniformDirectionalWarp"><span class="nav-number">2.3.</span> <span class="nav-text">NonUniformDirectionalWarp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NonUniformBlur"><span class="nav-number">2.4.</span> <span class="nav-text">NonUniformBlur</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HistogramScanNonUniform"><span class="nav-number">2.5.</span> <span class="nav-text">HistogramScanNonUniform</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SlopeBlur"><span class="nav-number">2.6.</span> <span class="nav-text">SlopeBlur</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gradient-Dynamic"><span class="nav-number">2.7.</span> <span class="nav-text">Gradient(Dynamic)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HistogramSelect"><span class="nav-number">2.8.</span> <span class="nav-text">HistogramSelect</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#纹理"><span class="nav-number">3.</span> <span class="nav-text">纹理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pattern"><span class="nav-number">3.1.</span> <span class="nav-text">Pattern</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TileSampler-1"><span class="nav-number">3.1.1.</span> <span class="nav-text">TileSampler</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Noise"><span class="nav-number">3.2.</span> <span class="nav-text">Noise</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Fluid00"><span class="nav-number">3.2.1.</span> <span class="nav-text">Fluid00</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fluid01"><span class="nav-number">3.2.2.</span> <span class="nav-text">Fluid01</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LichenNoise"><span class="nav-number">3.2.3.</span> <span class="nav-text">LichenNoise</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Moss00"><span class="nav-number">3.2.4.</span> <span class="nav-text">Moss00</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Moss01"><span class="nav-number">3.2.5.</span> <span class="nav-text">Moss01</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Grunge00"><span class="nav-number">3.2.6.</span> <span class="nav-text">Grunge00</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mud00"><span class="nav-number">3.2.7.</span> <span class="nav-text">Mud00</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#制作"><span class="nav-number">4.</span> <span class="nav-text">制作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RockTilling01"><span class="nav-number">4.1.</span> <span class="nav-text">RockTilling01</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GrassTilling01"><span class="nav-number">4.2.</span> <span class="nav-text">GrassTilling01</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FlowerTilling01"><span class="nav-number">4.3.</span> <span class="nav-text">FlowerTilling01</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#柔软放置"><span class="nav-number">4.4.</span> <span class="nav-text">柔软放置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数化"><span class="nav-number">5.</span> <span class="nav-text">参数化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参数的显示-关闭"><span class="nav-number">5.1.</span> <span class="nav-text">参数的显示/关闭</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">6.</span> <span class="nav-text">Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用Gradient调整位置"><span class="nav-number">6.1.</span> <span class="nav-text">用Gradient调整位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GradientEditor"><span class="nav-number">6.2.</span> <span class="nav-text">GradientEditor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用来Slope的Noise可以降低精度或者拉伸贴图"><span class="nav-number">6.3.</span> <span class="nav-text">用来Slope的Noise可以降低精度或者拉伸贴图</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">范子文</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+<script>
+if ($('body').find('pre.mermaid').length) {
+  $.ajax({
+    type: 'GET',
+    url: '//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js',
+    dataType: 'script',
+    cache: true,
+    success: function() {
+      mermaid.initialize({
+        theme: 'neutral',
+        logLevel: 3,
+        flowchart: { curve: 'linear' },
+        gantt: { axisFormat: '%m/%d/%Y' },
+        sequence: { actorMargin: 50 }
+      });
+    }
+  });
+}
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
