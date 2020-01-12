@@ -100,18 +100,18 @@
 
 
 
-  <meta name="description" content="初始设置设置姓名和邮箱地址cmd12git config --global user.name &quot;UserName&quot;git config --global user.email &quot;UserEmail@example.com&quot;         document.querySelectorAll(&apos;.github-emoji&apos;)           .forEach(el =&amp;gt; {">
+  <meta name="description" content="初始设置创建仓库123$ git init$ git remote add origin  https://github.com/UserName/REPOSITORY.git$ git pull [remote] [branch] 设置姓名和邮箱地址cmd12$ git config --global user.name &quot;UserName&quot;$ git config --global user.">
 <meta name="keywords" content="Notes">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GitHub使用教程">
 <meta property="og:url" content="http://yoursite.com/Tech/Github/index.html">
 <meta property="og:site_name" content="Fan ziwen">
-<meta property="og:description" content="初始设置设置姓名和邮箱地址cmd12git config --global user.name &quot;UserName&quot;git config --global user.email &quot;UserEmail@example.com&quot;         document.querySelectorAll(&apos;.github-emoji&apos;)           .forEach(el =&amp;gt; {">
+<meta property="og:description" content="初始设置创建仓库123$ git init$ git remote add origin  https://github.com/UserName/REPOSITORY.git$ git pull [remote] [branch] 设置姓名和邮箱地址cmd12$ git config --global user.name &quot;UserName&quot;$ git config --global user.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-20T05:20:17.515Z">
+<meta property="og:updated_time" content="2019-12-22T13:00:24.820Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub使用教程">
-<meta name="twitter:description" content="初始设置设置姓名和邮箱地址cmd12git config --global user.name &quot;UserName&quot;git config --global user.email &quot;UserEmail@example.com&quot;         document.querySelectorAll(&apos;.github-emoji&apos;)           .forEach(el =&amp;gt; {">
+<meta name="twitter:description" content="初始设置创建仓库123$ git init$ git remote add origin  https://github.com/UserName/REPOSITORY.git$ git pull [remote] [branch] 设置姓名和邮箱地址cmd12$ git config --global user.name &quot;UserName&quot;$ git config --global user.">
 
 
 
@@ -381,7 +381,7 @@
                 
               
 
-              <time title="创建时间：2019-05-06 21:14:10" itemprop="dateCreated datePublished" datetime="2019-05-06T21:14:10+08:00">2019-05-06</time>
+              <time title="创建时间：2019-05-04 21:14:10" itemprop="dateCreated datePublished" datetime="2019-05-04T21:14:10+08:00">2019-05-04</time>
             
 
             
@@ -398,7 +398,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-10-20 13:20:17" itemprop="dateModified" datetime="2019-10-20T13:20:17+08:00">2019-10-20</time>
+                <time title="修改时间：2019-12-22 21:00:24" itemprop="dateModified" datetime="2019-12-22T21:00:24+08:00">2019-12-22</time>
               
             
           </span>
@@ -450,7 +450,46 @@
       
 
       
-        <h3 id="初始设置"><a href="#初始设置" class="headerlink" title="初始设置"></a>初始设置</h3><h4 id="设置姓名和邮箱地址"><a href="#设置姓名和邮箱地址" class="headerlink" title="设置姓名和邮箱地址"></a>设置姓名和邮箱地址</h4><figure class="highlight bat"><figcaption><span>cmd</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name "UserName"</span><br><span class="line">git config --global user.email "UserEmail@example.com"</span><br></pre></td></tr></tbody></table></figure><script>
+        <h3 id="初始设置"><a href="#初始设置" class="headerlink" title="初始设置"></a>初始设置</h3><h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><figure class="highlight bat"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line">$ git remote add origin  https://github.com/UserName/REPOSITORY.git</span><br><span class="line">$ git pull [remote] [branch]</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="设置姓名和邮箱地址"><a href="#设置姓名和邮箱地址" class="headerlink" title="设置姓名和邮箱地址"></a>设置姓名和邮箱地址</h4><figure class="highlight bat"><figcaption><span>cmd</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name "UserName"</span><br><span class="line">$ git config --global user.email "UserEmail@example.com"</span><br></pre></td></tr></tbody></table></figure>
+<a id="more"></a>
+<h4 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h4><blockquote>
+<p>branch</p>
+</blockquote>
+<p>在进行多个并行作业时，我们会用到分支。不同分支中，可以同时进行完全不同的作业。等该分支的作业完成之后再与<strong>Master</strong>合并。</p>
+<h5 id="浏览"><a href="#浏览" class="headerlink" title="浏览"></a>浏览</h5><blockquote>
+<p>git branch</p>
+</blockquote>
+<p><code>git branch</code>命令可以将分支名列表显示，同时可以确认当前所在分支。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* master</span><br></pre></td></tr></tbody></table></figure>
+<div class="note primary">
+            <p><code>*</code>表示我们当前所在的分支,目前只有一个<strong>master</strong></p>
+          </div>
+<div class="note info">
+            <p><code>git branch -a</code>查看所有的分支，包括远程仓库里的</p>
+          </div>
+<h5 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h5><blockquote>
+<p>git checkout -b</p>
+</blockquote>
+<p>如果想以当前分支(master)为基础创建新的分支，需要使用<code>git checkout -b</code></p>
+<figure class="highlight bat"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b branch1</span><br><span class="line">Switched to a new branch 'branch1'</span><br></pre></td></tr></tbody></table></figure>
+<p>其实<code>git branch</code>后跟着分支名同样也可以创建一个分支,只不过还是要通过<code>git checkout</code>来切换到当前分支</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git branch newBranch</span><br><span class="line">$ git branch</span><br><span class="line">* branch1</span><br><span class="line">  master</span><br><span class="line">  newBranch</span><br></pre></td></tr></tbody></table></figure>
+<div class="note warning">
+            <p>注意到上面的<code>*</code>代表我们还在<strong>branch1</strong>中，我们还是要使用<code>git checkout</code>来切换当前分支</p>
+          </div>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout newBranch</span><br><span class="line">Switched to branch 'newBranch'</span><br><span class="line">$ git branch</span><br><span class="line">  branch1</span><br><span class="line">  master</span><br><span class="line">* newBranch</span><br></pre></td></tr></tbody></table></figure>
+<div class="note info">
+            <p><code>git branch -a</code>查看所有的分支，包括远程仓库里的</p>
+          </div>
+<h4 id="暂存"><a href="#暂存" class="headerlink" title="暂存"></a>暂存</h4><blockquote>
+<p>Stash</p>
+</blockquote>
+<p><code>git stash</code></p>
+<p><code>git stash list</code></p>
+<p><code>git stash apply</code></p>
+<p><code>git stash drop</code></p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -504,18 +543,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Tech/CMDandBatch/" rel="next" title="Command与Batch常用命令">
-                <i class="fa fa-chevron-left"></i> Command与Batch常用命令
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Tech/PythonInMaya/" rel="prev" title="Maya中Pymel常用命令">
-                Maya中Pymel常用命令 <i class="fa fa-chevron-right"></i>
+              <a href="/Tech/C++/" rel="prev" title="C++ Note(unfinished)">
+                C++ Note(unfinished) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -645,9 +680,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -700,7 +733,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始设置"><span class="nav-number">1.</span> <span class="nav-text">初始设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置姓名和邮箱地址"><span class="nav-number">1.1.</span> <span class="nav-text">设置姓名和邮箱地址</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始设置"><span class="nav-number">1.</span> <span class="nav-text">初始设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建仓库"><span class="nav-number">2.</span> <span class="nav-text">创建仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置姓名和邮箱地址"><span class="nav-number">2.1.</span> <span class="nav-text">设置姓名和邮箱地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分支"><span class="nav-number">2.2.</span> <span class="nav-text">分支</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#浏览"><span class="nav-number">2.2.1.</span> <span class="nav-text">浏览</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#创建"><span class="nav-number">2.2.2.</span> <span class="nav-text">创建</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#暂存"><span class="nav-number">2.3.</span> <span class="nav-text">暂存</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -721,7 +754,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

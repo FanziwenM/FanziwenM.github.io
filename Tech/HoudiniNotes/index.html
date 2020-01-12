@@ -100,13 +100,13 @@
 
 
 
-  <meta name="description" content="🌏基础介绍🔥常用节点 Attribute Transfer 属性传递  非常常用的功能，用于传递指定属性。例如我们这里可以传递位置属性：  先创建一个网格(Grid) 和一个 球体(Sphere) 使用节点Attribute Transfer 第一个输入为传递目标(Grid)，第二个输入为传递源(Sphere) 设置Attributes下的Points为P，既位置Position">
+  <meta name="description" content="🌏基础介绍🔥常用节点 Point Replicate 复制点  可以配合节点Add，快速生成一堆随机点， Attribute Transfer 属性传递  非常常用的功能，用于传递指定属性。例如我们这里可以传递位置属性：  先创建一个网格(Grid) 和一个 球体(Sphere) 使用节点Attribute Transfer 第一个输入为传递目标(Grid)，第二个输入为传递源(Sphere)">
 <meta name="keywords" content="Notes,Basic,Houdini">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Houdini笔记(未整理)">
+<meta property="og:title" content="Houdini笔记">
 <meta property="og:url" content="http://yoursite.com/Tech/HoudiniNotes/index.html">
 <meta property="og:site_name" content="Fan ziwen">
-<meta property="og:description" content="🌏基础介绍🔥常用节点 Attribute Transfer 属性传递  非常常用的功能，用于传递指定属性。例如我们这里可以传递位置属性：  先创建一个网格(Grid) 和一个 球体(Sphere) 使用节点Attribute Transfer 第一个输入为传递目标(Grid)，第二个输入为传递源(Sphere) 设置Attributes下的Points为P，既位置Position">
+<meta property="og:description" content="🌏基础介绍🔥常用节点 Point Replicate 复制点  可以配合节点Add，快速生成一堆随机点， Attribute Transfer 属性传递  非常常用的功能，用于传递指定属性。例如我们这里可以传递位置属性：  先创建一个网格(Grid) 和一个 球体(Sphere) 使用节点Attribute Transfer 第一个输入为传递目标(Grid)，第二个输入为传递源(Sphere)">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/attrTrans.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/attrTrans.gif">
@@ -122,9 +122,10 @@
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/findShortPath.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/findShortPath1.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/findShortPath2.jpg">
-<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/VEX/vexCreateAttri.png">
-<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/VEX/vexCreateAttri1.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/isooffset.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/pdgOutput.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/intrinsic.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/intrinsic2.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/group.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/group1.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/ch_mountain.png">
@@ -132,17 +133,23 @@
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/ch_mountain3.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/ch_mountain4.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/ch_mountain5.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/performance.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/menuParameter.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/menuParameter1.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Trick/ptsRint.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Trick/ptsRint2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Trick/ptsRint3.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Trick/ptsRint4.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Trick/ptsRint5.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/displaceFix.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/displaceFix1.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/displaceFix2.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/displaceFix3.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/onlyPts.jpg">
-<meta property="og:updated_time" content="2019-11-05T12:53:08.290Z">
+<meta property="og:updated_time" content="2020-01-11T07:37:09.038Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Houdini笔记(未整理)">
-<meta name="twitter:description" content="🌏基础介绍🔥常用节点 Attribute Transfer 属性传递  非常常用的功能，用于传递指定属性。例如我们这里可以传递位置属性：  先创建一个网格(Grid) 和一个 球体(Sphere) 使用节点Attribute Transfer 第一个输入为传递目标(Grid)，第二个输入为传递源(Sphere) 设置Attributes下的Points为P，既位置Position">
+<meta name="twitter:title" content="Houdini笔记">
+<meta name="twitter:description" content="🌏基础介绍🔥常用节点 Point Replicate 复制点  可以配合节点Add，快速生成一堆随机点， Attribute Transfer 属性传递  非常常用的功能，用于传递指定属性。例如我们这里可以传递位置属性：  先创建一个网格(Grid) 和一个 球体(Sphere) 使用节点Attribute Transfer 第一个输入为传递目标(Grid)，第二个输入为传递源(Sphere)">
 <meta name="twitter:image" content="http://yoursite.com/images/Notes/Houdini/attrTrans.jpg">
 
 
@@ -161,7 +168,7 @@
   };
 </script>
 
-  <title>Houdini笔记(未整理) | Fan ziwen</title>
+  <title>Houdini笔记 | Fan ziwen</title>
   
 
 
@@ -387,7 +394,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Houdini笔记(未整理)
+          <h1 class="post-title" itemprop="name headline">Houdini笔记
 
               
             
@@ -430,7 +437,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-11-05 20:53:08" itemprop="dateModified" datetime="2019-11-05T20:53:08+08:00">2019-11-05</time>
+                <time title="修改时间：2020-01-11 15:37:09" itemprop="dateModified" datetime="2020-01-11T15:37:09+08:00">2020-01-11</time>
               
             
           </span>
@@ -483,6 +490,10 @@
 
       
         <h2 id="🌏基础介绍"><a href="#🌏基础介绍" class="headerlink" title="🌏基础介绍"></a>🌏基础介绍</h2><h2 id="🔥常用节点"><a href="#🔥常用节点" class="headerlink" title="🔥常用节点"></a>🔥常用节点</h2><hr>
+<h3 id="Point-Replicate"><a href="#Point-Replicate" class="headerlink" title="Point Replicate"></a>Point Replicate</h3><blockquote>
+<p>复制点</p>
+</blockquote>
+<p>可以配合节点<strong>Add</strong>，快速生成一堆随机点，</p>
 <h3 id="Attribute-Transfer"><a href="#Attribute-Transfer" class="headerlink" title="Attribute Transfer"></a>Attribute Transfer</h3><blockquote>
 <p>属性传递</p>
 </blockquote>
@@ -539,163 +550,65 @@
 <p>拷贝至点</p>
 </blockquote>
 <p>可以将指定 物体 拷贝到点上,</p>
-<h3 id="Copy-Stamp"><a href="#Copy-Stamp" class="headerlink" title="Copy Stamp"></a>Copy Stamp</h3><h2 id="📋其他节点"><a href="#📋其他节点" class="headerlink" title="📋其他节点"></a>📋其他节点</h2><h3 id="PolyPath"><a href="#PolyPath" class="headerlink" title="PolyPath"></a>PolyPath</h3><hr>
+<h3 id="Copy-Stamp"><a href="#Copy-Stamp" class="headerlink" title="Copy Stamp"></a>Copy Stamp</h3><h3 id="Remesh"><a href="#Remesh" class="headerlink" title="Remesh"></a>Remesh</h3><h3 id="IsoOffset"><a href="#IsoOffset" class="headerlink" title="IsoOffset"></a>IsoOffset</h3><blockquote>
+<p>Builds an offset surface from geometry.</p>
+</blockquote>
+<p>可以通过参数<code>Sampling</code>，将<strong>Volume</strong>更匹配原模型。；，</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\isooffset.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<hr>
+<h2 id="📋其他节点"><a href="#📋其他节点" class="headerlink" title="📋其他节点"></a>📋其他节点</h2><h3 id="PolyPath"><a href="#PolyPath" class="headerlink" title="PolyPath"></a>PolyPath</h3><hr>
 <h3 id="L-System"><a href="#L-System" class="headerlink" title="L-System"></a>L-System</h3><hr>
-<h2 id="📦VOP"><a href="#📦VOP" class="headerlink" title="📦VOP"></a>📦VOP</h2><h2 id="🎓VEX"><a href="#🎓VEX" class="headerlink" title="🎓VEX"></a>🎓VEX</h2><h3 id="Create-New-Attribute"><a href="#Create-New-Attribute" class="headerlink" title="Create New Attribute"></a>Create New Attribute</h3><p>如何定义一个新的属性：<br></p><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@myAttri;</span><br></pre></td></tr></tbody></table></figure><p></p>
-<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\VEX\vexCreateAttri.png " class="full-image" style="max-width: none; width:65%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<p>因为没有声明数据类型，所以默认为<strong>浮点数(float)</strong>,如果创建的是<strong>Vector</strong>类型，则在<code>@</code>前加个<code>v</code>:<br></p><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v@myAttri;</span><br></pre></td></tr></tbody></table></figure><p></p>
-<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\VEX\vexCreateAttri1.png " class="full-image" style="max-width: none; width:65%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<p>这时候可以看到<strong>点(Points)</strong>属性里的<code>myAttrs</code>就变成了<strong>3 float</strong>的<strong>Vector</strong>类。</p>
-<p><strong>Houdini官方给出的声明属性类型表：</strong></p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">VEX type</th>
-<th style="text-align:left">Syntax</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">float</td>
-<td style="text-align:left">f@name</td>
-</tr>
-<tr>
-<td style="text-align:center">vector2(2floats)</td>
-<td style="text-align:left">u@name</td>
-</tr>
-<tr>
-<td style="text-align:center">vector(3floats)</td>
-<td style="text-align:left">v@name</td>
-</tr>
-<tr>
-<td style="text-align:center">vector4(4floats)</td>
-<td style="text-align:left">p@name</td>
-</tr>
-<tr>
-<td style="text-align:center">int</td>
-<td style="text-align:left">i@name</td>
-</tr>
-<tr>
-<td style="text-align:center">matrix2(2x2floats)</td>
-<td style="text-align:left">2@name</td>
-</tr>
-<tr>
-<td style="text-align:center">matrix3(3x3floats)</td>
-<td style="text-align:left">3@name</td>
-</tr>
-<tr>
-<td style="text-align:center">matrix(4x4floats)</td>
-<td style="text-align:left">4@name</td>
-</tr>
-<tr>
-<td style="text-align:center">string</td>
-<td style="text-align:left">s@name</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 id="Get-The-Known-Attributes"><a href="#Get-The-Known-Attributes" class="headerlink" title="Get The Known Attributes"></a>Get The Known Attributes</h3><p>Houdini 中一些常用的已知全局属性：</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Name</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">@P</td>
-<td style="text-align:left">位置(Position)</td>
-</tr>
-<tr>
-<td style="text-align:center">@N</td>
-<td style="text-align:left">法线(Normal)</td>
-</tr>
-<tr>
-<td style="text-align:center">@Cd</td>
-<td style="text-align:left">颜色(Color)</td>
-</tr>
-<tr>
-<td style="text-align:center">@ptnum</td>
-<td style="text-align:left">点的序号(point numober/index)</td>
-</tr>
-<tr>
-<td style="text-align:center">@numpt</td>
-<td style="text-align:left">点的数量(number of points)</td>
-</tr>
-<tr>
-<td style="text-align:center">@primnum</td>
-<td style="text-align:left"><strong>Primitive</strong>的序号</td>
-</tr>
-<tr>
-<td style="text-align:center">@numprom</td>
-<td style="text-align:left"><strong>Primitive</strong>的总数</td>
-</tr>
-<tr>
-<td style="text-align:center">@pscale</td>
-<td style="text-align:left">点的缩放(<code>copytoPoint</code>控制大小的参数)</td>
-</tr>
-<tr>
-<td style="text-align:center">@Frame</td>
-<td style="text-align:left">当前帧数</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 id="Common-functions"><a href="#Common-functions" class="headerlink" title="Common functions"></a>Common functions</h3><p>These appear in 99% of my vex wrangles:</p>
-<h4 id="Reading-attributes"><a href="#Reading-attributes" class="headerlink" title="Reading attributes"></a>Reading attributes</h4><blockquote>
-<p>获取属性</p>
-</blockquote>
-<p>以下这些<strong>函数</strong>可以通过<strong>detail/primitive/point/vertex</strong>来读取特定部分的属性，如果属性不存在则返回<code>0</code>或<strong>空值</strong></p>
-<p>通过指定部分读取属性：<br></p><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">attrib(geometry[geometry], attribclass[<span class="built_in">string</span>], name[<span class="built_in">string</span>], elemnum[<span class="keyword">int</span>])</span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>这种形式的读取，是在运行时指定要读取的特定<strong>类型</strong>。在编写一个应对不同类型的通用代码时很有帮助。<br>如果你知道自己想要的读取的<strong>属性</strong>在哪个部分，可以使用<code>detail(),prim(),point(),vertex()</code>，这样或许会更快点</p>
-<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">detail(geometry, attribute_name, ignored=<span class="number">0</span>)</span><br><span class="line"><span class="comment">//     [geometry]   [string]       [int]</span></span><br><span class="line"></span><br><span class="line">prim(geometry, attribute_name, primnumber)</span><br><span class="line"><span class="comment">//  [geometry]    [string]        [int]</span></span><br><span class="line"></span><br><span class="line">point(geometry, attribute_name, pointnumber)</span><br><span class="line"><span class="comment">//   [geometry]    [string]        [int]</span></span><br><span class="line"></span><br><span class="line">vertex(geometry, attribute_name, linear_vertex_index)</span><br><span class="line"><span class="comment">//   [geometry]    [string]            [int]</span></span><br><span class="line"><span class="comment">//Specifies the vertex using the linear index into the list of all vertices.</span></span><br><span class="line"></span><br><span class="line">vertex(geometry, attribute_name, prim_num, vertex_num)</span><br><span class="line"><span class="comment">//   [geometry]    [string]        [int]      [int]</span></span><br><span class="line"><span class="comment">//Specifies the vertex as a primitive number and then an offset into the list of vertices on that primitive.</span></span><br></pre></td></tr></tbody></table></figure>
-<h4 id="fit"><a href="#fit" class="headerlink" title="fit()"></a>fit()</h4><blockquote>
-<p>take a number between 2 values, fit it between 2 other values, usually 0-1. Eg, remap @u from range -5,20 to 0-1: foo = fit(@u, -5, 20, 0, 1);</p>
-</blockquote>
-<p>将一个区间里的值，映射到另一区间里。<br>例如:将100个点，根据点序号(0-99)，填充渐变颜色(0-1）</p>
-<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Cd = fit(@ptnum, <span class="number">0</span>,<span class="number">99</span>, <span class="number">0</span>,<span class="number">1</span>);</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="fit01"><a href="#fit01" class="headerlink" title="fit01()"></a>fit01()</h4><blockquote>
-<p>Takes the value in the range (0, 1) and shifts it to the corresponding value in a new range.</p>
-</blockquote>
-<p>不同于<code>fit()</code>的是，该函数默认你输入的是在区间<code>[0-1]</code>所以只要给两个参数定义新的取值范围：</p>
-<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fit01(rand(@ptnum),<span class="number">0.8</span>, <span class="number">1.5</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="rand"><a href="#rand" class="headerlink" title="rand()"></a>rand()</h4><blockquote>
-<p>generate a random number between 0 and 1. Usually feed it the point id, so each point gets a random number: foo = rand(@ptnum);</p>
-</blockquote>
-<h4 id="sin-cos"><a href="#sin-cos" class="headerlink" title="sin(), cos()"></a>sin(), cos()</h4><blockquote>
-<p>as you’d expect, but in radians.</p>
-</blockquote>
-<h4 id="radians"><a href="#radians" class="headerlink" title="radians()"></a>radians()</h4><blockquote>
-<p>convert a number from degrees to radians: foo = radians(90);</p>
-</blockquote>
-<h4 id="length"><a href="#length" class="headerlink" title="length()"></a>length()</h4><blockquote>
-<p>measure the length of a vector. Eg, measure the distance of a point from the origin: dist = length(@P);</p>
-</blockquote>
-<h4 id="distance"><a href="#distance" class="headerlink" title="distance()"></a>distance()</h4><blockquote>
-<p>measure the distance between two points: dist = distance(@P, v@mypoint);</p>
-</blockquote>
-<h4 id="intersect"><a href="#intersect" class="headerlink" title="intersect()"></a>intersect()</h4><blockquote>
-<p>This function computes the first intersection of a ray with geometry.</p>
-</blockquote>
-<h4 id="nearpoints"><a href="#nearpoints" class="headerlink" title="nearpoints()"></a>nearpoints()</h4><blockquote>
-<p>Finds the all the closest point in a geometry.</p>
-</blockquote>
-<p><strong>例如：</strong><br>连接所有一定距离(<code>MaxDistance</code>)的点</p>
-<figure class="highlight c++"><figcaption><span>points</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> nearPts[] = nearpoints(<span class="number">0</span>, @P, ch(<span class="string">"MaxDistance"</span>), <span class="number">8</span>);</span><br><span class="line"></span><br><span class="line">foreach(<span class="keyword">int</span> pt; nearPts){</span><br><span class="line">    <span class="keyword">if</span>(pt > @ptnum ){</span><br><span class="line">        addprim(<span class="number">0</span>, <span class="string">"polyline"</span>, @ptnum, pt);</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="Rotate-with-a-Matrix"><a href="#Rotate-with-a-Matrix" class="headerlink" title="Rotate with a Matrix"></a>Rotate with a Matrix</h3><p>在<strong>Houdini</strong>中矩阵旋转没有听上去的难，只要简单的三步：</p>
-<ul>
-<li>创建矩阵(Create a matrix)</li>
-<li>旋转矩阵(Rotate the matrix)</li>
-<li>将矩阵应用于模型(Apply the matrix to geometry)</li>
-</ul>
-<p>听上去第二步<strong>旋转(Rotate)</strong>矩阵似乎简化了，这一步在数学运算中虽然没有那么简单，但是在<strong>VEX</strong>中，有一个函数<code>rotate()</code>可以直接旋转矩阵<br>而第三步的应用，则是直接将模型和<strong>变化矩阵</strong>相乘即可</p>
-<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// create a identity matrix</span></span><br><span class="line">matrix3 m = ident();</span><br><span class="line"></span><br><span class="line"><span class="comment">// rotate the matrix</span></span><br><span class="line"><span class="built_in">vector</span> axis = {<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>};</span><br><span class="line"><span class="keyword">float</span> angle = radians(ch(<span class="string">"amount"</span>));</span><br><span class="line">rotate(m, angle, axis);</span><br><span class="line"></span><br><span class="line"><span class="comment">// apply the rotation</span></span><br><span class="line">@P *= m;</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="📦VOP"><a href="#📦VOP" class="headerlink" title="📦VOP"></a>📦VOP</h2><hr>
+<h2 id="🎓VEX"><a href="#🎓VEX" class="headerlink" title="🎓VEX"></a>🎓VEX</h2><p>详情见<a href="../HoudiniVEX">HoudiniVEX</a></p>
+<hr>
 <h2 id="🎩PDG"><a href="#🎩PDG" class="headerlink" title="🎩PDG"></a>🎩PDG</h2><p>可以通过创建<strong>Geometry</strong>创建<code>file</code>中设置路径`@pdg_output`来预览<strong>cook</strong>后的<strong>PDG</strong>输出的效果<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\pdgOutput.jpg " class="full-image" style="max-width: none; width:50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
 <hr>
-<h2 id="📌Tips"><a href="#📌Tips" class="headerlink" title="📌Tips"></a>📌Tips</h2><h3 id="type"><a href="#type" class="headerlink" title="type"></a>type</h3><p>节点链接出现虚线是因为数据类型不同，但是Houdini会自动转换数据类型。</p>
+<h2 id="🐍HOM"><a href="#🐍HOM" class="headerlink" title="🐍HOM"></a>🐍HOM</h2><blockquote>
+<p>How to script Houdini using Python and the Houdini Object Model</p>
+</blockquote>
+<p><strong>HOM</strong>(Houdini Object Model)就是指<strong>Houdini对象模块</strong>，可以让你通过使用<strong>Python</strong>脚本语言从Houdini中获取信息的<strong>API</strong><br>在使用Python时，<code>hou</code>包是定义<strong>HOM</strong>的模块、函数和类的顶层结构。它会在参数编辑中使用Python的时候自动导入。</p>
+<h3 id="Common-Functions"><a href="#Common-Functions" class="headerlink" title="Common Functions"></a>Common Functions</h3><blockquote>
+<p>常用函数</p>
+</blockquote>
+<h4 id="General"><a href="#General" class="headerlink" title="General"></a>General</h4><h5 id="hou-selectedNodes"><a href="#hou-selectedNodes" class="headerlink" title="hou.selectedNodes()"></a>hou.selectedNodes()</h5><blockquote>
+<p>已选中节点</p>
+</blockquote>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">selectedNodes(include_hidden=<span class="literal">False</span>)</span><br><span class="line"><span class="comment"># return tuple of hou.Node</span></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h4><blockquote>
+<p>节点类</p>
+</blockquote>
+<h5 id="createNode"><a href="#createNode" class="headerlink" title="createNode()"></a>createNode()</h5><blockquote>
+<p>创建节点</p>
+</blockquote>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">createNode(node_type_name, node_name=<span class="literal">None</span>, run_init_scripts=<span class="literal">True</span>, load_contents=<span class="literal">True</span>, exact_type_name=<span class="literal">False</span>)</span><br><span class="line"><span class="comment"># return hou.Node</span></span><br></pre></td></tr></tbody></table></figure>
+<p>例如：</p>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">obj = hou.node(<span class="string">"/obj"</span>)</span><br><span class="line">obj.createNode(<span class="string">"geo"</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h4><blockquote>
+<p>窗口类</p>
+</blockquote>
+<h5 id="displayMessage"><a href="#displayMessage" class="headerlink" title="displayMessage()"></a>displayMessage()</h5><blockquote>
+<p>提示消息窗口</p>
+</blockquote>
+<h5 id="selectFile"><a href="#selectFile" class="headerlink" title="selectFile()"></a>selectFile()</h5><blockquote>
+<p>选择文件窗口</p>
+</blockquote>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">selectFile(start_directory=<span class="literal">None</span>, title=<span class="literal">None</span>,</span><br><span class="line">    collapse_sequences=<span class="literal">False</span>, file_type=hou.fileType.Any,</span><br><span class="line">    pattern=<span class="literal">None</span>, default_value=<span class="literal">None</span>, multiple_select=<span class="literal">False</span>,</span><br><span class="line">    image_chooser=<span class="literal">False</span>, chooser_mode=hou.fileChooserMode.ReadAndWrite,</span><br><span class="line">    width=<span class="number">0</span>, height=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#return string</span></span><br></pre></td></tr></tbody></table></figure>
+<div class="note primary">
+            <p>形参<strong>file_type</strong>支持<code>hou.fileType</code>里列举的所有类型：<code>Image</code>，<code>Geometry</code>，<code>Hip</code>，<code>Otl</code>，<code>Directory</code> 等等<br><code>Any</code>这表示所有文件</p>
+          </div>
+<hr>
+<h2 id="📌Tips"><a href="#📌Tips" class="headerlink" title="📌Tips"></a>📌Tips</h2><h3 id="Intrinsic"><a href="#Intrinsic" class="headerlink" title="Intrinsic"></a>Intrinsic</h3><blockquote>
+<p>固有属性</p>
+</blockquote>
+<p>在模型的<strong>Primitives</strong>下可以看到很多隐藏的<strong>固有属性(Intrinsic)</strong><br>例如在使用节点<strong>Copy to Points</strong>并勾选<code>Pack and Instance</code>的情况下。Intrinsics就会多出<code>transform</code>属性，一个<code>3x3</code>矩阵。</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Tips\intrinsic.jpg " class="full-image" style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>然后可以通过读取或设置<code>transform</code>矩阵来改变模型信息，<br>使用到<strong>VEX</strong>函数:</p>
+<ul>
+<li><code>primintrinsic()</code></li>
+<li><code>setprimmintrinsic()</code></li>
+</ul>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Tips\intrinsic2.jpg " class="full-image" style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<h3 id="type"><a href="#type" class="headerlink" title="type"></a>type</h3><p>节点链接出现虚线是因为数据类型不同，但是Houdini会自动转换数据类型。</p>
 <h3 id="Group"><a href="#Group" class="headerlink" title="Group"></a>Group</h3><p>正如我们知道的<strong>Group</strong>中的<strong>Keep in Bounding Regions</strong>可以让我们通过一个<strong>Bounding Box</strong>来创建组：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Tips\group.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
 <p>然而<strong>Bounding</strong>的模式还可以选择<strong>Bounding Object</strong>;<br>而<strong>Group</strong>的第二个输入，就是允许我们输入一个<strong>Bounding Object</strong>来控制组的创建<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Tips\group1.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
 <h3 id="ch"><a href="#ch" class="headerlink" title="ch"></a>ch</h3><blockquote>
@@ -715,6 +628,12 @@
 <div class="note info">
             <p>在参数中输入表达式后默认显示的是表达式语句，鼠标点击<strong>参数名</strong>，显示最终数值：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\ch_mountain5.png " class="full-image" style="max-width: none; width:40%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
           </div>
+<hr>
+<h3 id="Performance-Monitor"><a href="#Performance-Monitor" class="headerlink" title="Performance Monitor"></a>Performance Monitor</h3><blockquote>
+<p>性能监控</p>
+</blockquote>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Tips\performance.jpg " class="full-image" style="max-width: none; width:95%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>可以很好检测哪些节点处理的时间比较久，比较不同方法的性能。</p>
 <hr>
 <h3 id="Digital-Asset"><a href="#Digital-Asset" class="headerlink" title="Digital Asset"></a>Digital Asset</h3><div class="note info">
             <p>虽然<strong>Digital Asset</strong>可以存储在同一个<strong>Digital Asset Library</strong>(.hda文件)里。但是官方还是建议每一个<strong>Digital Asset</strong>存在一个单独的文件里，方便查找和分享。</p><blockquote><p>However, we recommend you store each asset in a separate ibrary file. This makes it straightforward to share some assets and not others, and keep track of which assets are in which files.</p></blockquote>
@@ -742,7 +661,22 @@
 <p>这里我将设置的参数关联到创建的点的<strong>Y</strong>轴坐标，然后选择参数查看变化</p>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\menuParameter1.png " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <hr>
-<h2 id="👿-Trick"><a href="#👿-Trick" class="headerlink" title="👿 Trick"></a>👿 Trick</h2><h3 id="DisplacementTrick"><a href="#DisplacementTrick" class="headerlink" title="DisplacementTrick"></a>DisplacementTrick</h3><p><strong>Displace</strong>基本都是通过<strong>Normal</strong>改变模型，例如节点<strong>mountain</strong>。<br>我们会经常遇到下面这种情况：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\displaceFix.png " class="full-image" style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<h2 id="👿-Trick"><a href="#👿-Trick" class="headerlink" title="👿 Trick"></a>👿 Trick</h2><h3 id="选取整数点"><a href="#选取整数点" class="headerlink" title="选取整数点"></a>选取整数点</h3><p>对一堆点云进行取整，可以直接用对点位置<code>@P</code>进行四舍五入<code>rint()</code></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Trick\ptsRint.jpg " class="full-image" style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Trick\ptsRint2.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note success">
+            <p>可以在四舍五入前除以某个数，并在之后再乘回这个数进行类似隔断取整的效果：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Trick\ptsRint3.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+          </div>
+<div class="note warning">
+            <p>通过上述办法只是将点位置取整，点数还是不变，所以最后还是要通过节点<strong>fuse</strong>合并重合点。</p>
+          </div>
+<p>同样的处理方法还可以处理通过<strong>VDB</strong>转换出来的高面数的<strong>Polygons</strong>，还是一个整体模型的情况下，让模型点数变得可控，并且横平竖直。但缺点也是因为这样的布点，会丢失弧面细节。</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Trick\ptsRint4.jpg " class="full-image" style="max-width: none; width:100%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note success">
+            <p>这样的方法可以很好的处理程序化建筑的墙体，因为它需要的是一个简洁一体的，布线垂直的模型。</p><p><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Trick\ptsRint5.jpg " class="full-image" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+          </div>
+<hr>
+<h3 id="DisplacementTrick"><a href="#DisplacementTrick" class="headerlink" title="DisplacementTrick"></a>DisplacementTrick</h3><p><strong>Displace</strong>基本都是通过<strong>Normal</strong>改变模型，例如节点<strong>mountain</strong>。<br>我们会经常遇到下面这种情况：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\displaceFix.png " class="full-image" style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
 <p>因为<strong>Noise</strong>的强度太大而产生的面穿插。但是更多情况是因为模型的部分<strong>太薄</strong>。<br>然而，这种情况可以通过改变其<strong>Normal</strong>修复：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\displaceFix1.png " class="full-image" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
 <ul>
 <li>先通过<strong>VDB</strong> 将模型转变成<strong>圆滑</strong>效果不错的模型，主要目的是为了圆滑类似<strong>耳朵</strong>这样的比较薄的部分。<br>然后将模型的<strong>Normal</strong>传递给源模型：</li>
@@ -953,9 +887,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1008,7 +940,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌏基础介绍"><span class="nav-number">1.</span> <span class="nav-text">🌏基础介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔥常用节点"><span class="nav-number">2.</span> <span class="nav-text">🔥常用节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Attribute-Transfer"><span class="nav-number">2.1.</span> <span class="nav-text">Attribute Transfer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Grouptransfer"><span class="nav-number">2.2.</span> <span class="nav-text">Grouptransfer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Connectivity"><span class="nav-number">2.3.</span> <span class="nav-text">Connectivity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sort"><span class="nav-number">2.4.</span> <span class="nav-text">Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FindShortestPath"><span class="nav-number">2.5.</span> <span class="nav-text">FindShortestPath</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Copy-to-Points"><span class="nav-number">2.6.</span> <span class="nav-text">Copy to Points</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Copy-Stamp"><span class="nav-number">2.7.</span> <span class="nav-text">Copy Stamp</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📋其他节点"><span class="nav-number">3.</span> <span class="nav-text">📋其他节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PolyPath"><span class="nav-number">3.1.</span> <span class="nav-text">PolyPath</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#L-System"><span class="nav-number">3.2.</span> <span class="nav-text">L-System</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📦VOP"><span class="nav-number">4.</span> <span class="nav-text">📦VOP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🎓VEX"><span class="nav-number">5.</span> <span class="nav-text">🎓VEX</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-New-Attribute"><span class="nav-number">5.1.</span> <span class="nav-text">Create New Attribute</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Get-The-Known-Attributes"><span class="nav-number">5.2.</span> <span class="nav-text">Get The Known Attributes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Common-functions"><span class="nav-number">5.3.</span> <span class="nav-text">Common functions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Reading-attributes"><span class="nav-number">5.3.1.</span> <span class="nav-text">Reading attributes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fit"><span class="nav-number">5.3.2.</span> <span class="nav-text">fit()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fit01"><span class="nav-number">5.3.3.</span> <span class="nav-text">fit01()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rand"><span class="nav-number">5.3.4.</span> <span class="nav-text">rand()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sin-cos"><span class="nav-number">5.3.5.</span> <span class="nav-text">sin(), cos()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#radians"><span class="nav-number">5.3.6.</span> <span class="nav-text">radians()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#length"><span class="nav-number">5.3.7.</span> <span class="nav-text">length()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#distance"><span class="nav-number">5.3.8.</span> <span class="nav-text">distance()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#intersect"><span class="nav-number">5.3.9.</span> <span class="nav-text">intersect()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nearpoints"><span class="nav-number">5.3.10.</span> <span class="nav-text">nearpoints()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rotate-with-a-Matrix"><span class="nav-number">5.4.</span> <span class="nav-text">Rotate with a Matrix</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🎩PDG"><span class="nav-number">6.</span> <span class="nav-text">🎩PDG</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📌Tips"><span class="nav-number">7.</span> <span class="nav-text">📌Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#type"><span class="nav-number">7.1.</span> <span class="nav-text">type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Group"><span class="nav-number">7.2.</span> <span class="nav-text">Group</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ch"><span class="nav-number">7.3.</span> <span class="nav-text">ch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Digital-Asset"><span class="nav-number">7.4.</span> <span class="nav-text">Digital Asset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ParameterInterface"><span class="nav-number">7.5.</span> <span class="nav-text">ParameterInterface</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MenuParameter"><span class="nav-number">7.5.1.</span> <span class="nav-text">MenuParameter</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#👿-Trick"><span class="nav-number">8.</span> <span class="nav-text">👿 Trick</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DisplacementTrick"><span class="nav-number">8.1.</span> <span class="nav-text">DisplacementTrick</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过Resample保留点"><span class="nav-number">8.2.</span> <span class="nav-text">通过Resample保留点</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌏基础介绍"><span class="nav-number">1.</span> <span class="nav-text">🌏基础介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔥常用节点"><span class="nav-number">2.</span> <span class="nav-text">🔥常用节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Point-Replicate"><span class="nav-number">2.1.</span> <span class="nav-text">Point Replicate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Attribute-Transfer"><span class="nav-number">2.2.</span> <span class="nav-text">Attribute Transfer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Grouptransfer"><span class="nav-number">2.3.</span> <span class="nav-text">Grouptransfer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Connectivity"><span class="nav-number">2.4.</span> <span class="nav-text">Connectivity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sort"><span class="nav-number">2.5.</span> <span class="nav-text">Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FindShortestPath"><span class="nav-number">2.6.</span> <span class="nav-text">FindShortestPath</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Copy-to-Points"><span class="nav-number">2.7.</span> <span class="nav-text">Copy to Points</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Copy-Stamp"><span class="nav-number">2.8.</span> <span class="nav-text">Copy Stamp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Remesh"><span class="nav-number">2.9.</span> <span class="nav-text">Remesh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IsoOffset"><span class="nav-number">2.10.</span> <span class="nav-text">IsoOffset</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📋其他节点"><span class="nav-number">3.</span> <span class="nav-text">📋其他节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PolyPath"><span class="nav-number">3.1.</span> <span class="nav-text">PolyPath</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#L-System"><span class="nav-number">3.2.</span> <span class="nav-text">L-System</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📦VOP"><span class="nav-number">4.</span> <span class="nav-text">📦VOP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🎓VEX"><span class="nav-number">5.</span> <span class="nav-text">🎓VEX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🎩PDG"><span class="nav-number">6.</span> <span class="nav-text">🎩PDG</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🐍HOM"><span class="nav-number">7.</span> <span class="nav-text">🐍HOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Common-Functions"><span class="nav-number">7.1.</span> <span class="nav-text">Common Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#General"><span class="nav-number">7.1.1.</span> <span class="nav-text">General</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#hou-selectedNodes"><span class="nav-number">7.1.1.1.</span> <span class="nav-text">hou.selectedNodes()</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Node"><span class="nav-number">7.1.2.</span> <span class="nav-text">Node</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#createNode"><span class="nav-number">7.1.2.1.</span> <span class="nav-text">createNode()</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UI"><span class="nav-number">7.1.3.</span> <span class="nav-text">UI</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#displayMessage"><span class="nav-number">7.1.3.1.</span> <span class="nav-text">displayMessage()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#selectFile"><span class="nav-number">7.1.3.2.</span> <span class="nav-text">selectFile()</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📌Tips"><span class="nav-number">8.</span> <span class="nav-text">📌Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Intrinsic"><span class="nav-number">8.1.</span> <span class="nav-text">Intrinsic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#type"><span class="nav-number">8.2.</span> <span class="nav-text">type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Group"><span class="nav-number">8.3.</span> <span class="nav-text">Group</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ch"><span class="nav-number">8.4.</span> <span class="nav-text">ch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Performance-Monitor"><span class="nav-number">8.5.</span> <span class="nav-text">Performance Monitor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Digital-Asset"><span class="nav-number">8.6.</span> <span class="nav-text">Digital Asset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ParameterInterface"><span class="nav-number">8.7.</span> <span class="nav-text">ParameterInterface</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MenuParameter"><span class="nav-number">8.7.1.</span> <span class="nav-text">MenuParameter</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#👿-Trick"><span class="nav-number">9.</span> <span class="nav-text">👿 Trick</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选取整数点"><span class="nav-number">9.1.</span> <span class="nav-text">选取整数点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DisplacementTrick"><span class="nav-number">9.2.</span> <span class="nav-text">DisplacementTrick</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过Resample保留点"><span class="nav-number">9.3.</span> <span class="nav-text">通过Resample保留点</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1029,7 +961,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

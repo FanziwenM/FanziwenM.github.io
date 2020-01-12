@@ -100,18 +100,18 @@
 
 
 
-  <meta name="description" content="Unreal Engine 4 Console Variables and Commands在UE4工具栏 Help 中可以找到一个 Console Variables 点击后会在工程文件下创建一个HTML文件，并自动打开它里面是关于所有控制台变量和命令的文档  stat fpsstat unitstat unitgraphstat RHIfreezerendering         docum">
+  <meta name="description" content="Unreal Engine 4 Console Variables and Commands在UE4工具栏 Help 中可以找到一个 Console Variables 点击后会在工程文件下创建一个HTML文件，并自动打开它里面是关于所有控制台变量和命令的文档   stat fps stat unit stat unitgraph stat RHI freezerendering  Scripti">
 <meta property="og:type" content="website">
 <meta property="og:title" content="UE4 Tips &amp; Tricks">
 <meta property="og:url" content="http://yoursite.com/private/UE4TipsTrick/index.html">
 <meta property="og:site_name" content="Fan ziwen">
-<meta property="og:description" content="Unreal Engine 4 Console Variables and Commands在UE4工具栏 Help 中可以找到一个 Console Variables 点击后会在工程文件下创建一个HTML文件，并自动打开它里面是关于所有控制台变量和命令的文档  stat fpsstat unitstat unitgraphstat RHIfreezerendering         docum">
+<meta property="og:description" content="Unreal Engine 4 Console Variables and Commands在UE4工具栏 Help 中可以找到一个 Console Variables 点击后会在工程文件下创建一个HTML文件，并自动打开它里面是关于所有控制台变量和命令的文档   stat fps stat unit stat unitgraph stat RHI freezerendering  Scripti">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/Notes/UE4TipsTricks/UE4ConsoleHTML.jpg">
-<meta property="og:updated_time" content="2019-10-20T05:20:17.615Z">
+<meta property="og:updated_time" content="2019-12-13T18:07:38.816Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UE4 Tips &amp; Tricks">
-<meta name="twitter:description" content="Unreal Engine 4 Console Variables and Commands在UE4工具栏 Help 中可以找到一个 Console Variables 点击后会在工程文件下创建一个HTML文件，并自动打开它里面是关于所有控制台变量和命令的文档  stat fpsstat unitstat unitgraphstat RHIfreezerendering         docum">
+<meta name="twitter:description" content="Unreal Engine 4 Console Variables and Commands在UE4工具栏 Help 中可以找到一个 Console Variables 点击后会在工程文件下创建一个HTML文件，并自动打开它里面是关于所有控制台变量和命令的文档   stat fps stat unit stat unitgraph stat RHI freezerendering  Scripti">
 <meta name="twitter:image" content="http://yoursite.com/images/Notes/UE4TipsTricks/UE4ConsoleHTML.jpg">
 
 
@@ -398,8 +398,48 @@
         
         
           <h2 id="Unreal-Engine-4-Console-Variables-and-Commands"><a href="#Unreal-Engine-4-Console-Variables-and-Commands" class="headerlink" title="Unreal Engine 4 Console Variables and Commands"></a>Unreal Engine 4 Console Variables and Commands</h2><p>在UE4工具栏 Help 中可以找到一个 Console Variables 点击后会在工程文件下创建一个HTML文件，并自动打开它<br>里面是关于所有控制台变量和命令的文档</p>
-<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4TipsTricks\UE4ConsoleHTML.jpg " class="full-image" alt title style="max-width: none; width: 50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<h3 id="stat-fps"><a href="#stat-fps" class="headerlink" title="stat fps"></a>stat fps</h3><h3 id="stat-unit"><a href="#stat-unit" class="headerlink" title="stat unit"></a>stat unit</h3><h3 id="stat-unitgraph"><a href="#stat-unitgraph" class="headerlink" title="stat unitgraph"></a>stat unitgraph</h3><h3 id="stat-RHI"><a href="#stat-RHI" class="headerlink" title="stat RHI"></a>stat RHI</h3><h3 id="freezerendering"><a href="#freezerendering" class="headerlink" title="freezerendering"></a>freezerendering</h3><script>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\UE4TipsTricks\UE4ConsoleHTML.jpg " class="full-image" alt title style="max-width: none; width: 25%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<ul>
+<li>stat fps</li>
+<li>stat unit</li>
+<li>stat unitgraph</li>
+<li>stat RHI</li>
+<li>freezerendering</li>
+</ul>
+<h2 id="Scripting-the-Editor-using-Python"><a href="#Scripting-the-Editor-using-Python" class="headerlink" title="Scripting the Editor using Python"></a>Scripting the Editor using Python</h2><blockquote>
+<p>Describes how to use Python in the Unreal Editor to script content production tasks.</p>
+</blockquote>
+<p>可以通过<strong>Unreal Editor</strong>中的<strong>Python</strong>做到：</p>
+<ul>
+<li>构建跟大体量的字长管理或工作流。更好的跟其他的3D应用程序联系起来</li>
+<li>在<strong>UE4</strong>中自动执行耗费时间的管理认为，例如，批量的自动生成<strong>LOD</strong></li>
+<li>程序化的将内容中的资产布置到关卡中</li>
+<li>通过<strong>Python</strong>创建<strong>UI</strong>在<strong>UE4编辑器</strong>中进行控制</li>
+</ul>
+<div class="note success">
+            <p><strong>UE4</strong>的<strong>Python</strong>版本为<code>2.7</code>，如果想使用不同版本的Python 可以通过<strong>环境变量</strong><code>UE_PYTHON_DIR</code>，来重新指定安装在本地的，你所希望嵌入的Python版本，然后重新<a href="https://docs.unrealengine.com/en-US/Programming/Development/BuildingUnrealEngine/index.html" target="_blank" rel="noopener"><em>编译引擎</em></a></p>
+          </div>
+<div class="note warning">
+            <p>和<strong>蓝图(Blueprints)</strong>不同，<strong>Python</strong>的执行环境只在<strong>编辑器</strong>中有效，在项目运行的时候则无效。<br>意思就是，可以用Python自由的在<strong>编辑器</strong>中编写自动化的脚本，编辑或者创建资产。但是不能用Python作为一个编写游戏逻辑的语言。</p>
+          </div>
+<h3 id="Ways-to-Run-Python-Code-in-Unreal-Editor"><a href="#Ways-to-Run-Python-Code-in-Unreal-Editor" class="headerlink" title="Ways to Run Python Code in Unreal Editor"></a>Ways to Run Python Code in Unreal Editor</h3><blockquote>
+<p>各种在UE4编辑器中运行Python代码的方法</p>
+</blockquote>
+<p>这里有几种不同的方法在<strong>编辑器</strong>中运行<strong>Python</strong>脚本，每种方法略有不同，可以选择适合自己的方法</p>
+<ul>
+<li><strong>Python Console</strong>:在<strong>Output Log</strong>中切换成Python，就可以和Python自带的交互式shell一样，可以逐句的执行。如果需要多行则要使用<code>Shift+Enter</code></li>
+<li><strong>Cmd Console</strong>:在<strong>Output Log</strong>中，即使在Cmd下，也可以用<code>py</code>开头，来执行Python语句或文件</li>
+<li><ul>
+<li><code>py "C:\MyScripts\myScript.py"</code></li>
+</ul>
+</li>
+<li><ul>
+<li><code>py print "Hello World"</code></li>
+</ul>
+</li>
+<li><strong>The File Menu</strong>: 通过<strong>File/RecentPythonScripts</strong>来执行最近执行过的Python脚本</li>
+</ul>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -572,9 +612,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -627,7 +665,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Unreal-Engine-4-Console-Variables-and-Commands"><span class="nav-number">1.</span> <span class="nav-text">Unreal Engine 4 Console Variables and Commands</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#stat-fps"><span class="nav-number">1.1.</span> <span class="nav-text">stat fps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stat-unit"><span class="nav-number">1.2.</span> <span class="nav-text">stat unit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stat-unitgraph"><span class="nav-number">1.3.</span> <span class="nav-text">stat unitgraph</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stat-RHI"><span class="nav-number">1.4.</span> <span class="nav-text">stat RHI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#freezerendering"><span class="nav-number">1.5.</span> <span class="nav-text">freezerendering</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Unreal-Engine-4-Console-Variables-and-Commands"><span class="nav-number">1.</span> <span class="nav-text">Unreal Engine 4 Console Variables and Commands</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scripting-the-Editor-using-Python"><span class="nav-number">2.</span> <span class="nav-text">Scripting the Editor using Python</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ways-to-Run-Python-Code-in-Unreal-Editor"><span class="nav-number">2.1.</span> <span class="nav-text">Ways to Run Python Code in Unreal Editor</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -648,7 +686,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
