@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="Scratchapixel https://www.scratchapixel.com/index.php?redirect               一个非常棒的学习计算机图形学的网站32节课166篇文章C++源代码            该文章就是在阅读学习这个网站时做的笔记">
+<meta name="keywords" content="C++,Graphics,Note">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Scratchapixel 笔记">
+<meta property="og:url" content="http://yoursite.com/Tech/ScratchapixelNote/index.html">
+<meta property="og:site_name" content="Fan ziwen">
+<meta property="og:description" content="Scratchapixel https://www.scratchapixel.com/index.php?redirect               一个非常棒的学习计算机图形学的网站32节课166篇文章C++源代码            该文章就是在阅读学习这个网站时做的笔记">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Scratchapixel/coordinateSystem.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Scratchapixel/cross.png">
+<meta property="og:updated_time" content="2020-02-07T12:45:34.766Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Scratchapixel 笔记">
+<meta name="twitter:description" content="Scratchapixel https://www.scratchapixel.com/index.php?redirect               一个非常棒的学习计算机图形学的网站32节课166篇文章C++源代码            该文章就是在阅读学习这个网站时做的笔记">
+<meta name="twitter:image" content="http://yoursite.com/images/Notes/Scratchapixel/coordinateSystem.png">
+
+<link rel="canonical" href="http://yoursite.com/Tech/ScratchapixelNote/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Scratchapixel 笔记 | Fan ziwen</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d76c976ebf90b8fce3fc58985d94aa40";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Fan ziwen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/fanziwenm" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Tech/ScratchapixelNote/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="范子文">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fan ziwen">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Scratchapixel 笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-17 18:28:49" itemprop="dateCreated datePublished" datetime="2020-01-17T18:28:49+08:00">2020-01-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-07 20:45:34" itemprop="dateModified" datetime="2020-02-07T20:45:34+08:00">2020-02-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index">
+                    <span itemprop="name">Tech</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Scratchapixel"><a href="#Scratchapixel" class="headerlink" title="Scratchapixel"></a>Scratchapixel</h1><blockquote>
+<p><a href="https://www.scratchapixel.com/index.php?redirect" target="_blank" rel="noopener">https://www.scratchapixel.com/index.php?redirect</a></p>
+</blockquote>
+<div class="note default">
+            <p>一个非常棒的学习计算机图形学的网站</p><ul><li>32节课</li><li>166篇文章</li><li>C++源代码</li></ul>
+          </div>
+<p>该文章就是在阅读学习这个网站时做的笔记</p>
+<a id="more"></a>
+<h2 id="Geometry"><a href="#Geometry" class="headerlink" title="Geometry"></a>Geometry</h2><blockquote>
+<p>几何体</p>
+</blockquote>
+<h3 id="点，向量，法线"><a href="#点，向量，法线" class="headerlink" title="点，向量，法线"></a>点，向量，法线</h3><blockquote>
+<p>Points, Vectors and Normals</p>
+</blockquote>
+<p>向量的C++源码:<br></p><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span><<span class="keyword">typename</span> T></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Vector</span> {</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">// 3 most basic ways of initializing a vector</span></span><br><span class="line">    Vector() :x(T(<span class="number">0</span>)), y(T(<span class="number">0</span>)), z(T(<span class="number">0</span>)) {}</span><br><span class="line">    Vector(<span class="keyword">const</span> T& xx) : x(xx), y(xx), z(xx) {}</span><br><span class="line">    Vector(T xx, T yy, T zz) : x(xx), y(yy), z(zz) {}</span><br><span class="line">    T x, y, z;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="坐标系"><a href="#坐标系" class="headerlink" title="坐标系"></a>坐标系</h3><blockquote>
+<p>Coordinate Systems</p>
+</blockquote>
+<p><strong>左手坐标系(left-hand coordinate system)</strong>和<strong>右手坐标系(right-hand coordinate system)</strong><br>下图是scratchapixel给出的原图：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Scratchapixel\coordinateSystem.png " class="full-image" alt title style="max-width: none; width: 70%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note primary">
+            <p>要记住，<strong>中指</strong>总是表示<strong>朝右向量(right vector)</strong></p>
+          </div>
+<p>当检查坐标系的时候，最先用中指指向朝右向量，然后检查另外两个手指是否是与另外两个轴方向相同。这样就可以判断是左后还是右手坐标系。<br>坐标系的不同不是根据<strong>轴(Axes)</strong>的命名定的，所以<code>Y</code>轴朝上和<code>Z</code>轴朝上不一定是不同的坐标系。</p>
+<div class="note success">
+            <p>唯一能定义一个坐标系的是<strong>朝右向量(right vector)</strong>和<strong>朝上(up)</strong>,<strong>朝前(forward)</strong>相对的方向。而至于怎么标记这些轴并不重要</p>
+          </div>
+<hr>
+<h3 id="点和向量的数学运算"><a href="#点和向量的数学运算" class="headerlink" title="点和向量的数学运算"></a>点和向量的数学运算</h3><blockquote>
+<p>Math Operations on Points and Vectors</p>
+</blockquote>
+<hr>
+<h4 id="Length"><a href="#Length" class="headerlink" title="Length"></a>Length</h4><blockquote>
+<p>长度</p>
+</blockquote>
+<p>求向量<strong>长度(length)</strong>也叫<strong>模</strong>：</p>
+<script type="math/tex; mode=display">
+\left \| V \right \| = \sqrt{V.x^2 + V.y^2 + V.z^2}</script><p><strong>C++</strong>代码：</p>
+<ul>
+<li>作为一个类里的成员函数</li>
+</ul>
+<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span><<span class="keyword">typename</span> T></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Vector</span> {</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    ...</span><br><span class="line">    <span class="function">T <span class="title">length</span><span class="params">()</span> </span>{</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">sqrt</span>(x * x + y * y + z * z);</span><br><span class="line">    }</span><br><span class="line">    ...</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>作为一个函数：</li>
+</ul>
+<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span><<span class="keyword">typename</span> T></span><br><span class="line"><span class="function">T <span class="title">length</span><span class="params">(<span class="keyword">const</span> Vector<t> &v)</t></span> </span>{</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sqrt</span>(v.x * v.x + v.y * v.y + v.z * v.z);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<hr>
+<h4 id="Normalize"><a href="#Normalize" class="headerlink" title="Normalize"></a>Normalize</h4><blockquote>
+<p>归一化</p>
+</blockquote>
+<p>向量的<strong>归一化(Normalize)</strong>:</p>
+<script type="math/tex; mode=display">
+\widehat{V} = \frac{V}{\left \| V \right \|}</script><p><strong>单位向量(unit vector)</strong>，一个长度为<code>1</code>的向量，所以归一化除以自身长度即可。</p>
+<p><strong>C++</strong>代码：</p>
+<ul>
+<li>作为一个类成员函数：</li>
+</ul>
+<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span><<span class="keyword">typename</span> T></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Vector</span> {</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    ...</span><br><span class="line">    <span class="function">Vector&ltT&gt& <span class="title">normalize</span><span class="params">()</span> </span>{</span><br><span class="line">        T len = length();</span><br><span class="line">        <span class="keyword">if</span> (len > <span class="number">0</span>) {</span><br><span class="line">            T invLen = <span class="number">1</span> / len;</span><br><span class="line">            x *= invLen, y *= invLen, z *= invLen;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>作为一个函数：</li>
+</ul>
+<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span><<span class="keyword">typename</span> T></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">normalize</span><span class="params">(Vector&ltT&gt &v )</span></span>{</span><br><span class="line">    T len = length(v);</span><br><span class="line">    <span class="keyword">if</span> (len > <span class="number">0</span>) {</span><br><span class="line">        T invLen = <span class="number">1</span> / len;</span><br><span class="line">        v.x *= invLen;</span><br><span class="line">        v.y *= invLen;</span><br><span class="line">        v.z *= invLen;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<hr>
+<h4 id="Dot-Product"><a href="#Dot-Product" class="headerlink" title="Dot Product"></a>Dot Product</h4><blockquote>
+<p>点乘</p>
+</blockquote>
+<script type="math/tex; mode=display">
+A\cdot B = A.x* B.x + A.y * B.y + A.z * B.z</script><p>$A$向量<strong>点乘(Dot)</strong>$B$向量，写做 $A\cdot B$，将两个向量进行点乘是一个非常常见的操作，因为它的结果和两向量<strong>夹角 $\theta$ 的余弦</strong>有关：</p>
+<script type="math/tex; mode=display">
+A\cdot B = \left \| A \right \|\left \| B \right \|cos(\theta )</script><p>所以，如果两个向量AB都是<strong>单位向量</strong>那么点乘的结果就是这两个向量夹角 $\theta$ 的<strong>余弦值</strong>。</p>
+<p>通过点乘求夹角 $\theta$ ：</p>
+<script type="math/tex; mode=display">
+\theta = cos^{-1}(\frac{A\cdot B}{\left \| A \right \|\left \| B \right \|})</script><div class="note default">
+            <p>在数学中，$cos^-1$是余弦的反置<strong>反余弦(arc cosine)</strong>,在计算机编程语言中一般用<code>acos()</code>函数表示</p>
+          </div>
+<div class="note info">
+            <p>注意，点乘的公式和之前讲到的求向量长度的公式很像，如果两个<strong>相同向量</strong>点乘，这就是一个没有<strong>平方根</strong>长度公式。所以还有个公式：</p><script type="math/tex; mode=display">\left \| V \right \|^{2} = V\cdot V</script>
+          </div>
+<div class="note success">
+            <p>点乘在3D图形中是非常重要的操作。可以用在很多地方，最常用的就是测试两个向量是否垂直，如果两个向量垂直，那他们的点乘的值为<code>0</code></p>
+          </div>
+<p><strong>C++</strong>代码：</p>
+<ul>
+<li>作为一个类成员函数：</li>
+</ul>
+<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span><<span class="keyword">typename</span> T></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Vector</span> {</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    ...</span><br><span class="line">    <span class="function">T <span class="title">dot</span><span class="params">(<span class="keyword">const</span> Vector&ltT&gt  &v)</span> <span class="keyword">const</span> </span>{</span><br><span class="line">        <span class="keyword">return</span> x * v.x + y * v.y + z * v.z;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>作为一个函数：</li>
+</ul>
+<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span><<span class="keyword">typename</span> T></span><br><span class="line"><span class="function">T <span class="title">dot</span><span class="params">(<span class="keyword">const</span> Vector&ltT&gt& v1, <span class="keyword">const</span> Vector&ltT&gt& v2)</span></span>{</span><br><span class="line">    <span class="keyword">return</span> v1.x * v2.x + v1.y * v2.y + v1.z * v2.z;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<hr>
+<h4 id="Cross-Product"><a href="#Cross-Product" class="headerlink" title="Cross Product"></a>Cross Product</h4><blockquote>
+<p>叉乘</p>
+</blockquote>
+<p><strong>叉乘(Cross Product)</strong>也是对两个向量进行操作。和点乘不同的是返回值是一个<strong>向量</strong>例如向量$A$和向量$B$叉乘出向量$C$:</p>
+<script type="math/tex; mode=display">
+C = A \times B</script><script type="math/tex; mode=display">
+\begin{bmatrix}
+C.x\\ 
+C.y\\ 
+C.z
+\end{bmatrix} = \begin{bmatrix}
+A.y*B.z - A.z*B.y\\ 
+A.z*B.x - A.x*B.z\\ 
+A.x*B.y - A.y*B.x
+\end{bmatrix}</script><p>叉乘的结果 $C$ 垂直于其他两个向量 $A$ 和 $B$ 构成的平面。<br>$A$ 和 $B$ 向量不需要相互垂直，不过如果它们相互垂直就可以通过所得的 $A B$ 和 $C$ 构成一个<strong>笛卡尔坐标系(cartesian coordinate system)</strong>（假设向量是单位向量）。<span class="label primary"> 点乘在创建一个坐标系非常有用。</span></p>
+<p><strong>C++</strong>代码：</p>
+<ul>
+<li>作为一个类的成员函数：</li>
+</ul>
+<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span><<span class="keyword">typename</span> T></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Vector</span> {</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    ...</span><br><span class="line">    <span class="function">Vector&ltT&gt <span class="title">cross</span><span class="params">(<span class="keyword">const</span> Vector&ltT&gt  &v)</span> <span class="keyword">const</span> </span>{</span><br><span class="line">        <span class="keyword">return</span> Vector&ltT&gt(</span><br><span class="line">            y * v.z - z * v.y,</span><br><span class="line">            z * v.x - x * v.z,</span><br><span class="line">            x * v.y - y * v.x</span><br><span class="line">            );</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>作为一个函数：</li>
+</ul>
+<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span><<span class="keyword">typename</span> T></span><br><span class="line"><span class="function">Vector&ltT&gt <span class="title">cross</span><span class="params">(<span class="keyword">const</span> Vector&ltT&gt &v1, <span class="keyword">const</span> Vector&ltT&gt &v2)</span> </span>{</span><br><span class="line">    <span class="keyword">return</span> Vector&ltT&gt(</span><br><span class="line">        v1.y * v2.z - v1.z * v2.y,</span><br><span class="line">        v1.z * v2.x - v1.x * v2.z,</span><br><span class="line">        v1.x * v2.y - v1.y * v2.x</span><br><span class="line">        );</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<div class="note warning">
+            <p>叉乘不满足<strong>交换律</strong>，$A \times B$ 不等于 $B \times A$<br>例如：$A \times B=(1,0,0)\times(0,1,0) = (0,0,1)$<br>但是，$B \times A=(0,1,0)\times(1,0,0)=(0,0,-1)$<br>所以如果$A \times B = C$那么$B \times A = -C$</p>
+          </div>
+<div class="note primary">
+            <p>垂直于$AB$构成的平面的向量可以有两个朝向，而点乘出来的向量$C$的朝向也是根左右手坐标系来定的。这里我们以<strong>右手坐标系</strong>为例：</p><ul><li>食指指向$A$向量</li><li>中指指向$B$向量</li><li>大拇指的朝向就是$C$向量的正确朝向</li></ul><p><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Scratchapixel\cross.png " class="full-image" alt title style="max-width: none; width: 30%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+          </div>
+<h4 id="Addition-amp-Subtraction"><a href="#Addition-amp-Subtraction" class="headerlink" title="Addition & Subtraction"></a>Addition & Subtraction</h4><p>向量的<strong>加(Addition)</strong>，<strong>减(Subtraction)</strong>,和乘以一个<strong>标量(scalar)</strong>就比较简单直接：</p>
+<script type="math/tex; mode=display">
+A+B=\begin{bmatrix}
+A.x+B.x\\ 
+A.y+B.y\\ 
+A.z+B.z
+\end{bmatrix}</script><script type="math/tex; mode=display">
+A-B=\begin{bmatrix}
+A.x-B.x\\ 
+A.y-B.y\\ 
+A.z-B.z
+\end{bmatrix}</script><script type="math/tex; mode=display">
+A*k=\begin{bmatrix}
+A.x*k\\ 
+A.y*k\\ 
+A.z*k
+\end{bmatrix}</script><p><strong>C++</strong>代码：<br></p><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lttypename T&gt</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Vector</span> {</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    ...</span><br><span class="line">    Vector&ltT&gt <span class="keyword">operator</span> + (<span class="keyword">const</span> Vector&ltT&gt &v)<span class="keyword">const</span> {</span><br><span class="line">        <span class="keyword">return</span> Vector&ltT&gt(x + v.x, y + v.y, z + v.z);</span><br><span class="line">    }</span><br><span class="line">    Vector&ltT&gt <span class="keyword">operator</span> - (<span class="keyword">const</span> Vector&ltT&gt& v)<span class="keyword">const</span> {</span><br><span class="line">        <span class="keyword">return</span> Vector&ltT&gt(x - v.x, y - v.y, z - v.z);</span><br><span class="line">    }</span><br><span class="line">    Vector&ltT&gt <span class="keyword">operator</span> * (<span class="keyword">const</span> T& k) <span class="keyword">const</span> {</span><br><span class="line">        <span class="keyword">return</span> Vector&ltT&gt(x * k, y * k, z * k);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<hr>
+<h3 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h3><blockquote>
+<p>Matrices</p>
+</blockquote>
+<p>简单来说，在3D应用中(非数学中的定义)，<strong>矩阵(Matrices)</strong>就是将所有<strong>变换信息(Transformations)</strong>如：移动(translation)，旋转(rotation)，缩放(scale)合并成单个结构，让变换变得简单。</p>
+<p><strong>矩阵</strong>由<strong>行(rows)</strong>和<strong>列(columns)</strong>构成,一般描述为 $m \times n$ 矩阵，就是说 $m$ 行 $n$ 列矩阵, 例如一个 $3 \times 4$ 矩阵：</p>
+<script type="math/tex; mode=display">
+M = \begin{bmatrix}
+1 & 3 & 2 & 7\\ 
+ 4& 2 & 0 & 3\\ 
+1 & 5 & 6 & 4
+\end{bmatrix}</script><div class="note primary">
+            <p>一般我们用大写字母 $M, A, B$ 等等来表示一个矩阵。用下标 $i$ 和 $j$ 来表示矩阵中的某个元素。例如 $M_{ij}$ 就是表示矩阵 $M$ 的第 $i$ 行 $j$ 列 元素。</p>
+          </div>
+<h4 id="Square-Matrices"><a href="#Square-Matrices" class="headerlink" title="Square Matrices"></a>Square Matrices</h4><blockquote>
+<p>方阵</p>
+</blockquote>
+<p>对于<strong>3D</strong>应用来说，我们最常用到的就是<strong>方阵(square matrices)</strong>,即<strong>行</strong>和<strong>列</strong>相等的矩阵。<br>在3D应用主要使用的方阵是 $3 \times 3$ 和 $4 \times 4$矩阵</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}
+1 & 3 & 2\\ 
+ 4& 2 & 0\\ 
+1 & 5 & 6
+\end{bmatrix}\tag{1}</script><script type="math/tex; mode=display">
+\begin{bmatrix}
+7& 2& 0& 4\\
+2& 9& 5& 1\\
+8& 7& 2& 1\\
+3& 1& 0& 6
+\end{bmatrix}\tag{2}</script><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/C/" rel="tag"># C++</a>
+              <a href="/tags/Graphics/" rel="tag"># Graphics</a>
+              <a href="/tags/Note/" rel="tag"># Note</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Tech/HoudiniVEX/" rel="prev" title="Houdini VEX">
+      <i class="fa fa-chevron-left"></i> Houdini VEX
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Scratchapixel"><span class="nav-number">1.</span> <span class="nav-text">Scratchapixel</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Geometry"><span class="nav-number">1.1.</span> <span class="nav-text">Geometry</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#点，向量，法线"><span class="nav-number">1.1.1.</span> <span class="nav-text">点，向量，法线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#坐标系"><span class="nav-number">1.1.2.</span> <span class="nav-text">坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点和向量的数学运算"><span class="nav-number">1.1.3.</span> <span class="nav-text">点和向量的数学运算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Length"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">Length</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Normalize"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">Normalize</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dot-Product"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">Dot Product</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cross-Product"><span class="nav-number">1.1.3.4.</span> <span class="nav-text">Cross Product</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Addition-amp-Subtraction"><span class="nav-number">1.1.3.5.</span> <span class="nav-text">Addition &amp; Subtraction</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#矩阵"><span class="nav-number">1.1.4.</span> <span class="nav-text">矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Square-Matrices"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">Square Matrices</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">范子文</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fanziwenm" title="GitHub → https://github.com/fanziwenm" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:120416678@qq.com" title="E-Mail → mailto:120416678@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.artstation.com/van_hugh" title="Artstation → https://www.artstation.com/van_hugh" rel="noopener" target="_blank"><i class="fa fa-fw fa-artstation"></i>Artstation</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">范子文</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'neutral',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+
+  
+
+</body>
+</html>
