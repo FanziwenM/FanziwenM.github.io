@@ -14,6 +14,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 
 <script id="hexo-configurations">
@@ -28,7 +29,7 @@
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
+    fancybox: true,
     mediumzoom: false,
     lazyload: false,
     pangu: false,
@@ -217,7 +218,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-30 21:04:49" itemprop="dateModified" datetime="2019-11-30T21:04:49+08:00">2019-11-30</time>
+                <time title="修改时间：2020-03-25 01:26:21" itemprop="dateModified" datetime="2020-03-25T01:26:21+08:00">2020-03-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -242,15 +243,38 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="include"><a href="#include" class="headerlink" title="#include"></a>#include</h3><blockquote>
-<p>头文件</p>
+          <h3 id="编译和链接"><a href="#编译和链接" class="headerlink" title="编译和链接"></a>编译和链接</h3><blockquote>
+<p>Compiler & Linker Works</p>
 </blockquote>
-<div class="note primary">
-            <p><strong>#include</strong>包括两种形式：</p><ul><li><code>#include< ></code></li><li><code>#include" "</code></li></ul><p><code>#include< ></code> 引用的是编译器的类库路径里面的头文件。<br><code>#include" "</code> 引用的是你程序目录的相对路径中的头文件。</p>
-          </div>
-<div class="note info">
-            <p>有些C头文件被转换为C++头文件，这些文件被重新命名，去掉了扩展名h(使之成为C++风格的名称),但是在文件名称前加上前缀<code>c</code>（表示来自C语言),例如C语言的数学函数<code>#include<cmath></cmath></code></p>
-          </div>
+<p><strong>C++</strong>的<strong>Build</strong>可以分为4个步骤：<strong>预处理</strong>，<strong>编译</strong>，<strong>汇编</strong>，<strong>链接</strong>：</p>
+<pre class="mermaid" style="text-align: center;">            graph LR
+            
+a>Source code] -- Compiler --> c(Object code)
+a1>Source code] -- Compiler --> c1(Object code)
+a2>Source code] -- Compiler --> c2(Object code)
+
+lib((Libraries)) --- lik{Linker}
+c --- lik
+c1 --- lik
+c2 --- lik
+
+lik --> ex[Executable]
+
+          </pre>
+<ul>
+<li><p><strong>预处理</strong>：在这期间，编译器会检查所有<strong>pre-processing</strong>语句并进行评估。常见的有：<code>include</code>,<code>define</code>,<code>if</code>和<code>ifdef</code>…</p>
+</li>
+<li><p><strong>编译</strong>：一般来说，每一个<code>.cpp</code>文件都会编译成一个<code>.obj</code>文件(Object code 目标代码)，这些<code>.cpp</code>文件也叫做<strong>编译单元(Translation Unity)</strong></p>
+</li>
+<li><p><strong>汇编</strong>：有些情况，目标代码不是直接产生，会先以<strong>汇编语言语</strong>句的形式存在，然后再经过一个独立的编译阶段。</p>
+</li>
+<li><p><strong>链接</strong>：经过上一步后，将所有<code>.obj</code>文件通过<strong>Linker</strong>链接成一个可执行的<code>.exe</code>文件。</p>
+</li>
+</ul>
+<h4 id="include"><a href="#include" class="headerlink" title="include"></a>include</h4><p><code>include</code>的原理非常简单，就是将包含的文件内容完完全全拷贝到当前文件。就如此简单，而且可以很好证明。</p>
+<p>先再一个<code>.cpp</code>文件中写一段简单的代码：</p>
+<figure class="highlight cpp"><figcaption><span>Main.cpp</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">< iostream ></span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> << <span class="string">"hello world"</span> << <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></tbody></table></figure>
+<p>注意，上面代码末尾少了个<code>}</code>,如果编译会报错：<code>Main.cpp(3): fatal error C1075: '{': no matching token found</code></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/Tech/C++/#more" rel="contents">
@@ -308,7 +332,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-14 00:14:03" itemprop="dateModified" datetime="2020-01-14T00:14:03+08:00">2020-01-14</time>
+                <time title="修改时间：2020-08-15 23:34:24" itemprop="dateModified" datetime="2020-08-15T23:34:24+08:00">2020-08-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -504,6 +528,8 @@
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 <script src="/js/utils.js"></script><script src="/js/motion.js"></script>

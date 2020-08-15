@@ -14,6 +14,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 
 <script id="hexo-configurations">
@@ -28,7 +29,7 @@
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
+    fancybox: true,
     mediumzoom: false,
     lazyload: false,
     pangu: false,
@@ -46,21 +47,36 @@
   };
 </script>
 
-  <meta name="description" content="Scratchapixel https://www.scratchapixel.com/index.php?redirect               一个非常棒的学习计算机图形学的网站32节课166篇文章C++源代码            该文章就是在阅读学习这个网站时做的笔记">
+  <meta name="description" content="Scratchapixel https://www.Scratchapixel.com/index.php?redirect               一个非常棒的学习计算机图形学的网站32节课166篇文章C++源代码            该文章就是在阅读学习这个网站时做的笔记">
 <meta name="keywords" content="C++,Graphics,Note">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Scratchapixel 笔记">
+<meta property="og:title" content="图形学 笔记">
 <meta property="og:url" content="http://yoursite.com/Tech/ScratchapixelNote/index.html">
 <meta property="og:site_name" content="Fan ziwen">
-<meta property="og:description" content="Scratchapixel https://www.scratchapixel.com/index.php?redirect               一个非常棒的学习计算机图形学的网站32节课166篇文章C++源代码            该文章就是在阅读学习这个网站时做的笔记">
+<meta property="og:description" content="Scratchapixel https://www.Scratchapixel.com/index.php?redirect               一个非常棒的学习计算机图形学的网站32节课166篇文章C++源代码            该文章就是在阅读学习这个网站时做的笔记">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/Notes/Scratchapixel/coordinateSystem.png">
-<meta property="og:image" content="http://yoursite.com/images/Notes/Scratchapixel/cross.png">
-<meta property="og:updated_time" content="2020-02-07T12:45:34.766Z">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/coordinateSystem.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/cross.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Scratchapixel/camDir.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/ortho01.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/persp01.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/fov01.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/fov02.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/microfacets_light_rays.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/surface_reaction.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/solid_angle.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/radiant_intensity.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/radiance.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/ndf.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/geometry_shadowing.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/light_casters_spotlight_angles.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/TF2npr01.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/TF2npr02.jpg">
+<meta property="og:updated_time" content="2020-08-15T13:28:35.168Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Scratchapixel 笔记">
-<meta name="twitter:description" content="Scratchapixel https://www.scratchapixel.com/index.php?redirect               一个非常棒的学习计算机图形学的网站32节课166篇文章C++源代码            该文章就是在阅读学习这个网站时做的笔记">
-<meta name="twitter:image" content="http://yoursite.com/images/Notes/Scratchapixel/coordinateSystem.png">
+<meta name="twitter:title" content="图形学 笔记">
+<meta name="twitter:description" content="Scratchapixel https://www.Scratchapixel.com/index.php?redirect               一个非常棒的学习计算机图形学的网站32节课166篇文章C++源代码            该文章就是在阅读学习这个网站时做的笔记">
+<meta name="twitter:image" content="http://yoursite.com/images/Notes/Graphics/coordinateSystem.png">
 
 <link rel="canonical" href="http://yoursite.com/Tech/ScratchapixelNote/">
 
@@ -74,7 +90,7 @@
   };
 </script>
 
-  <title>Scratchapixel 笔记 | Fan ziwen</title>
+  <title>图形学 笔记 | Fan ziwen</title>
   
 
 
@@ -207,7 +223,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Scratchapixel 笔记
+          图形学 笔记
         </h1>
 
         <div class="post-meta">
@@ -224,7 +240,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-07 20:45:34" itemprop="dateModified" datetime="2020-02-07T20:45:34+08:00">2020-02-07</time>
+                <time title="修改时间：2020-08-15 21:28:35" itemprop="dateModified" datetime="2020-08-15T21:28:35+08:00">2020-08-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -250,7 +266,7 @@
 
       
         <h1 id="Scratchapixel"><a href="#Scratchapixel" class="headerlink" title="Scratchapixel"></a>Scratchapixel</h1><blockquote>
-<p><a href="https://www.scratchapixel.com/index.php?redirect" target="_blank" rel="noopener">https://www.scratchapixel.com/index.php?redirect</a></p>
+<p><a href="https://www.Scratchapixel.com/index.php?redirect" target="_blank" rel="noopener">https://www.Scratchapixel.com/index.php?redirect</a></p>
 </blockquote>
 <div class="note default">
             <p>一个非常棒的学习计算机图形学的网站</p><ul><li>32节课</li><li>166篇文章</li><li>C++源代码</li></ul>
@@ -267,8 +283,8 @@
 <h3 id="坐标系"><a href="#坐标系" class="headerlink" title="坐标系"></a>坐标系</h3><blockquote>
 <p>Coordinate Systems</p>
 </blockquote>
-<p><strong>左手坐标系(left-hand coordinate system)</strong>和<strong>右手坐标系(right-hand coordinate system)</strong><br>下图是scratchapixel给出的原图：</p>
-<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Scratchapixel\coordinateSystem.png " class="full-image" alt title style="max-width: none; width: 70%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p><strong>左手坐标系(left-hand coordinate system)</strong>和<strong>右手坐标系(right-hand coordinate system)</strong><br>下图是Graphics给出的原图：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\coordinateSystem.png " class="full-image" alt title style="max-width: none; width: 70%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <div class="note primary">
             <p>要记住，<strong>中指</strong>总是表示<strong>朝右向量(right vector)</strong></p>
           </div>
@@ -368,7 +384,7 @@ A.x*B.y - A.y*B.x
             <p>叉乘不满足<strong>交换律</strong>，$A \times B$ 不等于 $B \times A$<br>例如：$A \times B=(1,0,0)\times(0,1,0) = (0,0,1)$<br>但是，$B \times A=(0,1,0)\times(1,0,0)=(0,0,-1)$<br>所以如果$A \times B = C$那么$B \times A = -C$</p>
           </div>
 <div class="note primary">
-            <p>垂直于$AB$构成的平面的向量可以有两个朝向，而点乘出来的向量$C$的朝向也是根左右手坐标系来定的。这里我们以<strong>右手坐标系</strong>为例：</p><ul><li>食指指向$A$向量</li><li>中指指向$B$向量</li><li>大拇指的朝向就是$C$向量的正确朝向</li></ul><p><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Scratchapixel\cross.png " class="full-image" alt title style="max-width: none; width: 30%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+            <p>垂直于$AB$构成的平面的向量可以有两个朝向，而点乘出来的向量$C$的朝向也是根左右手坐标系来定的。这里我们以<strong>右手坐标系</strong>为例：</p><ul><li>食指指向$A$向量</li><li>中指指向$B$向量</li><li>大拇指的朝向就是$C$向量的正确朝向</li></ul><p><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\cross.png " class="full-image" alt title style="max-width: none; width: 30%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
           </div>
 <h4 id="Addition-amp-Subtraction"><a href="#Addition-amp-Subtraction" class="headerlink" title="Addition & Subtraction"></a>Addition & Subtraction</h4><p>向量的<strong>加(Addition)</strong>，<strong>减(Subtraction)</strong>,和乘以一个<strong>标量(scalar)</strong>就比较简单直接：</p>
 <script type="math/tex; mode=display">
@@ -416,7 +432,348 @@ M = \begin{bmatrix}
 2& 9& 5& 1\\
 8& 7& 2& 1\\
 3& 1& 0& 6
-\end{bmatrix}\tag{2}</script><script>
+\end{bmatrix}\tag{2}</script><h1 id="GAMES101"><a href="#GAMES101" class="headerlink" title="GAMES101"></a>GAMES101</h1><blockquote>
+<p>闫令琪 的 GAMES101-现代计算机图形学入门 笔记</p>
+</blockquote>
+<p>怎么判断画面好不好。从技术的角度来说，就是看画面够不够亮，如果全局关照做的好，画面就足够亮，看起来就很舒服。</p>
+<blockquote>
+<p>We learn Graphics, not Graphics APIs!</p>
+</blockquote>
+<p>从三维到二维我们管它叫投影，投影也是一个非常重要的变换。</p>
+<hr>
+<h2 id="各类矩阵"><a href="#各类矩阵" class="headerlink" title="各类矩阵"></a>各类矩阵</h2><h3 id="旋转矩阵"><a href="#旋转矩阵" class="headerlink" title="旋转矩阵"></a>旋转矩阵</h3><p>Rotation around <strong>X</strong>, <strong>Y</strong> or <strong>Z</strong></p>
+<script type="math/tex; mode=display">
+R_{x}(\theta)  = \begin{bmatrix}
+1 & 0 & 0 & 0\\ 
+0 & cos \theta & -sin \theta & 0\\ 
+0 & sin \theta & cos \theta & 0\\ 
+0 & 0 & 0 & 1
+\end{bmatrix}</script><script type="math/tex; mode=display">
+R_{y}(\theta)  = \begin{bmatrix}
+cos \theta & 0 & sin \theta & 0\\ 
+0 & 1 & 0 & 0\\ 
+- sin \theta & 0 & cos \theta & 0\\ 
+0 & 0 & 0 & 1
+\end{bmatrix}</script><script type="math/tex; mode=display">
+R_{z}(\theta)  = \begin{bmatrix}
+cos \theta & -sin \theta & 0 & 0\\ 
+sin \theta & cos \theta & 0 & 0\\ 
+0 & 0 & 1 & 0\\ 
+0 & 0 & 0 & 1
+\end{bmatrix}</script><hr>
+<h3 id="相机变换矩阵"><a href="#相机变换矩阵" class="headerlink" title="相机变换矩阵"></a>相机变换矩阵</h3><blockquote>
+<p>View/Camera Transformation</p>
+</blockquote>
+<p>通过矩阵$M_{view}$来变换相机到指定位置：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Scratchapixel\camDir.jpg " class="full-image" alt title style="max-width: none; width: 30%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<ul>
+<li>移动到原点</li>
+<li>旋转朝前向量 $\vec{g}$ 到 <strong>-Z</strong>方向</li>
+<li>旋转朝上向量 $\vec{t}$ 到 <strong>Y</strong>方向</li>
+<li>旋转向量$\vec{g}\times\vec{t}$到<strong>X</strong>方向</li>
+</ul>
+<p>变换矩阵通过两个矩阵实现，通过矩阵 $T<em>{view}$ 做平移<br>然后通过矩阵 $R</em>{view}$ 来做旋转</p>
+<script type="math/tex; mode=display">
+M_{view} = R_{view}T_{view}</script><p>先移动到原点：</p>
+<script type="math/tex; mode=display">
+T_{view}  = \begin{bmatrix}
+1 & 0 & 0 & -x_{e}\\ 
+0 & 1 & 0 & -y_{e}\\ 
+0 & 0 & 1 & -z_{e}\\ 
+0 & 0 & 0 & 1
+\end{bmatrix}</script><p>然后选择到各个轴对齐：</p>
+<script type="math/tex; mode=display">
+R_{view} = \begin{bmatrix}
+x_{\vec{g} \times \vec{t}} & y_{\vec{g} \times \vec{t}} & z_{\vec{g} \times \vec{t}} & 0 \\
+x_{t} & y_{t} & z_{t} & 0 \\
+x_{-\vec{g}} & y_{-\vec{g}} & z_{-\vec{g}} & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}</script><hr>
+<h3 id="正交投影矩阵"><a href="#正交投影矩阵" class="headerlink" title="正交投影矩阵"></a>正交投影矩阵</h3><blockquote>
+<p>Orthographic Projection</p>
+</blockquote>
+<p>将空间中任意的一个立方体(裁切空间)，移动到原点，然后将其<strong>X</strong>,<strong>Y</strong>,<strong>Z</strong>映射成<code>[-1, 1]</code>。构成一个<strong>标准立方体(Canonical Cube)</strong></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\ortho01.jpg " class="full-image" alt title style="max-width: none; width: 90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<script type="math/tex; mode=display">
+M_{ortho} = \begin{bmatrix}
+\frac{2}{r-l}& 0 & 0 & 0\\ 
+0 & \frac{2}{t-b} & 0 & 0\\ 
+0 & 0 & \frac{2}{n-f} & 0\\ 
+0 & 0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+1& 0 & 0 & -\frac{r+l}{2}\\ 
+0 & 1 & 0 & -\frac{t+b}{2}\\ 
+0 & 0 & 1 & -\frac{n+f}{2}\\ 
+0 & 0 & 0 & 1
+\end{bmatrix}</script><h3 id="透视投影"><a href="#透视投影" class="headerlink" title="透视投影"></a>透视投影</h3><blockquote>
+<p>Perspective Projection</p>
+</blockquote>
+<p>相比正交投影，透视投影更为常见。相比正交投影，透视投影多了一个矩阵$M_{persp\rightarrow ortho}$，即，将之前的裁切空间转换为一个正常的立方体，然后再像上面所提到的。再进行一次正交投影</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\persp01.jpg " class="full-image" alt title style="max-width: none; width: 75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<script type="math/tex; mode=display">
+M_{persp\rightarrow ortho} = \begin{bmatrix}
+n & 0 & 0 & 0\\ 
+0 & n & 0 & 0\\ 
+0 & n+f & -nf & 0\\ 
+0 & 0 & 1 & 0
+\end{bmatrix}</script><p>最后在进行正交投影</p>
+<script type="math/tex; mode=display">
+M_{persp} = M_{ortho}M_{persp \rightarrow ortho}</script><p>透视投影还有个重要的元素。就是摄像机能看到的范围。其中两个重要的元素：</p>
+<ul>
+<li>vertical <strong>Field-of-view(垂直可视角度)</strong></li>
+<li><strong>Aspect ratio(宽高比)</strong></li>
+</ul>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\fov01.jpg " class="full-image" alt title style="max-width: none; width: 60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>这两个概念定义了透视投影的<strong>视锥</strong></p>
+<p>我们只要定义了这两个元素，就可以很简单的转化成<strong>正交投影中</strong>提到的<strong>远近(f,n)，左右(l,r)</strong>和<strong>上下(t,b)</strong></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\fov02.jpg " class="full-image" alt title style="max-width: none; width: 90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<h3 id="采样"><a href="#采样" class="headerlink" title="采样"></a>采样</h3><blockquote>
+<p>Sampling</p>
+</blockquote>
+<p>采样在图形学中是一个非常非常重要的概念</p>
+<div class="note primary">
+            <p><strong>采样(Sampling)</strong>是什么概念：</p><ul><li>给你一个函数，它是连续的。然后我在不同的地方去问这个函数的值是多少;</li><li>例如<code>f(x)=sin(x)</code>，就去求<code>f(1),f(2),f(3)...</code>都是多少；</li><li>也就是说采样就是把一个函数<strong>离散化(discretize)</strong>的过程</li></ul>
+          </div>
+<h1 id="LearnOpenGL"><a href="#LearnOpenGL" class="headerlink" title="LearnOpenGL"></a>LearnOpenGL</h1><blockquote>
+<p><a href="https://learnopengl-cn.github.io/" target="_blank" rel="noopener">https://learnopengl-cn.github.io/</a></p>
+</blockquote>
+<h2 id="PBR"><a href="#PBR" class="headerlink" title="PBR"></a>PBR</h2><blockquote>
+<p>基于物理的渲染(Physically Based Rendering)<br><a href="https://learnopengl-cn.github.io/07%20PBR/01%20Theory/" target="_blank" rel="noopener">https://learnopengl-cn.github.io/07%20PBR/01%20Theory/</a></p>
+</blockquote>
+<p>判断一种PBR光照模型是否基于物理，必须满足以下三个条件：</p>
+<ol>
+<li>基于<strong>微平面</strong>的表面模型;</li>
+<li><strong>能量守恒</strong>;</li>
+<li>应用基于物理的<strong>BRDF</strong></li>
+</ol>
+<h3 id="微平面模型"><a href="#微平面模型" class="headerlink" title="微平面模型"></a>微平面模型</h3><p>所有的PBR技术都基于微平面理论：<br>达到微观尺度之后任何平面都可以用被称为<strong>微平面(Microfacets)</strong>的细小镜面来进行描绘</p>
+<div class="note info">
+            <p>一个平面越是粗糙，这个平面上的微平面的排列就越混乱。这些微小镜面这样无序取向排列的影响就是，当我们特指镜面光/镜面反射时，入射光线更趋向于向完全不同的方向发散(Scatter)开来，进而产生出分布范围更广泛的镜面反射。而与之相反的是，对于一个光滑的平面，光线大体上会更趋向于向同一个方向反射，造成更小更锐利的反射</p>
+          </div>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\microfacets_light_rays.png " class="full-image" alt title style="max-width: none; width: 65%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<h3 id="能量守恒"><a href="#能量守恒" class="headerlink" title="能量守恒"></a>能量守恒</h3><p>微平面近似法使用了这样一种形式的<strong>能量守恒(Energy Conservation)</strong>：</p>
+<ul>
+<li>出射光线的能量永远<strong>不能超过</strong>入射光线的能量（发光面除外）。</li>
+<li><strong>反射</strong>光与<strong>折射</strong>光它们二者之间是<strong>互斥的关系</strong>。</li>
+</ul>
+<p>为了遵守能量守恒定律，我们需要对漫反射光和镜面反射光之间做出明确的区分。当一束光线碰撞到一个表面的时候，它就会分离成一个<strong>折射部分</strong>和一个<strong>反射部分</strong>。</p>
+<div class="note primary">
+            <p>通过物理学我们可以得知，光线实际上可以被认为是一束没有耗尽就<strong>不停向前运动的能量</strong>，而光束是通过<strong>碰撞</strong>的方式来<strong>消耗能量</strong>。每一种材料都是由无数微小的粒子所组成，这些粒子都能如下图所示一样与光线发生碰撞。这些粒子在每次的碰撞中都可以<strong>吸收光线</strong>所携带的一部分或者是全部的能量而后<strong>转变成为热量</strong>。<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\surface_reaction.png " class="full-image" alt title style="max-width: none; width: 35%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br>光线会继续沿着（基本上）随机的方向发散，然后再和其他的粒子碰撞直至能量完全<strong>耗尽</strong>或者<strong>再次离开</strong>这个表面。而光线脱离物体表面后将会<strong>协同构成该表面的（漫反射）颜色</strong>。</p>
+          </div>
+<div class="note info">
+            <p>不过在基于物理的渲染之中我们进行了简化，假设对平面上的每一点<strong>所有的折射光</strong>都会被完全吸收而<strong>不会散开</strong>。而有一些被称为<strong>次表面散射(Subsurface Scattering)</strong>技术的着色器技术将这个问题考虑了进去。</p>
+          </div>
+<div class="note warning">
+            <p>对于<strong>金属(Metallic)</strong>表面,它们遵从的反射与折射原理是相同的，但是<strong>所有的折射光</strong>都会被<strong>直接吸收</strong>而不会散开，只留下<strong>反射光</strong>或者说镜面反射光。<span class="label warning">金属表面<b>不会显示出漫反射颜色</b></span>。因此它们两者在PBR渲染管线中被区别处理。</p>
+          </div>
+<h3 id="反射率方程"><a href="#反射率方程" class="headerlink" title="反射率方程"></a>反射率方程</h3><p>基于物理的渲染所坚定的遵循的是一种被称为<strong>反射率方程(The Reflectance Equation)</strong>的渲染方程的特化版本。<br>要正确的理解PBR 很重要的一点就是要首先透彻的理解反射率方程：</p>
+<script type="math/tex; mode=display">
+L_{o}(p,\omega) = \int_{\Omega}f_{r}(p, \omega_{i}, \omega_{o})L_{i}(p, \omega_{i})n \cdot \omega_{i} d \omega_{i}</script><p><strong>辐射率(Radiance)</strong>: $L$, 量化单一方向上发射来的光线的大小或者强度;</p>
+<p><strong>立体角(Solid angle)</strong>: $\omega$, 它可以为我们描述投射到单位球体上的一个截面的大小或者面积;<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\solid_angle.png " class="full-image" alt title style="max-width: none; width: 25%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<p><strong>辐射强度(Radiant intensity)</strong>: $I$, 一个光源向每单位立体角所投送的辐射通量。</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\radiant_intensity.png " class="full-image" alt title style="max-width: none; width: 20%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p><strong>辐射强度</strong>公式如下所示：</p>
+<script type="math/tex; mode=display">
+I = \frac{d\phi }{d\omega }</script><p>其中$\phi$ 表示<strong>辐射通量</strong>， $\omega$ 表示<strong>立体角</strong></p>
+<p>在理解了辐射通量，辐射强度与立体角的概念之后，我们终于可以开始讨论<strong>辐射率</strong>的方程式了。这个方程表示的是，一个拥有<strong>辐射强度</strong>$\phi$的光源在<strong>单位面积</strong>$A$，<strong>单位立体角</strong>$\omega$上的辐射出的总能量：</p>
+<p><strong>辐射率</strong>公式如下所示：</p>
+<script type="math/tex; mode=display">
+L = \frac{d^2\phi}{dAd\omega\cos\theta }</script><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\radiance.png " class="full-image" alt title style="max-width: none; width: 30%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>如果我们把立体角$\omega$和面积$A$看作是<strong>无穷小</strong>的，那么我们就能用辐射率来表示<strong>单束光线</strong>穿过空间中的<strong>一个点</strong>的通量。这就使我们可以计算得出作用于单个（片段）点上的<strong>单束光线的辐射率</strong>，我们实际上把立体角$\omega$转变为<strong>方向向量</strong>$\omega$然后把面$A$转换为<strong>点</strong>$p$。这样我们就能直接在我们的着色器中使用辐射率来计算单束光线对每个片段的作用了。</p>
+<p>让我们再回过头来看看<strong>反射率方程(The Reflectance Equation)</strong>:</p>
+<script type="math/tex; mode=display">
+L_{o}(p,\omega) = \int_{\Omega}f_{r}(p, \omega_{i}, \omega_{o})L_{i}(p, \omega_{i})n \cdot \omega_{i} d \omega_{i}</script><ul>
+<li>现在知道了$L$代表某个无限小的立体角$\omega_{i}$在某个点上的辐射率，而立体角可以视作是<strong>入射方向向量</strong></li>
+<li>利用光线和平面间的入射角的余弦值$\cos \theta$来计算能量，亦即从辐射率公式$L$转化至反射率公式时的$n\cdot\omega_{i}$。</li>
+<li>$\omega_{o}$ 表示观察方向。反射率计算公式计算了点$p$在观察方向上被反射出来的辐射率的总和</li>
+<li>基于反射率公式是围绕所有入射辐射率的总和，所以我们需要计算的就不只是是单一的一个方向上的入射光，而是一个以点$p$为球心的半球领域$\Omega$内所有方向上的入射光.为了计算某些面积的值我们会需要用到一种称为<strong>积分(Integral)</strong>的数学手段，也就是反射率公式中的符号$\int$,它的运算包含了半球领域$\Omega$内所有入射方向上的$d\omega_{i}$</li>
+</ul>
+<p>现在唯一剩下的未知符号就是$f_{r}$了，它被称为<strong>BRDF</strong>，或者<strong>双向反射分布函数(Bidirectional Reflective Distribution Function)</strong> ，它的作用是基于表面材质属性来对入射辐射率进行缩放或者加权。</p>
+<h3 id="BRDF"><a href="#BRDF" class="headerlink" title="BRDF"></a>BRDF</h3><blockquote>
+<p>双向反射分布函数(bidirectional reflective distribution function)</p>
+</blockquote>
+<p>BRDF可以近似的求出每束光线对一个给定了材质属性的平面上最终反射出来的光线所作出的贡献程度。</p>
+<blockquote>
+<p><strong>Blinn-Phong</strong>光照模型也被认为是一个<strong>BRDF</strong>。然而由于Blinn-Phong模型并没有遵循能<strong>量守恒定律</strong>，因此它不被认为是<strong>基于物理的渲染</strong>。</p>
+</blockquote>
+<p>现在已经有很好几种BRDF都能近似的得出物体表面对于光的反应。<br>但是几乎所有实时渲染管线使用的都是一种被称为Cook-Torrance BRDF模型:</p>
+<script type="math/tex; mode=display">
+f_{cook_torrance} = \frac{DFG}{4(\omega_{o} \cdot n)(\omega_{i} \cdot n)}</script><ul>
+<li><strong>正态分布函数(Normal Distribution Function)</strong>：估算在受到表面粗糙度的影响下，取向方向与中间向量一致的微平面的数量。这是用来估算微平面的主要函数。</li>
+<li><strong>菲涅尔方程(Fresnel Equation)</strong>：菲涅尔方程描述的是在不同的表面角下表面所反射的光线所占的比率。</li>
+<li><strong>几何函数(Geometry Function)</strong>：描述了微平面自成阴影的属性。当一个平面相对比较粗糙的时候，平面表面上的微平面有可能挡住其他的微平面从而减少表面所反射的光线。</li>
+</ul>
+<p>我们将会采用Epic Games在Unreal Engine 4中所使用的函数:</p>
+<ul>
+<li><strong>D</strong>: Trowbridge-Reitz GGX</li>
+<li><strong>F</strong>: Fresnel-Schlick approximation</li>
+<li><strong>G</strong>: Smith’s Schlick-GGX</li>
+</ul>
+<h4 id="正态分布函数"><a href="#正态分布函数" class="headerlink" title="正态分布函数"></a>正态分布函数</h4><blockquote>
+<p>Normal Distribution Function</p>
+</blockquote>
+<p><strong>正态分布函数</strong>从统计学上近似的表示了与某些（中间）向量$h$<strong>取向一致</strong>的微平面的<strong>比率</strong>。</p>
+<script type="math/tex; mode=display">
+NDF_{GGXTR}(n, h, a) = \frac{a^2}{\pi ((n \cdot h)^2 (a^2 - 1) + 1)^2}</script><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\ndf.png " class="full-image" alt title style="max-width: none; width: 65%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">D_GGX_TR</span><span class="params">(vec3 N, vec3 H, <span class="keyword">float</span> a)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">float</span> a2     = a*a;</span><br><span class="line">    <span class="keyword">float</span> NdotH  = max(dot(N, H), <span class="number">0.0</span>);</span><br><span class="line">    <span class="keyword">float</span> NdotH2 = NdotH*NdotH;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">float</span> nom    = a2;</span><br><span class="line">    <span class="keyword">float</span> denom  = (NdotH2 * (a2 - <span class="number">1.0</span>) + <span class="number">1.0</span>);</span><br><span class="line">    denom        = PI * denom * denom;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> nom / denom;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="几何函数"><a href="#几何函数" class="headerlink" title="几何函数"></a>几何函数</h4><blockquote>
+<p>Geometry Function</p>
+</blockquote>
+<p><strong>几何函数</strong>从统计学上近似的求得了<strong>微平面间相互遮蔽的比率</strong>，这种相互遮蔽会损耗光线的能量。</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\geometry_shadowing.png " class="full-image" alt title style="max-width: none; width: 45%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<script type="math/tex; mode=display">
+G_{SchlickGGX}(n, v, k) = \frac{n \cdot v}{(n \cdot v)(1 - k) + k}</script><p>这里的$k$是$\alpha$基于几何函数是针对<strong>直接光照</strong>还是针对<strong>IBL光照</strong>的<strong>重映射(Remapping)</strong> :</p>
+<script type="math/tex; mode=display">
+k_{direct} = \frac{(\alpha + 1)^2}{8}</script><script type="math/tex; mode=display">
+k_{IBL} = \frac{\alpha^2}{2}</script><p>为了有效的估算几何部分，需要将<strong>观察方向（几何遮蔽(Geometry Obstruction)）</strong>和<strong>光线方向（几何阴影(Geometry Shadowing)）</strong>都考虑进去。我们可以使用<strong>史密斯法(Smith’s method)</strong>来把两者都纳入其中：</p>
+<script type="math/tex; mode=display">
+G(n, v, l, k) = G_{sub}(n, v, k)G_{sbu}(n, l, k)</script><p>c</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">GeometrySchlickGGX</span><span class="params">(<span class="keyword">float</span> NdotV, <span class="keyword">float</span> k)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">float</span> nom   = NdotV;</span><br><span class="line">    <span class="keyword">float</span> denom = NdotV * (<span class="number">1.0</span> - k) + k;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> nom / denom;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">GeometrySmith</span><span class="params">(vec3 N, vec3 V, vec3 L, <span class="keyword">float</span> k)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">float</span> NdotV = max(dot(N, V), <span class="number">0.0</span>);</span><br><span class="line">    <span class="keyword">float</span> NdotL = max(dot(N, L), <span class="number">0.0</span>);</span><br><span class="line">    <span class="keyword">float</span> ggx1 = GeometrySchlickGGX(NdotV, k);</span><br><span class="line">    <span class="keyword">float</span> ggx2 = GeometrySchlickGGX(NdotL, k);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> ggx1 * ggx2;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="菲涅尔方程"><a href="#菲涅尔方程" class="headerlink" title="菲涅尔方程"></a>菲涅尔方程</h4><blockquote>
+<p>Fresnel Equation</p>
+</blockquote>
+<p><strong>菲涅尔方程</strong>描述的是被<strong>反射</strong>的光线对比光线被<strong>折射</strong>的部分所占的<strong>比率</strong>，这个比率会随着我们观察的角度不同而不同.</p>
+<script type="math/tex; mode=display">
+F_{Schlick}(n, v, F_{0}) = F_{0} + (1 - F_{0})(1 - (n \cdot v))^5</script><hr>
+<h2 id="灯光"><a href="#灯光" class="headerlink" title="灯光"></a>灯光</h2><hr>
+<h3 id="平行光"><a href="#平行光" class="headerlink" title="平行光"></a>平行光</h3><p>方向向量就会像这样来表示：<code>vec4(0.2f, 1.0f, 0.3f, 0.0f)</code>。<br>这也可以作为一个<strong>快速检测光照类型</strong>的工具：<br>你可以检测w分量是否等于1.0，来检测它是否是光的<strong>位置</strong>向量；<br>w分量等于0.0，则它是光的<strong>方向</strong>向量，这样就能根据这个来调整光照计算了：</p>
+<hr>
+<h3 id="点光源"><a href="#点光源" class="headerlink" title="点光源"></a>点光源</h3><blockquote>
+<p>Point Light</p>
+</blockquote>
+<ul>
+<li><strong>衰减(Attenuation)</strong>：</li>
+</ul>
+<script type="math/tex; mode=display">
+F_{att} = \frac{1.0}{K_{c} + K_{l} * d + K_{q} * d^2}</script><ul>
+<li>$d$ 代表片元于光源的距离；</li>
+<li>$K_{c}$ 常数项，通常保持<code>1.0</code>，主要作用保证分母不会比<code>1</code>小，否则某些距离上它反而会增强；</li>
+<li>$K_{l}$ 一次项， 于距离相乘，以线性的方式减少强度；</li>
+<li>$K_{q}$ 二次项， 于距离的平方相乘， 以二次递减的方式减少强度。</li>
+</ul>
+<p><strong>经验设置：</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">距离</th>
+<th style="text-align:left">常数项</th>
+<th style="text-align:left">一次项</th>
+<th style="text-align:left">二次项</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:left">1.0</td>
+<td style="text-align:left">0.7</td>
+<td style="text-align:left">1.8</td>
+</tr>
+<tr>
+<td style="text-align:left">13</td>
+<td style="text-align:left">1.0</td>
+<td style="text-align:left">0.35</td>
+<td style="text-align:left">0.44</td>
+</tr>
+<tr>
+<td style="text-align:left">20</td>
+<td style="text-align:left">1.0</td>
+<td style="text-align:left">0.22</td>
+<td style="text-align:left">0.20</td>
+</tr>
+<tr>
+<td style="text-align:left">32</td>
+<td style="text-align:left">1.0</td>
+<td style="text-align:left">0.14</td>
+<td style="text-align:left">0.07</td>
+</tr>
+<tr>
+<td style="text-align:left">50</td>
+<td style="text-align:left">1.0</td>
+<td style="text-align:left">0.09</td>
+<td style="text-align:left">0.032</td>
+</tr>
+<tr>
+<td style="text-align:left">65</td>
+<td style="text-align:left">1.0</td>
+<td style="text-align:left">0.07</td>
+<td style="text-align:left">0.017</td>
+</tr>
+<tr>
+<td style="text-align:left">100</td>
+<td style="text-align:left">1.0</td>
+<td style="text-align:left">0.045</td>
+<td style="text-align:left">0.0075</td>
+</tr>
+<tr>
+<td style="text-align:left">160</td>
+<td style="text-align:left">1.0</td>
+<td style="text-align:left">0.027</td>
+<td style="text-align:left">0.0028</td>
+</tr>
+<tr>
+<td style="text-align:left">200</td>
+<td style="text-align:left">1.0</td>
+<td style="text-align:left">0.022</td>
+<td style="text-align:left">0.0019</td>
+</tr>
+<tr>
+<td style="text-align:left">325</td>
+<td style="text-align:left">1.0</td>
+<td style="text-align:left">0.014</td>
+<td style="text-align:left">0.0007</td>
+</tr>
+<tr>
+<td style="text-align:left">600</td>
+<td style="text-align:left">1.0</td>
+<td style="text-align:left">0.007</td>
+<td style="text-align:left">0.0002</td>
+</tr>
+<tr>
+<td style="text-align:left">3250</td>
+<td style="text-align:left">1.0</td>
+<td style="text-align:left">0.0014</td>
+<td style="text-align:left">0.000007</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h3 id="聚光"><a href="#聚光" class="headerlink" title="聚光"></a>聚光</h3><blockquote>
+<p>Spotlight</p>
+</blockquote>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\light_casters_spotlight_angles.png " class="full-image" alt title style="max-width: none; width: 40%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<ul>
+<li><strong>LightDir</strong>: 从片元指向光源的向量；</li>
+<li><strong>SpotDir</strong>: 聚光所指向的方向；</li>
+<li><strong>Phi</strong> $\phi$: 指定的聚光半径的切光角；</li>
+<li><strong>Theta</strong> $\theta$: LightDir向量和SpotDir向量的夹角。</li>
+</ul>
+<p><strong>平滑/软化边缘</strong></p>
+<p>为了创建一种看起来边缘平滑的聚光，我们需要模拟聚光有一个内<strong>圆锥(Inner Cone)</strong>和一个<strong>外圆锥(Outer Cone)</strong>：<br>如果一个片段处于<strong>内外圆锥之间</strong>，将会给它计算出一个<code>0.0</code>到<code>1.0</code>之间的强度值。如果片段在<strong>内圆锥之内</strong>，它的强度就是<code>1.0</code>，如果在<strong>外圆锥之外</strong>强度值就是<code>0.0</code>。</p>
+<script type="math/tex; mode=display">
+I = \frac{\theta-\lambda}{\gamma}</script><ul>
+<li>$\epsilon$ 是内圆锥和外圆锥的余弦值差($\epsilon = \phi - \gamma$)。最终的$I$值就是当前片元聚光的强度</li>
+</ul>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><hr>
+<h2 id="军团要塞NPR渲染"><a href="#军团要塞NPR渲染" class="headerlink" title="军团要塞NPR渲染"></a>军团要塞NPR渲染</h2><blockquote>
+<p>Non-photorealistic shading in <em>Tram Fortress2</em><br><a href="https://steamcdn-a.akamaihd.net/apps/valve/2007/NPAR07_IllustrativeRenderingInTeamFortress2.pdf" target="_blank" rel="noopener">https://steamcdn-a.akamaihd.net/apps/valve/2007/NPAR07_IllustrativeRenderingInTeamFortress2.pdf</a></p>
+</blockquote>
+<script type="math/tex; mode=display">
+k_{d}
+\begin{bmatrix}
+a(\vec{n})+\sum_{i=1}^{L}c_{i}w((\alpha(\vec{n} \cdot \vec{l_{i}}) + \beta )^{\gamma })
+\end{bmatrix}</script><ul>
+<li>$L$ 表示灯关数量, $i$ 示灯关序号(index), $c_{i}$ 则表示该灯关的颜色；</li>
+<li>$k_{d}$为物体的固有颜色，即<strong>Albedo</strong>；</li>
+<li>$\vec{n} \cdot \vec{l_{i}}$ 是基于第 $i$ 个灯关的，传统的<strong>Lambert</strong>光照；</li>
+<li>常量$\alpha, \beta, \gamma$ 用于控制<strong>Lambert</strong>光照的参数；</li>
+<li>$a()$是一个计算环境与每个像素法线关系的函数；</li>
+<li>$w()$是一个将RGB颜色重新映射到<code>[0,1]</code>的函数。</li>
+</ul>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\TF2npr01.jpg " class="full-image" alt title style="max-width: none; width: 65%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\TF2npr02.jpg " class="full-image" alt title style="max-width: none; width: 65%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -517,7 +874,7 @@ M = \begin{bmatrix}
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Scratchapixel"><span class="nav-number">1.</span> <span class="nav-text">Scratchapixel</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Geometry"><span class="nav-number">1.1.</span> <span class="nav-text">Geometry</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#点，向量，法线"><span class="nav-number">1.1.1.</span> <span class="nav-text">点，向量，法线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#坐标系"><span class="nav-number">1.1.2.</span> <span class="nav-text">坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点和向量的数学运算"><span class="nav-number">1.1.3.</span> <span class="nav-text">点和向量的数学运算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Length"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">Length</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Normalize"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">Normalize</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dot-Product"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">Dot Product</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cross-Product"><span class="nav-number">1.1.3.4.</span> <span class="nav-text">Cross Product</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Addition-amp-Subtraction"><span class="nav-number">1.1.3.5.</span> <span class="nav-text">Addition &amp; Subtraction</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#矩阵"><span class="nav-number">1.1.4.</span> <span class="nav-text">矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Square-Matrices"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">Square Matrices</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Scratchapixel"><span class="nav-number">1.</span> <span class="nav-text">Scratchapixel</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Geometry"><span class="nav-number">1.1.</span> <span class="nav-text">Geometry</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#点，向量，法线"><span class="nav-number">1.1.1.</span> <span class="nav-text">点，向量，法线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#坐标系"><span class="nav-number">1.1.2.</span> <span class="nav-text">坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点和向量的数学运算"><span class="nav-number">1.1.3.</span> <span class="nav-text">点和向量的数学运算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Length"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">Length</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Normalize"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">Normalize</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dot-Product"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">Dot Product</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cross-Product"><span class="nav-number">1.1.3.4.</span> <span class="nav-text">Cross Product</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Addition-amp-Subtraction"><span class="nav-number">1.1.3.5.</span> <span class="nav-text">Addition &amp; Subtraction</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#矩阵"><span class="nav-number">1.1.4.</span> <span class="nav-text">矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Square-Matrices"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">Square Matrices</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GAMES101"><span class="nav-number">2.</span> <span class="nav-text">GAMES101</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#各类矩阵"><span class="nav-number">2.1.</span> <span class="nav-text">各类矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#旋转矩阵"><span class="nav-number">2.1.1.</span> <span class="nav-text">旋转矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相机变换矩阵"><span class="nav-number">2.1.2.</span> <span class="nav-text">相机变换矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正交投影矩阵"><span class="nav-number">2.1.3.</span> <span class="nav-text">正交投影矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#透视投影"><span class="nav-number">2.1.4.</span> <span class="nav-text">透视投影</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#采样"><span class="nav-number">2.1.5.</span> <span class="nav-text">采样</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LearnOpenGL"><span class="nav-number">3.</span> <span class="nav-text">LearnOpenGL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PBR"><span class="nav-number">3.1.</span> <span class="nav-text">PBR</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#微平面模型"><span class="nav-number">3.1.1.</span> <span class="nav-text">微平面模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#能量守恒"><span class="nav-number">3.1.2.</span> <span class="nav-text">能量守恒</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反射率方程"><span class="nav-number">3.1.3.</span> <span class="nav-text">反射率方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BRDF"><span class="nav-number">3.1.4.</span> <span class="nav-text">BRDF</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#正态分布函数"><span class="nav-number">3.1.4.1.</span> <span class="nav-text">正态分布函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#几何函数"><span class="nav-number">3.1.4.2.</span> <span class="nav-text">几何函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#菲涅尔方程"><span class="nav-number">3.1.4.3.</span> <span class="nav-text">菲涅尔方程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#灯光"><span class="nav-number">3.2.</span> <span class="nav-text">灯光</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#平行光"><span class="nav-number">3.2.1.</span> <span class="nav-text">平行光</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点光源"><span class="nav-number">3.2.2.</span> <span class="nav-text">点光源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#聚光"><span class="nav-number">3.2.3.</span> <span class="nav-text">聚光</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">4.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#军团要塞NPR渲染"><span class="nav-number">4.1.</span> <span class="nav-text">军团要塞NPR渲染</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -607,6 +964,8 @@ M = \begin{bmatrix}
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 <script src="/js/utils.js"></script><script src="/js/motion.js"></script>

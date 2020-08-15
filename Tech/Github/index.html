@@ -14,6 +14,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 
 <script id="hexo-configurations">
@@ -28,7 +29,7 @@
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
+    fancybox: true,
     mediumzoom: false,
     lazyload: false,
     pangu: false,
@@ -54,10 +55,14 @@
 <meta property="og:site_name" content="Fan ziwen">
 <meta property="og:description" content="初始设置创建仓库123$ git init$ git remote add origin  https://github.com/UserName/REPOSITORY.git$ git pull [remote] [branch] 创建远程跟踪1$ git branch --set-upstream-to=origin/[branch] master 设置姓名和邮箱地址cmd12$ git co">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-13T16:14:03.193Z">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Git/settings.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Git/newSSH.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Git/titleKey.jpg">
+<meta property="og:updated_time" content="2020-08-15T15:34:24.682Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub使用教程">
 <meta name="twitter:description" content="初始设置创建仓库123$ git init$ git remote add origin  https://github.com/UserName/REPOSITORY.git$ git pull [remote] [branch] 创建远程跟踪1$ git branch --set-upstream-to=origin/[branch] master 设置姓名和邮箱地址cmd12$ git co">
+<meta name="twitter:image" content="http://yoursite.com/images/Notes/Git/settings.jpg">
 
 <link rel="canonical" href="http://yoursite.com/Tech/Github/">
 
@@ -221,7 +226,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-14 00:14:03" itemprop="dateModified" datetime="2020-01-14T00:14:03+08:00">2020-01-14</time>
+                <time title="修改时间：2020-08-15 23:34:24" itemprop="dateModified" datetime="2020-08-15T23:34:24+08:00">2020-08-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -287,6 +292,92 @@
 <p><code>git stash apply</code></p>
 <p><code>git stash drop</code></p>
 <h3 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h3><p><code>git checkout -- *</code> 撤销上次递交后做的所有修改<br><code>git checkout -- [FILENAME]</code> 撤销上次递交后对单个文件的修改</p>
+<hr>
+<h3 id="SSH-密钥"><a href="#SSH-密钥" class="headerlink" title="SSH 密钥"></a>SSH 密钥</h3><blockquote>
+<p>Secure Shell</p>
+</blockquote>
+<h4 id="检查是否已经有-SSH-key"><a href="#检查是否已经有-SSH-key" class="headerlink" title="检查是否已经有 SSH key"></a>检查是否已经有 SSH key</h4><ol>
+<li>打开 <strong>Git Bash</strong></li>
+<li>键入<code>ls -al ~/.ssh</code>，如果 .ssh 文件夹存在，就会列出文件</li>
+<li>如果公钥文件存在，默认可能是以下名字：<ul>
+<li>id_rsa.pub</li>
+<li>id_ecdsa.pub</li>
+<li>id_ed25519.pub</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="创建一个新的-SSH-Key"><a href="#创建一个新的-SSH-Key" class="headerlink" title="创建一个新的 SSH Key"></a>创建一个新的 SSH Key</h4><ol>
+<li>打开 <strong>Git Bash</strong></li>
+<li><p>键入下面这段命令加上自己的邮箱：<br><code>$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"</code><br>这样就创建了一个以邮箱为标签的 SSH key<br><code>> Generating public/private rsa key pair.</code></p>
+</li>
+<li><p>接着会要你输入密钥的存放位置,直接回车为默认：<br><code>> Enter a file in which to save the key (/c/Users/you/.ssh/id_rsa):[Press enter]</code></p>
+</li>
+<li><p>接着提示输入安全密码。进一步了解：<a href="#使用-SSH-key-密码">使用 SSH key 密码</a>：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">> Enter passphrase (empty for no passphrase): [Type a passphrase]</span><br><span class="line">> Enter same passphrase again: [Type passphrase again]</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ol>
+<hr>
+<h4 id="将SSHkey添加到-ssh-agent"><a href="#将SSHkey添加到-ssh-agent" class="headerlink" title="将SSHkey添加到 ssh-agent"></a>将SSHkey添加到 ssh-agent</h4><ol>
+<li><p>确保<code>ssh-agent</code>正在运行，可以手动输入：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ eval $(ssh-agent -s)</span><br><span class="line">> Agent pid 59566</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>添加SSH私有密钥到<code>ssh-agent</code>:</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>添加SSH密钥到你的<strong>GitHub</strong>账户</p>
+</li>
+</ol>
+<hr>
+<h4 id="添加新的SSH密钥到你的GitHub账号上"><a href="#添加新的SSH密钥到你的GitHub账号上" class="headerlink" title="添加新的SSH密钥到你的GitHub账号上"></a>添加新的SSH密钥到你的GitHub账号上</h4><div class="note warning">
+            <ol><li>确保SSH密钥已经存在      -> <a href="#检查是否已经有-SSH-key">检查是否已经有 SSH key</a></li><li>并且将其添加到ssh-agent  -> <a href="#将SSHkey添加到-ssh-agent">将SSHkey添加到 ssh-agent</a></li><li>项目远程URL是使用SSH密钥 -> <a href="#更改远程设置">更改远程设置</a></li></ol>
+          </div>
+<ol>
+<li><p>拷贝你的SSH密钥：<code>clip < ~/.ssh/id_ras.pub</code>。或者直接用编辑器打开，拷贝内容</p>
+</li>
+<li><p>打开<strong>GitHub</strong>的个人设置，点击<strong>Settings</strong>：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Git\settings.jpg " class="full-image" style="max-width: none; width:20%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+</li>
+<li><p>在<strong>SSH一栏</strong>中，新建一个<strong>SSH密钥</strong></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Git\newSSH.jpg " class="full-image" style="max-width: none; width:85%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+</li>
+<li><p>在<strong>Title</strong>中输入你方便辨别的标签，在<strong>Key</strong>中粘贴SSH密钥内容：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Git\titleKey.jpg " class="full-image" style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+</li>
+<li><p>最后点击<strong>Add SSH key</strong>，并输入GitHub密码。</p>
+</li>
+</ol>
+<hr>
+<h4 id="更改远程设置"><a href="#更改远程设置" class="headerlink" title="更改远程设置"></a>更改远程设置</h4><p>如果用<strong>HTTPS</strong>来进行更新，你的<strong>URL</strong>是这样的：<br><code>https://github.com/USERNAME/REPOSITORY.git</code></p>
+<p>如果用<strong>SSH</strong>来进行更新，你的<strong>URL</strong>是这样的：<br><code>git@github.com:USERNAME/REPOSITORY.git</code></p>
+<ul>
+<li><p><strong>更改远程设置：HTTPS 转 SSH</strong></p>
+<ol>
+<li><p>打开<strong>Git Bash</strong></p>
+</li>
+<li><p>列出现有的远程服务器，从而得到名字来进行切换：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v</span><br><span class="line">> origin  https://github.com/USERNAME/REPOSITORY.git (fetch)</span><br><span class="line">> origin  https://github.com/USERNAME/REPOSITORY.git (push)</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>通过<code>git remote set-url</code>来改变远程链接：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>确定远程链接是否改变：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v</span><br><span class="line"># Verify new remote URL</span><br><span class="line">> origin  git@github.com:USERNAME/REPOSITORY.git (fetch)</span><br><span class="line">> origin  git@github.com:USERNAME/REPOSITORY.git (push)</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h4 id="使用-SSH-key-密码"><a href="#使用-SSH-key-密码" class="headerlink" title="使用 SSH key 密码"></a>使用 SSH key 密码</h4><p>因为SSHkey，如果有人获取了你计算机的访问权限，那他也获取了所以使用SSHkey的系统。<br>为了添加额外的安全保证，你可以为你的SSHkey创建密码。<br>你可以通过ssh-agent安全的保存你的密码，这样就不需要重复地输入密码。</p>
+<ul>
+<li><p><strong>添加或更改密码</strong></p>
+<figure class="highlight bat"><figcaption><span>git bash</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -p</span><br><span class="line">> Enter file <span class="keyword">in</span> which the key is (/Users/you/.ssh/id_rsa): [Hit enter]</span><br><span class="line">> Key has comment '/Users/you/.ssh/id_rsa'</span><br><span class="line">> Enter new passphrase (empty <span class="keyword">for</span> no passphrase): [<span class="built_in">Type</span> new passphrase]</span><br><span class="line">> Enter same passphrase again: [One <span class="built_in">more</span> <span class="built_in">time</span> <span class="keyword">for</span> luck]</span><br><span class="line">> Your identification has been saved with the new passphrase.</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p><strong>自动在Git上启动 ssh-agent </strong><br>你可以自动运行<code>ssh--agent</code>当你打开<strong>Git shell</strong>或者<strong>bash</strong>的时候。<br>拷贝下面的内容到<code>~/.profile</code>或<code>~/.bashrc</code>文件：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">env=~/.ssh/agent.env</span><br><span class="line"></span><br><span class="line">agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }</span><br><span class="line"></span><br><span class="line">agent_start () {</span><br><span class="line">    (umask 077; ssh-agent >| "$env")</span><br><span class="line">    . "$env" >| /dev/null ; }</span><br><span class="line"></span><br><span class="line">agent_load_env</span><br><span class="line"></span><br><span class="line"># agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2= agent not running</span><br><span class="line">agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)</span><br><span class="line"></span><br><span class="line">if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then</span><br><span class="line">    agent_start</span><br><span class="line">    ssh-add</span><br><span class="line">elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then</span><br><span class="line">    ssh-add</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">unset env</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+<p>这样，当你第一运行<strong>Git Bash</strong>，就会提示你输入密码。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -386,7 +477,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始设置"><span class="nav-number">1.</span> <span class="nav-text">初始设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建仓库"><span class="nav-number">1.1.</span> <span class="nav-text">创建仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建远程跟踪"><span class="nav-number">1.2.</span> <span class="nav-text">创建远程跟踪</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置姓名和邮箱地址"><span class="nav-number">1.3.</span> <span class="nav-text">设置姓名和邮箱地址</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支"><span class="nav-number">2.</span> <span class="nav-text">分支</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览"><span class="nav-number">2.1.</span> <span class="nav-text">浏览</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建"><span class="nav-number">2.2.</span> <span class="nav-text">创建</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#暂存"><span class="nav-number">3.</span> <span class="nav-text">暂存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销"><span class="nav-number">4.</span> <span class="nav-text">撤销</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始设置"><span class="nav-number">1.</span> <span class="nav-text">初始设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建仓库"><span class="nav-number">1.1.</span> <span class="nav-text">创建仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建远程跟踪"><span class="nav-number">1.2.</span> <span class="nav-text">创建远程跟踪</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置姓名和邮箱地址"><span class="nav-number">1.3.</span> <span class="nav-text">设置姓名和邮箱地址</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支"><span class="nav-number">2.</span> <span class="nav-text">分支</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览"><span class="nav-number">2.1.</span> <span class="nav-text">浏览</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建"><span class="nav-number">2.2.</span> <span class="nav-text">创建</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#暂存"><span class="nav-number">3.</span> <span class="nav-text">暂存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销"><span class="nav-number">4.</span> <span class="nav-text">撤销</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SSH-密钥"><span class="nav-number">5.</span> <span class="nav-text">SSH 密钥</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#检查是否已经有-SSH-key"><span class="nav-number">5.1.</span> <span class="nav-text">检查是否已经有 SSH key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建一个新的-SSH-Key"><span class="nav-number">5.2.</span> <span class="nav-text">创建一个新的 SSH Key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将SSHkey添加到-ssh-agent"><span class="nav-number">5.3.</span> <span class="nav-text">将SSHkey添加到 ssh-agent</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加新的SSH密钥到你的GitHub账号上"><span class="nav-number">5.4.</span> <span class="nav-text">添加新的SSH密钥到你的GitHub账号上</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更改远程设置"><span class="nav-number">5.5.</span> <span class="nav-text">更改远程设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-SSH-key-密码"><span class="nav-number">5.6.</span> <span class="nav-text">使用 SSH key 密码</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -476,6 +567,8 @@
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 <script src="/js/utils.js"></script><script src="/js/motion.js"></script>

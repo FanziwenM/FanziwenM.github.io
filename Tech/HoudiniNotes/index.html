@@ -14,6 +14,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 
 <script id="hexo-configurations">
@@ -28,7 +29,7 @@
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
+    fancybox: true,
     mediumzoom: false,
     lazyload: false,
     pangu: false,
@@ -46,13 +47,13 @@
   };
 </script>
 
-  <meta name="description" content="🌏基础介绍🔥常用节点 Add 添加(点，多边形)  常用的，构造一个几何体的基础节点。可以添加单个（多个）点(points)，或将多个点绘制单个（多个）图元(primitive)组成一个多边形(Polygons)">
+  <meta name="description" content="🌏基础介绍🔥常用节点 几何类Add 添加(点，多边形)  常用的，构造一个几何体的基础节点。可以添加单个（多个）点(points)，或将多个点绘制单个（多个）图元(primitive)组成一个多边形(Polygons)">
 <meta name="keywords" content="Notes,Basic,Houdini">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Houdini笔记">
 <meta property="og:url" content="http://yoursite.com/Tech/HoudiniNotes/index.html">
 <meta property="og:site_name" content="Fan ziwen">
-<meta property="og:description" content="🌏基础介绍🔥常用节点 Add 添加(点，多边形)  常用的，构造一个几何体的基础节点。可以添加单个（多个）点(points)，或将多个点绘制单个（多个）图元(primitive)组成一个多边形(Polygons)">
+<meta property="og:description" content="🌏基础介绍🔥常用节点 几何类Add 添加(点，多边形)  常用的，构造一个几何体的基础节点。可以添加单个（多个）点(points)，或将多个点绘制单个（多个）图元(primitive)组成一个多边形(Polygons)">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/add.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/add02.jpg">
@@ -72,23 +73,32 @@
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/group05.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/group06.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/group07.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/groupbyRange.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/groupTransfer.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/groupTransfer1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/split.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/connectivity.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/sort.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/sort1.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/sort2.jpg">
-<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/findShortPath.jpg">
-<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/findShortPath1.jpg">
-<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/findShortPath2.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/copytoPts.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/copytoPts02.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/copytoPts03.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/copytoPts04.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/copytoPts05.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/divide.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/divide02.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/divide03.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/fuse01.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/fuse02.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/isooffset.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/findShortPath.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/findShortPath1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/findShortPath2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/convertLine.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/convertLine02.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/convertLine03.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/matchSize.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/pdgOutput.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/intrinsic.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/intrinsic2.jpg">
@@ -100,12 +110,13 @@
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/ch_mountain4.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/ch_mountain5.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/performance.jpg">
-<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/menuParameter.png">
-<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/menuParameter1.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/spareInput.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/spareInput2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/spareInput5.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/spareInput3.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/spareInput4.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/menuParameter.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/menuParameter1.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/attribPromote.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/attribPromote1.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Trick/ptsRint.jpg">
@@ -128,10 +139,15 @@
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Trick/center04.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Trick/center05.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Trick/center06.jpg">
-<meta property="og:updated_time" content="2020-03-07T11:57:36.122Z">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Trick/midLine.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Trick/midLine.gif">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Trick/midLine02.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Trick/midLine03.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Trick/midLine04.jpg">
+<meta property="og:updated_time" content="2020-08-15T13:28:34.689Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Houdini笔记">
-<meta name="twitter:description" content="🌏基础介绍🔥常用节点 Add 添加(点，多边形)  常用的，构造一个几何体的基础节点。可以添加单个（多个）点(points)，或将多个点绘制单个（多个）图元(primitive)组成一个多边形(Polygons)">
+<meta name="twitter:description" content="🌏基础介绍🔥常用节点 几何类Add 添加(点，多边形)  常用的，构造一个几何体的基础节点。可以添加单个（多个）点(points)，或将多个点绘制单个（多个）图元(primitive)组成一个多边形(Polygons)">
 <meta name="twitter:image" content="http://yoursite.com/images/Notes/Houdini/add.jpg">
 
 <link rel="canonical" href="http://yoursite.com/Tech/HoudiniNotes/">
@@ -296,7 +312,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-07 19:57:36" itemprop="dateModified" datetime="2020-03-07T19:57:36+08:00">2020-03-07</time>
+                <time title="修改时间：2020-08-15 21:28:34" itemprop="dateModified" datetime="2020-08-15T21:28:34+08:00">2020-08-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -322,7 +338,7 @@
 
       
         <h2 id="🌏基础介绍"><a href="#🌏基础介绍" class="headerlink" title="🌏基础介绍"></a>🌏基础介绍</h2><h2 id="🔥常用节点"><a href="#🔥常用节点" class="headerlink" title="🔥常用节点"></a>🔥常用节点</h2><hr>
-<h3 id="Add"><a href="#Add" class="headerlink" title="Add"></a>Add</h3><blockquote>
+<h3 id="几何类"><a href="#几何类" class="headerlink" title="几何类"></a>几何类</h3><h4 id="Add"><a href="#Add" class="headerlink" title="Add"></a>Add</h4><blockquote>
 <p>添加(点，多边形)</p>
 </blockquote>
 <p>常用的，构造一个几何体的基础节点。<br>可以添加单个（多个）<strong>点(points)</strong>，或将多个点绘制单个（多个）<strong>图元(primitive)</strong>组成一个多边形(Polygons)</p>
@@ -339,7 +355,7 @@
             <p>节点<strong>Add</strong>在生成<strong>Polygons</strong>的时候还可以选择<code>By Group</code>,其中有意思的就是<code>Groups of N points</code>,即每<strong>N</strong>个点组成一个<strong>Primitive</strong>：</p><p><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\add05.jpg " class="full-image" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
           </div>
 <hr>
-<h3 id="Attribute-Transfer"><a href="#Attribute-Transfer" class="headerlink" title="Attribute Transfer"></a>Attribute Transfer</h3><blockquote>
+<h3 id="属性类"><a href="#属性类" class="headerlink" title="属性类"></a>属性类</h3><h4 id="Attribute-Transfer"><a href="#Attribute-Transfer" class="headerlink" title="Attribute Transfer"></a>Attribute Transfer</h4><blockquote>
 <p>属性传递</p>
 </blockquote>
 <p>用于传递<strong>指定属性</strong>。<br>例如我们这里可以传递位置属性：</p>
@@ -366,7 +382,7 @@
             <p><strong>Attribute Transfer</strong>最常用的参数：</p><ul><li><strong>Distance Threshold</strong>: 传递范围阈值，既目标模型距离源模型距离多少以内属性会被传递；</li><li><strong>Blend Width</strong>: 混合宽度，既传递属性的值于原值进行混合过渡的宽度；</li></ul><p>我们可以通过<strong>Marker</strong>来看看下图中属性<code>temp</code>的传递效果</p><p><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\attrTrans3.jpg " class="full-image" style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p><p><strong>Sphere</strong>的属性<strong>temp</strong>的值为<code>1</code>，而<strong>Grid</strong>的值为<code>0</code>，传递后<code>0</code>和<code>1</code>中间出现的小数就是它们的混合值，而<strong>Blend Width</strong>就是调整<code>0</code>到<code>1</code>的过渡宽度</p>
           </div>
 <hr>
-<h3 id="Group"><a href="#Group" class="headerlink" title="Group"></a>Group</h3><blockquote>
+<h3 id="组相关"><a href="#组相关" class="headerlink" title="组相关"></a>组相关</h3><h4 id="Group"><a href="#Group" class="headerlink" title="Group"></a>Group</h4><blockquote>
 <p>组</p>
 </blockquote>
 <p>最基础的作用就是将输入的<strong>类型(Primitive, Point, Edges…)</strong>进行打组</p>
@@ -390,17 +406,30 @@
 </li>
 </ul>
 <hr>
-<h3 id="Grouptransfer"><a href="#Grouptransfer" class="headerlink" title="Grouptransfer"></a>Grouptransfer</h3><blockquote>
+<h4 id="Group-by-Range"><a href="#Group-by-Range" class="headerlink" title="Group by Range"></a>Group by Range</h4><blockquote>
+<p>根据范围打组</p>
+</blockquote>
+<p>可以根据<strong>开始到结束</strong>或者<strong>每N个选择M个</strong>来创建新的组：</p>
+<p>例如，下图就是没<code>3</code>个点中选择<code>1</code>个打组</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\groupbyRange.jpg " class="full-image" style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<h4 id="Grouptransfer"><a href="#Grouptransfer" class="headerlink" title="Grouptransfer"></a>Grouptransfer</h4><blockquote>
 <p>传递组</p>
 </blockquote>
 <p>将某一模型中的组传递给另一模型，类似<strong>Attribute Transfer</strong><br>有一个很好的例子：<br>在一个<strong>网格(Grid)</strong>上随机撒点，找到最近(一定距离内)的<strong>网格</strong>上的点：<br>新建<strong>网格(Grid)</strong>，然后通过<strong>scatter</strong>撒点，通过<strong>group</strong>打组成<code>scatterPts</code><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\groupTransfer.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br>通过<strong>GroupTransfer</strong>勾选<strong>点(point)</strong>，输入<code>scatterPts</code>，调整<strong>DistanceThreshold</strong>到合适参数<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\groupTransfer1.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
 <hr>
-<h3 id="Connectivity"><a href="#Connectivity" class="headerlink" title="Connectivity"></a>Connectivity</h3><blockquote>
+<h4 id="Split"><a href="#Split" class="headerlink" title="Split"></a>Split</h4><blockquote>
+<p>划分</p>
+</blockquote>
+<p>通过一个<strong>组(Group)</strong>将结果分两部分执行。</p>
+<p>例如，下图是通过<strong>GroupbyRange</strong>在primitives下打组了一个<code>group1</code>，然后根据这个分组将<code>group1</code>内的primitives上成红色，然后组外的上成蓝色：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\split.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<hr>
+<h3 id="属性操作"><a href="#属性操作" class="headerlink" title="属性操作"></a>属性操作</h3><h4 id="Connectivity"><a href="#Connectivity" class="headerlink" title="Connectivity"></a>Connectivity</h4><blockquote>
 <p>链接性</p>
 </blockquote>
 <p>相连接的 <strong>point</strong> 或者 <strong>primitive</strong> 给与相同的值<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\connectivity.png " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
 <hr>
-<h3 id="Sort"><a href="#Sort" class="headerlink" title="Sort"></a>Sort</h3><blockquote>
+<h4 id="Sort"><a href="#Sort" class="headerlink" title="Sort"></a>Sort</h4><blockquote>
 <p>排序</p>
 </blockquote>
 <p>对<strong>point</strong>或者<strong>Primitive</strong>的序号进行重新排序。</p>
@@ -413,11 +442,7 @@
 <div class="note success">
             <p>节点<strong>Sort</strong>还可以配合节点<strong>Group by Range</strong>进行随机打组：</p><p><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\sort2.jpg " class="full-image" style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
           </div>
-<h3 id="FindShortestPath"><a href="#FindShortestPath" class="headerlink" title="FindShortestPath"></a>FindShortestPath</h3><blockquote>
-<p>最短路径</p>
-</blockquote>
-<p>通过定义<strong>起始点</strong>，和<strong>结束点</strong>来寻找它们之间最短的路径<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\findShortPath.jpg " class="full-image" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\findShortPath1.jpg " class="full-image" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\findShortPath2.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
-<h3 id="Copy-to-Points"><a href="#Copy-to-Points" class="headerlink" title="Copy to Points"></a>Copy to Points</h3><blockquote>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><h4 id="Copy-to-Points"><a href="#Copy-to-Points" class="headerlink" title="Copy to Points"></a>Copy to Points</h4><blockquote>
 <p>拷贝至点</p>
 </blockquote>
 <p>可以将指定 <strong>几何体</strong> 拷贝到点上。<br>你可以将模型拷贝到有序的点上，例如网格上的点：</p>
@@ -508,7 +533,17 @@
             <p>如果还需要除了以上属性能控制的额外的复杂操作，就需要用到<strong>For-Each</strong>。</p>
           </div>
 <hr>
-<h3 id="Fuse"><a href="#Fuse" class="headerlink" title="Fuse"></a>Fuse</h3><blockquote>
+<h3 id="几何操作"><a href="#几何操作" class="headerlink" title="几何操作"></a>几何操作</h3><h4 id="Divide"><a href="#Divide" class="headerlink" title="Divide"></a>Divide</h4><blockquote>
+<p>分割</p>
+</blockquote>
+<p>将模型中的多变面重新分割成三角面：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\divide.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\divide02.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note success">
+            <p>勾选<code>Don't Generate Slivers</code>和<code>Avoid Small Angles</code>可以达到更好的三边面效果</p><p><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\divide03.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+          </div>
+<hr>
+<h4 id="Fuse"><a href="#Fuse" class="headerlink" title="Fuse"></a>Fuse</h4><blockquote>
 <p>焊点</p>
 </blockquote>
 <p>节点<strong>Fuse</strong>用于焊接相邻点。</p>
@@ -519,13 +554,27 @@
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\fuse02.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <p>用这种方法可以很快生成一个规则的曲线。</p>
 <hr>
-<h3 id="Remesh"><a href="#Remesh" class="headerlink" title="Remesh"></a>Remesh</h3><h3 id="IsoOffset"><a href="#IsoOffset" class="headerlink" title="IsoOffset"></a>IsoOffset</h3><blockquote>
+<h4 id="Remesh"><a href="#Remesh" class="headerlink" title="Remesh"></a>Remesh</h4><hr>
+<h2 id="📋其他节点"><a href="#📋其他节点" class="headerlink" title="📋其他节点"></a>📋其他节点</h2><h3 id="IsoOffset"><a href="#IsoOffset" class="headerlink" title="IsoOffset"></a>IsoOffset</h3><blockquote>
 <p>Builds an offset surface from geometry.</p>
 </blockquote>
 <p>可以通过参数<code>Sampling</code>，将<strong>Volume</strong>更匹配原模型。；，</p>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\isooffset.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<h3 id="FindShortestPath"><a href="#FindShortestPath" class="headerlink" title="FindShortestPath"></a>FindShortestPath</h3><blockquote>
+<p>最短路径</p>
+</blockquote>
+<p>通过定义<strong>起始点</strong>，和<strong>结束点</strong>来寻找它们之间最短的路径<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\findShortPath.jpg " class="full-image" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\findShortPath1.jpg " class="full-image" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\findShortPath2.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<h3 id="Convert-Line"><a href="#Convert-Line" class="headerlink" title="Convert Line"></a>Convert Line</h3><p>节点<strong>ConvertLine</strong>可以将几何模型转换成线段：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\convertLine.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>但是其实它有个非常有用的功能，就是将一个只有单个<strong>Primitive</strong>的<strong>Curve</strong>转成多个<strong>Primitives</strong></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\convertLine02.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\convertLine03.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <hr>
-<h2 id="📋其他节点"><a href="#📋其他节点" class="headerlink" title="📋其他节点"></a>📋其他节点</h2><h3 id="PolyPath"><a href="#PolyPath" class="headerlink" title="PolyPath"></a>PolyPath</h3><hr>
+<h3 id="Match-Size"><a href="#Match-Size" class="headerlink" title="Match Size"></a>Match Size</h3><p>相当于一个对齐工具，可以使一个模型对齐另一个模型的<strong>最小(Min)</strong>,<strong>中心(Center)</strong>和<strong>最大(Max)</strong>。(要指定<code>X</code>,<code>Y</code>或<code>Z</code>轴)</p>
+<p>例如下图的<strong>Box</strong>就是通过节点<strong>MatchSize</strong>对齐了<strong>Grid</strong>的<code>X</code>轴最小值，<code>Y</code>,<code>Z</code>轴的中心。</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\matchSize.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<hr>
+<h3 id="PolyPath"><a href="#PolyPath" class="headerlink" title="PolyPath"></a>PolyPath</h3><hr>
 <h3 id="L-System"><a href="#L-System" class="headerlink" title="L-System"></a>L-System</h3><hr>
 <h2 id="Hscript"><a href="#Hscript" class="headerlink" title="Hscript"></a>Hscript</h2><blockquote>
 <p>houdini 表达式</p>
@@ -546,19 +595,57 @@
 <h3 id="Common-Functions"><a href="#Common-Functions" class="headerlink" title="Common Functions"></a>Common Functions</h3><blockquote>
 <p>常用函数</p>
 </blockquote>
-<h4 id="General"><a href="#General" class="headerlink" title="General"></a>General</h4><h5 id="hou-selectedNodes"><a href="#hou-selectedNodes" class="headerlink" title="hou.selectedNodes()"></a>hou.selectedNodes()</h5><blockquote>
-<p>已选中节点</p>
-</blockquote>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">selectedNodes(include_hidden=<span class="literal">False</span>)</span><br><span class="line"><span class="comment"># return tuple of hou.Node</span></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="General"><a href="#General" class="headerlink" title="General"></a>General</h4><ul>
+<li><p><strong>copyNodesTo</strong> 拷贝多个节点到：</p>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># copyNodesTo(nodes, destination_node) -> tuple of Nodes</span></span><br><span class="line">hou.copyNodesTo(oldNode.children(), newNode)</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p><strong>selectedNodes</strong> 已选中节点</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hou.selectedNodes(include_hidden=<span class="literal">False</span>)</span><br><span class="line"><span class="comment"># return tuple of hou.Node</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
 <h4 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h4><blockquote>
 <p>节点类</p>
 </blockquote>
+<h5 id="Geneeral"><a href="#Geneeral" class="headerlink" title="Geneeral"></a>Geneeral</h5><blockquote>
+<p>节点通用函数</p>
+</blockquote>
+<ul>
+<li><p><strong>moveToGoodPosition</strong> 移动到合适位置：</p>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hou.node(<span class="string">"."</span>).moveToGoodPosition()</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p><strong>layoutChildren</strong> 自动布局子节点：</p>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hou.node(<span class="string">"/obj/geo1"</span>).layoutChildren()</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p><strong>setDisplayFlag</strong> 显示该节点：</p>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hou.node(<span class="string">"/obj/geo1"</span>).setDisplayFlag(<span class="literal">False</span>)</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
 <h5 id="createNode"><a href="#createNode" class="headerlink" title="createNode()"></a>createNode()</h5><blockquote>
 <p>创建节点</p>
 </blockquote>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">createNode(node_type_name, node_name=<span class="literal">None</span>, run_init_scripts=<span class="literal">True</span>, load_contents=<span class="literal">True</span>, exact_type_name=<span class="literal">False</span>)</span><br><span class="line"><span class="comment"># return hou.Node</span></span><br></pre></td></tr></tbody></table></figure>
 <p>例如：</p>
 <figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">obj = hou.node(<span class="string">"/obj"</span>)</span><br><span class="line">obj.createNode(<span class="string">"geo"</span>)</span><br></pre></td></tr></tbody></table></figure>
+<hr>
+<h4 id="Geometry"><a href="#Geometry" class="headerlink" title="Geometry"></a>Geometry</h4><blockquote>
+<p>几何类</p>
+</blockquote>
+<p>获取几何类:<br></p><figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">geo = hou.pwd().geometry()</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h5 id="Creation"><a href="#Creation" class="headerlink" title="Creation"></a>Creation</h5><blockquote>
+<p>添加</p>
+</blockquote>
+<ul>
+<li><strong>createPoint()</strong> ->hou.Point<br>添加点：</li>
+</ul>
+<h5 id="Point"><a href="#Point" class="headerlink" title="Point"></a>Point</h5><blockquote>
+<p>点</p>
+</blockquote>
+<p>获取点：<br><code>pts = geo.points()</code></p>
+<ul>
+<li><strong>attribValue(name_or_attrib)</strong> → int , float , str , or tuple<br>读取点属性：<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pts = geo.points()</span><br><span class="line"><span class="keyword">for</span> pt <span class="keyword">in</span> pts:</span><br><span class="line">    color = pt.attribValue(<span class="string">"Cd"</span>)</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+<hr>
 <h4 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h4><blockquote>
 <p>窗口类</p>
 </blockquote>
@@ -615,7 +702,27 @@
             <p>虽然<strong>Digital Asset</strong>可以存储在同一个<strong>Digital Asset Library</strong>(.hda文件)里。但是官方还是建议每一个<strong>Digital Asset</strong>存在一个单独的文件里，方便查找和分享。</p><blockquote><p>However, we recommend you store each asset in a separate ibrary file. This makes it straightforward to share some assets and not others, and keep track of which assets are in which files.</p></blockquote>
           </div>
 <hr>
-<h3 id="ParameterInterface"><a href="#ParameterInterface" class="headerlink" title="ParameterInterface"></a>ParameterInterface</h3><hr>
+<h3 id="ParameterInterface"><a href="#ParameterInterface" class="headerlink" title="ParameterInterface"></a>ParameterInterface</h3><h3 id="Insert"><a href="#Insert" class="headerlink" title="Insert"></a>Insert</h3><blockquote>
+<p>插入(添加多文件夹)</p>
+</blockquote>
+<p><code>kwargs['node'].hm().OnMultiparmChange(kwargs['node'])</code></p>
+<hr>
+<h3 id="SpareInput"><a href="#SpareInput" class="headerlink" title="SpareInput"></a>SpareInput</h3><blockquote>
+<p>备用输入</p>
+</blockquote>
+<p>我们会经常用到输入端口例如<code>npoints(0)</code>，就表示第一个输入的几何体有多少个点。也可以直接引用节点名字：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Tips\spareInput.jpg " class="full-image" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>还有一种方法就是创建一个备用输入：<br>打开节点的<strong>参数界面编辑(Edit Parameter Interface)</strong><br>创建一个<strong>字符串(String)</strong>类型的参数，命名为<code>spare_input0</code>(命名必须准确)</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Tips\spareInput2.jpg " class="full-image" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note success">
+            <p>还有个更方便的办法创建备用输入，就是右键节点设置，找到<strong>Add Spare Input</strong></p><p><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Tips\spareInput5.jpg " class="full-image" style="max-width: none; width:45%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+          </div>
+<p>在我们新增的参数栏中键入<code>../null2</code><br>然后我们将<strong>Select Input</strong>中的<code>npoints()</code>中直接打<code>-1</code><br>这个时候我们就会发现节点<code>null2</code>会和当前节点连着一条紫色的虚线，而且因为<code>null2</code>有一个点，所以<strong>Select Input</strong>的值为<code>1</code>,所以<code>Switch1</code>节点切换到了第二个输。</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Tips\spareInput3.jpg " class="full-image" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note info">
+            <p>第一个备用输入端<code>spare_input0</code>是通过<code>-1</code>调用。同理第二个备用输入则通过<code>-2</code>调用,创建的参数名则为<code>spare_input1</code>,以此类推。<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Tips\spareInput4.jpg " class="full-image" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+          </div>
+<hr>
 <h4 id="MenuParameter"><a href="#MenuParameter" class="headerlink" title="MenuParameter"></a>MenuParameter</h4><blockquote>
 <p>菜单栏参数</p>
 </blockquote>
@@ -636,19 +743,6 @@
           </div>
 <p>这里我将设置的参数关联到创建的点的<strong>Y</strong>轴坐标，然后选择参数查看变化</p>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\menuParameter1.png " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<hr>
-<h3 id="SpareInput"><a href="#SpareInput" class="headerlink" title="SpareInput"></a>SpareInput</h3><blockquote>
-<p>备用输入</p>
-</blockquote>
-<p>我们会经常用到输入端口例如<code>npoints(0)</code>，就表示第一个输入的几何体有多少个点。也可以直接引用节点名字：</p>
-<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Tips\spareInput.jpg " class="full-image" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<p>还有一种方法就是创建一个备用输入：<br>打开节点的<strong>参数界面编辑(Edit Parameter Interface)</strong><br>创建一个<strong>字符串(String)</strong>类型的参数，命名为<code>spare_input0</code>(命名必须准确)</p>
-<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Tips\spareInput2.jpg " class="full-image" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<p>在我们新增的参数栏中键入<code>../null2</code><br>然后我们将<strong>Select Input</strong>中的<code>npoints()</code>中直接打<code>-1</code><br>这个时候我们就会发现节点<code>null2</code>会和当前节点连着一条紫色的虚线，而且因为<code>null2</code>有一个点，所以<strong>Select Input</strong>的值为<code>1</code>,所以<code>Switch1</code>节点切换到了第二个输。</p>
-<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Tips\spareInput3.jpg " class="full-image" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<div class="note info">
-            <p>第一个备用输入端<code>spare_input0</code>是通过<code>-1</code>调用。同理第二个备用输入则通过<code>-2</code>调用,创建的参数名则为<code>spare_input1</code>,以此类推。<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Tips\spareInput4.jpg " class="full-image" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
-          </div>
 <hr>
 <h3 id="AttribPromote"><a href="#AttribPromote" class="headerlink" title="AttribPromote"></a>AttribPromote</h3><blockquote>
 <p>属性转移</p>
@@ -723,6 +817,22 @@
 <p>这方法同样适用于<strong>Polygons</strong>：</p>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Trick\center05.jpg " class="full-image" style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Trick\center06.jpg " class="full-image" style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<hr>
+<h3 id="通过Expand2D生成模型中线"><a href="#通过Expand2D生成模型中线" class="headerlink" title="通过Expand2D生成模型中线"></a>通过Expand2D生成模型中线</h3><p>可能会遇到这样的问题，就是有一个长廊类的地面，我们需要找到它的<strong>中线</strong>然后才方便后续在中线上放置模型：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Trick\midLine.jpg " class="full-image" style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>先使用节点<strong>PolyExpand2D</strong>让模型向内挤出。</p>
+<ul>
+<li><strong>Output</strong>选择<code>Offset Surfaces</code></li>
+<li><strong>Side Determination</strong> 选择<code>Alternating Reachability</code></li>
+<li><strong>Output Outside</strong> 去掉勾选</li>
+</ul>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Trick\midLine.gif " class="full-image" style="max-width: none; width:100%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>然后通过<strong>Convert Line</strong>转成线段:</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Trick\midLine02.jpg " class="full-image" style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>接着用原模型通过<strong>Poly Wire</strong>身材边界模型。通过这个边界模型打组：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Trick\midLine03.jpg " class="full-image" style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>最后删除该组：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Trick\midLine04.jpg " class="full-image" style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -827,7 +937,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌏基础介绍"><span class="nav-number">1.</span> <span class="nav-text">🌏基础介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔥常用节点"><span class="nav-number">2.</span> <span class="nav-text">🔥常用节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Add"><span class="nav-number">2.1.</span> <span class="nav-text">Add</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Attribute-Transfer"><span class="nav-number">2.2.</span> <span class="nav-text">Attribute Transfer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Group"><span class="nav-number">2.3.</span> <span class="nav-text">Group</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Grouptransfer"><span class="nav-number">2.4.</span> <span class="nav-text">Grouptransfer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Connectivity"><span class="nav-number">2.5.</span> <span class="nav-text">Connectivity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sort"><span class="nav-number">2.6.</span> <span class="nav-text">Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FindShortestPath"><span class="nav-number">2.7.</span> <span class="nav-text">FindShortestPath</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Copy-to-Points"><span class="nav-number">2.8.</span> <span class="nav-text">Copy to Points</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fuse"><span class="nav-number">2.9.</span> <span class="nav-text">Fuse</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Remesh"><span class="nav-number">2.10.</span> <span class="nav-text">Remesh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IsoOffset"><span class="nav-number">2.11.</span> <span class="nav-text">IsoOffset</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📋其他节点"><span class="nav-number">3.</span> <span class="nav-text">📋其他节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PolyPath"><span class="nav-number">3.1.</span> <span class="nav-text">PolyPath</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#L-System"><span class="nav-number">3.2.</span> <span class="nav-text">L-System</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hscript"><span class="nav-number">4.</span> <span class="nav-text">Hscript</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#opninputs"><span class="nav-number">4.1.</span> <span class="nav-text">opninputs()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📦VOP"><span class="nav-number">5.</span> <span class="nav-text">📦VOP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🎓VEX"><span class="nav-number">6.</span> <span class="nav-text">🎓VEX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🎩PDG"><span class="nav-number">7.</span> <span class="nav-text">🎩PDG</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🐍HOM"><span class="nav-number">8.</span> <span class="nav-text">🐍HOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Common-Functions"><span class="nav-number">8.1.</span> <span class="nav-text">Common Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#General"><span class="nav-number">8.1.1.</span> <span class="nav-text">General</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#hou-selectedNodes"><span class="nav-number">8.1.1.1.</span> <span class="nav-text">hou.selectedNodes()</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Node"><span class="nav-number">8.1.2.</span> <span class="nav-text">Node</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#createNode"><span class="nav-number">8.1.2.1.</span> <span class="nav-text">createNode()</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UI"><span class="nav-number">8.1.3.</span> <span class="nav-text">UI</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#displayMessage"><span class="nav-number">8.1.3.1.</span> <span class="nav-text">displayMessage()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#selectFile"><span class="nav-number">8.1.3.2.</span> <span class="nav-text">selectFile()</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📌Tips"><span class="nav-number">9.</span> <span class="nav-text">📌Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Intrinsic"><span class="nav-number">9.1.</span> <span class="nav-text">Intrinsic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#type"><span class="nav-number">9.2.</span> <span class="nav-text">type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Group-1"><span class="nav-number">9.3.</span> <span class="nav-text">Group</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ch"><span class="nav-number">9.4.</span> <span class="nav-text">ch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Performance-Monitor"><span class="nav-number">9.5.</span> <span class="nav-text">Performance Monitor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Digital-Asset"><span class="nav-number">9.6.</span> <span class="nav-text">Digital Asset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ParameterInterface"><span class="nav-number">9.7.</span> <span class="nav-text">ParameterInterface</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MenuParameter"><span class="nav-number">9.7.1.</span> <span class="nav-text">MenuParameter</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SpareInput"><span class="nav-number">9.8.</span> <span class="nav-text">SpareInput</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AttribPromote"><span class="nav-number">9.9.</span> <span class="nav-text">AttribPromote</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#👿-Trick"><span class="nav-number">10.</span> <span class="nav-text">👿 Trick</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选取整数点"><span class="nav-number">10.1.</span> <span class="nav-text">选取整数点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DisplacementTrick"><span class="nav-number">10.2.</span> <span class="nav-text">DisplacementTrick</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过Resample保留点"><span class="nav-number">10.3.</span> <span class="nav-text">通过Resample保留点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#只保留模型边界"><span class="nav-number">10.4.</span> <span class="nav-text">只保留模型边界</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过Fuse生成中心点"><span class="nav-number">10.5.</span> <span class="nav-text">通过Fuse生成中心点</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌏基础介绍"><span class="nav-number">1.</span> <span class="nav-text">🌏基础介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔥常用节点"><span class="nav-number">2.</span> <span class="nav-text">🔥常用节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#几何类"><span class="nav-number">2.1.</span> <span class="nav-text">几何类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Add"><span class="nav-number">2.1.1.</span> <span class="nav-text">Add</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性类"><span class="nav-number">2.2.</span> <span class="nav-text">属性类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Attribute-Transfer"><span class="nav-number">2.2.1.</span> <span class="nav-text">Attribute Transfer</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组相关"><span class="nav-number">2.3.</span> <span class="nav-text">组相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Group"><span class="nav-number">2.3.1.</span> <span class="nav-text">Group</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Group-by-Range"><span class="nav-number">2.3.2.</span> <span class="nav-text">Group by Range</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Grouptransfer"><span class="nav-number">2.3.3.</span> <span class="nav-text">Grouptransfer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Split"><span class="nav-number">2.3.4.</span> <span class="nav-text">Split</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性操作"><span class="nav-number">2.4.</span> <span class="nav-text">属性操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Connectivity"><span class="nav-number">2.4.1.</span> <span class="nav-text">Connectivity</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sort"><span class="nav-number">2.4.2.</span> <span class="nav-text">Sort</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例"><span class="nav-number">2.5.</span> <span class="nav-text">实例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Copy-to-Points"><span class="nav-number">2.5.1.</span> <span class="nav-text">Copy to Points</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#几何操作"><span class="nav-number">2.6.</span> <span class="nav-text">几何操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Divide"><span class="nav-number">2.6.1.</span> <span class="nav-text">Divide</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fuse"><span class="nav-number">2.6.2.</span> <span class="nav-text">Fuse</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Remesh"><span class="nav-number">2.6.3.</span> <span class="nav-text">Remesh</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📋其他节点"><span class="nav-number">3.</span> <span class="nav-text">📋其他节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IsoOffset"><span class="nav-number">3.1.</span> <span class="nav-text">IsoOffset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FindShortestPath"><span class="nav-number">3.2.</span> <span class="nav-text">FindShortestPath</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Convert-Line"><span class="nav-number">3.3.</span> <span class="nav-text">Convert Line</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Match-Size"><span class="nav-number">3.4.</span> <span class="nav-text">Match Size</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PolyPath"><span class="nav-number">3.5.</span> <span class="nav-text">PolyPath</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#L-System"><span class="nav-number">3.6.</span> <span class="nav-text">L-System</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hscript"><span class="nav-number">4.</span> <span class="nav-text">Hscript</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#opninputs"><span class="nav-number">4.1.</span> <span class="nav-text">opninputs()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📦VOP"><span class="nav-number">5.</span> <span class="nav-text">📦VOP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🎓VEX"><span class="nav-number">6.</span> <span class="nav-text">🎓VEX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🎩PDG"><span class="nav-number">7.</span> <span class="nav-text">🎩PDG</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🐍HOM"><span class="nav-number">8.</span> <span class="nav-text">🐍HOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Common-Functions"><span class="nav-number">8.1.</span> <span class="nav-text">Common Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#General"><span class="nav-number">8.1.1.</span> <span class="nav-text">General</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Node"><span class="nav-number">8.1.2.</span> <span class="nav-text">Node</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Geneeral"><span class="nav-number">8.1.2.1.</span> <span class="nav-text">Geneeral</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#createNode"><span class="nav-number">8.1.2.2.</span> <span class="nav-text">createNode()</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Geometry"><span class="nav-number">8.1.3.</span> <span class="nav-text">Geometry</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Creation"><span class="nav-number">8.1.3.1.</span> <span class="nav-text">Creation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Point"><span class="nav-number">8.1.3.2.</span> <span class="nav-text">Point</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UI"><span class="nav-number">8.1.4.</span> <span class="nav-text">UI</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#displayMessage"><span class="nav-number">8.1.4.1.</span> <span class="nav-text">displayMessage()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#selectFile"><span class="nav-number">8.1.4.2.</span> <span class="nav-text">selectFile()</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📌Tips"><span class="nav-number">9.</span> <span class="nav-text">📌Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Intrinsic"><span class="nav-number">9.1.</span> <span class="nav-text">Intrinsic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#type"><span class="nav-number">9.2.</span> <span class="nav-text">type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Group-1"><span class="nav-number">9.3.</span> <span class="nav-text">Group</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ch"><span class="nav-number">9.4.</span> <span class="nav-text">ch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Performance-Monitor"><span class="nav-number">9.5.</span> <span class="nav-text">Performance Monitor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Digital-Asset"><span class="nav-number">9.6.</span> <span class="nav-text">Digital Asset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ParameterInterface"><span class="nav-number">9.7.</span> <span class="nav-text">ParameterInterface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Insert"><span class="nav-number">9.8.</span> <span class="nav-text">Insert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SpareInput"><span class="nav-number">9.9.</span> <span class="nav-text">SpareInput</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MenuParameter"><span class="nav-number">9.9.1.</span> <span class="nav-text">MenuParameter</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AttribPromote"><span class="nav-number">9.10.</span> <span class="nav-text">AttribPromote</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#👿-Trick"><span class="nav-number">10.</span> <span class="nav-text">👿 Trick</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选取整数点"><span class="nav-number">10.1.</span> <span class="nav-text">选取整数点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DisplacementTrick"><span class="nav-number">10.2.</span> <span class="nav-text">DisplacementTrick</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过Resample保留点"><span class="nav-number">10.3.</span> <span class="nav-text">通过Resample保留点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#只保留模型边界"><span class="nav-number">10.4.</span> <span class="nav-text">只保留模型边界</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过Fuse生成中心点"><span class="nav-number">10.5.</span> <span class="nav-text">通过Fuse生成中心点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过Expand2D生成模型中线"><span class="nav-number">10.6.</span> <span class="nav-text">通过Expand2D生成模型中线</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -917,6 +1027,8 @@
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 <script src="/js/utils.js"></script><script src="/js/motion.js"></script>
