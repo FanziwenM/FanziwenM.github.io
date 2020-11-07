@@ -50,15 +50,15 @@
   <meta name="description" content="编译和链接 Compiler &amp; Linker Works  C++的Build可以分为4个步骤：预处理，编译，汇编，链接：             graph LR              a&amp;gt;Source code] -- Compiler --&amp;gt; c(Object code) a1&amp;gt;Source code] -- Compiler --&amp;gt; c1(Object code) a2&amp;gt;Source">
 <meta name="keywords" content="Notes,C++,Advance">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++ Note(unfinished)">
+<meta property="og:title" content="C++ 笔记">
 <meta property="og:url" content="http://yoursite.com/Tech/C++/index.html">
 <meta property="og:site_name" content="Fan ziwen">
 <meta property="og:description" content="编译和链接 Compiler &amp; Linker Works  C++的Build可以分为4个步骤：预处理，编译，汇编，链接：             graph LR              a&amp;gt;Source code] -- Compiler --&amp;gt; c(Object code) a1&amp;gt;Source code] -- Compiler --&amp;gt; c1(Object code) a2&amp;gt;Source">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/Notes/C++/preprocessor.jpg">
-<meta property="og:updated_time" content="2020-03-24T17:26:21.540Z">
+<meta property="og:updated_time" content="2020-08-24T15:17:50.444Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++ Note(unfinished)">
+<meta name="twitter:title" content="C++ 笔记">
 <meta name="twitter:description" content="编译和链接 Compiler &amp; Linker Works  C++的Build可以分为4个步骤：预处理，编译，汇编，链接：             graph LR              a&amp;gt;Source code] -- Compiler --&amp;gt; c(Object code) a1&amp;gt;Source code] -- Compiler --&amp;gt; c1(Object code) a2&amp;gt;Source">
 <meta name="twitter:image" content="http://yoursite.com/images/Notes/C++/preprocessor.jpg">
 
@@ -74,7 +74,7 @@
   };
 </script>
 
-  <title>C++ Note(unfinished) | Fan ziwen</title>
+  <title>C++ 笔记 | Fan ziwen</title>
   
 
 
@@ -207,7 +207,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          C++ Note(unfinished)
+          C++ 笔记
         </h1>
 
         <div class="post-meta">
@@ -224,7 +224,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-25 01:26:21" itemprop="dateModified" datetime="2020-03-25T01:26:21+08:00">2020-03-25</time>
+                <time title="修改时间：2020-08-24 23:17:50" itemprop="dateModified" datetime="2020-08-24T23:17:50+08:00">2020-08-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -382,16 +382,54 @@ lik --> ex[Executable]
 <h5 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h5><p>要使用<strong>string</strong>类，必须在程序中包含头文件<code>string</code>。<strong>string</strong>类位于命名空间<code>std</code>中。<br>string类定义隐藏了字符串的数组性质，<span class="label success">让你能够像处理普通变量一样处理字符串</span></p>
 <p>使用string类的方式和使用字符串数组相同：</p>
 <ul>
-<li>可以使用C-风格字符串来初始化string对象；</li>
-<li>可以使用<code>cin</code>来将键盘输入存储到string对象中；</li>
-<li>可以使用<code>cout</code>来显示string对象；</li>
-<li>可以使用数组表示法来访问存储在string对象中的字符。</li>
+<li>可以使用C-风格字符串来初始化<strong>string</strong>对象；</li>
+<li>可以使用<code>cin</code>来将键盘输入存储到<strong>string</strong>对象中；</li>
+<li>可以使用<code>cout</code>来显示<strong>string</strong>对象；</li>
+<li>可以使用数组表示法来访问存储在<strong>string</strong>对象中的字符。</li>
 </ul>
 <div class="note success">
             <p>不能将一个数组赋给另一个数组，但是可以将一个string对象赋给另一个string对象：</p><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> charr1[<span class="number">20</span>];</span><br><span class="line"><span class="keyword">char</span> charr2[<span class="number">20</span>] = <span class="string">"fanziwen"</span>;</span><br><span class="line"><span class="built_in">string</span> str1;</span><br><span class="line"><span class="built_in">string</span> str2 = <span class="string">"fanziwen"</span>;</span><br><span class="line">charr1 = charr2; <span class="comment">// INVALID</span></span><br><span class="line">str1 = str2; <span class="comment">// VALID</span></span><br></pre></td></tr></tbody></table></figure>
           </div>
-<p>string类简化了字符串合并操作。可以使用运算符<code>+</code>将两个string对象合并起来。还可以使用运算符<code>+=</code>将字符串附加到string对象的末尾。</p>
+<p><strong>string类</strong>简化了字符串合并操作。可以使用运算符<code>+</code>将两个string对象<strong>合并</strong>起来。还可以使用运算符<code>+=</code>将字符串<strong>附加</strong>到string对象的末尾。</p>
 <figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> str1 = <span class="string">"fan"</span>;</span><br><span class="line"><span class="built_in">string</span> str2 = <span class="string">"ziwen"</span>;</span><br><span class="line"><span class="built_in">string</span> str3 = str1 + str2; <span class="comment">// result: "fanziwen"</span></span><br><span class="line">str1 += str2; <span class="comment">// result: "fanziwen"</span></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h4><blockquote>
+<p>enum</p>
+</blockquote>
+<p><strong>enum</strong>是另一种创建符号常量的方式，这种方式可以代替<strong>const</strong><br>使用<strong>enum</strong>的句法和结构相似：</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> spectrum {</span><br><span class="line">    red, orange, yellow, green, blue, violet, indigo, ultraviolet</span><br><span class="line">};</span><br><span class="line">spectrum band;</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li><p>对于枚举，只定义了<strong>赋值运算符</strong>，只能将定义<strong>枚举</strong>时使用的<strong>枚举量</strong>赋给这种<strong>枚举的变量</strong>：</p>
+  <figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">band = blue;        <span class="comment">// 合法</span></span><br><span class="line">++band;             <span class="comment">// 不合法</span></span><br><span class="line">color = <span class="number">3</span> + read;   <span class="comment">// 不合法</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>枚举量是<strong>整型</strong>，可被提升为<strong>int</strong>类型，但是int类型不能自动转换为<strong>枚举类型</strong>：</p>
+  <figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> color = blue;       <span class="comment">// 合法</span></span><br><span class="line">band = <span class="number">3</span>;               <span class="comment">// 不合法，int 不能转枚举类型</span></span><br><span class="line">color = <span class="number">3</span> + red;        <span class="comment">// 合法，red 被转换成整型</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+<h4 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h4><blockquote>
+<p>pointer</p>
+</blockquote>
+<p>计算机程序在存储数据时必须跟踪的3种基本属性：</p>
+<ul>
+<li>信息存储在<strong>何处</strong>；</li>
+<li>存储的<strong>值</strong>是多少；</li>
+<li>存储的信息是什么<strong>类型</strong>。</li>
+</ul>
+<div class="note primary">
+            <p><strong>指针</strong>是一个<strong>变量</strong>，存储的是值的<strong>地址</strong>，而不是值的本身。</p>
+          </div>
+<p><code>*</code>运算符被称为<strong>间接值(indirect velue)</strong>或<strong>解除引用(dereferencing)</strong>运算符，将其应用于<strong>指针</strong>，可以得到该地址<strong>储存的值</strong>。</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string"><iostream></iostream></span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">int</span> updates = <span class="number">6</span>;</span><br><span class="line">	<span class="keyword">int</span>* p_updates;</span><br><span class="line">	p_updates = &updates;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> << <span class="string">"Values: updates = "</span> << updates;</span><br><span class="line">	<span class="built_in">cout</span> << <span class="string">", *p_updates = "</span> << *p_updates << <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> << <span class="string">"Addresses: &updates = "</span> << &updates;</span><br><span class="line">	<span class="built_in">cout</span> << <span class="string">", p_updates = "</span> << p_updates << <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	*p_updates = *p_updates + <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">cout</span> << <span class="string">"Now updates = "</span> << updates << <span class="built_in">endl</span>;</span><br><span class="line">}</span><br><span class="line"><span class="comment">// result:</span></span><br><span class="line"><span class="comment">// Values: updates = 6, *p_updates = 6</span></span><br><span class="line"><span class="comment">// Addresses: &updates = 00AFF9C4, p_updates = 00AFF9C4</span></span><br><span class="line"><span class="comment">// Now updates = 7</span></span><br></pre></td></tr></tbody></table></figure>
+<div class="note info">
+            <p><code>*</code>运算符两边的空格是可选的。<br>传统上，<strong>C</strong>程序员使用这样的格式:<br><code>int *ptr;</code><br>这强调<code>*ptr</code>是一个int类型的值。<br>而很多<strong>C++</strong>程序员使用这种格式：<br><code>int* ptr;</code><br>这强调的是<code>int*</code>是一种类型——指向int的指针</p>
+          </div>
+<div class="note warning">
+            <p>但是要知道的是，下面的声明创建了一个指针<code>p1</code>和一个int变量<code>p2</code><br><code>int* p1, p2;</code><br>如果要声明两个指针，则都要加<code>*</code></p>
+          </div>
+<h5 id="用New来分配指针"><a href="#用New来分配指针" class="headerlink" title="用New来分配指针"></a>用New来分配指针</h5><p>变量是在编译时分配的<strong>有名字的内存</strong>，而指针只是为可通过名字直接访问的内存提供了一个别名。<br>指针真正的用武之地在于，在运行阶段分配<strong>未命名的内存</strong>以存储值。</p>
+<p><code>new</code>将找到一个长度正确的<strong>内存块</strong>，并返回该内存块的地址。程序员的责任是将该地址赋给一个指针。<br></p><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>* pn = <span class="keyword">new</span> <span class="keyword">int</span>;</span><br></pre></td></tr></tbody></table></figure><p></p>
+<div class="note default">
+            <p><code>pn</code>指向的内存没有名称，我们说<code>pn</code>指向一个<strong>数据对象</strong>，<strong>数据对象</strong>比<strong>变量</strong>更通用，它指的是为数据项分配的内存块。<br>变量也是数据对象，但是<code>pn</code>指向的内存不是变量。</p>
+          </div>
 <hr>
 <h3 id="与C的差异"><a href="#与C的差异" class="headerlink" title="与C的差异"></a>与C的差异</h3><p>输入/输出的风格差异</p>
 <p><strong>scanf/printf(C):</strong></p>
@@ -522,7 +560,7 @@ lik --> ex[Executable]
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#编译和链接"><span class="nav-number">1.</span> <span class="nav-text">编译和链接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#include"><span class="nav-number">1.1.</span> <span class="nav-text">include</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linker"><span class="nav-number">1.2.</span> <span class="nav-text">Linker</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#头文件"><span class="nav-number">2.</span> <span class="nav-text">头文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复合类型"><span class="nav-number">3.</span> <span class="nav-text">复合类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数组"><span class="nav-number">3.1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串"><span class="nav-number">3.2.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#C-风格字符串"><span class="nav-number">3.2.1.</span> <span class="nav-text">C-风格字符串</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#String类"><span class="nav-number">3.2.2.</span> <span class="nav-text">String类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与C的差异"><span class="nav-number">4.</span> <span class="nav-text">与C的差异</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tips"><span class="nav-number">5.</span> <span class="nav-text">Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#System"><span class="nav-number">5.1.</span> <span class="nav-text">System</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三元运算符"><span class="nav-number">5.2.</span> <span class="nav-text">三元运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#匿名函数"><span class="nav-number">5.3.</span> <span class="nav-text">匿名函数</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#编译和链接"><span class="nav-number">1.</span> <span class="nav-text">编译和链接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#include"><span class="nav-number">1.1.</span> <span class="nav-text">include</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linker"><span class="nav-number">1.2.</span> <span class="nav-text">Linker</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#头文件"><span class="nav-number">2.</span> <span class="nav-text">头文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复合类型"><span class="nav-number">3.</span> <span class="nav-text">复合类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数组"><span class="nav-number">3.1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串"><span class="nav-number">3.2.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#C-风格字符串"><span class="nav-number">3.2.1.</span> <span class="nav-text">C-风格字符串</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#String类"><span class="nav-number">3.2.2.</span> <span class="nav-text">String类</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#枚举"><span class="nav-number">3.3.</span> <span class="nav-text">枚举</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指针"><span class="nav-number">3.4.</span> <span class="nav-text">指针</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#用New来分配指针"><span class="nav-number">3.4.1.</span> <span class="nav-text">用New来分配指针</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与C的差异"><span class="nav-number">4.</span> <span class="nav-text">与C的差异</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tips"><span class="nav-number">5.</span> <span class="nav-text">Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#System"><span class="nav-number">5.1.</span> <span class="nav-text">System</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三元运算符"><span class="nav-number">5.2.</span> <span class="nav-text">三元运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#匿名函数"><span class="nav-number">5.3.</span> <span class="nav-text">匿名函数</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -536,7 +574,7 @@ lik --> ex[Executable]
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -549,7 +587,7 @@ lik --> ex[Executable]
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

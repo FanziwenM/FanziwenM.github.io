@@ -70,9 +70,16 @@
 <meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/ndf.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/geometry_shadowing.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/light_casters_spotlight_angles.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/parallax_mapping_scaled_height.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/parallax_mapping_scaled_height2.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/parallax_mapping_incorrect_p.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/deferred_g_buffer.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/TF2npr01.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/TF2npr02.jpg">
-<meta property="og:updated_time" content="2020-08-15T13:28:35.168Z">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/thickness.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/directAndTranslucency.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/allTogether.jpg">
+<meta property="og:updated_time" content="2020-11-07T12:27:11.697Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图形学 笔记">
 <meta name="twitter:description" content="Scratchapixel https://www.Scratchapixel.com/index.php?redirect               一个非常棒的学习计算机图形学的网站32节课166篇文章C++源代码            该文章就是在阅读学习这个网站时做的笔记">
@@ -240,7 +247,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-15 21:28:35" itemprop="dateModified" datetime="2020-08-15T21:28:35+08:00">2020-08-15</time>
+                <time title="修改时间：2020-11-07 20:27:11" itemprop="dateModified" datetime="2020-11-07T20:27:11+08:00">2020-11-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -756,6 +763,118 @@ F_{att} = \frac{1.0}{K_{c} + K_{l} * d + K_{q} * d^2}</script><ul>
 I = \frac{\theta-\lambda}{\gamma}</script><ul>
 <li>$\epsilon$ 是内圆锥和外圆锥的余弦值差($\epsilon = \phi - \gamma$)。最终的$I$值就是当前片元聚光的强度</li>
 </ul>
+<h2 id="lt-lt-lt-lt-lt-lt-lt-HEAD"><a href="#lt-lt-lt-lt-lt-lt-lt-HEAD" class="headerlink" title="<<<<<<< HEAD"></a><<<<<<< HEAD</h2><h2 id="帧缓存"><a href="#帧缓存" class="headerlink" title="帧缓存"></a>帧缓存</h2><blockquote>
+<p>Framebuffers</p>
+</blockquote>
+<p>创建一个帧缓存：<br></p><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> fbo;</span><br><span class="line">glGenFramebuffers(<span class="number">1</span>, &fbo); <span class="comment">// 创建帧缓存</span></span><br><span class="line"></span><br><span class="line">glBindFramebuffer(GL_FRAMEBUFFER, fbo); <span class="comment">// 绑定为激活的帧缓存</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    进行一些操作</span></span><br><span class="line"><span class="comment">    之后所有的渲染操作将会渲染到当前绑定帧缓冲的附件中</span></span><br><span class="line"><span class="comment">    即，离屏渲染(Off-screen Rendering)</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">glBindFramebuffer(GL_FRAMEBUFFER, <span class="number">0</span>); <span class="comment">// 解除绑定，再次激活默认帧缓存</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>一个完整的帧缓存需要满足以下条件：</p>
+<ul>
+<li>附加至少一个<strong>缓存</strong>（颜色、深度或模板）；</li>
+<li>至少有一个颜色<strong>附件</strong>(Attachment)；</li>
+<li>所有的<strong>附件</strong>都必须是<strong>完整</strong>的（保留了内存）；</li>
+<li>每个缓存都应该有<strong>相同</strong>的<strong>样本数</strong>。</li>
+</ul>
+<div class="note primary">
+            <p>检查帧缓存是否完整：<br><code>if(glCheckFramebufferStatus(GL_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE)</code></p>
+          </div>
+<div class="note info">
+            <p>由于我们的帧缓冲不是默认帧缓冲，渲染指令将不会对窗口的视觉输出有任何影响。<br>出于这个原因，渲染到一个不同的帧缓冲被叫做<strong>离屏渲染(Off-screen Rendering)</strong>。</p>
+          </div>
+<p>在完成所有帧缓存操作后，删除帧缓存对象：<br></p><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">glDeleteFramebuffers(<span class="number">1</span>, &fbo);</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p><strong>附件</strong>是一个内存位置，它能够作为帧缓存的一个缓存，可以将它想象为一个图像。当创建一个附件的时候又两个选项：</p>
+<ul>
+<li><strong>纹理(Texture)</strong></li>
+<li><strong>渲染缓存对象(Renderbuffer Object)</strong></li>
+</ul>
+<h3 id="纹理附件"><a href="#纹理附件" class="headerlink" title="纹理附件"></a>纹理附件</h3><blockquote>
+<p>Texture attachments</p>
+</blockquote>
+<p>为帧缓冲创建一个纹理和创建一个普通的纹理差不多：</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> texture;</span><br><span class="line">glGenTextures(<span class="number">1</span>, &texture);</span><br><span class="line">glBindTexture(GL_TEXTURE_2D, texture);</span><br><span class="line"></span><br><span class="line">glTexImage2D(GL_TEXTURE_2D, <span class="number">0</span>, GL_RGB, <span class="number">800</span>, <span class="number">600</span>, <span class="number">0</span>, GL_RGB, GL_UNSIGNED_BYTE, <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);</span><br><span class="line">glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);</span><br></pre></td></tr></tbody></table></figure>
+<div class="note primary">
+            <p>当把一个纹理附加到帧缓冲的时候，所有的渲染指令将会<strong>写入到这个纹理中</strong>，就想它是一个普通的<strong>颜色</strong>,<strong>深度</strong>或<strong>模板</strong>缓冲一样。</p>
+          </div>
+<p>现在我们已经创建好一个纹理了，要做的最后一件事就是将它附加到帧缓冲上了：</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture, <span class="number">0</span>);</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>glFramebufferTexture2D</strong>参数：</p>
+<ul>
+<li><strong>target</strong>: 帧缓存的目标（绘制、读取或者都）；</li>
+<li><strong>attachment</strong>: 附加的附件类型，颜色，深度和模板；</li>
+<li><strong>textarget</strong>: 附加的纹理类型；</li>
+<li><strong>texture</strong>: 附加的纹理；</li>
+<li><strong>level</strong>: Mipmap等级；</li>
+</ul>
+<h3 id="渲染缓存对象附件"><a href="#渲染缓存对象附件" class="headerlink" title="渲染缓存对象附件"></a>渲染缓存对象附件</h3><blockquote>
+<p>Renderbuffer Object</p>
+</blockquote>
+<p><strong>渲染缓存对象</strong>是一个真正的缓冲，即一系列的<strong>字节</strong>、<strong>整数</strong>、<strong>像素</strong>等。<br>它会将数据储存为<strong>OpenGL原生的渲染格式</strong>，它是为离屏渲染到帧缓存<strong>优化过</strong>的。</p>
+<div class="note info">
+            <p>渲染缓存对象直接将所有的渲染数据储存到它的缓存中，不会做任何针对纹理格式的转换，让它变为一个更快的可写储存介质。然而，渲染缓存对象通常都是<strong>只写</strong>的，所以你<strong>不能读取它们</strong>（比如使用纹理访问）。</p>
+          </div>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个渲染缓冲对象：</span></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> rbo;</span><br><span class="line">glGenRenderbuffers(<span class="number">1</span>, &rbo);</span><br><span class="line"><span class="comment">// 我们需要绑定这个渲染缓冲对象，让之后所有的渲染缓冲操作影响当前的rbo</span></span><br><span class="line">glBindRenderbuffer(GL_RENDERBUFFER, rbo);</span><br><span class="line"><span class="comment">// 创建一个深度和模板渲染缓存对象：</span></span><br><span class="line">glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, <span class="number">800</span>, <span class="number">600</span>);</span><br><span class="line"><span class="comment">// 这里我们选择`GL_DEPTH24_STENCIL8`作为内部格式，它封装了**24位的深度**和**8位的模板缓冲**。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//最后一件事就是附加这个渲染缓冲对象:</span></span><br><span class="line">glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, rbo);</span><br></pre></td></tr></tbody></table></figure>
+<div class="note primary">
+            <p>由于渲染缓存对象通常都是只写的，它们会经常用于<strong>深度</strong>和<strong>模板</strong>附件，因为大部分时间我们都不需要从深度和模板缓冲中读取值，<strong>只关心深度和模板测试。</strong></p>
+          </div>
+<hr>
+<h2 id="法线"><a href="#法线" class="headerlink" title="法线"></a>法线</h2><blockquote>
+<p>Normal</p>
+</blockquote>
+<h3 id="切线空间"><a href="#切线空间" class="headerlink" title="切线空间"></a>切线空间</h3><blockquote>
+<p>Tangent Space</p>
+</blockquote>
+<p>法线贴图中的<strong>法线向量</strong>定义在<strong>切线空间</strong>中，在切线空间中，法线永远指着正z方向。<br>切线空间是位于三角形表面之上的空间：<strong>法线相对于单个三角形的本地参考框架</strong></p>
+<div class="note primary">
+            <p>切线空间的一大好处是我们可以为任何类型的表面计算出一个这样的矩阵，由此我们可以把切线空间的z方向和表面的法线方向对齐。</p>
+          </div>
+<h2 id="视差贴图"><a href="#视差贴图" class="headerlink" title="视差贴图"></a>视差贴图</h2><blockquote>
+<p>Parallax</p>
+</blockquote>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\parallax_mapping_scaled_height.png " class="full-image" alt title style="max-width: none; width: 45%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<ul>
+<li><strong>红线</strong>是高度图的立体表现；</li>
+<li>$\vec{V}$(黄线) 代表观察方向；</li>
+<li>观察者会在点$A$看到表面；</li>
+<li>而使用<strong>视差贴图</strong>后，观察者会在点$B$看到表面；</li>
+<li>在$A$位置上的<strong>Fragment</strong>不再使用点$A$的纹理坐标而是使用点$B$的。</li>
+</ul>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\parallax_mapping_scaled_height2.png " class="full-image" alt title style="max-width: none; width: 50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>如何从点$A$得到点$B$的纹理坐标：</p>
+<ol>
+<li>将观察向量$\vec{V}$的长度缩放到高度贴图在点$A$出处的采样值$H(A)$,得到$\vec{P}$;</li>
+<li>随后算出$\vec{P}$以及该向量与平面对齐的坐标，作为纹理坐标的偏移量；</li>
+</ol>
+<div class="note warning">
+            <p>这个技巧在大多数时候都没问题，但点$B$是粗略估算得到的。<br>当表面的高度变化很快的时候，看起来就不会真实，因为向量$\vec{P}$最终不会和$B$接近。<br>就像下图这样：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\parallax_mapping_incorrect_p.png " class="full-image" alt title style="max-width: none; width: 50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+          </div>
+<h1 id><a href="#" class="headerlink" title></a><div class="note info">
+            <p>视差贴图的另一个问题是，当表面被任意旋转以后很难指出从$\vec{P}$获取哪一个坐标。我们在视差贴图中使用了另一个坐标空间，这个空间$\vec{P}$向量的<strong>x</strong>和<strong>y</strong>元素总是与纹理表面对齐。我们还是在切线空间中实现视差贴图。</p>
+          </div></h1><hr>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>6f397b70f4ada781f006ccae0b6729afb5485976</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="延迟渲染"><a href="#延迟渲染" class="headerlink" title="延迟渲染"></a>延迟渲染</h2><blockquote>
+<p>Deferred Rendering</p>
+</blockquote>
+<p><strong>正向渲染(Forward Rendering)</strong>，它的渲染方式非常直接：<br>在场景中，根据光源的光照逐个渲染物体。对<strong>每一个光源</strong>，<strong>每一个需要渲染的片段</strong>进行迭代。<br>并且，大部分片段着色器的输出都会<strong>被之后的输出覆盖</strong>，（多个物体重合在一个像素上）浪费大量的运行时间。</p>
+<p><strong>延迟渲染(Deferred Rendering)</strong>，为了解决上述问题诞生：</p>
+<ul>
+<li><strong>延迟(Defer)</strong>大部分计算量非常大的渲染(像是光照)到<strong>后期进行处理</strong>；</li>
+<li>在第一个<strong>几何处理阶段(Geometry Pass)</strong>中，我们先渲染场景一次，之后获取对象的各种几何信息，并储存在一系列叫做<strong>G缓冲(G-buffer)</strong>的纹理中；</li>
+</ul>
+<p>一帧中G缓冲的内容：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\deferred_g_buffer.png " class="full-image" alt title style="max-width: none; width: 65%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<hr>
 <h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><hr>
 <h2 id="军团要塞NPR渲染"><a href="#军团要塞NPR渲染" class="headerlink" title="军团要塞NPR渲染"></a>军团要塞NPR渲染</h2><blockquote>
 <p>Non-photorealistic shading in <em>Tram Fortress2</em><br><a href="https://steamcdn-a.akamaihd.net/apps/valve/2007/NPAR07_IllustrativeRenderingInTeamFortress2.pdf" target="_blank" rel="noopener">https://steamcdn-a.akamaihd.net/apps/valve/2007/NPAR07_IllustrativeRenderingInTeamFortress2.pdf</a></p>
@@ -773,7 +892,56 @@ a(\vec{n})+\sum_{i=1}^{L}c_{i}w((\alpha(\vec{n} \cdot \vec{l_{i}}) + \beta )^{\g
 <li>$w()$是一个将RGB颜色重新映射到<code>[0,1]</code>的函数。</li>
 </ul>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\TF2npr01.jpg " class="full-image" alt title style="max-width: none; width: 65%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\TF2npr02.jpg " class="full-image" alt title style="max-width: none; width: 65%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><script>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\TF2npr02.jpg " class="full-image" alt title style="max-width: none; width: 65%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<h2 id="EA次表面散射：快速，廉价"><a href="#EA次表面散射：快速，廉价" class="headerlink" title="EA次表面散射：快速，廉价"></a>EA次表面散射：快速，廉价</h2><blockquote>
+<p>Fast, Cheap and Convincing Subsurface Scattering Look<br><strong>次表面散射（subsurface scattering）</strong>：当光线照射到半透明材料的表面时，一部分在内部传播，在分子之间反弹，直到它找到出路。这通常会导致在特定点吸收的光在其他地方重新发射。</p>
+</blockquote>
+<p>本笔记中描述的方法基于<strong>ColinBarré-Brisebois</strong>和<strong>Marc Bouchard</strong>在<strong>GDC 2011</strong>上提出的解决方案：<br><a href="https://colinbarrebrisebois.com/2011/03/07/gdc-2011-approximating-translucency-for-a-fast-cheap-and-convincing-subsurface-scattering-look/" target="_blank" rel="noopener">Approximating Translucency for a Fast, Cheap and Convincing Subsurface Scattering Look</a><br>他们的解决方案被整合到Frostbite 2引擎中。</p>
+<div class="note success">
+            <p><strong>Alan Zucconi</strong>在<strong>Unity</strong>中的实现：<br><a href="https://www.alanzucconi.com/2017/08/30/fast-subsurface-scattering-1/" target="_blank" rel="noopener">Fast Subsurface Scattering in Unity (Part 1)</a><br><a href="https://www.alanzucconi.com/2017/08/30/fast-subsurface-scattering-2/" target="_blank" rel="noopener">Fast Subsurface Scattering in Unity (Part 2)</a></p>
+          </div>
+<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><ul>
+<li>我们不希望依赖于额外的<strong>深度图(depth maps)</strong>和<strong>贴图空间模糊(texture-sapce blurs)</strong><ul>
+<li>需要<strong>更多的内存</strong>(深度图等)</li>
+<li>需要<strong>大量的计算</strong>(贴图模糊等)</li>
+</ul>
+</li>
+<li>本质上，合理的半透明材质，光线会在物体内传播：<ul>
+<li>受物体的<strong>厚度</strong>影响</li>
+<li>受视角和灯光的<strong>扩散/衰减</strong>影响</li>
+</ul>
+</li>
+<li>我们只需要一个<strong>简单的内部扩散</strong>表示<ul>
+<li>即使不准确，但是能得到一个比较可信的结果</li>
+<li>而且，如果实现效果廉价，我们就可以自由的到处使用</li>
+</ul>
+</li>
+</ul>
+<h3 id="厚度图"><a href="#厚度图" class="headerlink" title="厚度图"></a>厚度图</h3><blockquote>
+<p>Thickness</p>
+</blockquote>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\thickness.jpg " class="full-image" alt title style="max-width: none; width: 45%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<ul>
+<li>依赖于<strong>Ambient Occlusion</strong>计算这些信息：<ol>
+<li>反转表面法线</li>
+<li>渲染AO</li>
+<li>反向颜色存储成一张贴图</li>
+</ol>
+</li>
+</ul>
+<h3 id="实现细节"><a href="#实现细节" class="headerlink" title="实现细节"></a>实现细节</h3><blockquote>
+<p>Implementation Details</p>
+</blockquote>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\directAndTranslucency.jpg " class="full-image" alt title="Direct and Translucency Lighting Vectors" style="max-width: none; width: 45%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p><strong>Code:</strong><br></p><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">half3 vLTLight = vLight + vNormal * fLTDistortion;</span><br><span class="line">half fLTDot = <span class="built_in">pow</span>(saturate(dot(vEye, -vLTLight)), iLTPower) * fLTScale;</span><br><span class="line">half3 fLT = fLightAttenuation * (fLTDot + fLTAmbient) * fLTThickness;</span><br><span class="line">outColor.rgb += cDiffuseAlbedo * cLightDiffuse * fLT;</span><br></pre></td></tr></tbody></table></figure><p></p>
+<ul>
+<li><strong>fLTDistortion:</strong> <strong>次表面失真(Subsurface Distortion)</strong>，便宜表面法线，表现更多的菲涅尔效果</li>
+<li><strong>fLTAmbient:</strong> <strong>环境强度</strong>。所有角度可见，半透明材质前后都会影响；</li>
+<li><strong>iLTPower:</strong> 直接透明的<strong>幂(power)</strong>；</li>
+<li><strong>fLTThickness:</strong> 预计算的本地<strong>厚度图(ThicknessMap)</strong>，用于间接和直接透明。通过计算表面厚度的变化进行<strong>衰减</strong>。</li>
+<li><strong>fLTScale:</strong> <strong>直射/背面</strong> 半透明<strong>强度</strong></li>
+</ul>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\allTogether.jpg " class="full-image" alt title style="max-width: none; width: 55%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -814,7 +982,10 @@ a(\vec{n})+\sum_{i=1}^{L}c_{i}w((\alpha(\vec{n} \cdot \vec{l_{i}}) + \beta )^{\g
     <a href="/Tech/HoudiniVEX/" rel="prev" title="Houdini VEX">
       <i class="fa fa-chevron-left"></i> Houdini VEX
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/Art/Unity3d_Shader/" rel="next" title="Unity3D Shader">
+      Unity3D Shader <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -874,7 +1045,9 @@ a(\vec{n})+\sum_{i=1}^{L}c_{i}w((\alpha(\vec{n} \cdot \vec{l_{i}}) + \beta )^{\g
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Scratchapixel"><span class="nav-number">1.</span> <span class="nav-text">Scratchapixel</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Geometry"><span class="nav-number">1.1.</span> <span class="nav-text">Geometry</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#点，向量，法线"><span class="nav-number">1.1.1.</span> <span class="nav-text">点，向量，法线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#坐标系"><span class="nav-number">1.1.2.</span> <span class="nav-text">坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点和向量的数学运算"><span class="nav-number">1.1.3.</span> <span class="nav-text">点和向量的数学运算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Length"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">Length</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Normalize"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">Normalize</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dot-Product"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">Dot Product</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cross-Product"><span class="nav-number">1.1.3.4.</span> <span class="nav-text">Cross Product</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Addition-amp-Subtraction"><span class="nav-number">1.1.3.5.</span> <span class="nav-text">Addition &amp; Subtraction</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#矩阵"><span class="nav-number">1.1.4.</span> <span class="nav-text">矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Square-Matrices"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">Square Matrices</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GAMES101"><span class="nav-number">2.</span> <span class="nav-text">GAMES101</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#各类矩阵"><span class="nav-number">2.1.</span> <span class="nav-text">各类矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#旋转矩阵"><span class="nav-number">2.1.1.</span> <span class="nav-text">旋转矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相机变换矩阵"><span class="nav-number">2.1.2.</span> <span class="nav-text">相机变换矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正交投影矩阵"><span class="nav-number">2.1.3.</span> <span class="nav-text">正交投影矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#透视投影"><span class="nav-number">2.1.4.</span> <span class="nav-text">透视投影</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#采样"><span class="nav-number">2.1.5.</span> <span class="nav-text">采样</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LearnOpenGL"><span class="nav-number">3.</span> <span class="nav-text">LearnOpenGL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PBR"><span class="nav-number">3.1.</span> <span class="nav-text">PBR</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#微平面模型"><span class="nav-number">3.1.1.</span> <span class="nav-text">微平面模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#能量守恒"><span class="nav-number">3.1.2.</span> <span class="nav-text">能量守恒</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反射率方程"><span class="nav-number">3.1.3.</span> <span class="nav-text">反射率方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BRDF"><span class="nav-number">3.1.4.</span> <span class="nav-text">BRDF</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#正态分布函数"><span class="nav-number">3.1.4.1.</span> <span class="nav-text">正态分布函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#几何函数"><span class="nav-number">3.1.4.2.</span> <span class="nav-text">几何函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#菲涅尔方程"><span class="nav-number">3.1.4.3.</span> <span class="nav-text">菲涅尔方程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#灯光"><span class="nav-number">3.2.</span> <span class="nav-text">灯光</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#平行光"><span class="nav-number">3.2.1.</span> <span class="nav-text">平行光</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点光源"><span class="nav-number">3.2.2.</span> <span class="nav-text">点光源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#聚光"><span class="nav-number">3.2.3.</span> <span class="nav-text">聚光</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">4.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#军团要塞NPR渲染"><span class="nav-number">4.1.</span> <span class="nav-text">军团要塞NPR渲染</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Scratchapixel"><span class="nav-number">1.</span> <span class="nav-text">Scratchapixel</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Geometry"><span class="nav-number">1.1.</span> <span class="nav-text">Geometry</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#点，向量，法线"><span class="nav-number">1.1.1.</span> <span class="nav-text">点，向量，法线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#坐标系"><span class="nav-number">1.1.2.</span> <span class="nav-text">坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点和向量的数学运算"><span class="nav-number">1.1.3.</span> <span class="nav-text">点和向量的数学运算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Length"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">Length</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Normalize"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">Normalize</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dot-Product"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">Dot Product</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cross-Product"><span class="nav-number">1.1.3.4.</span> <span class="nav-text">Cross Product</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Addition-amp-Subtraction"><span class="nav-number">1.1.3.5.</span> <span class="nav-text">Addition &amp; Subtraction</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#矩阵"><span class="nav-number">1.1.4.</span> <span class="nav-text">矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Square-Matrices"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">Square Matrices</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GAMES101"><span class="nav-number">2.</span> <span class="nav-text">GAMES101</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#各类矩阵"><span class="nav-number">2.1.</span> <span class="nav-text">各类矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#旋转矩阵"><span class="nav-number">2.1.1.</span> <span class="nav-text">旋转矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相机变换矩阵"><span class="nav-number">2.1.2.</span> <span class="nav-text">相机变换矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正交投影矩阵"><span class="nav-number">2.1.3.</span> <span class="nav-text">正交投影矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#透视投影"><span class="nav-number">2.1.4.</span> <span class="nav-text">透视投影</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#采样"><span class="nav-number">2.1.5.</span> <span class="nav-text">采样</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LearnOpenGL"><span class="nav-number">3.</span> <span class="nav-text">LearnOpenGL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PBR"><span class="nav-number">3.1.</span> <span class="nav-text">PBR</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#微平面模型"><span class="nav-number">3.1.1.</span> <span class="nav-text">微平面模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#能量守恒"><span class="nav-number">3.1.2.</span> <span class="nav-text">能量守恒</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反射率方程"><span class="nav-number">3.1.3.</span> <span class="nav-text">反射率方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BRDF"><span class="nav-number">3.1.4.</span> <span class="nav-text">BRDF</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#正态分布函数"><span class="nav-number">3.1.4.1.</span> <span class="nav-text">正态分布函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#几何函数"><span class="nav-number">3.1.4.2.</span> <span class="nav-text">几何函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#菲涅尔方程"><span class="nav-number">3.1.4.3.</span> <span class="nav-text">菲涅尔方程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#灯光"><span class="nav-number">3.2.</span> <span class="nav-text">灯光</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#平行光"><span class="nav-number">3.2.1.</span> <span class="nav-text">平行光</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点光源"><span class="nav-number">3.2.2.</span> <span class="nav-text">点光源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#聚光"><span class="nav-number">3.2.3.</span> <span class="nav-text">聚光</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-lt-lt-lt-lt-lt-lt-HEAD"><span class="nav-number">3.3.</span> <span class="nav-text">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#帧缓存"><span class="nav-number">3.4.</span> <span class="nav-text">帧缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#纹理附件"><span class="nav-number">3.4.1.</span> <span class="nav-text">纹理附件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#渲染缓存对象附件"><span class="nav-number">3.4.2.</span> <span class="nav-text">渲染缓存对象附件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#法线"><span class="nav-number">3.5.</span> <span class="nav-text">法线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#切线空间"><span class="nav-number">3.5.1.</span> <span class="nav-text">切线空间</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视差贴图"><span class="nav-number">3.6.</span> <span class="nav-text">视差贴图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">4.</span> <span class="nav-text">
+            视差贴图的另一个问题是，当表面被任意旋转以后很难指出从$\vec{P}$获取哪一个坐标。我们在视差贴图中使用了另一个坐标空间，这个空间$\vec{P}$向量的x和y元素总是与纹理表面对齐。我们还是在切线空间中实现视差贴图。
+          </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#延迟渲染"><span class="nav-number">4.1.</span> <span class="nav-text">延迟渲染</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">5.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#军团要塞NPR渲染"><span class="nav-number">5.1.</span> <span class="nav-text">军团要塞NPR渲染</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EA次表面散射：快速，廉价"><span class="nav-number">5.2.</span> <span class="nav-text">EA次表面散射：快速，廉价</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">5.2.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#厚度图"><span class="nav-number">5.2.2.</span> <span class="nav-text">厚度图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现细节"><span class="nav-number">5.2.3.</span> <span class="nav-text">实现细节</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -888,7 +1061,7 @@ a(\vec{n})+\sum_{i=1}^{L}c_{i}w((\alpha(\vec{n} \cdot \vec{l_{i}}) + \beta )^{\g
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -901,7 +1074,7 @@ a(\vec{n})+\sum_{i=1}^{L}c_{i}w((\alpha(\vec{n} \cdot \vec{l_{i}}) + \beta )^{\g
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
