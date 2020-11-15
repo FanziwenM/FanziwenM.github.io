@@ -56,7 +56,7 @@
 <meta property="og:description" content="编译和链接 Compiler &amp; Linker Works  C++的Build可以分为4个步骤：预处理，编译，汇编，链接：             graph LR              a&amp;gt;Source code] -- Compiler --&amp;gt; c(Object code) a1&amp;gt;Source code] -- Compiler --&amp;gt; c1(Object code) a2&amp;gt;Source">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/Notes/C++/preprocessor.jpg">
-<meta property="og:updated_time" content="2020-08-24T15:17:50.444Z">
+<meta property="og:updated_time" content="2020-11-14T11:36:39.793Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ 笔记">
 <meta name="twitter:description" content="编译和链接 Compiler &amp; Linker Works  C++的Build可以分为4个步骤：预处理，编译，汇编，链接：             graph LR              a&amp;gt;Source code] -- Compiler --&amp;gt; c(Object code) a1&amp;gt;Source code] -- Compiler --&amp;gt; c1(Object code) a2&amp;gt;Source">
@@ -224,7 +224,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-24 23:17:50" itemprop="dateModified" datetime="2020-08-24T23:17:50+08:00">2020-08-24</time>
+                <time title="修改时间：2020-11-14 19:36:39" itemprop="dateModified" datetime="2020-11-14T19:36:39+08:00">2020-11-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -249,7 +249,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="编译和链接"><a href="#编译和链接" class="headerlink" title="编译和链接"></a>编译和链接</h3><blockquote>
+        <h2 id="编译和链接"><a href="#编译和链接" class="headerlink" title="编译和链接"></a>编译和链接</h2><blockquote>
 <p>Compiler & Linker Works</p>
 </blockquote>
 <p><strong>C++</strong>的<strong>Build</strong>可以分为4个步骤：<strong>预处理</strong>，<strong>编译</strong>，<strong>汇编</strong>，<strong>链接</strong>：</p>
@@ -277,7 +277,7 @@ lik --> ex[Executable]
 <li><p><strong>链接</strong>：经过上一步后，将所有<code>.obj</code>文件通过<strong>Linker</strong>链接成一个可执行的<code>.exe</code>文件。</p>
 </li>
 </ul>
-<h4 id="include"><a href="#include" class="headerlink" title="include"></a>include</h4><p><code>include</code>的原理非常简单，就是将包含的文件内容完完全全拷贝到当前文件。就如此简单，而且可以很好证明。</p>
+<h3 id="include"><a href="#include" class="headerlink" title="include"></a>include</h3><p><code>include</code>的原理非常简单，就是将包含的文件内容完完全全拷贝到当前文件。就如此简单，而且可以很好证明。</p>
 <p>先再一个<code>.cpp</code>文件中写一段简单的代码：</p>
 <figure class="highlight cpp"><figcaption><span>Main.cpp</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">< iostream ></span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> << <span class="string">"hello world"</span> << <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></tbody></table></figure>
 <p>注意，上面代码末尾少了个<code>}</code>,如果编译会报错：<code>Main.cpp(3): fatal error C1075: '{': no matching token found</code></p>
@@ -298,7 +298,7 @@ lik --> ex[Executable]
           </div>
 <!-- more -->
 <hr>
-<h4 id="Linker"><a href="#Linker" class="headerlink" title="Linker"></a>Linker</h4><p>编译器很相信我们，如果我们声明了一个函数。它就认为真有这个函数，即使这个函数没有函数体。<br>如果声明了一个函数，但是没有定义这个函数到底是干嘛的，编译还是会正常进行。至于这个函数是干嘛的则是由<strong>Linker</strong>去找。当然，如果它找不到，自然就会出现错误。</p>
+<h3 id="Linker"><a href="#Linker" class="headerlink" title="Linker"></a>Linker</h3><p>编译器很相信我们，如果我们声明了一个函数。它就认为真有这个函数，即使这个函数没有函数体。<br>如果声明了一个函数，但是没有定义这个函数到底是干嘛的，编译还是会正常进行。至于这个函数是干嘛的则是由<strong>Linker</strong>去找。当然，如果它找不到，自然就会出现错误。</p>
 <p>例如：</p>
 <figure class="highlight cpp"><figcaption><span>Main.cpp</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">< iostream ></span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">log</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* message)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">multiplay</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>{</span><br><span class="line">	<span class="built_in">log</span>(<span class="string">"Multiplay"</span>);</span><br><span class="line">	<span class="keyword">return</span> a * b;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line"></span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> << multiplay(<span class="number">2</span>, <span class="number">5</span>) << <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cin</span>.get();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <p>上面的代码声明了函数<code>log()</code>但是它没有定义具体内容。如果进行<strong>Compile</strong>，对单个文件进行编译结果不会有任何问题：</p>
@@ -329,11 +329,11 @@ lik --> ex[Executable]
 <p>这样看就很明显，我们确实定义了两次<code>log()</code>函数。</p>
 <p>要解决这种问题可以使用<code>static</code>或者<code>inline</code>来定义函数。<br>或者，更常用的方法就是将函数的声明放头文件<code>.h</code>中，定义放在另一个<code>.cpp</code>文件中。</p>
 <hr>
-<h3 id="头文件"><a href="#头文件" class="headerlink" title="头文件"></a>头文件</h3><blockquote>
+<h2 id="头文件"><a href="#头文件" class="headerlink" title="头文件"></a>头文件</h2><blockquote>
 <p>Header Files</p>
 </blockquote>
 <hr>
-<h3 id="复合类型"><a href="#复合类型" class="headerlink" title="复合类型"></a>复合类型</h3><h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><blockquote>
+<h2 id="复合类型"><a href="#复合类型" class="headerlink" title="复合类型"></a>复合类型</h2><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><blockquote>
 <p>array</p>
 </blockquote>
 <p><strong>数组(array)</strong>是一种数据格式，能够存储多个同类型的值。<br>数组之所以被称为复合类型，是因为它是使用其他类型来创建的。</p>
@@ -357,7 +357,7 @@ lik --> ex[Executable]
             <p>通常，让编译器计算元素个数是种很糟糕的做法，因为其计数可能与你想象的不一样。<br>然而，这种方法对于将<strong>字符数组</strong>初始化为一个<strong>字符串</strong>来说比较安全</p>
           </div>
 <hr>
-<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><blockquote>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><blockquote>
 <p>string</p>
 </blockquote>
 <p>字符串是存储在内存的连续字节中的一系列字符。<br><strong>C++</strong>处理字符串的方式有两种：</p>
@@ -365,7 +365,7 @@ lik --> ex[Executable]
 <li>第一种，来自<strong>C</strong>语言，通常被称为<strong>C-风格字符串(C-style string)</strong>；</li>
 <li>第二种，基于<strong>String</strong>类库的方法。</li>
 </ul>
-<h5 id="C-风格字符串"><a href="#C-风格字符串" class="headerlink" title="C-风格字符串"></a>C-风格字符串</h5><p><strong>C-风格字符串</strong>具有一种特殊的性质：<span class="label info">以空字符(null character)结尾</span> 空字符写做<code>\0</code>,其<strong>ASCII</strong>码为<code>0</code>。</p>
+<h4 id="C-风格字符串"><a href="#C-风格字符串" class="headerlink" title="C-风格字符串"></a>C-风格字符串</h4><p><strong>C-风格字符串</strong>具有一种特殊的性质：<span class="label info">以空字符(null character)结尾</span> 空字符写做<code>\0</code>,其<strong>ASCII</strong>码为<code>0</code>。</p>
 <p>例如下面两个声明：</p>
 <figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> myString1[<span class="number">5</span>] = {<span class="string">'h'</span>, <span class="string">'e'</span>, <span class="string">'l'</span>, <span class="string">'l'</span>, <span class="string">'o'</span>};  <span class="comment">// not a string!!!</span></span><br><span class="line"><span class="keyword">char</span> myString2[<span class="number">6</span>] = {<span class="string">'w'</span>, <span class="string">'o'</span>, <span class="string">'r'</span>, <span class="string">'l'</span>, <span class="string">'d'</span>, <span class="string">'\0'</span>};    <span class="comment">// a string!</span></span><br></pre></td></tr></tbody></table></figure>
 <p>如果使用<code>cout</code>显示<code>myString1</code>这样的字符串，它除了打印出<code>hello</code>之外还会继续打印内存中随后的字节，直到出现空字符为止（我这边的结果输出结果<code>hello[I</code>）</p>
@@ -379,7 +379,7 @@ lik --> ex[Executable]
 <div class="note warning">
             <p><code>cin</code>使用空白来确定字符串的结束为止，所以它只能读取一个单词。<br>如果需要整行字符串则要使用<code>cin.getline()</code>或者<code>cin.get()</code></p>
           </div>
-<h5 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h5><p>要使用<strong>string</strong>类，必须在程序中包含头文件<code>string</code>。<strong>string</strong>类位于命名空间<code>std</code>中。<br>string类定义隐藏了字符串的数组性质，<span class="label success">让你能够像处理普通变量一样处理字符串</span></p>
+<h4 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h4><p>要使用<strong>string</strong>类，必须在程序中包含头文件<code>string</code>。<strong>string</strong>类位于命名空间<code>std</code>中。<br>string类定义隐藏了字符串的数组性质，<span class="label success">让你能够像处理普通变量一样处理字符串</span></p>
 <p>使用string类的方式和使用字符串数组相同：</p>
 <ul>
 <li>可以使用C-风格字符串来初始化<strong>string</strong>对象；</li>
@@ -392,7 +392,7 @@ lik --> ex[Executable]
           </div>
 <p><strong>string类</strong>简化了字符串合并操作。可以使用运算符<code>+</code>将两个string对象<strong>合并</strong>起来。还可以使用运算符<code>+=</code>将字符串<strong>附加</strong>到string对象的末尾。</p>
 <figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> str1 = <span class="string">"fan"</span>;</span><br><span class="line"><span class="built_in">string</span> str2 = <span class="string">"ziwen"</span>;</span><br><span class="line"><span class="built_in">string</span> str3 = str1 + str2; <span class="comment">// result: "fanziwen"</span></span><br><span class="line">str1 += str2; <span class="comment">// result: "fanziwen"</span></span><br></pre></td></tr></tbody></table></figure>
-<h4 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h4><blockquote>
+<h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><blockquote>
 <p>enum</p>
 </blockquote>
 <p><strong>enum</strong>是另一种创建符号常量的方式，这种方式可以代替<strong>const</strong><br>使用<strong>enum</strong>的句法和结构相似：</p>
@@ -405,7 +405,7 @@ lik --> ex[Executable]
   <figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> color = blue;       <span class="comment">// 合法</span></span><br><span class="line">band = <span class="number">3</span>;               <span class="comment">// 不合法，int 不能转枚举类型</span></span><br><span class="line">color = <span class="number">3</span> + red;        <span class="comment">// 合法，red 被转换成整型</span></span><br></pre></td></tr></tbody></table></figure>
 </li>
 </ul>
-<h4 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h4><blockquote>
+<h3 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h3><blockquote>
 <p>pointer</p>
 </blockquote>
 <p>计算机程序在存储数据时必须跟踪的3种基本属性：</p>
@@ -425,24 +425,66 @@ lik --> ex[Executable]
 <div class="note warning">
             <p>但是要知道的是，下面的声明创建了一个指针<code>p1</code>和一个int变量<code>p2</code><br><code>int* p1, p2;</code><br>如果要声明两个指针，则都要加<code>*</code></p>
           </div>
-<h5 id="用New来分配指针"><a href="#用New来分配指针" class="headerlink" title="用New来分配指针"></a>用New来分配指针</h5><p>变量是在编译时分配的<strong>有名字的内存</strong>，而指针只是为可通过名字直接访问的内存提供了一个别名。<br>指针真正的用武之地在于，在运行阶段分配<strong>未命名的内存</strong>以存储值。</p>
-<p><code>new</code>将找到一个长度正确的<strong>内存块</strong>，并返回该内存块的地址。程序员的责任是将该地址赋给一个指针。<br></p><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>* pn = <span class="keyword">new</span> <span class="keyword">int</span>;</span><br></pre></td></tr></tbody></table></figure><p></p>
+<div class="note danger">
+            <p><strong>指针不是整数</strong>，虽然计算机通常把地址当作整数来处理。<br>整数是可以执行加、减、乘除，但是指针描述的是位置，<span class="label danger">将两个地址相乘没有任何意义</span></p>
+          </div>
+<h4 id="new"><a href="#new" class="headerlink" title="new"></a>new</h4><p><strong>分配内存</strong></p>
+<p>变量是在编译时分配的<strong>有名字的内存</strong>，而指针只是为可通过名字直接访问的内存提供了一个别名。<br><span class="label info">指针真正的用武之地在于，在运行阶段分配<b>未命名的内存</b>以存储值。</span><br><code>new</code>将找到一个长度正确的<strong>内存块</strong>，并返回该内存块的地址。程序员的责任是将该地址赋给一个指针。</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>* pn = <span class="keyword">new</span> <span class="keyword">int</span>;</span><br></pre></td></tr></tbody></table></figure>
 <div class="note default">
             <p><code>pn</code>指向的内存没有名称，我们说<code>pn</code>指向一个<strong>数据对象</strong>，<strong>数据对象</strong>比<strong>变量</strong>更通用，它指的是为数据项分配的内存块。<br>变量也是数据对象，但是<code>pn</code>指向的内存不是变量。</p>
           </div>
+<p><strong>分配动态数组</strong></p>
+<p>通常，对于大型数据（如数组、字符串和结构），应使用<code>new</code>。<br><span class="label warning">如果通过声明创建数组，则在程序被编译时，将为它分配内存空间。不管程序最终是否使用数组，它都占用了内存。</span></p>
+<p>但使用<code>new</code>时，如果在运行阶段需要数组，则创建；不需要，则不创建。还可以在程序运行时选择数组的长度。<br>则被称为<strong>动态联编(dynamic binding)</strong>,而这样的数组叫<strong>动态数组(dynamic array)</strong></p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> * psome = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>]; <span class="comment">// get a block of 10 ints</span></span><br></pre></td></tr></tbody></table></figure>
+<p>当程序使用完<code>new</code>分配出来的内存块时，应使用<code>delete</code>释放它们。</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> [] psone;</span><br></pre></td></tr></tbody></table></figure>
+<div class="note warning">
+            <p>方括号告诉程序，应该释放整个数组，而不仅仅是指针指向的元素。<br>如果使用<code>new</code>时，不带方括号，则<code>delete</code>时也不带方括号。</p>
+          </div>
+<h4 id="delete"><a href="#delete" class="headerlink" title="delete"></a>delete</h4><p><strong>释放内存</strong></p>
+<p><code>delete</code>运算符，它使得在使用完内存后，能够将其归还给内存池，这是通向最有效的使用内存的关键一步。</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>* ps = <span class="keyword">new</span> <span class="keyword">int</span>;    <span class="comment">// allocate memory with new</span></span><br><span class="line">...                   <span class="comment">// use the memory</span></span><br><span class="line"><span class="keyword">delete</span> ps;            <span class="comment">// free memory with delete</span></span><br></pre></td></tr></tbody></table></figure>
+<span class="label info">这将释放<b>ps指向的内存</b>，但是不会删除指针<b>ps本身</b></span>
+<div class="note danger">
+            <p>只能用<code>delete</code>来释放<code>new</code>分配的内存。<br>对于空指针，使用<code>delete</code>是安全的。</p>
+          </div>
+<h4 id="new和delete总结"><a href="#new和delete总结" class="headerlink" title="new和delete总结"></a>new和delete总结</h4><ul>
+<li>不要使用<code>delete</code>来释放不是<code>new</code>分配的内存。</li>
+<li>不要使用<code>delete</code>释放同一个内存块两次。</li>
+<li>如果使用<code>new[]</code>为数组分配内存，则应该使用<code>delete[]</code>来释放。</li>
+<li>如果使用<code>new</code>为一个实体分配内存，则应该使用<code>delete</code>（没有方括号）来释放。</li>
+<li>对空指针应用<code>delete</code>是安全的。</li>
+</ul>
+<h4 id="指针算数"><a href="#指针算数" class="headerlink" title="指针算数"></a>指针算数</h4><blockquote>
+<p>pointer arithmetic</p>
+</blockquote>
+<span class="label primary">将整数增加1，其值增加1；但是将指针增加1，增加的量等于它指向的<b>类型字节数</b></span>
+<blockquote>
+<p>将指向<strong>double</strong>的指针增加1后，如果系统对<strong>double</strong>使用8个字节存储，则数组增加8。<br><strong>sort</strong>的指针增加1后，指针的值就可能增加2。</p>
+</blockquote>
+<div class="note primary">
+            <p>C++ 将数组名解释为地址:</p><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> wages[<span class="number">3</span>] = {<span class="number">100.0</span>, <span class="number">200.0</span>, <span class="number">300.0</span>};</span><br><span class="line"><span class="keyword">double</span>* pw = wages; <span class="comment">// name of array = address</span></span><br><span class="line"><span class="comment">/* wages = &wages[0] = address of first element of array */</span></span><br></pre></td></tr></tbody></table></figure>
+          </div>
+<h4 id="new创建动态结构-类"><a href="#new创建动态结构-类" class="headerlink" title="new创建动态结构(类)"></a>new创建动态结构(类)</h4><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">inflatable</span></span></span><br><span class="line"><span class="class">{</span></span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">20</span>];</span><br><span class="line">    <span class="keyword">float</span> volume;</span><br><span class="line">    <span class="keyword">double</span> price;</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line">    inflatable* ps = <span class="keyword">new</span> inflatable;    <span class="comment">// allot memory for structure</span></span><br><span class="line">    <span class="built_in">cout</span> << <span class="string">"Enter name of inflatalbe item: "</span>;</span><br><span class="line">    <span class="built_in">cin</span>.get(ps->name, <span class="number">20</span>);              <span class="comment">// method 1 for member access</span></span><br><span class="line">    <span class="built_in">cout</span> << <span class="string">"Enter volume in cubic feet:"</span>;</span><br><span class="line">    <span class="built_in">cin</span> >> (*ps).volume;                <span class="comment">// method 2 for member accress</span></span><br><span class="line">    <span class="built_in">cout</span> << <span class="string">"Enter price: $"</span>;</span><br><span class="line">    <span class="built_in">cin</span> >> ps->price;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> << <span class="string">"Name: "</span> << (*ps).name << <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> << <span class="string">"Volume: "</span> << ps->volume << <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> << <span class="string">"Price: $"</span> << ps->price << <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">delete</span> ps;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<div class="note info">
+            <p>创建动态结构时，不能将成员运算符<code>.</code>用于结构名，因为这种结构没有名称，只是知道它的地址。<br>C++专门为这种结构提供了一个运算符:<code>-></code>，来访问被指向结构体的成员。</p>
+          </div>
+<h3 id="Vector类"><a href="#Vector类" class="headerlink" title="Vector类"></a>Vector类</h3><p>模板类<strong>vector</strong>是数组的替代品。</p>
 <hr>
-<h3 id="与C的差异"><a href="#与C的差异" class="headerlink" title="与C的差异"></a>与C的差异</h3><p>输入/输出的风格差异</p>
+<h2 id="与C的差异"><a href="#与C的差异" class="headerlink" title="与C的差异"></a>与C的差异</h2><p>输入/输出的风格差异</p>
 <p><strong>scanf/printf(C):</strong></p>
-<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string"><iostream></iostream></span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="keyword">int</span> a; <span class="keyword">long</span> b; <span class="keyword">char</span> c; <span class="keyword">float</span> d; <span class="keyword">double</span> e;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%i %li %c %f %lf"</span>,&a,&b,&c,&d,&e);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%i\n%li\n%c\n%.03f\n%.09lf\n"</span>,a,b,c,d,e);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string"><iostream></iostream></span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="keyword">int</span> a; <span class="keyword">long</span> b; <span class="keyword">char</span> c; <span class="keyword">float</span> d; <span class="keyword">double</span> e;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%i %li %c %f %lf"</span>,&a,&b,&c,&d,&e);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%i\n%li\n%c\n%.03f\n%.09lf\n"</span>,a,b,c,d,e);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <p><strong>cin/cout(C++):</strong></p>
 <figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string"><iostream></iostream></span></span></span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cin</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cout</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::fixed;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="keyword">int</span> a; <span class="keyword">long</span> b; <span class="keyword">char</span> c; <span class="keyword">float</span> d; <span class="keyword">double</span> e;</span><br><span class="line">    <span class="built_in">cin</span> >> a >> b >> c >> d >>e;</span><br><span class="line">    <span class="built_in">cout</span> << a << <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> << b << <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> << c << <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">3</span>);</span><br><span class="line">    <span class="built_in">cout</span> << fixed << d << <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">9</span>);</span><br><span class="line">    <span class="built_in">cout</span> << fixed << e << <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h3><h4 id="System"><a href="#System" class="headerlink" title="System"></a>System</h4><blockquote>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><h3 id="System"><a href="#System" class="headerlink" title="System"></a>System</h3><blockquote>
 <p>发出一个DOS命令</p>
 </blockquote>
 <figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">system</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> * command)</span></span></span><br></pre></td></tr></tbody></table></figure>
-<h4 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h4><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> a>b?a:b;</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h3><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> a>b?a:b;</span><br></pre></td></tr></tbody></table></figure>
 <p>等价于<br></p><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(a>b){</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">}<span class="keyword">else</span>{</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h4 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h4><blockquote>
+<h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><blockquote>
 <p>lambda expression</p>
 </blockquote>
 <p>从C++11开始支持匿名函数，也成<strong>Lambda 表达式</strong>,具体形式：</p>
@@ -560,7 +602,7 @@ lik --> ex[Executable]
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#编译和链接"><span class="nav-number">1.</span> <span class="nav-text">编译和链接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#include"><span class="nav-number">1.1.</span> <span class="nav-text">include</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linker"><span class="nav-number">1.2.</span> <span class="nav-text">Linker</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#头文件"><span class="nav-number">2.</span> <span class="nav-text">头文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复合类型"><span class="nav-number">3.</span> <span class="nav-text">复合类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数组"><span class="nav-number">3.1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串"><span class="nav-number">3.2.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#C-风格字符串"><span class="nav-number">3.2.1.</span> <span class="nav-text">C-风格字符串</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#String类"><span class="nav-number">3.2.2.</span> <span class="nav-text">String类</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#枚举"><span class="nav-number">3.3.</span> <span class="nav-text">枚举</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指针"><span class="nav-number">3.4.</span> <span class="nav-text">指针</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#用New来分配指针"><span class="nav-number">3.4.1.</span> <span class="nav-text">用New来分配指针</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与C的差异"><span class="nav-number">4.</span> <span class="nav-text">与C的差异</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tips"><span class="nav-number">5.</span> <span class="nav-text">Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#System"><span class="nav-number">5.1.</span> <span class="nav-text">System</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三元运算符"><span class="nav-number">5.2.</span> <span class="nav-text">三元运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#匿名函数"><span class="nav-number">5.3.</span> <span class="nav-text">匿名函数</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译和链接"><span class="nav-number">1.</span> <span class="nav-text">编译和链接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#include"><span class="nav-number">1.1.</span> <span class="nav-text">include</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linker"><span class="nav-number">1.2.</span> <span class="nav-text">Linker</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头文件"><span class="nav-number">2.</span> <span class="nav-text">头文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复合类型"><span class="nav-number">3.</span> <span class="nav-text">复合类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组"><span class="nav-number">3.1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">3.2.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-风格字符串"><span class="nav-number">3.2.1.</span> <span class="nav-text">C-风格字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String类"><span class="nav-number">3.2.2.</span> <span class="nav-text">String类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#枚举"><span class="nav-number">3.3.</span> <span class="nav-text">枚举</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针"><span class="nav-number">3.4.</span> <span class="nav-text">指针</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#new"><span class="nav-number">3.4.1.</span> <span class="nav-text">new</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#delete"><span class="nav-number">3.4.2.</span> <span class="nav-text">delete</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#new和delete总结"><span class="nav-number">3.4.3.</span> <span class="nav-text">new和delete总结</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指针算数"><span class="nav-number">3.4.4.</span> <span class="nav-text">指针算数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#new创建动态结构-类"><span class="nav-number">3.4.5.</span> <span class="nav-text">new创建动态结构(类)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vector类"><span class="nav-number">3.5.</span> <span class="nav-text">Vector类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与C的差异"><span class="nav-number">4.</span> <span class="nav-text">与C的差异</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">5.</span> <span class="nav-text">Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#System"><span class="nav-number">5.1.</span> <span class="nav-text">System</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三元运算符"><span class="nav-number">5.2.</span> <span class="nav-text">三元运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匿名函数"><span class="nav-number">5.3.</span> <span class="nav-text">匿名函数</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
