@@ -301,7 +301,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-14 19:36:39" itemprop="dateModified" datetime="2020-11-14T19:36:39+08:00">2020-11-14</time>
+                <time title="修改时间：2020-11-22 16:11:09" itemprop="dateModified" datetime="2020-11-22T16:11:09+08:00">2020-11-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -398,7 +398,7 @@ lik --> ex[Executable]
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/Tech/Github/" class="post-title-link" itemprop="url">GitHub使用教程</a>
+            <a href="/Tech/Github/" class="post-title-link" itemprop="url">Git使用教程</a>
         </h1>
 
         <div class="post-meta">
@@ -415,7 +415,7 @@ lik --> ex[Executable]
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-23 23:20:22" itemprop="dateModified" datetime="2020-08-23T23:20:22+08:00">2020-08-23</time>
+                <time title="修改时间：2020-11-29 16:21:48" itemprop="dateModified" datetime="2020-11-29T16:21:48+08:00">2020-11-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -440,8 +440,15 @@ lik --> ex[Executable]
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="初始设置"><a href="#初始设置" class="headerlink" title="初始设置"></a>初始设置</h3><h4 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h4><figure class="highlight bat"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line">$ git remote add origin  https://github.com/UserName/REPOSITORY.git</span><br><span class="line">$ git pull [remote] [branch]</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="创建远程跟踪"><a href="#创建远程跟踪" class="headerlink" title="创建远程跟踪"></a>创建远程跟踪</h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch --set-upstream-to=origin/[branch] master</span><br></pre></td></tr></tbody></table></figure>
+          <p><strong>版本控制(Version Control)</strong>就是管理更新的历史记录。<br>它为我们提供了一些在软件开发过程中必不可少的功能，例如记录一款软件<strong>添加</strong>或<strong>更改</strong>源代码的过程，<strong>回滚</strong>到特定阶段，<strong>恢复</strong>误删除的文件等。</p>
+<ul>
+<li><p><strong>集中型</strong><br>  <strong>Subversion</strong>为代表，打在对一个文件的操作(CheckOut),上传(Commit)都集中在<strong>一个仓库里</strong>，而仓库在服务器上，一旦开发者所处环境不能连接服务器，就几乎无法进行开发。</p>
+</li>
+<li><p><strong>分散型</strong><br>  <strong>Git</strong>为代表，分散型拥有<strong>多个仓库</strong>，相对而言稍显复杂。但是也因为本地开发环境就有仓库，所以开发者不必连接远程仓库就可以进行开发。</p>
+</li>
+</ul>
+<h3 id="初始设置"><a href="#初始设置" class="headerlink" title="初始设置"></a>初始设置</h3><h4 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h4><figure class="highlight bat"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line">$ git remote add origin  https://github.com/UserName/REPOSITORY.git</span><br><span class="line">$ git pull [REMOTE] [BRANCH]</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="创建远程跟踪"><a href="#创建远程跟踪" class="headerlink" title="创建远程跟踪"></a>创建远程跟踪</h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch --set-upstream-to=origin/[BRANCH] master</span><br></pre></td></tr></tbody></table></figure>
 <h4 id="设置姓名和邮箱地址"><a href="#设置姓名和邮箱地址" class="headerlink" title="设置姓名和邮箱地址"></a>设置姓名和邮箱地址</h4><figure class="highlight bat"><figcaption><span>cmd</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name "UserName"</span><br><span class="line">$ git config --global user.email "UserEmail@example.com"</span><br></pre></td></tr></tbody></table></figure>
           <!--noindex-->
             <div class="post-button">

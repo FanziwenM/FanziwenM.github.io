@@ -56,7 +56,7 @@
 <meta property="og:description" content="编译和链接 Compiler &amp; Linker Works  C++的Build可以分为4个步骤：预处理，编译，汇编，链接：             graph LR              a&amp;gt;Source code] -- Compiler --&amp;gt; c(Object code) a1&amp;gt;Source code] -- Compiler --&amp;gt; c1(Object code) a2&amp;gt;Source">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/Notes/C++/preprocessor.jpg">
-<meta property="og:updated_time" content="2020-11-14T11:36:39.793Z">
+<meta property="og:updated_time" content="2020-11-22T08:11:09.645Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ 笔记">
 <meta name="twitter:description" content="编译和链接 Compiler &amp; Linker Works  C++的Build可以分为4个步骤：预处理，编译，汇编，链接：             graph LR              a&amp;gt;Source code] -- Compiler --&amp;gt; c(Object code) a1&amp;gt;Source code] -- Compiler --&amp;gt; c1(Object code) a2&amp;gt;Source">
@@ -224,7 +224,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-14 19:36:39" itemprop="dateModified" datetime="2020-11-14T19:36:39+08:00">2020-11-14</time>
+                <time title="修改时间：2020-11-22 16:11:09" itemprop="dateModified" datetime="2020-11-22T16:11:09+08:00">2020-11-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -356,6 +356,8 @@ lik --> ex[Executable]
 <div class="note info">
             <p>通常，让编译器计算元素个数是种很糟糕的做法，因为其计数可能与你想象的不一样。<br>然而，这种方法对于将<strong>字符数组</strong>初始化为一个<strong>字符串</strong>来说比较安全</p>
           </div>
+<p><strong>初始化二维数组</strong></p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> maxtemps[<span class="number">4</span>][<span class="number">5</span>] =    <span class="comment">// 2-D array</span></span><br><span class="line">{</span><br><span class="line">    {<span class="number">96</span>, <span class="number">100</span>, <span class="number">87</span>, <span class="number">101</span>, <span class="number">105</span>},</span><br><span class="line">    {<span class="number">96</span>, <span class="number">98</span>, <span class="number">91</span>, <span class="number">107</span>, <span class="number">104</span>},</span><br><span class="line">    {<span class="number">97</span>, <span class="number">101</span>, <span class="number">93</span>, <span class="number">108</span>, <span class="number">107</span>},</span><br><span class="line">    {<span class="number">98</span>, <span class="number">103</span>, <span class="number">95</span>, <span class="number">109</span>, <span class="number">108</span>}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <hr>
 <h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><blockquote>
 <p>string</p>
@@ -471,6 +473,7 @@ lik --> ex[Executable]
 <div class="note info">
             <p>创建动态结构时，不能将成员运算符<code>.</code>用于结构名，因为这种结构没有名称，只是知道它的地址。<br>C++专门为这种结构提供了一个运算符:<code>-></code>，来访问被指向结构体的成员。</p>
           </div>
+<hr>
 <h3 id="Vector类"><a href="#Vector类" class="headerlink" title="Vector类"></a>Vector类</h3><p>模板类<strong>vector</strong>是数组的替代品。</p>
 <hr>
 <h2 id="与C的差异"><a href="#与C的差异" class="headerlink" title="与C的差异"></a>与C的差异</h2><p>输入/输出的风格差异</p>
@@ -498,6 +501,27 @@ lik --> ex[Executable]
 <figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[]        <span class="comment">//no variables defined. Attempting to use any external variables in the lambda is an error.</span></span><br><span class="line">[x, &y]   <span class="comment">//x is captured by value, y is captured by reference</span></span><br><span class="line">[&]       <span class="comment">//any external variable is implicitly captured by reference if used</span></span><br><span class="line">[=]       <span class="comment">//any external variable is implicitly captured by value if used</span></span><br><span class="line">[&, x]    <span class="comment">//x is explicitly captured by value. Other variables will be captured by reference</span></span><br><span class="line">[=, &z]   <span class="comment">//z is explicitly captured by reference. Other variables will be captured by value</span></span><br></pre></td></tr></tbody></table></figure>
 <p>匿名函数的例子：</p>
 <figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">< algorithm ></span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">< iostream ></span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">< array ></span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> myArr[<span class="number">5</span>] = { <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> };</span><br><span class="line">    <span class="built_in">array</span><<span class="keyword">int</span>, 5> newArr;</span><br><span class="line">    transform(</span><br><span class="line">        begin(myArr), end(myArr), newArr.begin(),</span><br><span class="line">        [](<span class="keyword">int</span> a){ <span class="keyword">return</span> a*<span class="number">2</span>;}</span><br><span class="line">        );</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i: newArr){</span><br><span class="line">        <span class="built_in">cout</span> << i << <span class="built_in">endl</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cin</span>.get();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><h4 id="自动存储、静态存储和动态存储"><a href="#自动存储、静态存储和动态存储" class="headerlink" title="自动存储、静态存储和动态存储"></a>自动存储、静态存储和动态存储</h4><ul>
+<li><strong>自动存储</strong><ul>
+<li>函数内部定义的常规变量使用的<strong>自动存储空间</strong>，也被称为<strong>自动变量(Automatic Variable)</strong>，意味着它们所在的函数被调用时自动产生，函数结束时自动消亡。</li>
+</ul>
+</li>
+<li><strong>静态存储</strong><ul>
+<li>静态存储是<strong>整个程序执行期间</strong>都存在的存储方式。</li>
+<li>使用静态变量的两种方式：<ol>
+<li>在函数外面定义它</li>
+<li>声明变量时使用关键字<code>static</code></li>
+</ol>
+</li>
+</ul>
+</li>
+<li>动态存储<ul>
+<li><code>new</code>和<code>delete</code>运算符提供了一个更灵活的方法管理<strong>内存池</strong>。</li>
+<li>在C++中称为<strong>自由存储空间(free store)</strong>或<strong>堆(heap)</strong>。</li>
+<li>使用<code>new</code>和<code>delete</code>让程序员对内存有更大的控制权，但是内存管理也更复杂。</li>
+</ul>
+</li>
+</ul>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -536,8 +560,8 @@ lik --> ex[Executable]
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/Tech/Github/" rel="prev" title="GitHub使用教程">
-      <i class="fa fa-chevron-left"></i> GitHub使用教程
+    <a href="/Tech/Github/" rel="prev" title="Git使用教程">
+      <i class="fa fa-chevron-left"></i> Git使用教程
     </a></div>
       <div class="post-nav-item">
     <a href="/Tech/NextMarkdown/" rel="next" title="Next主题下Markdown语法">
@@ -602,7 +626,7 @@ lik --> ex[Executable]
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译和链接"><span class="nav-number">1.</span> <span class="nav-text">编译和链接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#include"><span class="nav-number">1.1.</span> <span class="nav-text">include</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linker"><span class="nav-number">1.2.</span> <span class="nav-text">Linker</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头文件"><span class="nav-number">2.</span> <span class="nav-text">头文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复合类型"><span class="nav-number">3.</span> <span class="nav-text">复合类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组"><span class="nav-number">3.1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">3.2.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-风格字符串"><span class="nav-number">3.2.1.</span> <span class="nav-text">C-风格字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String类"><span class="nav-number">3.2.2.</span> <span class="nav-text">String类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#枚举"><span class="nav-number">3.3.</span> <span class="nav-text">枚举</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针"><span class="nav-number">3.4.</span> <span class="nav-text">指针</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#new"><span class="nav-number">3.4.1.</span> <span class="nav-text">new</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#delete"><span class="nav-number">3.4.2.</span> <span class="nav-text">delete</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#new和delete总结"><span class="nav-number">3.4.3.</span> <span class="nav-text">new和delete总结</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指针算数"><span class="nav-number">3.4.4.</span> <span class="nav-text">指针算数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#new创建动态结构-类"><span class="nav-number">3.4.5.</span> <span class="nav-text">new创建动态结构(类)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vector类"><span class="nav-number">3.5.</span> <span class="nav-text">Vector类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与C的差异"><span class="nav-number">4.</span> <span class="nav-text">与C的差异</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">5.</span> <span class="nav-text">Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#System"><span class="nav-number">5.1.</span> <span class="nav-text">System</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三元运算符"><span class="nav-number">5.2.</span> <span class="nav-text">三元运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匿名函数"><span class="nav-number">5.3.</span> <span class="nav-text">匿名函数</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译和链接"><span class="nav-number">1.</span> <span class="nav-text">编译和链接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#include"><span class="nav-number">1.1.</span> <span class="nav-text">include</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linker"><span class="nav-number">1.2.</span> <span class="nav-text">Linker</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头文件"><span class="nav-number">2.</span> <span class="nav-text">头文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复合类型"><span class="nav-number">3.</span> <span class="nav-text">复合类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组"><span class="nav-number">3.1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">3.2.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-风格字符串"><span class="nav-number">3.2.1.</span> <span class="nav-text">C-风格字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String类"><span class="nav-number">3.2.2.</span> <span class="nav-text">String类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#枚举"><span class="nav-number">3.3.</span> <span class="nav-text">枚举</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针"><span class="nav-number">3.4.</span> <span class="nav-text">指针</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#new"><span class="nav-number">3.4.1.</span> <span class="nav-text">new</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#delete"><span class="nav-number">3.4.2.</span> <span class="nav-text">delete</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#new和delete总结"><span class="nav-number">3.4.3.</span> <span class="nav-text">new和delete总结</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指针算数"><span class="nav-number">3.4.4.</span> <span class="nav-text">指针算数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#new创建动态结构-类"><span class="nav-number">3.4.5.</span> <span class="nav-text">new创建动态结构(类)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vector类"><span class="nav-number">3.5.</span> <span class="nav-text">Vector类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与C的差异"><span class="nav-number">4.</span> <span class="nav-text">与C的差异</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">5.</span> <span class="nav-text">Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#System"><span class="nav-number">5.1.</span> <span class="nav-text">System</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三元运算符"><span class="nav-number">5.2.</span> <span class="nav-text">三元运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匿名函数"><span class="nav-number">5.3.</span> <span class="nav-text">匿名函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">6.</span> <span class="nav-text">补充</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自动存储、静态存储和动态存储"><span class="nav-number">6.0.1.</span> <span class="nav-text">自动存储、静态存储和动态存储</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
