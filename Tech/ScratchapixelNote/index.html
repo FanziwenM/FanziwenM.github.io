@@ -52,12 +52,12 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="图形学 笔记">
 <meta property="og:url" content="http://yoursite.com/Tech/ScratchapixelNote/index.html">
-<meta property="og:site_name" content="Fan ziwen">
+<meta property="og:site_name" content="Van">
 <meta property="og:description" content="Scratchapixel https://www.Scratchapixel.com/index.php?redirect               一个非常棒的学习计算机图形学的网站32节课166篇文章C++源代码            该文章就是在阅读学习这个网站时做的笔记">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/coordinateSystem.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/cross.png">
-<meta property="og:image" content="http://yoursite.com/images/Notes/Scratchapixel/camDir.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/camDir.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/ortho01.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/persp01.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/fov01.jpg">
@@ -83,7 +83,7 @@
 <meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/thickness.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/directAndTranslucency.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Graphics/allTogether.jpg">
-<meta property="og:updated_time" content="2020-11-21T07:51:04.244Z">
+<meta property="og:updated_time" content="2020-12-10T16:19:01.974Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图形学 笔记">
 <meta name="twitter:description" content="Scratchapixel https://www.Scratchapixel.com/index.php?redirect               一个非常棒的学习计算机图形学的网站32节课166篇文章C++源代码            该文章就是在阅读学习这个网站时做的笔记">
@@ -101,7 +101,7 @@
   };
 </script>
 
-  <title>图形学 笔记 | Fan ziwen</title>
+  <title>图形学 笔记 | Van</title>
   
 
 
@@ -154,7 +154,7 @@
     <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Fan ziwen</span>
+        <span class="site-title">Van</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -225,12 +225,12 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="范子文">
+      <meta itemprop="name" content="业余蚊子">
       <meta itemprop="description" content>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Fan ziwen">
+      <meta itemprop="name" content="Van">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -251,7 +251,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-21 15:51:04" itemprop="dateModified" datetime="2020-11-21T15:51:04+08:00">2020-11-21</time>
+                <time title="修改时间：2020-12-11 00:19:01" itemprop="dateModified" datetime="2020-12-11T00:19:01+08:00">2020-12-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -476,14 +476,15 @@ sin \theta & cos \theta & 0 & 0\\
 <p>View/Camera Transformation</p>
 </blockquote>
 <p>通过矩阵$M_{view}$来变换相机到指定位置：</p>
-<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Scratchapixel\camDir.jpg " class="full-image" alt title style="max-width: none; width: 30%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Graphics\camDir.jpg " class="full-image" alt title style="max-width: none; width: 30%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <ul>
 <li>移动到原点</li>
 <li>旋转朝前向量 $\vec{g}$ 到 <strong>-Z</strong>方向</li>
 <li>旋转朝上向量 $\vec{t}$ 到 <strong>Y</strong>方向</li>
 <li>旋转向量$\vec{g}\times\vec{t}$到<strong>X</strong>方向</li>
 </ul>
-<p>变换矩阵通过两个矩阵实现，通过矩阵 $T<em>{view}$ 做平移<br>然后通过矩阵 $R</em>{view}$ 来做旋转</p>
+<p>变换矩阵通过两个矩阵实现，通过矩阵$T_{view}$做平移</p>
+<p>然后通过矩 $R_{view}$来做旋转</p>
 <script type="math/tex; mode=display">
 M_{view} = R_{view}T_{view}</script><p>先移动到原点：</p>
 <script type="math/tex; mode=display">
@@ -1113,7 +1114,7 @@ a(\vec{n})+\sum_{i=1}^{L}c_{i}w((\alpha(\vec{n} \cdot \vec{l_{i}}) + \beta )^{\g
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">范子文</p>
+  <p class="site-author-name" itemprop="name">业余蚊子</p>
   <div class="site-description" itemprop="description"></div>
 </div>
 <div class="site-state-wrap motion-element">
@@ -1170,11 +1171,11 @@ a(\vec{n})+\sum_{i=1}^{L}c_{i}w((\alpha(\vec{n} \cdot \vec{l_{i}}) + \beta )^{\g
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">范子文</span>
+  <span class="author" itemprop="copyrightHolder">业余蚊子</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0
   </div>

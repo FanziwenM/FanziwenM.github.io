@@ -47,25 +47,41 @@
   };
 </script>
 
-  <meta name="description" content="🌏基础介绍🔥常用节点 几何类Add 添加(点，多边形)  常用的，构造一个几何体的基础节点。可以添加单个（多个）点(points)，或将多个点绘制单个（多个）图元(primitive)组成一个多边形(Polygons)">
+  <meta name="description" content="🌏基础介绍             因为是自己平时工作中记录的笔记所以东西有点了乱，没有系统整理            🔥常用节点几何类Add 添加(点，多边形)  常用的，构造一个几何体的基础节点。可以添加单个（多个）点(points)，或将多个点绘制单个（多个）图元(primitive)组成一个多边形(Polygons)">
 <meta name="keywords" content="Notes,Basic,Houdini">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Houdini笔记">
 <meta property="og:url" content="http://yoursite.com/Tech/HoudiniNotes/index.html">
-<meta property="og:site_name" content="Fan ziwen">
-<meta property="og:description" content="🌏基础介绍🔥常用节点 几何类Add 添加(点，多边形)  常用的，构造一个几何体的基础节点。可以添加单个（多个）点(points)，或将多个点绘制单个（多个）图元(primitive)组成一个多边形(Polygons)">
+<meta property="og:site_name" content="Van">
+<meta property="og:description" content="🌏基础介绍             因为是自己平时工作中记录的笔记所以东西有点了乱，没有系统整理            🔥常用节点几何类Add 添加(点，多边形)  常用的，构造一个几何体的基础节点。可以添加单个（多个）点(points)，或将多个点绘制单个（多个）图元(primitive)组成一个多边形(Polygons)">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/add.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/add02.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/add03.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/add04.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/add05.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/divide.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/divide02.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/divide03.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/fuse01.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/fuse02.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/resample.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/resample01.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/resample02.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/attrTrans.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/attrTrans.gif">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/attrTrans1.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/attrTrans2.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/attrTrans1.gif">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/attrTrans3.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/sort.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/sort1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/sort2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/connectivity.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/OrientAlongCurve.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/MaskbyFeature.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/MaskbyFeature01.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/MaskbyFeature02.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/group01.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/group02.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/group03.jpg">
@@ -77,20 +93,15 @@
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/groupTransfer.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/groupTransfer1.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/split.jpg">
-<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/connectivity.png">
-<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/sort.jpg">
-<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/sort1.jpg">
-<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/sort2.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/copytoPts.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/copytoPts02.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/copytoPts03.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/copytoPts04.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/copytoPts05.jpg">
-<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/divide.jpg">
-<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/divide02.jpg">
-<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/divide03.jpg">
-<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/fuse01.jpg">
-<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/fuse02.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/copytoPts06.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/ScatterAlign.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/ScatterAlign01.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/ScatterAlign02.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/isooffset.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/findShortPath.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/findShortPath1.jpg">
@@ -116,6 +127,11 @@
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/ch_mountain4.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/ch_mountain5.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/performance.jpg">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/CopyDefaultsFromNode.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/Scripts&Module.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/Scripts&Module01.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/Scripts&Module02.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/Scripts&Module03.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/spareInput.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/spareInput2.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/spareInput5.jpg">
@@ -123,6 +139,10 @@
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/spareInput4.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/menuParameter.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/menuParameter1.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/multiparmBlock00.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/multiparmBlock01.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/multiparmBlock02.png">
+<meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/multiparmBlock03.png">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/attribPromote.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/attribPromote1.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Tips/hfBorder.png">
@@ -153,10 +173,10 @@
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Trick/midLine02.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Trick/midLine03.jpg">
 <meta property="og:image" content="http://yoursite.com/images/Notes/Houdini/Trick/midLine04.jpg">
-<meta property="og:updated_time" content="2020-11-29T08:55:01.822Z">
+<meta property="og:updated_time" content="2021-01-02T16:30:32.425Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Houdini笔记">
-<meta name="twitter:description" content="🌏基础介绍🔥常用节点 几何类Add 添加(点，多边形)  常用的，构造一个几何体的基础节点。可以添加单个（多个）点(points)，或将多个点绘制单个（多个）图元(primitive)组成一个多边形(Polygons)">
+<meta name="twitter:description" content="🌏基础介绍             因为是自己平时工作中记录的笔记所以东西有点了乱，没有系统整理            🔥常用节点几何类Add 添加(点，多边形)  常用的，构造一个几何体的基础节点。可以添加单个（多个）点(points)，或将多个点绘制单个（多个）图元(primitive)组成一个多边形(Polygons)">
 <meta name="twitter:image" content="http://yoursite.com/images/Notes/Houdini/add.jpg">
 
 <link rel="canonical" href="http://yoursite.com/Tech/HoudiniNotes/">
@@ -171,7 +191,7 @@
   };
 </script>
 
-  <title>Houdini笔记 | Fan ziwen</title>
+  <title>Houdini笔记 | Van</title>
   
 
 
@@ -224,7 +244,7 @@
     <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Fan ziwen</span>
+        <span class="site-title">Van</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -295,12 +315,12 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="范子文">
+      <meta itemprop="name" content="业余蚊子">
       <meta itemprop="description" content>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Fan ziwen">
+      <meta itemprop="name" content="Van">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -321,7 +341,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-29 16:55:01" itemprop="dateModified" datetime="2020-11-29T16:55:01+08:00">2020-11-29</time>
+                <time title="修改时间：2021-01-03 00:30:32" itemprop="dateModified" datetime="2021-01-03T00:30:32+08:00">2021-01-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -346,8 +366,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="🌏基础介绍"><a href="#🌏基础介绍" class="headerlink" title="🌏基础介绍"></a>🌏基础介绍</h2><h2 id="🔥常用节点"><a href="#🔥常用节点" class="headerlink" title="🔥常用节点"></a>🔥常用节点</h2><hr>
-<h3 id="几何类"><a href="#几何类" class="headerlink" title="几何类"></a>几何类</h3><h4 id="Add"><a href="#Add" class="headerlink" title="Add"></a>Add</h4><blockquote>
+        <h2 id="🌏基础介绍"><a href="#🌏基础介绍" class="headerlink" title="🌏基础介绍"></a>🌏基础介绍</h2><div class="note warning">
+            <p>因为是自己平时工作中记录的笔记<br>所以东西有点了乱，没有系统整理</p>
+          </div>
+<h2 id="🔥常用节点"><a href="#🔥常用节点" class="headerlink" title="🔥常用节点"></a>🔥常用节点</h2><h3 id="几何类"><a href="#几何类" class="headerlink" title="几何类"></a>几何类</h3><h4 id="Add"><a href="#Add" class="headerlink" title="Add"></a>Add</h4><blockquote>
 <p>添加(点，多边形)</p>
 </blockquote>
 <p>常用的，构造一个几何体的基础节点。<br>可以添加单个（多个）<strong>点(points)</strong>，或将多个点绘制单个（多个）<strong>图元(primitive)</strong>组成一个多边形(Polygons)</p>
@@ -364,6 +386,32 @@
             <p>节点<strong>Add</strong>在生成<strong>Polygons</strong>的时候还可以选择<code>By Group</code>,其中有意思的就是<code>Groups of N points</code>,即每<strong>N</strong>个点组成一个<strong>Primitive</strong>：</p><p><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\add05.jpg " class="full-image" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
           </div>
 <hr>
+<h4 id="Divide"><a href="#Divide" class="headerlink" title="Divide"></a>Divide</h4><blockquote>
+<p>分割</p>
+</blockquote>
+<p>将模型中的多变面重新分割成三角面：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\divide.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\divide02.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note success">
+            <p>勾选<code>Don't Generate Slivers</code>和<code>Avoid Small Angles</code>可以达到更好的三边面效果</p><p><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\divide03.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+          </div>
+<hr>
+<h4 id="Fuse"><a href="#Fuse" class="headerlink" title="Fuse"></a>Fuse</h4><blockquote>
+<p>焊点</p>
+</blockquote>
+<p>节点<strong>Fuse</strong>用于焊接相邻点。</p>
+<p>但是它还有个特殊功能，就是<strong>将点吸附到网格上</strong><code>Snap to Grid</code></p>
+<p>例如一个任意曲线，然后将其<strong>resample</strong>成多个点：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\fuse01.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>然后使用节点<strong>Fuse</strong>，但是<strong>Snap</strong>模式该成<code>Grid</code>,并设置网格大小：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\fuse02.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>用这种方法可以很快生成一个规则的曲线。</p>
+<hr>
+<h4 id="Resample"><a href="#Resample" class="headerlink" title="Resample"></a>Resample</h4><p><strong>Resample</strong>对线上的点进行重新<strong>采样</strong>，即重新布置点数<br>最常的用法，就是根据<strong>Length(长度)</strong>来重新采样点。<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\resample.png " class="full-image" style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<p>虽然根据长度进行了重新采样，但是总会出现长度除不尽的情况<br>所以默认情况下，分段长度会进行平均，如果需要强制长度，则需要把<strong>Even Last Segment Same Length</strong>的勾选取消掉：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\resample01.png " class="full-image" style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<p>还可以对重新采样的点进行平滑：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\resample02.png " class="full-image" style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<hr>
+<h4 id="Remesh"><a href="#Remesh" class="headerlink" title="Remesh"></a>Remesh</h4><hr>
 <h3 id="属性类"><a href="#属性类" class="headerlink" title="属性类"></a>属性类</h3><h4 id="Attribute-Transfer"><a href="#Attribute-Transfer" class="headerlink" title="Attribute Transfer"></a>Attribute Transfer</h4><blockquote>
 <p>属性传递</p>
 </blockquote>
@@ -391,6 +439,45 @@
             <p><strong>Attribute Transfer</strong>最常用的参数：</p><ul><li><strong>Distance Threshold</strong>: 传递范围阈值，既目标模型距离源模型距离多少以内属性会被传递；</li><li><strong>Blend Width</strong>: 混合宽度，既传递属性的值于原值进行混合过渡的宽度；</li></ul><p>我们可以通过<strong>Marker</strong>来看看下图中属性<code>temp</code>的传递效果</p><p><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\attrTrans3.jpg " class="full-image" style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p><p><strong>Sphere</strong>的属性<strong>temp</strong>的值为<code>1</code>，而<strong>Grid</strong>的值为<code>0</code>，传递后<code>0</code>和<code>1</code>中间出现的小数就是它们的混合值，而<strong>Blend Width</strong>就是调整<code>0</code>到<code>1</code>的过渡宽度</p>
           </div>
 <hr>
+<h4 id="Sort"><a href="#Sort" class="headerlink" title="Sort"></a>Sort</h4><blockquote>
+<p>排序</p>
+</blockquote>
+<p>对<strong>point</strong>或者<strong>Primitive</strong>的序号进行重新排序。</p>
+<p>例如：<br>先创建一个<strong>Grid</strong>查看点序号:<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\sort.jpg " class="full-image" style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<p>创建<strong>Sort</strong>，然后选择<strong>PointSort</strong>中的<code>Reverse</code>,就可以将之前的点序号的排序颠倒:</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\sort1.jpg " class="full-image" style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note primary">
+            <p>还有很多其他常用的排序类型：</p><ul><li><strong>by X/Y/Z</strong> 根据特定轴朝向排序</li><li><strong>Random</strong> 随机排序</li><li><strong>Shift</strong> 偏移排序</li></ul>
+          </div>
+<div class="note success">
+            <p>节点<strong>Sort</strong>还可以配合节点<strong>Group by Range</strong>进行随机打组：</p><p><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\sort2.jpg " class="full-image" style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+          </div>
+<hr>
+<h4 id="Connectivity"><a href="#Connectivity" class="headerlink" title="Connectivity"></a>Connectivity</h4><blockquote>
+<p>链接性</p>
+</blockquote>
+<p>相连接的 <strong>point</strong> 或者 <strong>primitive</strong> 给与相同的值<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\connectivity.png " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<hr>
+<h4 id="Orient-Along-Curve"><a href="#Orient-Along-Curve" class="headerlink" title="Orient Along Curve"></a>Orient Along Curve</h4><blockquote>
+<p>朝向沿曲线</p>
+</blockquote>
+<p>朝向沿曲线，省去polyframe的设置<code>Target Up Vector</code>和设置@N的朝向<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\OrientAlongCurve.png " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<hr>
+<h4 id="Mask-by-Feature"><a href="#Mask-by-Feature" class="headerlink" title="Mask by Feature"></a>Mask by Feature</h4><blockquote>
+<p>根据特征遮罩 [18.5新节点]</p>
+</blockquote>
+<p>可以根据</p>
+<ul>
+<li><p><strong>方向(Direction)</strong></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\MaskbyFeature.png " class="full-image" style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+</li>
+<li><p><strong>阴影(Shadow)</strong></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\MaskbyFeature01.png " class="full-image" style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+</li>
+<li><p><strong>环境光遮蔽(Ambient Occlusion)</strong></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\MaskbyFeature02.png " class="full-image" style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+</li>
+</ul>
 <h3 id="组相关"><a href="#组相关" class="headerlink" title="组相关"></a>组相关</h3><h4 id="Group"><a href="#Group" class="headerlink" title="Group"></a>Group</h4><blockquote>
 <p>组</p>
 </blockquote>
@@ -433,24 +520,6 @@
 <p>例如，下图是通过<strong>GroupbyRange</strong>在primitives下打组了一个<code>group1</code>，然后根据这个分组将<code>group1</code>内的primitives上成红色，然后组外的上成蓝色：</p>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\split.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <hr>
-<h3 id="属性操作"><a href="#属性操作" class="headerlink" title="属性操作"></a>属性操作</h3><h4 id="Connectivity"><a href="#Connectivity" class="headerlink" title="Connectivity"></a>Connectivity</h4><blockquote>
-<p>链接性</p>
-</blockquote>
-<p>相连接的 <strong>point</strong> 或者 <strong>primitive</strong> 给与相同的值<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\connectivity.png " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
-<hr>
-<h4 id="Sort"><a href="#Sort" class="headerlink" title="Sort"></a>Sort</h4><blockquote>
-<p>排序</p>
-</blockquote>
-<p>对<strong>point</strong>或者<strong>Primitive</strong>的序号进行重新排序。</p>
-<p>例如：<br>先创建一个<strong>Grid</strong>查看点序号:<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\sort.jpg " class="full-image" style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
-<p>创建<strong>Sort</strong>，然后选择<strong>PointSort</strong>中的<code>Reverse</code>,就可以将之前的点序号的排序颠倒:</p>
-<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\sort1.jpg " class="full-image" style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<div class="note primary">
-            <p>还有很多其他常用的排序类型：</p><ul><li><strong>by X/Y/Z</strong> 根据特定轴朝向排序</li><li><strong>Random</strong> 随机排序</li><li><strong>Shift</strong> 偏移排序</li></ul>
-          </div>
-<div class="note success">
-            <p>节点<strong>Sort</strong>还可以配合节点<strong>Group by Range</strong>进行随机打组：</p><p><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\sort2.jpg " class="full-image" style="max-width: none; width:80%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
-          </div>
 <h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><h4 id="Copy-to-Points"><a href="#Copy-to-Points" class="headerlink" title="Copy to Points"></a>Copy to Points</h4><blockquote>
 <p>拷贝至点</p>
 </blockquote>
@@ -541,29 +610,17 @@
 <div class="note info">
             <p>如果还需要除了以上属性能控制的额外的复杂操作，就需要用到<strong>For-Each</strong>。</p>
           </div>
-<hr>
-<h3 id="几何操作"><a href="#几何操作" class="headerlink" title="几何操作"></a>几何操作</h3><h4 id="Divide"><a href="#Divide" class="headerlink" title="Divide"></a>Divide</h4><blockquote>
-<p>分割</p>
-</blockquote>
-<p>将模型中的多变面重新分割成三角面：</p>
-<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\divide.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\divide02.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<div class="note success">
-            <p>勾选<code>Don't Generate Slivers</code>和<code>Avoid Small Angles</code>可以达到更好的三边面效果</p><p><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\divide03.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<div class="note primary">
+            <p><code>Piece Attribute</code>可以设置拷贝至点的随机属性<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\copytoPts06.png " class="full-image" style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
           </div>
 <hr>
-<h4 id="Fuse"><a href="#Fuse" class="headerlink" title="Fuse"></a>Fuse</h4><blockquote>
-<p>焊点</p>
+<h4 id="Scatter-Align"><a href="#Scatter-Align" class="headerlink" title="Scatter Align"></a>Scatter Align</h4><blockquote>
+<p>分布对齐  [18.5新节点]</p>
 </blockquote>
-<p>节点<strong>Fuse</strong>用于焊接相邻点。</p>
-<p>但是它还有个特殊功能，就是<strong>将点吸附到网格上</strong><code>Snap to Grid</code></p>
-<p>例如一个任意曲线，然后将其<strong>resample</strong>成多个点：</p>
-<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\fuse01.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<p>然后使用节点<strong>Fuse</strong>，但是<strong>Snap</strong>模式该成<code>Grid</code>,并设置网格大小：</p>
-<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\fuse02.jpg " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
-<p>用这种方法可以很快生成一个规则的曲线。</p>
+<p>散布点的同时，已经具备了很多常用属性。和<strong>Copy to Points</strong>后的一些较频繁的操作。<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\ScatterAlign.png " class="full-image" style="max-width: none; width:45%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<p>重点是可以对齐(Alignment)各个轴向，方便模型的放置：<br>其中<code>Blend Normal</code>则是让 法线朝向趋与某个自定义朝向。<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\ScatterAlign01.png " class="full-image" style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<p>同时还可以进行沿着法线方向的随机旋转:<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\ScatterAlign02.png " class="full-image" style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
 <hr>
-<h4 id="Remesh"><a href="#Remesh" class="headerlink" title="Remesh"></a>Remesh</h4><hr>
 <h2 id="📋其他节点"><a href="#📋其他节点" class="headerlink" title="📋其他节点"></a>📋其他节点</h2><h3 id="IsoOffset"><a href="#IsoOffset" class="headerlink" title="IsoOffset"></a>IsoOffset</h3><blockquote>
 <p>Builds an offset surface from geometry.</p>
 </blockquote>
@@ -743,16 +800,46 @@
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Tips\performance.jpg " class="full-image" style="max-width: none; width:95%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
 <p>可以很好检测哪些节点处理的时间比较久，比较不同方法的性能。</p>
 <hr>
-<h3 id="Digital-Asset"><a href="#Digital-Asset" class="headerlink" title="Digital Asset"></a>Digital Asset</h3><div class="note info">
+<h3 id="Houdini-Digital-Asset"><a href="#Houdini-Digital-Asset" class="headerlink" title="Houdini Digital Asset"></a>Houdini Digital Asset</h3><blockquote>
+<p>Houdini 数字资产</p>
+</blockquote>
+<h4 id="创建规范"><a href="#创建规范" class="headerlink" title="创建规范"></a>创建规范</h4><div class="note warning">
             <p>虽然<strong>Digital Asset</strong>可以存储在同一个<strong>Digital Asset Library</strong>(.hda文件)里。但是官方还是建议每一个<strong>Digital Asset</strong>存在一个单独的文件里，方便查找和分享。</p><blockquote><p>However, we recommend you store each asset in a separate ibrary file. This makes it straightforward to share some assets and not others, and keep track of which assets are in which files.</p></blockquote>
           </div>
+<h4 id="HDA的命名空间和版本"><a href="#HDA的命名空间和版本" class="headerlink" title="HDA的命名空间和版本"></a>HDA的命名空间和版本</h4><blockquote>
+<p>Namespaces & Versions</p>
+</blockquote>
+<p>我们所创建的HDA是可以赋予命名空间和版本的。</p>
+<ul>
+<li><strong>命名空间(Namespaces)</strong> 是预防你所创建的HDA与别人创建的HDA重名而产生冲突</li>
+<li><strong>版本(Versions)</strong> 是方便你在不改变HDA主要名字，相对独立的保存你的各个版本。而不是新建HDA例如MyHDA_copy, MyHDA_new_copy, MyHDA_newer_copy,等等</li>
+</ul>
+<p>所以一个标准的HDA命名是<code>[namespace::]node_name[::version]</code></p>
+<div class="note info">
+            <p>可以通过<strong>Edit->Preferences->Shelves and Tab Menu</strong>中的<strong>Show all Nodes</strong>显示所有节点版本</p>
+          </div>
+<h4 id="HDA默认参数"><a href="#HDA默认参数" class="headerlink" title="HDA默认参数"></a>HDA默认参数</h4><blockquote>
+<p>CopyDefaultsFromNode</p>
+</blockquote>
+<p>如果想将一个实例的HDA节点上的参数作为<strong>原HDA的默认值</strong>，在T<strong>ype Properties -> Parameters </strong>中找到并点击<strong>齿轮图标</strong>，找到 <strong>CopyDefaultsFromNode</strong><br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Tips\CopyDefaultsFromNode.png " class="full-image" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<h4 id="HDA脚本-和模块-添加"><a href="#HDA脚本-和模块-添加" class="headerlink" title="HDA脚本(和模块)添加"></a>HDA脚本(和模块)添加</h4><blockquote>
+<p>Scripts&Module</p>
+</blockquote>
+<p>在<strong>Type Properties</strong>中的<strong>Scripts</strong>中可以添加各类脚本：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Tips\Scripts&Module.png " class="full-image" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<p>例如上图创建的一个<code>OnCreated</code>类型的脚本，即在该节点创建的时候，执行脚本内容：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Tips\Scripts&Module01.png " class="full-image" style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<p>常用的是创建一个<strong>Python模块(Python Module)</strong>，在其中定义各种需要使用到的<strong>函数</strong>，例如下图定义了一个点击函数<code>onButtonPress</code>:<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Tips\Scripts&Module02.png " class="full-image" style="max-width: none; width:75%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<p>然后通过特定的控件调用该模块中的内容：<br><code>kwargs['node'].hm().onButtonPress(kwargs)</code></p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Tips\Scripts&Module03.png " class="full-image" style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<div class="note primary">
+            <p><code>kwargs["node"]</code>为当前节点，<code>hm()</code>则是调用模块，<code>kwargs</code>可以作为参数传入定义的函数</p>
+          </div>
 <hr>
-<h3 id="ParameterInterface"><a href="#ParameterInterface" class="headerlink" title="ParameterInterface"></a>ParameterInterface</h3><h3 id="Insert"><a href="#Insert" class="headerlink" title="Insert"></a>Insert</h3><blockquote>
+<h3 id="ParameterInterface"><a href="#ParameterInterface" class="headerlink" title="ParameterInterface"></a>ParameterInterface</h3><h4 id="Insert"><a href="#Insert" class="headerlink" title="Insert"></a>Insert</h4><blockquote>
 <p>插入(添加多文件夹)</p>
 </blockquote>
 <p><code>kwargs['node'].hm().OnMultiparmChange(kwargs['node'])</code></p>
 <hr>
-<h3 id="SpareInput"><a href="#SpareInput" class="headerlink" title="SpareInput"></a>SpareInput</h3><blockquote>
+<h4 id="SpareInput"><a href="#SpareInput" class="headerlink" title="SpareInput"></a>SpareInput</h4><blockquote>
 <p>备用输入</p>
 </blockquote>
 <p>我们会经常用到输入端口例如<code>npoints(0)</code>，就表示第一个输入的几何体有多少个点。也可以直接引用节点名字：</p>
@@ -788,6 +875,20 @@
           </div>
 <p>这里我将设置的参数关联到创建的点的<strong>Y</strong>轴坐标，然后选择参数查看变化</p>
 <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\menuParameter1.png " class="full-image" style="max-width: none; width:90%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<hr>
+<h4 id="Multiparm-Block"><a href="#Multiparm-Block" class="headerlink" title="Multiparm Block"></a>Multiparm Block</h4><p>在添加数据类型的时候，添加<strong>Multiparm Block</strong>可以添加<strong>成组的参数块</strong>：</p>
+<p>各种类型的<strong>Multiparrm Block</strong>：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Tips\multiparmBlock00.png " class="full-image" style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br>最终显示的效果：<br><span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Tips\multiparmBlock01.png " class="full-image" style="max-width: none; width:50%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span></p>
+<p>而在HDA里添加对应的参数，则可以通过<strong>for循环</strong>来添加节点内容。</p>
+<ol>
+<li><p>创建完<strong>for循环模块</strong>后，先用<code>ch("../[MULTIPARM_FOLDER_NAME]")</code>确定要循环的次数：</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Tips\multiparmBlock02.png " class="full-image" style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+</li>
+<li><p>接着创建for循环模块的<strong>Metadata</strong>获取迭代参数<code>iteration</code>:</p>
+<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="\images\Notes\Houdini\Tips\multiparmBlock03.png " class="full-image" style="max-width: none; width:60%;"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+</li>
+<li><p>根据需要，进行节点的循环，或者直接用过<strong>VEX</strong>进行功能的实现…</p>
+</li>
+</ol>
 <hr>
 <h3 id="AttribPromote"><a href="#AttribPromote" class="headerlink" title="AttribPromote"></a>AttribPromote</h3><blockquote>
 <p>属性转移</p>
@@ -985,13 +1086,13 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌏基础介绍"><span class="nav-number">1.</span> <span class="nav-text">🌏基础介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔥常用节点"><span class="nav-number">2.</span> <span class="nav-text">🔥常用节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#几何类"><span class="nav-number">2.1.</span> <span class="nav-text">几何类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Add"><span class="nav-number">2.1.1.</span> <span class="nav-text">Add</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性类"><span class="nav-number">2.2.</span> <span class="nav-text">属性类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Attribute-Transfer"><span class="nav-number">2.2.1.</span> <span class="nav-text">Attribute Transfer</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组相关"><span class="nav-number">2.3.</span> <span class="nav-text">组相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Group"><span class="nav-number">2.3.1.</span> <span class="nav-text">Group</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Group-by-Range"><span class="nav-number">2.3.2.</span> <span class="nav-text">Group by Range</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Grouptransfer"><span class="nav-number">2.3.3.</span> <span class="nav-text">Grouptransfer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Split"><span class="nav-number">2.3.4.</span> <span class="nav-text">Split</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性操作"><span class="nav-number">2.4.</span> <span class="nav-text">属性操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Connectivity"><span class="nav-number">2.4.1.</span> <span class="nav-text">Connectivity</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sort"><span class="nav-number">2.4.2.</span> <span class="nav-text">Sort</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例"><span class="nav-number">2.5.</span> <span class="nav-text">实例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Copy-to-Points"><span class="nav-number">2.5.1.</span> <span class="nav-text">Copy to Points</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#几何操作"><span class="nav-number">2.6.</span> <span class="nav-text">几何操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Divide"><span class="nav-number">2.6.1.</span> <span class="nav-text">Divide</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fuse"><span class="nav-number">2.6.2.</span> <span class="nav-text">Fuse</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Remesh"><span class="nav-number">2.6.3.</span> <span class="nav-text">Remesh</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📋其他节点"><span class="nav-number">3.</span> <span class="nav-text">📋其他节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IsoOffset"><span class="nav-number">3.1.</span> <span class="nav-text">IsoOffset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FindShortestPath"><span class="nav-number">3.2.</span> <span class="nav-text">FindShortestPath</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Convert-Line"><span class="nav-number">3.3.</span> <span class="nav-text">Convert Line</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Match-Size"><span class="nav-number">3.4.</span> <span class="nav-text">Match Size</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PolyPath"><span class="nav-number">3.5.</span> <span class="nav-text">PolyPath</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#L-System"><span class="nav-number">3.6.</span> <span class="nav-text">L-System</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🗻-地形相关"><span class="nav-number">4.</span> <span class="nav-text">🗻 地形相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Heightfield"><span class="nav-number">4.1.</span> <span class="nav-text">Heightfield</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HF-Noise"><span class="nav-number">4.2.</span> <span class="nav-text">HF Noise</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HF-Blur"><span class="nav-number">4.3.</span> <span class="nav-text">HF Blur</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HF-Distort"><span class="nav-number">4.4.</span> <span class="nav-text">HF Distort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HF-Erode"><span class="nav-number">4.5.</span> <span class="nav-text">HF Erode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HF-Resample"><span class="nav-number">4.6.</span> <span class="nav-text">HF Resample</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HF-Mask-by-Feature"><span class="nav-number">4.7.</span> <span class="nav-text">HF Mask by Feature</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HF-Slump"><span class="nav-number">4.8.</span> <span class="nav-text">HF Slump</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HF-Pattern"><span class="nav-number">4.9.</span> <span class="nav-text">HF Pattern</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HF-Mask相关"><span class="nav-number">4.10.</span> <span class="nav-text">HF Mask相关</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🎓VEX"><span class="nav-number">5.</span> <span class="nav-text">🎓VEX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🎩PDG"><span class="nav-number">6.</span> <span class="nav-text">🎩PDG</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🐍HOM"><span class="nav-number">7.</span> <span class="nav-text">🐍HOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Common-Functions"><span class="nav-number">7.1.</span> <span class="nav-text">Common Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#General"><span class="nav-number">7.1.1.</span> <span class="nav-text">General</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Node"><span class="nav-number">7.1.2.</span> <span class="nav-text">Node</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Geneeral"><span class="nav-number">7.1.2.1.</span> <span class="nav-text">Geneeral</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#createNode"><span class="nav-number">7.1.2.2.</span> <span class="nav-text">createNode()</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Geometry"><span class="nav-number">7.1.3.</span> <span class="nav-text">Geometry</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Creation"><span class="nav-number">7.1.3.1.</span> <span class="nav-text">Creation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Point"><span class="nav-number">7.1.3.2.</span> <span class="nav-text">Point</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UI"><span class="nav-number">7.1.4.</span> <span class="nav-text">UI</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#displayMessage"><span class="nav-number">7.1.4.1.</span> <span class="nav-text">displayMessage()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#selectFile"><span class="nav-number">7.1.4.2.</span> <span class="nav-text">selectFile()</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📌Tips"><span class="nav-number">8.</span> <span class="nav-text">📌Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Intrinsic"><span class="nav-number">8.1.</span> <span class="nav-text">Intrinsic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#type"><span class="nav-number">8.2.</span> <span class="nav-text">type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Group-1"><span class="nav-number">8.3.</span> <span class="nav-text">Group</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ch"><span class="nav-number">8.4.</span> <span class="nav-text">ch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Performance-Monitor"><span class="nav-number">8.5.</span> <span class="nav-text">Performance Monitor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Digital-Asset"><span class="nav-number">8.6.</span> <span class="nav-text">Digital Asset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ParameterInterface"><span class="nav-number">8.7.</span> <span class="nav-text">ParameterInterface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Insert"><span class="nav-number">8.8.</span> <span class="nav-text">Insert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SpareInput"><span class="nav-number">8.9.</span> <span class="nav-text">SpareInput</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MenuParameter"><span class="nav-number">8.9.1.</span> <span class="nav-text">MenuParameter</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AttribPromote"><span class="nav-number">8.10.</span> <span class="nav-text">AttribPromote</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HF-边界问题"><span class="nav-number">8.11.</span> <span class="nav-text">HF 边界问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HF-Layer操作"><span class="nav-number">8.12.</span> <span class="nav-text">HF Layer操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#👿-Trick"><span class="nav-number">9.</span> <span class="nav-text">👿 Trick</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选取整数点"><span class="nav-number">9.1.</span> <span class="nav-text">选取整数点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DisplacementTrick"><span class="nav-number">9.2.</span> <span class="nav-text">DisplacementTrick</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过Resample保留点"><span class="nav-number">9.3.</span> <span class="nav-text">通过Resample保留点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#只保留模型边界"><span class="nav-number">9.4.</span> <span class="nav-text">只保留模型边界</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过Fuse生成中心点"><span class="nav-number">9.5.</span> <span class="nav-text">通过Fuse生成中心点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过Expand2D生成模型中线"><span class="nav-number">9.6.</span> <span class="nav-text">通过Expand2D生成模型中线</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🌏基础介绍"><span class="nav-number">1.</span> <span class="nav-text">🌏基础介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🔥常用节点"><span class="nav-number">2.</span> <span class="nav-text">🔥常用节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#几何类"><span class="nav-number">2.1.</span> <span class="nav-text">几何类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Add"><span class="nav-number">2.1.1.</span> <span class="nav-text">Add</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Divide"><span class="nav-number">2.1.2.</span> <span class="nav-text">Divide</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fuse"><span class="nav-number">2.1.3.</span> <span class="nav-text">Fuse</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Resample"><span class="nav-number">2.1.4.</span> <span class="nav-text">Resample</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Remesh"><span class="nav-number">2.1.5.</span> <span class="nav-text">Remesh</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性类"><span class="nav-number">2.2.</span> <span class="nav-text">属性类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Attribute-Transfer"><span class="nav-number">2.2.1.</span> <span class="nav-text">Attribute Transfer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sort"><span class="nav-number">2.2.2.</span> <span class="nav-text">Sort</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Connectivity"><span class="nav-number">2.2.3.</span> <span class="nav-text">Connectivity</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Orient-Along-Curve"><span class="nav-number">2.2.4.</span> <span class="nav-text">Orient Along Curve</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mask-by-Feature"><span class="nav-number">2.2.5.</span> <span class="nav-text">Mask by Feature</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组相关"><span class="nav-number">2.3.</span> <span class="nav-text">组相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Group"><span class="nav-number">2.3.1.</span> <span class="nav-text">Group</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Group-by-Range"><span class="nav-number">2.3.2.</span> <span class="nav-text">Group by Range</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Grouptransfer"><span class="nav-number">2.3.3.</span> <span class="nav-text">Grouptransfer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Split"><span class="nav-number">2.3.4.</span> <span class="nav-text">Split</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例"><span class="nav-number">2.4.</span> <span class="nav-text">实例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Copy-to-Points"><span class="nav-number">2.4.1.</span> <span class="nav-text">Copy to Points</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Scatter-Align"><span class="nav-number">2.4.2.</span> <span class="nav-text">Scatter Align</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📋其他节点"><span class="nav-number">3.</span> <span class="nav-text">📋其他节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IsoOffset"><span class="nav-number">3.1.</span> <span class="nav-text">IsoOffset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FindShortestPath"><span class="nav-number">3.2.</span> <span class="nav-text">FindShortestPath</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Convert-Line"><span class="nav-number">3.3.</span> <span class="nav-text">Convert Line</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Match-Size"><span class="nav-number">3.4.</span> <span class="nav-text">Match Size</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PolyPath"><span class="nav-number">3.5.</span> <span class="nav-text">PolyPath</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#L-System"><span class="nav-number">3.6.</span> <span class="nav-text">L-System</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🗻-地形相关"><span class="nav-number">4.</span> <span class="nav-text">🗻 地形相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Heightfield"><span class="nav-number">4.1.</span> <span class="nav-text">Heightfield</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HF-Noise"><span class="nav-number">4.2.</span> <span class="nav-text">HF Noise</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HF-Blur"><span class="nav-number">4.3.</span> <span class="nav-text">HF Blur</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HF-Distort"><span class="nav-number">4.4.</span> <span class="nav-text">HF Distort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HF-Erode"><span class="nav-number">4.5.</span> <span class="nav-text">HF Erode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HF-Resample"><span class="nav-number">4.6.</span> <span class="nav-text">HF Resample</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HF-Mask-by-Feature"><span class="nav-number">4.7.</span> <span class="nav-text">HF Mask by Feature</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HF-Slump"><span class="nav-number">4.8.</span> <span class="nav-text">HF Slump</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HF-Pattern"><span class="nav-number">4.9.</span> <span class="nav-text">HF Pattern</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HF-Mask相关"><span class="nav-number">4.10.</span> <span class="nav-text">HF Mask相关</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🎓VEX"><span class="nav-number">5.</span> <span class="nav-text">🎓VEX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🎩PDG"><span class="nav-number">6.</span> <span class="nav-text">🎩PDG</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🐍HOM"><span class="nav-number">7.</span> <span class="nav-text">🐍HOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Common-Functions"><span class="nav-number">7.1.</span> <span class="nav-text">Common Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#General"><span class="nav-number">7.1.1.</span> <span class="nav-text">General</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Node"><span class="nav-number">7.1.2.</span> <span class="nav-text">Node</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Geneeral"><span class="nav-number">7.1.2.1.</span> <span class="nav-text">Geneeral</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#createNode"><span class="nav-number">7.1.2.2.</span> <span class="nav-text">createNode()</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Geometry"><span class="nav-number">7.1.3.</span> <span class="nav-text">Geometry</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Creation"><span class="nav-number">7.1.3.1.</span> <span class="nav-text">Creation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Point"><span class="nav-number">7.1.3.2.</span> <span class="nav-text">Point</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UI"><span class="nav-number">7.1.4.</span> <span class="nav-text">UI</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#displayMessage"><span class="nav-number">7.1.4.1.</span> <span class="nav-text">displayMessage()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#selectFile"><span class="nav-number">7.1.4.2.</span> <span class="nav-text">selectFile()</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📌Tips"><span class="nav-number">8.</span> <span class="nav-text">📌Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Intrinsic"><span class="nav-number">8.1.</span> <span class="nav-text">Intrinsic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#type"><span class="nav-number">8.2.</span> <span class="nav-text">type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Group-1"><span class="nav-number">8.3.</span> <span class="nav-text">Group</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ch"><span class="nav-number">8.4.</span> <span class="nav-text">ch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Performance-Monitor"><span class="nav-number">8.5.</span> <span class="nav-text">Performance Monitor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Houdini-Digital-Asset"><span class="nav-number">8.6.</span> <span class="nav-text">Houdini Digital Asset</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建规范"><span class="nav-number">8.6.1.</span> <span class="nav-text">创建规范</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HDA的命名空间和版本"><span class="nav-number">8.6.2.</span> <span class="nav-text">HDA的命名空间和版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HDA默认参数"><span class="nav-number">8.6.3.</span> <span class="nav-text">HDA默认参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HDA脚本-和模块-添加"><span class="nav-number">8.6.4.</span> <span class="nav-text">HDA脚本(和模块)添加</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ParameterInterface"><span class="nav-number">8.7.</span> <span class="nav-text">ParameterInterface</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Insert"><span class="nav-number">8.7.1.</span> <span class="nav-text">Insert</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SpareInput"><span class="nav-number">8.7.2.</span> <span class="nav-text">SpareInput</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MenuParameter"><span class="nav-number">8.7.3.</span> <span class="nav-text">MenuParameter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Multiparm-Block"><span class="nav-number">8.7.4.</span> <span class="nav-text">Multiparm Block</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AttribPromote"><span class="nav-number">8.8.</span> <span class="nav-text">AttribPromote</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HF-边界问题"><span class="nav-number">8.9.</span> <span class="nav-text">HF 边界问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HF-Layer操作"><span class="nav-number">8.10.</span> <span class="nav-text">HF Layer操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#👿-Trick"><span class="nav-number">9.</span> <span class="nav-text">👿 Trick</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选取整数点"><span class="nav-number">9.1.</span> <span class="nav-text">选取整数点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DisplacementTrick"><span class="nav-number">9.2.</span> <span class="nav-text">DisplacementTrick</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过Resample保留点"><span class="nav-number">9.3.</span> <span class="nav-text">通过Resample保留点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#只保留模型边界"><span class="nav-number">9.4.</span> <span class="nav-text">只保留模型边界</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过Fuse生成中心点"><span class="nav-number">9.5.</span> <span class="nav-text">通过Fuse生成中心点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过Expand2D生成模型中线"><span class="nav-number">9.6.</span> <span class="nav-text">通过Expand2D生成模型中线</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">范子文</p>
+  <p class="site-author-name" itemprop="name">业余蚊子</p>
   <div class="site-description" itemprop="description"></div>
 </div>
 <div class="site-state-wrap motion-element">
@@ -1048,11 +1149,11 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">范子文</span>
+  <span class="author" itemprop="copyrightHolder">业余蚊子</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0
   </div>
